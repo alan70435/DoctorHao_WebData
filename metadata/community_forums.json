@@ -1,0 +1,289 @@
+{
+  "meta": {
+    "task": "社群調研：2024-2026 年間 Reddit/HN/Stack Overflow/dev.to 分享的『免登入抓取 Facebook 公開粉專歷史貼文』實戰方法",
+    "target": "台灣粉專 page_id=100090796624852，2023-2025 貼文文字；瓶頸 = post_id / story_fbid 枚舉",
+    "date_of_research": "2026-09-08",
+    "researcher": "community-forums recon agent",
+    "api_notes": {
+      "reddit": "www.reddit.com 的 *.json 全被擋（回 HTML）；old.reddit.com 導登入頁（lor2 限流）；可用管道 = www.reddit.com/*.rss（Atom feed，限流約 2-3 請求/分鐘，超過回 0-byte 429）與 Arctic Shift（arctic-shift.photon-reddit.com，免登入，/api/posts/ids?ids=... 與 /api/comments/search?link_id=...）；PullPush.io 回 429 並要求付費，棄用",
+      "hacker_news": "hn.algolia.com/api/v1/search 與 /items/{id} 穩定免登入",
+      "stack_overflow": "api.stackexchange.com/2.3 穩定免登入（filter=withbody 讀回答）",
+      "dev_to": "dev.to/search/feed_content 回空 result；可用管道 = /api/articles?tag=facebook 與 /api/articles/{id}（含 body_html）",
+      "lobsters": "/search.json 拒絕參數（400），HTML 搜尋頁無 facebook scraping 相關故事",
+      "mastodon": "/api/v2/search 免 token 回空集合（狀態搜尋需 OAuth），棄用"
+    }
+  },
+  "channels": {
+    "reddit": {
+      "queries_executed": [
+        "r/webscraping: facebook scraper / facebook posts without login / facebook page scraping / facebook graph api alternative / facebook scraper blocked / mbasic facebook（RSS, sort=top&t=all 與 sort=newest）",
+        "全站: facebook scraper without login (newest) / crowdtangle alternative (top,t=year) / \"meta content library\" (top,t=year) / facebook post id scrape / facebook page posts export / mbasic.facebook.com / facebook scraping 2025 / facebook posts without account",
+        "r/OSINT: facebook posts、facebook page posts；r/DataHoarder: facebook archive"
+      ],
+      "key_threads": [
+        {
+          "url": "https://www.reddit.com/r/webscraping/comments/1bntnuk/finding_out_a_facebookscraper_that_works/",
+          "date": "2024-03-26",
+          "title": "finding out a Facebook-scraper that works ...",
+          "finding": "推薦 moda20/facebook-scraper（kevinzg 的 fork，多 60 commits）為當時仍可用的維護版； kevinzg 原版 Issues 區多人回報壞掉。2024-06-18 有人在留言問『Does this work for you? I can't get it to return anything』→ 已現失效徵兆"
+        },
+        {
+          "url": "https://www.reddit.com/r/webscraping/comments/1bgsyhp/facebook_scraping_impossible/",
+          "date": "2024-03-17",
+          "title": "Facebook scraping. Impossible?",
+          "finding": "留言 rwhyan60 彙整歷史帖；結論：FB 反爬+訴訟風險，無免登入捷徑；推薦 kevinzg/facebook-scraper 為起點（需 cookie）"
+        },
+        {
+          "url": "https://www.reddit.com/r/webscraping/comments/16namzg/is_there_a_web_scraper_for_facebook_pages/",
+          "date": "2023-09-20",
+          "title": "Is there a web scraper for Facebook pages?",
+          "finding": "(a) Street-Arm-7962：『先用 Google 搜尋取出 FB 連結、再逐連結抓內容』——Google 對 FB 索引好，此法當時有效。(b) ValdrST：直接打 Facebook GraphQL API，『only works with node fetch』（Python requests 不行），需正確 endpoint；當時用於社團貼文/市集。(c) Deedu_4U：建議多帳號輪替 cookie + puppeteer（需帳號）。"
+        },
+        {
+          "url": "https://www.reddit.com/r/webscraping/comments/1dm4uei/facebooks_insanity/",
+          "date": "2024-06-22",
+          "title": "Facebook's insanity",
+          "finding": "共識：HTML class 名隨機且每次刷新變動、ML 反爬、無登入幾乎必被擋；『No normal scraper can work on Facebook... must use headless browser』（Crazed_waffle_party）；v3ctorns1mon 提出以『抓渲染後全文 + LLM 清洗』替代選擇器"
+        },
+        {
+          "url": "https://www.reddit.com/r/SideProject/comments/1vxec2i/nocookie_scrapers_facebook_linkedin_tiktok_and/",
+          "date": "2026-08-25",
+          "title": "No-Cookie Scrapers - Facebook... data without ever asking for a login",
+          "finding": "2026 年現役無登入抓 FB 的獨立開發者。核心：只讀 logged-out 公開資料（FB posts/pages 的 reactions/comments/shares/video views）。關鍵技術=『shell page 偵測』：FB 會間歇性回 HTTP 200 但只有幾 KB 的殼（client-side render），若只看 status code/大小會存到空紀錄，必須『以 data blob 缺失為條件重試』。未貼具體 endpoint，但證明 2026 年免登入抓 page 貼文仍可行"
+        },
+        {
+          "url": "https://www.reddit.com/r/WebDataDiggers/comments/1q4fx88/extracting_public_data_from_facebook_pages/",
+          "date": "2026-01-05",
+          "title": "Extracting public data from Facebook pages",
+          "finding": "Apify 行銷文（付費立場）：宣稱『you cannot scrape Facebook effectively as a guest anymore…幾秒後 login wall』、需 cookie + headless 無限捲動。與 1vxec2i 矛盾 → 顯示無登入抓『最新貼文』可行、但『捲動歷史』受牆"
+        },
+        {
+          "url": "https://www.reddit.com/r/Journalism/comments/1nyv0sp/alternatives_to_crowdtangle_for_monitoring/",
+          "date": "2025-10-06",
+          "title": "Alternatives to CrowdTangle for monitoring Facebook?",
+          "finding": "記者社群公開徵求 CrowdTangle 替代品，自承『知道 MCL 但 access is limited』，0 則有效回覆 → 社群沒有免費替代品共識"
+        },
+        {
+          "url": "https://www.reddit.com/r/AcademiaEU/comments/1vw2d55/meta_content_library/",
+          "date": "2026-08-23",
+          "title": "Meta Content Library",
+          "finding": "歐洲學者 2026 夏申請 MCL 被自動拒絕（系統黑箱：『system flagged eligibility criteria not met』），無申訴管道 → MCL 申請門檻極高、不透明"
+        },
+        {
+          "url": "https://www.reddit.com/r/ITPhilippines/comments/1s8fz7s/how_to_access_public_facebook_posts_using_an_api/",
+          "date": "2026-03-31",
+          "title": "How to access public Facebook posts using an API (Open Source)",
+          "finding": "開發者結論：即時抓公開 FB 貼文文字的『最佳線索』= Meta Content Library API（免費註冊+審核），無其他 open source 捷徑"
+        },
+        {
+          "url": "https://www.reddit.com/r/facebook/comments/1unsvye/how_can_i_archivecatalogue_old_facebook_group/",
+          "date": "2026-07-05",
+          "title": "How can I archive/catalogue old Facebook group posts...",
+          "finding": "原生介面捲動歷史會崩潰、站內搜尋漏貼文 → 連 FB 自家 UI 都無法可靠回溯歷史；無解留言"
+        },
+        {
+          "url": "https://www.reddit.com/r/facebook/comments/1dofzoo/what_is_the_alternative_to_mbasicfacebookcom_it/",
+          "date": "2024-06-25",
+          "title": "What is the alternative to mbasic.facebook.com it doesn't open anymore",
+          "finding": "mbasic 對一般使用者自 2024 年中起失效；另見 r/LegacyJailbreak 1jhybp3（2025-03-23）iOS6 上 mbasic cookie 彈窗 bug → mbasic 通道整體退化，與我方『mbasic 同 payload』死路一致"
+        },
+        {
+          "url": "https://www.reddit.com/r/API_Finder/comments/1uzxwoo/facebook_posts_scraper_pay_per_event_89k_users/",
+          "date": "2026-07-18",
+          "title": "Facebook Posts Scraper — Pay per event | 89K users",
+          "finding": "Apify 官方 actor apify/facebook-posts-scraper：89K 用戶、pay-per-event（新用戶每月 $5 免費額度）；其技術路線是模擬 session（cookie）。屬付費+需 cookie，依規則不採用，僅記錄存在性"
+        }
+      ]
+    },
+    "hacker_news": {
+      "queries_executed": [
+        "facebook scraper / facebook scraping / facebook without login / common crawl facebook / facebook graph api / crowdtangle / facebook page posts scrape (tags=story 與 tags=comment)"
+      ],
+      "key_threads": [
+        {
+          "url": "https://news.ycombinator.com/item?id=41533060",
+          "date": "2024-09-13",
+          "title": "Facebook scraped every Australian adult user's public posts to train AI (273 pts, 250 comments)",
+          "finding": "關鍵留言 candiddevmike：『Internet public and Facebook public are two different things…It's not indexed or usable outside of Facebook』→ HN 共識：FB 公開貼文本質上無法被外部索引/發現，post_id 發現性是平台設計使然，無繞過討論"
+        },
+        {
+          "url": "https://news.ycombinator.com/item?id=47741527",
+          "date": "2026-04-13",
+          "title": "Show HN（What are you working on）TrackCheck — 抓 FB 粉專『最近貼文』+ LLM 判斷場地開放",
+          "finding": "2026 年實戰案例：『I scrape recent posts and use an LLM to infer whether a track is open』→ 只抓 recent posts（與我方 Googlebot 最新 20 則同天花板），無歷史枚舉"
+        },
+        {
+          "url": "https://news.ycombinator.com/item?id=40718306",
+          "date": "2024-06-18",
+          "title": "Researchers find Meta's replacement of CrowdTangle with MCL tool hard to swallow",
+          "finding": "MCL 被研究者社群批評：資格嚴、功能縮水 → MCL 是唯一官方管道但不易取得"
+        },
+        {
+          "url": "https://news.ycombinator.com/item?id=41275164",
+          "date": "2024-08-17",
+          "title": "Meta kills off CrowdTangle despite pleas from researchers, journalists (另有 41290930、40301868、39750117)",
+          "finding": "CrowdTangle 於 2024-08-14 正式關閉；免費的 FB 公開貼文監測 API 從此消失 → 替代資料源死路"
+        },
+        {
+          "url": "https://news.ycombinator.com/item?id=48470117",
+          "date": "2026-06-10",
+          "title": "Show HN: Facebook Post Scraper (Chrome extension)",
+          "finding": "Chrome 擴充功能：宣稱可從公開粉專/個人檔匯出貼文與下載媒體。0 討論、需瀏覽器 session（無法 server-side 自動化）→ 對自動化管線價值低"
+        },
+        {
+          "url": "https://news.ycombinator.com/item?id=25815152",
+          "date": "2021-01-17",
+          "title": "Tell HN: Facebook just blocked seeing public company pages without login",
+          "finding": "歷史節點：2021 年起 FB 對未登入者遮蔽粉專瀏覽 → 我方『Googlebot UA 繞過』是少數剩餘的未登入通道"
+        }
+      ]
+    },
+    "stack_overflow": {
+      "queries_executed": [
+        "facebook scraper without login / facebook posts scraping / facebook graph api without token page posts / facebook page posts without access token（sort=votes）",
+        "facebook scrape / facebook-scraper / facebook page posts / facebook page feed（fromdate=2024-01-01, sort=creation）"
+      ],
+      "key_threads": [
+        {
+          "url": "https://stackoverflow.com/questions/79474235/facebook-scraper-get-posts-not-returning-any-posts",
+          "date": "2025-02-28",
+          "title": "facebook_scraper.get_posts not returning any posts",
+          "finding": "SO 上 2025 年 facebook-scraper 套件失效的直接證詞（0 回答 → 社群也無解）"
+        },
+        {
+          "url": "https://stackoverflow.com/questions/78220723/facebook-scraper-without-api-works-nicely-but-login-process-failes-some-how",
+          "date": "2024-03-25",
+          "title": "FaceBook-Scraper (without API) works nicely - but Login Process fails",
+          "finding": "『免 API』抓法仍繞不開登入流程失敗問題 → 登入牆是套件共同死點"
+        },
+        {
+          "url": "https://stackoverflow.com/questions/78062339/python-scraper-for-facebook-marketplace-isnt-working-anymore",
+          "date": "2024-02-26",
+          "title": "Python scraper for facebook marketplace isn't working anymore",
+          "finding": "2024 年起 FB 各垂直區塊（marketplace 等）舊抓法連環失效"
+        },
+        {
+          "url": "https://stackoverflow.com/questions/78584814/trying-to-extract-a-month-worth-of-posts-using-cursor-based-pagination-on-facebook",
+          "date": "2024-06-06",
+          "title": "Cursor Based Pagination on Facebook Graph API (accepted answer)",
+          "finding": "官方 Graph API /{page_id}/feed + since/until + batch requests 可抓月級歷史，但需要 Page access token（須是粉專管理員或有 pages_read_engagement 的 App）→ 非免登入，僅適用自家粉專"
+        },
+        {
+          "url": "https://stackoverflow.com/questions/79972560/how-do-i-retrieve-the-shared-facbook-post-links-in-bulk",
+          "date": "2026-07-02",
+          "title": "How do I retrieve the shared facebook post links in bulk?",
+          "finding": "唯一回答僅一句『You can use facebook graphql to fetch the data』無細節 → SO 對此問題 2026 年已無實質內容"
+        },
+        {
+          "url": "https://stackoverflow.com/questions/78933121/facebook-share-links-the-document-returned-no-data-403",
+          "date": "2024-08-30",
+          "title": "Facebook share links 'The document returned no data. 403'",
+          "finding": "與 FB 相關的反爬 403 證詞（對象是站長自己的 robots.txt），對 FB 端無方法"
+        }
+      ]
+    },
+    "dev_to": {
+      "queries_executed": [
+        "search/feed_content (facebook scraper / facebook scraping) → 端點回空，棄用",
+        "/api/articles?tag=facebook（命中 20+ 篇，多為 2026-08 廠商文）"
+      ],
+      "key_threads": [
+        {
+          "url": "https://dev.to/apivault/inside-our-facebook-profile-scraper-emails-contacts-and-lead-scoring-no-login-cji",
+          "date": "2026-08-06",
+          "title": "Inside Our Facebook Profile Scraper (No Login)",
+          "finding": "現役無登入商業 API 廠商自白：never logs in / never uses cookies / 只讀 logged-out 可見資料；明言 trade-off = 『without login you get profile and Page metadata, NOT private feeds or a full post history』→ 免登入拿不到完整貼文歷史（連廠商都拿不到）"
+        },
+        {
+          "url": "https://dev.to/yulia_taylor_980225d112d8/scraping-facebook-comments-at-scale-a-developers-playbook-3m7g",
+          "date": "2026-08-22",
+          "title": "Scraping Facebook Comments at Scale: A Developer's Playbook",
+          "finding": "最完整的 2026 GraphQL 重放教學：POST https://www.facebook.com/api/graphql/ 帶 av / __user / __a=1 / fb_dtsg / variables(feedID, after cursor) / doc_id；回應有 for(;;); 前綴；留言每 25-50 筆分頁、雙 cursor（頂層+回覆）。門檻=需要登入 cookie 與 fb_dtsg（帳號 session）→ 免登入不可行；與我方『bot 頁無 doc_id 可提』觀察一致"
+        },
+        {
+          "url": "https://dev.to/yulia_taylor_980225d112d8/how-to-scrape-facebook-posts-for-research-and-analytics-3d6p",
+          "date": "2026-08-18",
+          "title": "How to Scrape Facebook Posts for Research and Analytics",
+          "finding": "手動路線=Selenium/Playwright + 住宅代理 + cookie session（需帳號）；結尾導向付費服務。無免登入技巧"
+        },
+        {
+          "url": "https://dev.to/crawlerbros/how-to-scrape-facebook-reviews-for-competitor-analysis-4bg5",
+          "date": "2026-09-05",
+          "title": "How to Scrape Facebook Reviews for Competitor Analysis",
+          "finding": "同廠商行銷文系列；評論/推薦牆面資料，未提供免登入 endpoint"
+        }
+      ]
+    },
+    "github_pypi_tool_validity": {
+      "kevinzg_facebook_scraper": {
+        "github": "https://github.com/kevinzg/facebook-scraper",
+        "last_push": "2024-06-22",
+        "open_issues": 446,
+        "pypi_latest": "0.2.59 (2020-08-06)",
+        "verdict": "2024 年中後停更；Issue #『Example Scrape does not return any posts』(2025-10-02, open) 與 SO 79474235 (2025-02-28) 證實 get_posts 已不回傳。需要登入 cookie。→ 已失效"
+      },
+      "moda20_facebook_scraper_fork": {
+        "github": "https://github.com/moda20/facebook-scraper",
+        "last_push": "2024-06-14",
+        "stars": 112,
+        "verdict": "2024-03 由 r/webscraping 留言推薦為活躍 fork，但 2024-06-14 後亦無 commit。→ 已失效"
+      },
+      "facebook_page_scraper_pypi": {
+        "pypi": "https://pypi.org/project/facebook-page-scraper/",
+        "latest_release": "5.0.6 (2024-07-14)",
+        "verdict": "最後發行 2024-07，無 2025-2026 社群背書；同為登入式。→ 大概率失效"
+      },
+      "apify_facebook_posts_scraper": {
+        "url": "https://apify.com/apify/facebook-posts-scraper",
+        "date_seen": "2026-07-18 (r/API_Finder)",
+        "verdict": "89K 用戶、pay-per-event、需 session cookie；新帳號每月 $5 免費額度。屬付費+需帳號，依規則不採用，僅記錄"
+      }
+    },
+    "dead_ends": {
+      "lobsters": "/search.json 400 Unpermitted query；HTML 搜尋頁無 facebook scraping 故事",
+      "mastodon": "/api/v2/search 免 token 回空（需 OAuth）",
+      "crowdtangle": "2024-08-14 已關閉（HN 41275164 等）",
+      "parsehub": "r/webscraping 185z0t4 留言引官方：『Parsehub cannot be used to get data from LinkedIn, Facebook, Instagram, or Google』",
+      "mbasic": "r/facebook 1dofzoo (2024-06-25)：mbasic 對一般用戶已打不開 → 通道整體退化（我方 Googlebot UA 情形另測）",
+      "pullpush_io": "回 429 並聲明需付費/聯絡管理員 → 棄用"
+    }
+  },
+  "methods_ranked": [
+    {
+      "rank": 1,
+      "name": "無登入『shell page』偵測 + 以 data blob 缺失為條件的重試迴圈",
+      "source": "https://www.reddit.com/r/SideProject/comments/1vxec2i/ (2026-08-25)",
+      "summary": "2026 年現役無登入 FB 抓取者：FB 間歇性回 HTTP 200 + 數 KB 殼頁（無資料），要用『回應中資料 blob 是否存在』當重試條件，而非 status code 或頁面大小。作者以此穩定抓粉專貼文/互動數",
+      "applicability": "可直接試：套在我方 Googlebot UA 抓粉專首頁/ permalink.php 流程，加入 shell 偵測與重試，提高穩定性；對『翻頁超過 20 則』無直接幫助"
+    },
+    {
+      "rank": 2,
+      "name": "Meta Content Library (MCL) API 免費申請（唯一合法免登入歷史資料管道）",
+      "source": "https://www.reddit.com/r/ITPhilippines/comments/1s8fz7s/ (2026-03-31), https://www.reddit.com/r/AcademiaEU/comments/1vw2d55/ (2026-08-23), https://news.ycombinator.com/item?id=40718306 (2024-06-18)",
+      "summary": "流程：transparency.meta.com / metcontentlibrary.com 線上申請 → 自動資格審查（學術/公益研究機構背景）→ 通過後有 GUI 搜尋與 API，可查公開粉專/社團/粉絲頁貼文歷史。免費、免 FB 個人帳號密碼（需機構 email 與研究計畫說明）",
+      "applicability": "需帳號（免費註冊+審核）：個人申請 2026 年已知會被系統自動拒絕（AcademiaEU 案例零解釋）；若 doctor 診所經營者有醫療公衛研究合作管道可嘗試。這是唯一官方歷史貼文管道"
+    },
+    {
+      "rank": 3,
+      "name": "搜尋引擎索引收割（Google site:facebook.com 取貼文連結→逐連結抓全文）",
+      "source": "https://www.reddit.com/r/webscraping/comments/16namzg/ (2023-09-20, Street-Arm-7962 留言)",
+      "summary": "利用 Google 對 FB 的深度索引找出粉專貼文 permalink，再對每個 permalink 免登入抓內容——這正是我方 permalink.php+Googlebot UA 已驗證可行的『單篇抓取』組合；缺的仍是初始連結清單",
+      "applicability": "我方環境已驗證死路（所有搜尋引擎反爬）；社群 2023 年背書。若換網路出口/換引擎（如 Brave Search API 免費層）可再試一次，成本低"
+    },
+    {
+      "rank": 4,
+      "name": "GraphQL /api/graphql/ doc_id 重放（含 fb_dtsg + 登入 cookie）",
+      "source": "https://dev.to/yulia_taylor_980225d112d8/scraping-facebook-comments-at-scale-a-developers-playbook-3m7g (2026-08-22), https://www.reddit.com/r/webscraping/comments/16namzg/ (ValdrST, 2023-09: 僅 node fetch 可行)",
+      "summary": "2026 年最完整的分頁重放教學：doc_id 定義查詢、variables.after 為 cursor、25-50 筆/頁、雙 cursor（留言+回覆）；需 session cookie 與 fb_dtsg",
+      "applicability": "需帳號（不符合免登入）；且我方已驗證 bot 視圖頁面無 doc_id 可提取。僅在取得自備測試帳號時有用"
+    },
+    {
+      "rank": 5,
+      "name": "『最新 N 則 + 高頻輪詢累積』時間換歷史（2026 實戰存在案例）",
+      "source": "https://news.ycombinator.com/item?id=47741527 (2026-04-13, TrackCheck)",
+      "summary": "HN 2026 案例：監控數十個 UK motocross 粉專，只抓『recent posts』+ LLM 分類，長期輪詢累積時間序列。承認無法回溯歷史",
+      "applicability": "可直接試：我方 Googlebot UA 已能拿最新 20 則 → 排程每 6-12 小時輪詢 page_id 首頁，即時歸檔新貼文；對 2023-2024 缺口無效，但可止住 2026+ 缺口擴大"
+    }
+  ],
+  "post_id_enumeration_verdict": "在 Reddit/HN/SO/dev.to 的 2024-2026 討論中，沒有任何公開分享的『免登入枚舉粉專全部 post_id/story_fbid』方法。多個獨立信號交叉確認：(1) HN 41533060 留言『not indexed or usable outside of Facebook』；(2) dev.to apivault 廠商自白無登入拿不到 full post history；(3) r/Journalism 1nyv0sp 徵求替代品零回應；(4) r/facebook 1unsvye 連 FB 原生 UI 都無法回溯歷史。社群唯一接近的歷史枚舉路徑 = MCL 申請 或 付費服務（Apify/Bright Data，需 session cookie）"
+}

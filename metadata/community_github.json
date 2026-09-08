@@ -1,0 +1,220 @@
+{
+  "_meta": {
+    "date": "2026-09-08",
+    "purpose": "免登入抓取 Facebook 公開粉專歷史貼文的開源工具/技術調研（GitHub + PyPI/npm）",
+    "target": "程皓醫師｜好動人生 page_id=100090796624852 (2023-03-15 創立)",
+    "sandbox": "/tmp/fb_tool_test/",
+    "test_rule": "只測匿名模式，絕不輸入帳密/cookie；請求間隔 sleep 2 秒"
+  },
+  "breakthrough": {
+    "summary": "匿名 GraphQL doc_id 重放（無 cookie、無 fb_dtsg）對粉專 timeline 完全可用，且 cursor 翻頁可一路回溯至建站首篇",
+    "verified_result": "以 doc_id=28591463417151325 (ProfileCometTimelineFeedRefetchQuery) 匿名 POST https://www.facebook.com/api/graphql/，cursor 連續翻頁 50 頁 + beforeTime 跳躍，枚舉出 150 篇貼文（2023-03-16 創站首篇 ~ 2026-08-01），149 篇含全文。完整清單存於 metadata/graphql_replay_posts_20260908.json",
+    "payload_essentials": {
+      "url": "https://www.facebook.com/api/graphql/",
+      "method": "POST (application/x-www-form-urlencoded)",
+      "headers": {
+        "user-agent": "一般瀏覽器 UA（不必是 Googlebot）",
+        "origin": "https://www.facebook.com",
+        "referer": "https://www.facebook.com/",
+        "x-fb-friendly-name": "ProfileCometTimelineFeedRefetchQuery"
+      },
+      "form_fields": {
+        "av": "0",
+        "__user": "0",
+        "__a": "1",
+        "__comet_req": "15",
+        "fb_api_caller_class": "RelayModern",
+        "fb_api_req_friendly_name": "ProfileCometTimelineFeedRefetchQuery",
+        "fb_dtsg": "（空字串即可）",
+        "doc_id": "28591463417151325",
+        "variables": "{\"id\":\"<page_id>\",\"count\":3,\"cursor\":null,\"feedLocation\":\"TIMELINE\",\"renderLocation\":\"timeline\",\"scale\":2,...relay provider 旗標}"
+      },
+      "pagination": "回應 JSON data.node.timeline_list_feed_units.page_info.end_cursor 帶入下一次 cursor",
+      "time_jump": "variables.beforeTime=<unix_ts> 可直接跳到該時間之前的貼文（afterTime 同理反向）",
+      "limits": "伺服器將 count 鎖在 3（要求 8/10 也只回 3）；偶發空回應=暫時性限流，需 retry/backoff；連續高頻後可能全空，建議間隔 >=2s",
+      "test_script": "/tmp/fb_tool_test/test_graphql_replay.py + harvest_v2.py"
+    }
+  },
+  "candidates": [
+    {
+      "name": "mohdtalal3/facebook_post_comment_scraper",
+      "url": "https://github.com/mohdtalal3/facebook_post_comment_scraper",
+      "ecosystem": "GitHub (Python, requests only)",
+      "stars": 39,
+      "last_commit": "2026-09-08",
+      "needs_auth": false,
+      "test_result": "SUCCESS",
+      "notes": "本次調研最大突破來源。post_scraper.py 純 requests 重放 GraphQL doc_id 28591463417151325（ProfileCometTimelineFeedRefetchQuery），匿名模式（COOKIES={}、FB_DTSG=''）實測可用。含 cursor 翻頁、Story node 多位置解析、reel/video 過濾、留言數提取、相簿 media_id 迭代。附 PyQt6 GUI 但核心邏輯可抽出 headless 使用。原碼參考 /tmp/fb_tool_test/mohd_post_scraper.py"
+    },
+    {
+      "name": "browser-act/skills (facebook-page-profile-posts skill)",
+      "url": "https://github.com/browser-act/skills/tree/main/solutions/social-listening/facebook-page-profile-posts",
+      "ecosystem": "GitHub (skill 文件 + browser JS 腳本)",
+      "stars": 5844,
+      "last_commit": "2026-08-24",
+      "needs_auth": false,
+      "test_result": "TECHNIQUE CONFIRMED",
+      "notes": "獨立來源驗證同一手法：同一 doc_id + beforeTime/afterTime/omitPinnedPost/postedBy:{group:OWNER} 參數。其變數模板揭露 time-filter 用法（我們實測 beforeTime 跳躍有效）。它是瀏覽器內注入 JS 執行（需 DOM 取 LSD token），我們的純 requests 匿名版更輕。也是 doc_id 生態的權威參考"
+    },
+    {
+      "name": "facebook-scraper (kevinzg/facebook-scraper)",
+      "url": "https://github.com/kevinzg/facebook-scraper",
+      "ecosystem": "PyPI 0.2.59 + GitHub",
+      "stars": 3279,
+      "last_commit": "2024-06-22",
+      "needs_auth": false,
+      "test_result": "FAIL (anonymous)",
+      "notes": "曾是最主流套件。實測 get_posts('100090796624852', pages=3/5) 匿名回傳 0 篇（無例外）。安裝需補 lxml_html_clean（issue #1128）。issue #1130（2025-10）證實連帶 cookies 也回 0 篇，無修復。446 open issues，repo 已一年多未 push。結論：已死，不可用"
+    },
+    {
+      "name": "facebook-graphql-scraper (FaustRen/facebook-graphql-scraper)",
+      "url": "https://github.com/FaustRen/facebook-graphql-scraper",
+      "ecosystem": "PyPI facebook-graphql-scraper",
+      "stars": 92,
+      "last_commit": "2026-08-18 (v1.2.0)",
+      "needs_auth": false,
+      "test_result": "NOT_TESTED (needs chromedriver)",
+      "notes": "活躍維護中（2026-08 還在發版）。手法：selenium-wire 攔截瀏覽器自己發出的 ProfileCometTimelineFeedRefetchQuery GraphQL 請求再重放（doc_id 與我們測的相同）。README 明確支援『Without logging in』模式抓 page/user 貼文，days_limit 參數可回溯歷史。缺點：需 chromedriver + 瀏覽器環境；登入模式『under maintenance』。若需 GUI 式穩定方案可考慮"
+    },
+    {
+      "name": "facebook_page_scraper (shaikhsajid1111/facebook_page_scraper)",
+      "url": "https://github.com/shaikhsajid1111/facebook_page_scraper",
+      "ecosystem": "PyPI facebook-page-scraper",
+      "stars": 280,
+      "last_commit": "2024-07-14",
+      "needs_auth": false,
+      "test_result": "NOT_TESTED (needs webdriver)",
+      "notes": "宣稱『No API key, no limitation』。原始碼含 driver_initialization.py，需本機 Chrome/Firefox + webdriver 走 m.facebook/mbasic UI，非純 HTTP。changelog 顯示曾用 permalink.php?story_fbid 模式。舊 UI 型爬蟲在 2025-2026 佈局下存活率低，未投入實測"
+    },
+    {
+      "name": "facebook-page-info-scraper (wael-sudo2)",
+      "url": "https://github.com/wael-sudo2/facebook-page-info-scraper",
+      "ecosystem": "PyPI",
+      "stars": 67,
+      "last_commit": "2026-08-29",
+      "needs_auth": false,
+      "test_result": "OUT_OF_SCOPE",
+      "notes": "活躍（2026-08 更新）且免登入，但只抓粉專 metadata（名稱/追蹤數等），不含貼文列表。對我們的歷史貼文瓶頸無幫助"
+    },
+    {
+      "name": "facebook-post-scraper (brutalsavage)",
+      "url": "https://github.com/brutalsavage/facebook-post-scraper",
+      "ecosystem": "GitHub (Python + selenium)",
+      "stars": 366,
+      "last_commit": "2023-01-03",
+      "needs_auth": true,
+      "test_result": "SKIP",
+      "notes": "需將帳密寫入 facebook_credentials.txt + chromedriver。三年未更新，跳過"
+    },
+    {
+      "name": "FacebookPostsScraper (hhsm95)",
+      "url": "https://github.com/hhsm95/FacebookPostsScraper",
+      "ecosystem": "GitHub (Python)",
+      "stars": 154,
+      "last_commit": "2022-12-08",
+      "needs_auth": true,
+      "test_result": "SKIP",
+      "notes": "selenium 系、三年多未更新"
+    },
+    {
+      "name": "facebook-scraper-selenium (apurvmishra99)",
+      "url": "https://github.com/apurvmishra99/facebook-scraper-selenium",
+      "ecosystem": "GitHub",
+      "stars": 237,
+      "last_commit": "2020-06-28",
+      "needs_auth": true,
+      "test_result": "SKIP",
+      "notes": "六年未更新，dead"
+    },
+    {
+      "name": "facebook-page-post-scraper (minimaxir)",
+      "url": "https://github.com/minimaxir/facebook-page-post-scraper",
+      "ecosystem": "GitHub",
+      "stars": 2134,
+      "last_commit": "2019-05-23",
+      "needs_auth": true,
+      "test_result": "SKIP",
+      "notes": "依賴已廢止的 Graph API v2.x + access token，dead"
+    },
+    {
+      "name": "Facebook_Crawler (TIGCR 台灣大數據小組)",
+      "url": "https://github.com/TIGCR/Facebook_Crawler",
+      "ecosystem": "GitHub (Python)",
+      "stars": 18,
+      "last_commit": "2022-08-10",
+      "needs_auth": true,
+      "test_result": "SKIP",
+      "notes": "台灣團隊作品（中文文檔）。README 自述：mbasic 改版後無法正確抓統計數字；留言爬蟲需 FB 帳密。基於 TLYu0419/facebook_crawler 的 mbasic 手法（與我們已驗證死路的 mbasic 同源）"
+    },
+    {
+      "name": "@bochilteam/scraper-facebook",
+      "url": "https://www.npmjs.com/package/@bochilteam/scraper-facebook",
+      "ecosystem": "npm 5.0.0 (2024-07-18)",
+      "stars": null,
+      "last_commit": "2024-07-18",
+      "needs_auth": false,
+      "test_result": "NOT_APPLICABLE",
+      "notes": "npm 上唯一較活躍的 facebook 套件，但原始碼（lib/cjs/src/facebook-v1.js）只是把單篇貼文 URL 丟給第三方 fdownloader.net 下載影片，無粉專貼文列表功能。npm 生態無可用之粉專歷史枚舉工具"
+    },
+    {
+      "name": "js-fitz/Facebook-scraper",
+      "url": "https://github.com/js-fitz/Facebook-scraper",
+      "ecosystem": "GitHub",
+      "stars": 9,
+      "last_commit": "2024-05-06",
+      "needs_auth": false,
+      "test_result": "OUT_OF_SCOPE",
+      "notes": "『no account required』但僅針對 Facebook Group，不支援粉專 timeline"
+    },
+    {
+      "name": "商業服務（僅記錄，未使用）",
+      "url": "https://apify.com/ | https://brightdata.com/",
+      "ecosystem": "SaaS",
+      "stars": null,
+      "last_commit": null,
+      "needs_auth": true,
+      "test_result": "NOT_USED",
+      "notes": "Apify（NewNautilus/epctex 等 facebook-post-scraper actor）與 Bright Data 均需付費帳號；GitHub 上大量零星 repo 只是 Apify actor 的殼。依任務規則僅記錄不使用"
+    }
+  ],
+  "techniques": [
+    {
+      "name": "匿名 GraphQL doc_id 重放（ProfileCometTimelineFeedRefetchQuery）",
+      "detail": "POST https://www.facebook.com/api/graphql/，form 帶 doc_id=28591463417151325、fb_dtsg 空字串、__user=0、av=0，variables 帶 {id: page_id, count, cursor, feedLocation:TIMELINE, renderLocation:timeline, scale:2} + 一組 __relay_internal__pv__* 旗標。無需任何 cookie/token。回傳 data.node.timeline_list_feed_units.edges[]，每個 node.__typename=Story 含 post_id、creation_time、comet_sections.content.story.message.text 全文、feedback.id",
+      "status": "VERIFIED 2026-09-08：對 page_id 100090796624852 枚舉出全部 150 篇（2023-03-16~2026-08-01）",
+      "source": "https://github.com/mohdtalal3/facebook_post_comment_scraper/blob/main/post_scraper.py"
+    },
+    {
+      "name": "beforeTime/afterTime 時間切片跳躍",
+      "detail": "variables.beforeTime=<unix timestamp> 使 feed 直接從該時間點之前開始，配合 cursor 可對任意年代直接下潛；實測 beforeTime=1704038400 (2024-01-01) 直接回傳 2023-12-12/03/11-29 的貼文",
+      "status": "VERIFIED 2026-09-08",
+      "source": "https://github.com/browser-act/skills/blob/main/solutions/social-listening/facebook-page-profile-posts/scripts/get-page-posts.py"
+    },
+    {
+      "name": "selenium-wire 攔截後重放（半自動 doc_id 捕捉法）",
+      "detail": "用真瀏覽器載入粉專頁，selenium-wire 攔截頁面自己發出的 GraphQL 請求（含即時 doc_id 與完整 payload），之後以 requests 重放並改 cursor 翻頁。當 doc_id 失效（FB 定期換版）時此法可自動找回新 doc_id",
+      "status": "README/CHANGELOG 宣稱可用（v1.2.0 2026-08-18），未實測（需 chromedriver）",
+      "source": "https://github.com/FaustRen/facebook-graphql-scraper"
+    },
+    {
+      "name": "已死路清單（社群資料佐證）",
+      "detail": "mbasic/m.facebook HTML 抓取：TIGCR 與多個 2022-2023 repo 自述因改版失效；kevinzg facebook-scraper 匿名模式回 0 篇（issue #1130, 2025-10）；Graph API v2.x 公開抓取（minimaxir 2019）早已要求 token；npm 生態僅有 fdownloader.net 包裝的單篇影片下載器",
+      "status": "CONFIRMED DEAD",
+      "source": "https://github.com/kevinzg/facebook-scraper/issues/1130"
+    },
+    {
+      "name": "doc_id 重放的運維注意事項（實測心得）",
+      "detail": "1) count 伺服器端鎖 3/頁，翻 50 頁約 100 秒（含 sleep 2s）即可枚舉 150 篇；2) 偶發空回應（200 但無 data）=暫時限流，backoff 8-10s 重試即可，勿把單次空回應當終點；3) 長時間高頻後可能整批空回應，等待或換 IP；4) cursor 走到建站日自然耗盡（無更多頁），此即完整性訊號；5) 若未來 doc_id 失效，可從粉專頁面 HTML/JS bundle 重新提取（Threads 同手法已驗證），或改用 FaustRen 的 selenium-wire 自動捕捉",
+      "status": "VERIFIED",
+      "source": "實測紀錄 /tmp/fb_tool_test/harvest_v2_log.txt"
+    }
+  ],
+  "harvest_output": {
+    "file": "metadata/graphql_replay_posts_20260908.json",
+    "total_posts": 150,
+    "date_range": "2023-03-16 ~ 2026-08-01",
+    "per_year": {"2023": 31, "2024": 29, "2025": 66, "2026": 24},
+    "with_text": 149,
+    "fields_per_post": ["post_id (即 permalink story_fbid)", "creation_time/iso", "text 全文", "feedback_id"]
+  }
+}
