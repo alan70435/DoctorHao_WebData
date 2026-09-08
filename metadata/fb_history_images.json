@@ -1,0 +1,4010 @@
+{
+ "page_id": "100090796624852",
+ "page_name": "程皓醫師｜好動人生。運動與家庭醫學",
+ "generated_at": "2026-09-08",
+ "method_summary": {
+  "download_endpoint": "https://lookaside.fbsbx.com/lookaside/crawler/media/?media_id={photo_id} + Googlebot UA",
+  "enumeration": {
+   "photo.php_prev_next_bfs": {
+    "status": "WORKS — primary method",
+    "detail": "GET https://www.facebook.com/photo.php?fbid={id} with Googlebot UA returns GraphQL JSON containing default_mediaset Album (id 161022763600944) with prevMedia/nextMedia edges (each Photo node carries owner id). BFS over neighbors walks the page's entire default photo album chronologically. Owner field used to prevent drift into foreign albums (commenter avatars / other pages' photos appear as Photo/media_id nodes without page ownership)."
+   },
+   "sk_tabs": {
+    "status": "PARTIAL — sk=photos grid gives 12 latest photo nodes; all other sk values (videos/reels/photos_all/photos_music/albums/map/about_photos) redirect to the same photos tab; no video ids exposed to bots on this page."
+   },
+   "album_pages": {
+    "status": "USELESS — set=a.{album_id} param ignored for bots; always renders the same general photos grid. 14 album ids discovered: 161022763600944, 119880574381830, 119848247718396, 440444706081226, 231783693170029, 117876417018362, 135271220003538, 122122354106320930, 109944478687285, 122102615774656535, 122103434265048903, 109943132020753, 5260514744071035, 1426241077607114, 443430981125402, 443430977792069, 443430991125401, 443430974458736, 325876139556731"
+   },
+   "post_pages": {
+    "status": "WORKS for photo->post mapping — GET /{page}/posts/{post_id} embeds attachment media_id uris; 14 of 20 known posts embed photo attachments, 6 posts are text-only."
+   },
+   "mbasic_facebook": {
+    "status": "Same JSON payload as www (redirect); no extra data."
+   }
+  },
+  "ownership_guard": "Every downloaded photo verified via its photo.php page containing Photo nodes with owner==100090796624852. 73 foreign files downloaded during unguarded runs were identified and deleted (owner 100063755121747 吳易澄醫師-運動醫學, 100064030411054, commenter avatars).",
+  "limits": {
+   "new_photos_cap": 150,
+   "time_cap_minutes": 60,
+   "request_sleep": "1-3s"
+  }
+ },
+ "stats": {
+  "total_image_files": 211,
+  "post_mapped_photos": 27,
+  "photo_id_only_new": 182,
+  "cover": 1,
+  "profile_picture": 1,
+  "new_downloads_this_run": 182,
+  "failed_ids": 87,
+  "pil_verified": 211
+ },
+ "photo_to_post_verified_mapping": {
+  "1009912618711950": [
+   "1009912478711964"
+  ],
+  "885508454485701": [
+   "885508377819042",
+   "885508414485705"
+  ],
+  "895606786809201": [
+   "895606740142539"
+  ],
+  "899784503058096": [
+   "899784449724768"
+  ],
+  "900334256336454": [
+   "900340386335841",
+   "900340436335836",
+   "900340483002498"
+  ],
+  "905717909131422": [
+   "905717879131425"
+  ],
+  "908814315488448": [
+   "908818662154680",
+   "908818722154674"
+  ],
+  "909580665411813": [
+   "909580562078490",
+   "909580598745153",
+   "909580632078483"
+  ],
+  "912362921800254": [
+   "912362791800267",
+   "912362871800259"
+  ],
+  "921131584256721": [
+   "921131290923417",
+   "921131370923409",
+   "921131447590068",
+   "921131527590060",
+   "921132560923290"
+  ],
+  "923222414047638": [
+   "923222387380974"
+  ],
+  "926758937027319": [
+   "926758900360656"
+  ],
+  "932585863111293": [
+   "932585636444649",
+   "932585729777973",
+   "932585829777963"
+  ],
+  "937865692583310": [
+   "937865649249981"
+  ]
+ },
+ "photos": [
+  {
+   "file": "1009912618711950-1_1009912478711964.jpg",
+   "bytes": 42130,
+   "post_id": "1009912618711950",
+   "seq": 1,
+   "photo_id": "1009912478711964",
+   "naming": "post_mapped",
+   "dims": [
+    640,
+    378
+   ],
+   "format": "JPEG",
+   "verified": true
+  },
+  {
+   "file": "119880451048509.jpg",
+   "bytes": 693007,
+   "photo_id": "119880451048509",
+   "naming": "photo_id_only",
+   "dims": [
+    1200,
+    628
+   ],
+   "format": "JPEG",
+   "verified": true,
+   "method": "lookaside:bfs",
+   "content_type": "image/jpeg"
+  },
+  {
+   "file": "161022470267640.jpg",
+   "bytes": 273600,
+   "photo_id": "161022470267640",
+   "naming": "photo_id_only",
+   "dims": [
+    1536,
+    2048
+   ],
+   "format": "JPEG",
+   "verified": true,
+   "method": "lookaside:bfs",
+   "content_type": "image/jpeg"
+  },
+  {
+   "file": "161022503600970.jpg",
+   "bytes": 496217,
+   "photo_id": "161022503600970",
+   "naming": "photo_id_only",
+   "dims": [
+    1536,
+    2048
+   ],
+   "format": "JPEG",
+   "verified": true,
+   "method": "lookaside:bfs",
+   "content_type": "image/jpeg"
+  },
+  {
+   "file": "161024396934114.jpg",
+   "bytes": 572283,
+   "photo_id": "161024396934114",
+   "naming": "photo_id_only",
+   "dims": [
+    2048,
+    1536
+   ],
+   "format": "JPEG",
+   "verified": true,
+   "method": "lookaside:bfs",
+   "content_type": "image/jpeg"
+  },
+  {
+   "file": "161024436934110.jpg",
+   "bytes": 582072,
+   "photo_id": "161024436934110",
+   "naming": "photo_id_only",
+   "dims": [
+    2048,
+    1536
+   ],
+   "format": "JPEG",
+   "verified": true,
+   "method": "lookaside:bfs",
+   "content_type": "image/jpeg"
+  },
+  {
+   "file": "161024466934107.jpg",
+   "bytes": 430733,
+   "photo_id": "161024466934107",
+   "naming": "photo_id_only",
+   "dims": [
+    1536,
+    2048
+   ],
+   "format": "JPEG",
+   "verified": true,
+   "method": "lookaside:bfs",
+   "content_type": "image/jpeg"
+  },
+  {
+   "file": "161024503600770.jpg",
+   "bytes": 424962,
+   "photo_id": "161024503600770",
+   "naming": "photo_id_only",
+   "dims": [
+    1536,
+    2048
+   ],
+   "format": "JPEG",
+   "verified": true,
+   "method": "lookaside:bfs",
+   "content_type": "image/jpeg"
+  },
+  {
+   "file": "161024523600768.jpg",
+   "bytes": 675143,
+   "photo_id": "161024523600768",
+   "naming": "photo_id_only",
+   "dims": [
+    2048,
+    1536
+   ],
+   "format": "JPEG",
+   "verified": true,
+   "method": "lookaside:bfs",
+   "content_type": "image/jpeg"
+  },
+  {
+   "file": "161024543600766.jpg",
+   "bytes": 568967,
+   "photo_id": "161024543600766",
+   "naming": "photo_id_only",
+   "dims": [
+    2048,
+    1536
+   ],
+   "format": "JPEG",
+   "verified": true,
+   "method": "lookaside:bfs",
+   "content_type": "image/jpeg"
+  },
+  {
+   "file": "161024576934096.jpg",
+   "bytes": 461815,
+   "photo_id": "161024576934096",
+   "naming": "photo_id_only",
+   "dims": [
+    2048,
+    1536
+   ],
+   "format": "JPEG",
+   "verified": true,
+   "method": "lookaside:bfs",
+   "content_type": "image/jpeg"
+  },
+  {
+   "file": "161025120267375.jpg",
+   "bytes": 343958,
+   "photo_id": "161025120267375",
+   "naming": "photo_id_only",
+   "dims": [
+    1536,
+    2048
+   ],
+   "format": "JPEG",
+   "verified": true,
+   "method": "lookaside:bfs",
+   "content_type": "image/jpeg"
+  },
+  {
+   "file": "196173963419157.jpg",
+   "bytes": 100622,
+   "photo_id": "196173963419157",
+   "naming": "photo_id_only",
+   "dims": [
+    1280,
+    960
+   ],
+   "format": "JPEG",
+   "verified": true,
+   "method": "lookaside:bfs",
+   "content_type": "image/jpeg"
+  },
+  {
+   "file": "196173996752487.jpg",
+   "bytes": 112139,
+   "photo_id": "196173996752487",
+   "naming": "photo_id_only",
+   "dims": [
+    2048,
+    922
+   ],
+   "format": "JPEG",
+   "verified": true,
+   "method": "lookaside:bfs",
+   "content_type": "image/jpeg"
+  },
+  {
+   "file": "196174043419149.jpg",
+   "bytes": 167633,
+   "photo_id": "196174043419149",
+   "naming": "photo_id_only",
+   "dims": [
+    1479,
+    1109
+   ],
+   "format": "JPEG",
+   "verified": true,
+   "method": "lookaside:bfs",
+   "content_type": "image/jpeg"
+  },
+  {
+   "file": "196174076752479.jpg",
+   "bytes": 176570,
+   "photo_id": "196174076752479",
+   "naming": "photo_id_only",
+   "dims": [
+    1479,
+    1109
+   ],
+   "format": "JPEG",
+   "verified": true,
+   "method": "lookaside:bfs",
+   "content_type": "image/jpeg"
+  },
+  {
+   "file": "196174113419142.jpg",
+   "bytes": 50453,
+   "photo_id": "196174113419142",
+   "naming": "photo_id_only",
+   "dims": [
+    838,
+    687
+   ],
+   "format": "JPEG",
+   "verified": true,
+   "method": "lookaside:bfs",
+   "content_type": "image/jpeg"
+  },
+  {
+   "file": "212441078459112.jpg",
+   "bytes": 137048,
+   "photo_id": "212441078459112",
+   "naming": "photo_id_only",
+   "dims": [
+    1080,
+    956
+   ],
+   "format": "JPEG",
+   "verified": true,
+   "method": "lookaside:bfs",
+   "content_type": "image/jpeg"
+  },
+  {
+   "file": "234786846224535.jpg",
+   "bytes": 206799,
+   "photo_id": "234786846224535",
+   "naming": "photo_id_only",
+   "dims": [
+    1536,
+    2048
+   ],
+   "format": "JPEG",
+   "verified": true,
+   "method": "lookaside:bfs",
+   "content_type": "image/jpeg"
+  },
+  {
+   "file": "234786892891197.jpg",
+   "bytes": 174784,
+   "photo_id": "234786892891197",
+   "naming": "photo_id_only",
+   "dims": [
+    1536,
+    2048
+   ],
+   "format": "JPEG",
+   "verified": true,
+   "method": "lookaside:bfs",
+   "content_type": "image/jpeg"
+  },
+  {
+   "file": "234786926224527.jpg",
+   "bytes": 421213,
+   "photo_id": "234786926224527",
+   "naming": "photo_id_only",
+   "dims": [
+    2048,
+    1536
+   ],
+   "format": "JPEG",
+   "verified": true,
+   "method": "lookaside:bfs",
+   "content_type": "image/jpeg"
+  },
+  {
+   "file": "234786949557858.jpg",
+   "bytes": 165748,
+   "photo_id": "234786949557858",
+   "naming": "photo_id_only",
+   "dims": [
+    2048,
+    1536
+   ],
+   "format": "JPEG",
+   "verified": true,
+   "method": "lookaside:bfs",
+   "content_type": "image/jpeg"
+  },
+  {
+   "file": "234787242891162.jpg",
+   "bytes": 80432,
+   "photo_id": "234787242891162",
+   "naming": "photo_id_only",
+   "dims": [
+    1326,
+    1224
+   ],
+   "format": "JPEG",
+   "verified": true,
+   "method": "lookaside:bfs",
+   "content_type": "image/jpeg"
+  },
+  {
+   "file": "286001411103078.jpg",
+   "bytes": 219137,
+   "photo_id": "286001411103078",
+   "naming": "photo_id_only",
+   "dims": [
+    1700,
+    962
+   ],
+   "format": "JPEG",
+   "verified": true,
+   "method": "lookaside:bfs",
+   "content_type": "image/jpeg"
+  },
+  {
+   "file": "286001447769741.jpg",
+   "bytes": 160405,
+   "photo_id": "286001447769741",
+   "naming": "photo_id_only",
+   "dims": [
+    1477,
+    1108
+   ],
+   "format": "JPEG",
+   "verified": true,
+   "method": "lookaside:retry",
+   "content_type": "image/jpeg"
+  },
+  {
+   "file": "286001471103072.jpg",
+   "bytes": 220587,
+   "photo_id": "286001471103072",
+   "naming": "photo_id_only",
+   "dims": [
+    1970,
+    1422
+   ],
+   "format": "JPEG",
+   "verified": true,
+   "method": "lookaside:bfs",
+   "content_type": "image/jpeg"
+  },
+  {
+   "file": "288307587539127.jpg",
+   "bytes": 103392,
+   "photo_id": "288307587539127",
+   "naming": "photo_id_only",
+   "dims": [
+    1245,
+    1247
+   ],
+   "format": "JPEG",
+   "verified": true,
+   "method": "lookaside:bfs",
+   "content_type": "image/jpeg"
+  },
+  {
+   "file": "305754725794413.jpg",
+   "bytes": 182669,
+   "photo_id": "305754725794413",
+   "naming": "photo_id_only",
+   "dims": [
+    1479,
+    1109
+   ],
+   "format": "JPEG",
+   "verified": true,
+   "method": "lookaside:bfs",
+   "content_type": "image/jpeg"
+  },
+  {
+   "file": "319426701093882.jpg",
+   "bytes": 205335,
+   "photo_id": "319426701093882",
+   "naming": "photo_id_only",
+   "dims": [
+    2048,
+    1536
+   ],
+   "format": "JPEG",
+   "verified": true,
+   "method": "lookaside:bfs",
+   "content_type": "image/jpeg"
+  },
+  {
+   "file": "319426731093879.jpg",
+   "bytes": 175093,
+   "photo_id": "319426731093879",
+   "naming": "photo_id_only",
+   "dims": [
+    2048,
+    1152
+   ],
+   "format": "JPEG",
+   "verified": true,
+   "method": "lookaside:bfs",
+   "content_type": "image/jpeg"
+  },
+  {
+   "file": "347771058259446.jpg",
+   "bytes": 437739,
+   "photo_id": "347771058259446",
+   "naming": "photo_id_only",
+   "dims": [
+    2048,
+    1537
+   ],
+   "format": "JPEG",
+   "verified": true,
+   "method": "lookaside:bfs",
+   "content_type": "image/jpeg"
+  },
+  {
+   "file": "347771108259441.jpg",
+   "bytes": 418790,
+   "photo_id": "347771108259441",
+   "naming": "photo_id_only",
+   "dims": [
+    2048,
+    1537
+   ],
+   "format": "JPEG",
+   "verified": true,
+   "method": "lookaside:bfs",
+   "content_type": "image/jpeg"
+  },
+  {
+   "file": "347771144926104.jpg",
+   "bytes": 59654,
+   "photo_id": "347771144926104",
+   "naming": "photo_id_only",
+   "dims": [
+    960,
+    720
+   ],
+   "format": "JPEG",
+   "verified": true,
+   "method": "lookaside:bfs",
+   "content_type": "image/jpeg"
+  },
+  {
+   "file": "347771218259430.jpg",
+   "bytes": 212993,
+   "photo_id": "347771218259430",
+   "naming": "photo_id_only",
+   "dims": [
+    1536,
+    2048
+   ],
+   "format": "JPEG",
+   "verified": true,
+   "method": "lookaside:bfs",
+   "content_type": "image/jpeg"
+  },
+  {
+   "file": "347771258259426.jpg",
+   "bytes": 317278,
+   "photo_id": "347771258259426",
+   "naming": "photo_id_only",
+   "dims": [
+    1536,
+    2048
+   ],
+   "format": "JPEG",
+   "verified": true,
+   "method": "lookaside:bfs",
+   "content_type": "image/jpeg"
+  },
+  {
+   "file": "347771311592754.jpg",
+   "bytes": 314805,
+   "photo_id": "347771311592754",
+   "naming": "photo_id_only",
+   "dims": [
+    1536,
+    2048
+   ],
+   "format": "JPEG",
+   "verified": true,
+   "method": "lookaside:bfs",
+   "content_type": "image/jpeg"
+  },
+  {
+   "file": "364005309969354.jpg",
+   "bytes": 122524,
+   "photo_id": "364005309969354",
+   "naming": "photo_id_only",
+   "dims": [
+    1512,
+    2016
+   ],
+   "format": "JPEG",
+   "verified": true,
+   "method": "lookaside:bfs",
+   "content_type": "image/jpeg"
+  },
+  {
+   "file": "364005333302685.jpg",
+   "bytes": 233118,
+   "photo_id": "364005333302685",
+   "naming": "photo_id_only",
+   "dims": [
+    2048,
+    1536
+   ],
+   "format": "JPEG",
+   "verified": true,
+   "method": "lookaside:bfs",
+   "content_type": "image/jpeg"
+  },
+  {
+   "file": "364005369969348.jpg",
+   "bytes": 280948,
+   "photo_id": "364005369969348",
+   "naming": "photo_id_only",
+   "dims": [
+    2048,
+    1536
+   ],
+   "format": "JPEG",
+   "verified": true,
+   "method": "lookaside:bfs",
+   "content_type": "image/jpeg"
+  },
+  {
+   "file": "364005399969345.jpg",
+   "bytes": 317324,
+   "photo_id": "364005399969345",
+   "naming": "photo_id_only",
+   "dims": [
+    2048,
+    1536
+   ],
+   "format": "JPEG",
+   "verified": true,
+   "method": "lookaside:bfs",
+   "content_type": "image/jpeg"
+  },
+  {
+   "file": "364005429969342.jpg",
+   "bytes": 241119,
+   "photo_id": "364005429969342",
+   "naming": "photo_id_only",
+   "dims": [
+    2048,
+    1536
+   ],
+   "format": "JPEG",
+   "verified": true,
+   "method": "lookaside:bfs",
+   "content_type": "image/jpeg"
+  },
+  {
+   "file": "364006546635897.jpg",
+   "bytes": 103388,
+   "photo_id": "364006546635897",
+   "naming": "photo_id_only",
+   "dims": [
+    2048,
+    1536
+   ],
+   "format": "JPEG",
+   "verified": true,
+   "method": "lookaside:bfs",
+   "content_type": "image/jpeg"
+  },
+  {
+   "file": "377571761946042.jpg",
+   "bytes": 224553,
+   "photo_id": "377571761946042",
+   "naming": "photo_id_only",
+   "dims": [
+    2048,
+    1536
+   ],
+   "format": "JPEG",
+   "verified": true,
+   "method": "lookaside:bfs",
+   "content_type": "image/jpeg"
+  },
+  {
+   "file": "377571785279373.jpg",
+   "bytes": 486754,
+   "photo_id": "377571785279373",
+   "naming": "photo_id_only",
+   "dims": [
+    2048,
+    1536
+   ],
+   "format": "JPEG",
+   "verified": true,
+   "method": "lookaside:bfs",
+   "content_type": "image/jpeg"
+  },
+  {
+   "file": "377571811946037.jpg",
+   "bytes": 326603,
+   "photo_id": "377571811946037",
+   "naming": "photo_id_only",
+   "dims": [
+    2048,
+    1536
+   ],
+   "format": "JPEG",
+   "verified": true,
+   "method": "lookaside:bfs",
+   "content_type": "image/jpeg"
+  },
+  {
+   "file": "377571848612700.jpg",
+   "bytes": 256548,
+   "photo_id": "377571848612700",
+   "naming": "photo_id_only",
+   "dims": [
+    2048,
+    1536
+   ],
+   "format": "JPEG",
+   "verified": true,
+   "method": "lookaside:bfs",
+   "content_type": "image/jpeg"
+  },
+  {
+   "file": "377571885279363.jpg",
+   "bytes": 198978,
+   "photo_id": "377571885279363",
+   "naming": "photo_id_only",
+   "dims": [
+    2048,
+    1536
+   ],
+   "format": "JPEG",
+   "verified": true,
+   "method": "lookaside:bfs",
+   "content_type": "image/jpeg"
+  },
+  {
+   "file": "377571915279360.jpg",
+   "bytes": 284280,
+   "photo_id": "377571915279360",
+   "naming": "photo_id_only",
+   "dims": [
+    2048,
+    1536
+   ],
+   "format": "JPEG",
+   "verified": true,
+   "method": "lookaside:bfs",
+   "content_type": "image/jpeg"
+  },
+  {
+   "file": "388561594180392.jpg",
+   "bytes": 88093,
+   "photo_id": "388561594180392",
+   "naming": "photo_id_only",
+   "dims": [
+    1640,
+    1095
+   ],
+   "format": "JPEG",
+   "verified": true,
+   "method": "lookaside:bfs",
+   "content_type": "image/jpeg"
+  },
+  {
+   "file": "388561617513723.jpg",
+   "bytes": 86172,
+   "photo_id": "388561617513723",
+   "naming": "photo_id_only",
+   "dims": [
+    1623,
+    1036
+   ],
+   "format": "JPEG",
+   "verified": true,
+   "method": "lookaside:bfs",
+   "content_type": "image/jpeg"
+  },
+  {
+   "file": "394016256968259.jpg",
+   "bytes": 189572,
+   "photo_id": "394016256968259",
+   "naming": "photo_id_only",
+   "dims": [
+    1536,
+    2048
+   ],
+   "format": "JPEG",
+   "verified": true,
+   "method": "lookaside:bfs",
+   "content_type": "image/jpeg"
+  },
+  {
+   "file": "394016260301592.jpg",
+   "bytes": 180321,
+   "photo_id": "394016260301592",
+   "naming": "photo_id_only",
+   "dims": [
+    1536,
+    2048
+   ],
+   "format": "JPEG",
+   "verified": true,
+   "method": "lookaside:bfs",
+   "content_type": "image/jpeg"
+  },
+  {
+   "file": "401460389557179.jpg",
+   "bytes": 30435,
+   "photo_id": "401460389557179",
+   "naming": "photo_id_only",
+   "dims": [
+    692,
+    482
+   ],
+   "format": "JPEG",
+   "verified": true,
+   "method": "lookaside:bfs",
+   "content_type": "image/jpeg"
+  },
+  {
+   "file": "441008555602362.jpg",
+   "bytes": 221354,
+   "photo_id": "441008555602362",
+   "naming": "photo_id_only",
+   "dims": [
+    2048,
+    1423
+   ],
+   "format": "JPEG",
+   "verified": true,
+   "method": "lookaside:bfs",
+   "content_type": "image/jpeg"
+  },
+  {
+   "file": "441008592269025.jpg",
+   "bytes": 201263,
+   "photo_id": "441008592269025",
+   "naming": "photo_id_only",
+   "dims": [
+    2048,
+    1423
+   ],
+   "format": "JPEG",
+   "verified": true,
+   "method": "lookaside:bfs",
+   "content_type": "image/jpeg"
+  },
+  {
+   "file": "445078671862017.jpg",
+   "bytes": 92883,
+   "photo_id": "445078671862017",
+   "naming": "photo_id_only",
+   "dims": [
+    1080,
+    1350
+   ],
+   "format": "JPEG",
+   "verified": true,
+   "method": "lookaside:bfs",
+   "content_type": "image/jpeg"
+  },
+  {
+   "file": "460528130317071.jpg",
+   "bytes": 156124,
+   "photo_id": "460528130317071",
+   "naming": "photo_id_only",
+   "dims": [
+    1536,
+    2048
+   ],
+   "format": "JPEG",
+   "verified": true,
+   "method": "lookaside:bfs",
+   "content_type": "image/jpeg"
+  },
+  {
+   "file": "461995630170321.jpg",
+   "bytes": 137785,
+   "photo_id": "461995630170321",
+   "naming": "photo_id_only",
+   "dims": [
+    1609,
+    2048
+   ],
+   "format": "JPEG",
+   "verified": true,
+   "method": "lookaside:bfs",
+   "content_type": "image/jpeg"
+  },
+  {
+   "file": "461995663503651.jpg",
+   "bytes": 123401,
+   "photo_id": "461995663503651",
+   "naming": "photo_id_only",
+   "dims": [
+    1917,
+    1355
+   ],
+   "format": "JPEG",
+   "verified": true,
+   "method": "lookaside:bfs",
+   "content_type": "image/jpeg"
+  },
+  {
+   "file": "466778216358729.jpg",
+   "bytes": 477308,
+   "photo_id": "466778216358729",
+   "naming": "photo_id_only",
+   "dims": [
+    1536,
+    2048
+   ],
+   "format": "JPEG",
+   "verified": true,
+   "method": "lookaside:bfs",
+   "content_type": "image/jpeg"
+  },
+  {
+   "file": "466778273025390.jpg",
+   "bytes": 230300,
+   "photo_id": "466778273025390",
+   "naming": "photo_id_only",
+   "dims": [
+    1477,
+    1108
+   ],
+   "format": "JPEG",
+   "verified": true,
+   "method": "lookaside:bfs",
+   "content_type": "image/jpeg"
+  },
+  {
+   "file": "466778306358720.jpg",
+   "bytes": 248866,
+   "photo_id": "466778306358720",
+   "naming": "photo_id_only",
+   "dims": [
+    1477,
+    1108
+   ],
+   "format": "JPEG",
+   "verified": true,
+   "method": "lookaside:bfs",
+   "content_type": "image/jpeg"
+  },
+  {
+   "file": "466778363025381.jpg",
+   "bytes": 237915,
+   "photo_id": "466778363025381",
+   "naming": "photo_id_only",
+   "dims": [
+    1477,
+    1108
+   ],
+   "format": "JPEG",
+   "verified": true,
+   "method": "lookaside:bfs",
+   "content_type": "image/jpeg"
+  },
+  {
+   "file": "477183648651519.jpg",
+   "bytes": 376313,
+   "photo_id": "477183648651519",
+   "naming": "photo_id_only",
+   "dims": [
+    2048,
+    1540
+   ],
+   "format": "JPEG",
+   "verified": true,
+   "method": "lookaside:bfs",
+   "content_type": "image/jpeg"
+  },
+  {
+   "file": "477183681984849.jpg",
+   "bytes": 186491,
+   "photo_id": "477183681984849",
+   "naming": "photo_id_only",
+   "dims": [
+    2048,
+    1536
+   ],
+   "format": "JPEG",
+   "verified": true,
+   "method": "lookaside:bfs",
+   "content_type": "image/jpeg"
+  },
+  {
+   "file": "477183738651510.jpg",
+   "bytes": 340847,
+   "photo_id": "477183738651510",
+   "naming": "photo_id_only",
+   "dims": [
+    2048,
+    1536
+   ],
+   "format": "JPEG",
+   "verified": true,
+   "method": "lookaside:bfs",
+   "content_type": "image/jpeg"
+  },
+  {
+   "file": "477183825318168.jpg",
+   "bytes": 566745,
+   "photo_id": "477183825318168",
+   "naming": "photo_id_only",
+   "dims": [
+    2048,
+    1536
+   ],
+   "format": "JPEG",
+   "verified": true,
+   "method": "lookaside:bfs",
+   "content_type": "image/jpeg"
+  },
+  {
+   "file": "491007633935787.jpg",
+   "bytes": 429770,
+   "photo_id": "491007633935787",
+   "naming": "photo_id_only",
+   "dims": [
+    1524,
+    1473
+   ],
+   "format": "JPEG",
+   "verified": true,
+   "method": "lookaside:bfs",
+   "content_type": "image/jpeg"
+  },
+  {
+   "file": "491007663935784.jpg",
+   "bytes": 144908,
+   "photo_id": "491007663935784",
+   "naming": "photo_id_only",
+   "dims": [
+    2048,
+    1536
+   ],
+   "format": "JPEG",
+   "verified": true,
+   "method": "lookaside:bfs",
+   "content_type": "image/jpeg"
+  },
+  {
+   "file": "516028994766984.jpg",
+   "bytes": 302220,
+   "photo_id": "516028994766984",
+   "naming": "photo_id_only",
+   "dims": [
+    2048,
+    1153
+   ],
+   "format": "JPEG",
+   "verified": true,
+   "method": "lookaside:bfs",
+   "content_type": "image/jpeg"
+  },
+  {
+   "file": "521762990860251.jpg",
+   "bytes": 96547,
+   "photo_id": "521762990860251",
+   "naming": "photo_id_only",
+   "dims": [
+    2048,
+    1423
+   ],
+   "format": "JPEG",
+   "verified": true,
+   "method": "lookaside:bfs",
+   "content_type": "image/jpeg"
+  },
+  {
+   "file": "523764447326772.jpg",
+   "bytes": 257675,
+   "photo_id": "523764447326772",
+   "naming": "photo_id_only",
+   "dims": [
+    1536,
+    2048
+   ],
+   "format": "JPEG",
+   "verified": true,
+   "method": "lookaside:bfs",
+   "content_type": "image/jpeg"
+  },
+  {
+   "file": "523764473993436.jpg",
+   "bytes": 161346,
+   "photo_id": "523764473993436",
+   "naming": "photo_id_only",
+   "dims": [
+    1152,
+    2048
+   ],
+   "format": "JPEG",
+   "verified": true,
+   "method": "lookaside:bfs",
+   "content_type": "image/jpeg"
+  },
+  {
+   "file": "523764507326766.jpg",
+   "bytes": 313570,
+   "photo_id": "523764507326766",
+   "naming": "photo_id_only",
+   "dims": [
+    2048,
+    1152
+   ],
+   "format": "JPEG",
+   "verified": true,
+   "method": "lookaside:bfs",
+   "content_type": "image/jpeg"
+  },
+  {
+   "file": "523764540660096.jpg",
+   "bytes": 326212,
+   "photo_id": "523764540660096",
+   "naming": "photo_id_only",
+   "dims": [
+    2048,
+    1152
+   ],
+   "format": "JPEG",
+   "verified": true,
+   "method": "lookaside:bfs",
+   "content_type": "image/jpeg"
+  },
+  {
+   "file": "536173619419188.jpg",
+   "bytes": 222600,
+   "photo_id": "536173619419188",
+   "naming": "photo_id_only",
+   "dims": [
+    1365,
+    2048
+   ],
+   "format": "JPEG",
+   "verified": true,
+   "method": "lookaside:bfs",
+   "content_type": "image/jpeg"
+  },
+  {
+   "file": "536173632752520.jpg",
+   "bytes": 127099,
+   "photo_id": "536173632752520",
+   "naming": "photo_id_only",
+   "dims": [
+    1365,
+    2048
+   ],
+   "format": "JPEG",
+   "verified": true,
+   "method": "lookaside:bfs",
+   "content_type": "image/jpeg"
+  },
+  {
+   "file": "556154804087736.jpg",
+   "bytes": 175325,
+   "photo_id": "556154804087736",
+   "naming": "photo_id_only",
+   "dims": [
+    1080,
+    1440
+   ],
+   "format": "JPEG",
+   "verified": true,
+   "method": "lookaside:bfs",
+   "content_type": "image/jpeg"
+  },
+  {
+   "file": "556154834087733.jpg",
+   "bytes": 189908,
+   "photo_id": "556154834087733",
+   "naming": "photo_id_only",
+   "dims": [
+    2048,
+    1536
+   ],
+   "format": "JPEG",
+   "verified": true,
+   "method": "lookaside:bfs",
+   "content_type": "image/jpeg"
+  },
+  {
+   "file": "556154870754396.jpg",
+   "bytes": 258578,
+   "photo_id": "556154870754396",
+   "naming": "photo_id_only",
+   "dims": [
+    1152,
+    2048
+   ],
+   "format": "JPEG",
+   "verified": true,
+   "method": "lookaside:bfs",
+   "content_type": "image/jpeg"
+  },
+  {
+   "file": "570384499331433.jpg",
+   "bytes": 525397,
+   "photo_id": "570384499331433",
+   "naming": "photo_id_only",
+   "dims": [
+    1536,
+    2048
+   ],
+   "format": "JPEG",
+   "verified": true,
+   "method": "lookaside:bfs",
+   "content_type": "image/jpeg"
+  },
+  {
+   "file": "584069441296272.jpg",
+   "bytes": 67163,
+   "photo_id": "584069441296272",
+   "naming": "photo_id_only",
+   "dims": [
+    1208,
+    898
+   ],
+   "format": "JPEG",
+   "verified": true,
+   "method": "lookaside:bfs",
+   "content_type": "image/jpeg"
+  },
+  {
+   "file": "593688373667712.jpg",
+   "bytes": 105412,
+   "photo_id": "593688373667712",
+   "naming": "photo_id_only",
+   "dims": [
+    1326,
+    1100
+   ],
+   "format": "JPEG",
+   "verified": true,
+   "method": "lookaside:bfs",
+   "content_type": "image/jpeg"
+  },
+  {
+   "file": "595514473485102.jpg",
+   "bytes": 79271,
+   "photo_id": "595514473485102",
+   "naming": "photo_id_only",
+   "dims": [
+    1021,
+    549
+   ],
+   "format": "JPEG",
+   "verified": true,
+   "method": "lookaside:bfs",
+   "content_type": "image/jpeg"
+  },
+  {
+   "file": "595514510151765.jpg",
+   "bytes": 73360,
+   "photo_id": "595514510151765",
+   "naming": "photo_id_only",
+   "dims": [
+    886,
+    712
+   ],
+   "format": "JPEG",
+   "verified": true,
+   "method": "lookaside:bfs",
+   "content_type": "image/jpeg"
+  },
+  {
+   "file": "595514540151762.jpg",
+   "bytes": 135960,
+   "photo_id": "595514540151762",
+   "naming": "photo_id_only",
+   "dims": [
+    1477,
+    1108
+   ],
+   "format": "JPEG",
+   "verified": true,
+   "method": "lookaside:bfs",
+   "content_type": "image/jpeg"
+  },
+  {
+   "file": "595514576818425.jpg",
+   "bytes": 159567,
+   "photo_id": "595514576818425",
+   "naming": "photo_id_only",
+   "dims": [
+    1477,
+    1108
+   ],
+   "format": "JPEG",
+   "verified": true,
+   "method": "lookaside:bfs",
+   "content_type": "image/jpeg"
+  },
+  {
+   "file": "595514620151754.jpg",
+   "bytes": 585958,
+   "photo_id": "595514620151754",
+   "naming": "photo_id_only",
+   "dims": [
+    1660,
+    2048
+   ],
+   "format": "JPEG",
+   "verified": true,
+   "method": "lookaside:bfs",
+   "content_type": "image/jpeg"
+  },
+  {
+   "file": "601096329593583.jpg",
+   "bytes": 255173,
+   "photo_id": "601096329593583",
+   "naming": "photo_id_only",
+   "dims": [
+    1080,
+    1350
+   ],
+   "format": "JPEG",
+   "verified": true,
+   "method": "lookaside:bfs",
+   "content_type": "image/jpeg"
+  },
+  {
+   "file": "606529119050304.jpg",
+   "bytes": 55390,
+   "photo_id": "606529119050304",
+   "naming": "photo_id_only",
+   "dims": [
+    840,
+    852
+   ],
+   "format": "JPEG",
+   "verified": true,
+   "method": "lookaside:bfs",
+   "content_type": "image/jpeg"
+  },
+  {
+   "file": "606529165716966.jpg",
+   "bytes": 797104,
+   "photo_id": "606529165716966",
+   "naming": "photo_id_only",
+   "dims": [
+    2048,
+    1536
+   ],
+   "format": "JPEG",
+   "verified": true,
+   "method": "lookaside:bfs",
+   "content_type": "image/jpeg"
+  },
+  {
+   "file": "610302248672991.jpg",
+   "bytes": 96792,
+   "photo_id": "610302248672991",
+   "naming": "photo_id_only",
+   "dims": [
+    1080,
+    1350
+   ],
+   "format": "JPEG",
+   "verified": true,
+   "method": "lookaside:bfs",
+   "content_type": "image/jpeg"
+  },
+  {
+   "file": "621676414202241.jpg",
+   "bytes": 313226,
+   "photo_id": "621676414202241",
+   "naming": "photo_id_only",
+   "dims": [
+    1448,
+    2048
+   ],
+   "format": "JPEG",
+   "verified": true,
+   "method": "lookaside:bfs",
+   "content_type": "image/jpeg"
+  },
+  {
+   "file": "626473583722524.jpg",
+   "bytes": 183169,
+   "photo_id": "626473583722524",
+   "naming": "photo_id_only",
+   "dims": [
+    1640,
+    1578
+   ],
+   "format": "JPEG",
+   "verified": true,
+   "method": "lookaside:bfs",
+   "content_type": "image/jpeg"
+  },
+  {
+   "file": "630257480010801.jpg",
+   "bytes": 261764,
+   "photo_id": "630257480010801",
+   "naming": "photo_id_only",
+   "dims": [
+    1585,
+    1108
+   ],
+   "format": "JPEG",
+   "verified": true,
+   "method": "lookaside:bfs",
+   "content_type": "image/jpeg"
+  },
+  {
+   "file": "630257516677464.jpg",
+   "bytes": 485696,
+   "photo_id": "630257516677464",
+   "naming": "photo_id_only",
+   "dims": [
+    1536,
+    2048
+   ],
+   "format": "JPEG",
+   "verified": true,
+   "method": "lookaside:bfs",
+   "content_type": "image/jpeg"
+  },
+  {
+   "file": "630257556677460.jpg",
+   "bytes": 472810,
+   "photo_id": "630257556677460",
+   "naming": "photo_id_only",
+   "dims": [
+    2048,
+    1536
+   ],
+   "format": "JPEG",
+   "verified": true,
+   "method": "lookaside:bfs",
+   "content_type": "image/jpeg"
+  },
+  {
+   "file": "630257596677456.jpg",
+   "bytes": 671934,
+   "photo_id": "630257596677456",
+   "naming": "photo_id_only",
+   "dims": [
+    2048,
+    1536
+   ],
+   "format": "JPEG",
+   "verified": true,
+   "method": "lookaside:bfs",
+   "content_type": "image/jpeg"
+  },
+  {
+   "file": "630257626677453.jpg",
+   "bytes": 408232,
+   "photo_id": "630257626677453",
+   "naming": "photo_id_only",
+   "dims": [
+    1536,
+    2048
+   ],
+   "format": "JPEG",
+   "verified": true,
+   "method": "lookaside:bfs",
+   "content_type": "image/jpeg"
+  },
+  {
+   "file": "637182822651600.jpg",
+   "bytes": 128774,
+   "photo_id": "637182822651600",
+   "naming": "photo_id_only",
+   "dims": [
+    1220,
+    798
+   ],
+   "format": "JPEG",
+   "verified": true,
+   "method": "lookaside:bfs",
+   "content_type": "image/jpeg"
+  },
+  {
+   "file": "639043055798910.jpg",
+   "bytes": 399475,
+   "photo_id": "639043055798910",
+   "naming": "photo_id_only",
+   "dims": [
+    1536,
+    2048
+   ],
+   "format": "JPEG",
+   "verified": true,
+   "method": "lookaside:bfs",
+   "content_type": "image/jpeg"
+  },
+  {
+   "file": "639043112465571.jpg",
+   "bytes": 401292,
+   "photo_id": "639043112465571",
+   "naming": "photo_id_only",
+   "dims": [
+    1536,
+    2048
+   ],
+   "format": "JPEG",
+   "verified": true,
+   "method": "lookaside:bfs",
+   "content_type": "image/jpeg"
+  },
+  {
+   "file": "639043152465567.jpg",
+   "bytes": 610780,
+   "photo_id": "639043152465567",
+   "naming": "photo_id_only",
+   "dims": [
+    2048,
+    1536
+   ],
+   "format": "JPEG",
+   "verified": true,
+   "method": "lookaside:bfs",
+   "content_type": "image/jpeg"
+  },
+  {
+   "file": "641204692249413.jpg",
+   "bytes": 440736,
+   "photo_id": "641204692249413",
+   "naming": "photo_id_only",
+   "dims": [
+    2048,
+    1539
+   ],
+   "format": "JPEG",
+   "verified": true,
+   "method": "lookaside:bfs",
+   "content_type": "image/jpeg"
+  },
+  {
+   "file": "641204725582743.jpg",
+   "bytes": 708563,
+   "photo_id": "641204725582743",
+   "naming": "photo_id_only",
+   "dims": [
+    2048,
+    1536
+   ],
+   "format": "JPEG",
+   "verified": true,
+   "method": "lookaside:bfs",
+   "content_type": "image/jpeg"
+  },
+  {
+   "file": "641204755582740.jpg",
+   "bytes": 507746,
+   "photo_id": "641204755582740",
+   "naming": "photo_id_only",
+   "dims": [
+    2048,
+    1536
+   ],
+   "format": "JPEG",
+   "verified": true,
+   "method": "lookaside:bfs",
+   "content_type": "image/jpeg"
+  },
+  {
+   "file": "643403725362843.jpg",
+   "bytes": 220866,
+   "photo_id": "643403725362843",
+   "naming": "photo_id_only",
+   "dims": [
+    1640,
+    1095
+   ],
+   "format": "JPEG",
+   "verified": true,
+   "method": "lookaside:bfs",
+   "content_type": "image/jpeg"
+  },
+  {
+   "file": "643893991980483.jpg",
+   "bytes": 80536,
+   "photo_id": "643893991980483",
+   "naming": "photo_id_only",
+   "dims": [
+    1220,
+    1035
+   ],
+   "format": "JPEG",
+   "verified": true,
+   "method": "lookaside:bfs",
+   "content_type": "image/jpeg"
+  },
+  {
+   "file": "644615095241706.jpg",
+   "bytes": 127669,
+   "photo_id": "644615095241706",
+   "naming": "photo_id_only",
+   "dims": [
+    1080,
+    1350
+   ],
+   "format": "JPEG",
+   "verified": true,
+   "method": "lookaside:bfs",
+   "content_type": "image/jpeg"
+  },
+  {
+   "file": "644615121908370.jpg",
+   "bytes": 74218,
+   "photo_id": "644615121908370",
+   "naming": "photo_id_only",
+   "dims": [
+    724,
+    543
+   ],
+   "format": "JPEG",
+   "verified": true,
+   "method": "lookaside:bfs",
+   "content_type": "image/jpeg"
+  },
+  {
+   "file": "644615155241700.jpg",
+   "bytes": 145963,
+   "photo_id": "644615155241700",
+   "naming": "photo_id_only",
+   "dims": [
+    1280,
+    1129
+   ],
+   "format": "JPEG",
+   "verified": true,
+   "method": "lookaside:bfs",
+   "content_type": "image/jpeg"
+  },
+  {
+   "file": "644707641899118.jpg",
+   "bytes": 58667,
+   "photo_id": "644707641899118",
+   "naming": "photo_id_only",
+   "dims": [
+    1423,
+    640
+   ],
+   "format": "JPEG",
+   "verified": true,
+   "method": "lookaside:bfs",
+   "content_type": "image/jpeg"
+  },
+  {
+   "file": "645437091826173.jpg",
+   "bytes": 36229,
+   "photo_id": "645437091826173",
+   "naming": "photo_id_only",
+   "dims": [
+    516,
+    516
+   ],
+   "format": "JPEG",
+   "verified": true,
+   "method": "lookaside:bfs",
+   "content_type": "image/jpeg"
+  },
+  {
+   "file": "645630685140147.jpg",
+   "bytes": 234019,
+   "photo_id": "645630685140147",
+   "naming": "photo_id_only",
+   "dims": [
+    1640,
+    1095
+   ],
+   "format": "JPEG",
+   "verified": true,
+   "method": "lookaside:bfs",
+   "content_type": "image/jpeg"
+  },
+  {
+   "file": "645630691806813.jpg",
+   "bytes": 273575,
+   "photo_id": "645630691806813",
+   "naming": "photo_id_only",
+   "dims": [
+    1424,
+    2048
+   ],
+   "format": "JPEG",
+   "verified": true,
+   "method": "lookaside:bfs",
+   "content_type": "image/jpeg"
+  },
+  {
+   "file": "646127525090463.jpg",
+   "bytes": 111228,
+   "photo_id": "646127525090463",
+   "naming": "photo_id_only",
+   "dims": [
+    1440,
+    810
+   ],
+   "format": "JPEG",
+   "verified": true,
+   "method": "lookaside:bfs",
+   "content_type": "image/jpeg"
+  },
+  {
+   "file": "646329658403583.jpg",
+   "bytes": 74581,
+   "photo_id": "646329658403583",
+   "naming": "photo_id_only",
+   "dims": [
+    1046,
+    1318
+   ],
+   "format": "JPEG",
+   "verified": true,
+   "method": "lookaside:bfs",
+   "content_type": "image/jpeg"
+  },
+  {
+   "file": "646846025018613.jpg",
+   "bytes": 121997,
+   "photo_id": "646846025018613",
+   "naming": "photo_id_only",
+   "dims": [
+    1151,
+    1112
+   ],
+   "format": "JPEG",
+   "verified": true,
+   "method": "lookaside:bfs",
+   "content_type": "image/jpeg"
+  },
+  {
+   "file": "646846031685279.jpg",
+   "bytes": 60554,
+   "photo_id": "646846031685279",
+   "naming": "photo_id_only",
+   "dims": [
+    1050,
+    591
+   ],
+   "format": "JPEG",
+   "verified": true,
+   "method": "lookaside:bfs",
+   "content_type": "image/jpeg"
+  },
+  {
+   "file": "647610041608878.jpg",
+   "bytes": 42935,
+   "photo_id": "647610041608878",
+   "naming": "photo_id_only",
+   "dims": [
+    640,
+    427
+   ],
+   "format": "JPEG",
+   "verified": true,
+   "method": "lookaside:bfs",
+   "content_type": "image/jpeg"
+  },
+  {
+   "file": "648161191553763.jpg",
+   "bytes": 84268,
+   "photo_id": "648161191553763",
+   "naming": "photo_id_only",
+   "dims": [
+    1280,
+    720
+   ],
+   "format": "JPEG",
+   "verified": true,
+   "method": "lookaside:bfs",
+   "content_type": "image/jpeg"
+  },
+  {
+   "file": "648161218220427.jpg",
+   "bytes": 155131,
+   "photo_id": "648161218220427",
+   "naming": "photo_id_only",
+   "dims": [
+    1640,
+    1000
+   ],
+   "format": "JPEG",
+   "verified": true,
+   "method": "lookaside:bfs",
+   "content_type": "image/jpeg"
+  },
+  {
+   "file": "648161248220424.jpg",
+   "bytes": 46804,
+   "photo_id": "648161248220424",
+   "naming": "photo_id_only",
+   "dims": [
+    940,
+    788
+   ],
+   "format": "JPEG",
+   "verified": true,
+   "method": "lookaside:bfs",
+   "content_type": "image/jpeg"
+  },
+  {
+   "file": "648161268220422.jpg",
+   "bytes": 169336,
+   "photo_id": "648161268220422",
+   "naming": "photo_id_only",
+   "dims": [
+    1640,
+    923
+   ],
+   "format": "JPEG",
+   "verified": true,
+   "method": "lookaside:bfs",
+   "content_type": "image/jpeg"
+  },
+  {
+   "file": "648791838157365.jpg",
+   "bytes": 158530,
+   "photo_id": "648791838157365",
+   "naming": "photo_id_only",
+   "dims": [
+    1080,
+    1267
+   ],
+   "format": "JPEG",
+   "verified": true,
+   "method": "lookaside:bfs",
+   "content_type": "image/jpeg"
+  },
+  {
+   "file": "648791871490695.jpg",
+   "bytes": 102431,
+   "photo_id": "648791871490695",
+   "naming": "photo_id_only",
+   "dims": [
+    821,
+    879
+   ],
+   "format": "JPEG",
+   "verified": true,
+   "method": "lookaside:bfs",
+   "content_type": "image/jpeg"
+  },
+  {
+   "file": "648791918157357.jpg",
+   "bytes": 121318,
+   "photo_id": "648791918157357",
+   "naming": "photo_id_only",
+   "dims": [
+    1640,
+    1635
+   ],
+   "format": "JPEG",
+   "verified": true,
+   "method": "lookaside:bfs",
+   "content_type": "image/jpeg"
+  },
+  {
+   "file": "648874731482409.jpg",
+   "bytes": 398009,
+   "photo_id": "648874731482409",
+   "naming": "photo_id_only",
+   "dims": [
+    1365,
+    2048
+   ],
+   "format": "JPEG",
+   "verified": true,
+   "method": "lookaside:bfs",
+   "content_type": "image/jpeg"
+  },
+  {
+   "file": "650124611357421.jpg",
+   "bytes": 195077,
+   "photo_id": "650124611357421",
+   "naming": "photo_id_only",
+   "dims": [
+    1920,
+    1080
+   ],
+   "format": "JPEG",
+   "verified": true,
+   "method": "lookaside:bfs",
+   "content_type": "image/jpeg"
+  },
+  {
+   "file": "650871617949387.jpg",
+   "bytes": 52938,
+   "photo_id": "650871617949387",
+   "naming": "photo_id_only",
+   "dims": [
+    770,
+    513
+   ],
+   "format": "JPEG",
+   "verified": true,
+   "method": "lookaside:bfs",
+   "content_type": "image/jpeg"
+  },
+  {
+   "file": "650871664616049.jpg",
+   "bytes": 103962,
+   "photo_id": "650871664616049",
+   "naming": "photo_id_only",
+   "dims": [
+    1640,
+    1115
+   ],
+   "format": "JPEG",
+   "verified": true,
+   "method": "lookaside:bfs",
+   "content_type": "image/jpeg"
+  },
+  {
+   "file": "650871701282712.jpg",
+   "bytes": 101026,
+   "photo_id": "650871701282712",
+   "naming": "photo_id_only",
+   "dims": [
+    1640,
+    1057
+   ],
+   "format": "JPEG",
+   "verified": true,
+   "method": "lookaside:bfs",
+   "content_type": "image/jpeg"
+  },
+  {
+   "file": "651203134582902.jpg",
+   "bytes": 19013,
+   "photo_id": "651203134582902",
+   "naming": "photo_id_only",
+   "dims": [
+    1168,
+    202
+   ],
+   "format": "JPEG",
+   "verified": true,
+   "method": "lookaside:bfs",
+   "content_type": "image/jpeg"
+  },
+  {
+   "file": "651269494576266.jpg",
+   "bytes": 81794,
+   "photo_id": "651269494576266",
+   "naming": "photo_id_only",
+   "dims": [
+    1220,
+    1035
+   ],
+   "format": "JPEG",
+   "verified": true,
+   "method": "lookaside:bfs",
+   "content_type": "image/jpeg"
+  },
+  {
+   "file": "651561664547049.jpg",
+   "bytes": 112862,
+   "photo_id": "651561664547049",
+   "naming": "photo_id_only",
+   "dims": [
+    600,
+    900
+   ],
+   "format": "JPEG",
+   "verified": true,
+   "method": "lookaside:bfs",
+   "content_type": "image/jpeg"
+  },
+  {
+   "file": "652529444450271.jpg",
+   "bytes": 114221,
+   "photo_id": "652529444450271",
+   "naming": "photo_id_only",
+   "dims": [
+    1220,
+    1155
+   ],
+   "format": "JPEG",
+   "verified": true,
+   "method": "lookaside:bfs",
+   "content_type": "image/jpeg"
+  },
+  {
+   "file": "653781334325082.jpg",
+   "bytes": 61467,
+   "photo_id": "653781334325082",
+   "naming": "photo_id_only",
+   "dims": [
+    686,
+    386
+   ],
+   "format": "JPEG",
+   "verified": true,
+   "method": "lookaside:bfs",
+   "content_type": "image/jpeg"
+  },
+  {
+   "file": "657480817288467.jpg",
+   "bytes": 246248,
+   "photo_id": "657480817288467",
+   "naming": "photo_id_only",
+   "dims": [
+    1640,
+    1799
+   ],
+   "format": "JPEG",
+   "verified": true,
+   "method": "lookaside:bfs",
+   "content_type": "image/jpeg"
+  },
+  {
+   "file": "659162823786933.jpg",
+   "bytes": 108670,
+   "photo_id": "659162823786933",
+   "naming": "photo_id_only",
+   "dims": [
+    765,
+    1020
+   ],
+   "format": "JPEG",
+   "verified": true,
+   "method": "lookaside:bfs",
+   "content_type": "image/jpeg"
+  },
+  {
+   "file": "659162877120261.jpg",
+   "bytes": 829467,
+   "photo_id": "659162877120261",
+   "naming": "photo_id_only",
+   "dims": [
+    1536,
+    2048
+   ],
+   "format": "JPEG",
+   "verified": true,
+   "method": "lookaside:bfs",
+   "content_type": "image/jpeg"
+  },
+  {
+   "file": "661359723567243.jpg",
+   "bytes": 85543,
+   "photo_id": "661359723567243",
+   "naming": "photo_id_only",
+   "dims": [
+    1200,
+    673
+   ],
+   "format": "JPEG",
+   "verified": true,
+   "method": "lookaside:bfs",
+   "content_type": "image/jpeg"
+  },
+  {
+   "file": "661359780233904.jpg",
+   "bytes": 112850,
+   "photo_id": "661359780233904",
+   "naming": "photo_id_only",
+   "dims": [
+    1024,
+    576
+   ],
+   "format": "JPEG",
+   "verified": true,
+   "method": "lookaside:bfs",
+   "content_type": "image/jpeg"
+  },
+  {
+   "file": "662105633492652.jpg",
+   "bytes": 89677,
+   "photo_id": "662105633492652",
+   "naming": "photo_id_only",
+   "dims": [
+    1640,
+    886
+   ],
+   "format": "JPEG",
+   "verified": true,
+   "method": "lookaside:bfs",
+   "content_type": "image/jpeg"
+  },
+  {
+   "file": "663898196646729.jpg",
+   "bytes": 83196,
+   "photo_id": "663898196646729",
+   "naming": "photo_id_only",
+   "dims": [
+    1220,
+    1021
+   ],
+   "format": "JPEG",
+   "verified": true,
+   "method": "lookaside:bfs",
+   "content_type": "image/jpeg"
+  },
+  {
+   "file": "663898399980042.jpg",
+   "bytes": 153760,
+   "photo_id": "663898399980042",
+   "naming": "photo_id_only",
+   "dims": [
+    1640,
+    1245
+   ],
+   "format": "JPEG",
+   "verified": true,
+   "method": "lookaside:bfs",
+   "content_type": "image/jpeg"
+  },
+  {
+   "file": "667787049591177.jpg",
+   "bytes": 107567,
+   "photo_id": "667787049591177",
+   "naming": "photo_id_only",
+   "dims": [
+    1640,
+    1098
+   ],
+   "format": "JPEG",
+   "verified": true,
+   "method": "lookaside:bfs",
+   "content_type": "image/jpeg"
+  },
+  {
+   "file": "667787096257839.jpg",
+   "bytes": 163817,
+   "photo_id": "667787096257839",
+   "naming": "photo_id_only",
+   "dims": [
+    1640,
+    1337
+   ],
+   "format": "JPEG",
+   "verified": true,
+   "method": "lookaside:bfs",
+   "content_type": "image/jpeg"
+  },
+  {
+   "file": "674713748898507.jpg",
+   "bytes": 109908,
+   "photo_id": "674713748898507",
+   "naming": "photo_id_only",
+   "dims": [
+    1640,
+    1384
+   ],
+   "format": "JPEG",
+   "verified": true,
+   "method": "lookaside:bfs",
+   "content_type": "image/jpeg"
+  },
+  {
+   "file": "675923988777483.jpg",
+   "bytes": 138144,
+   "photo_id": "675923988777483",
+   "naming": "photo_id_only",
+   "dims": [
+    1280,
+    720
+   ],
+   "format": "JPEG",
+   "verified": true,
+   "method": "lookaside:bfs",
+   "content_type": "image/jpeg"
+  },
+  {
+   "file": "680916354944913.jpg",
+   "bytes": 94542,
+   "photo_id": "680916354944913",
+   "naming": "photo_id_only",
+   "dims": [
+    1220,
+    1120
+   ],
+   "format": "JPEG",
+   "verified": true,
+   "method": "lookaside:bfs",
+   "content_type": "image/jpeg"
+  },
+  {
+   "file": "683411734695375.jpg",
+   "bytes": 89596,
+   "photo_id": "683411734695375",
+   "naming": "photo_id_only",
+   "dims": [
+    1108,
+    1477
+   ],
+   "format": "JPEG",
+   "verified": true,
+   "method": "lookaside:bfs",
+   "content_type": "image/jpeg"
+  },
+  {
+   "file": "683411788028703.jpg",
+   "bytes": 165206,
+   "photo_id": "683411788028703",
+   "naming": "photo_id_only",
+   "dims": [
+    1108,
+    1477
+   ],
+   "format": "JPEG",
+   "verified": true,
+   "method": "lookaside:bfs",
+   "content_type": "image/jpeg"
+  },
+  {
+   "file": "683411814695367.jpg",
+   "bytes": 199433,
+   "photo_id": "683411814695367",
+   "naming": "photo_id_only",
+   "dims": [
+    1477,
+    1108
+   ],
+   "format": "JPEG",
+   "verified": true,
+   "method": "lookaside:bfs",
+   "content_type": "image/jpeg"
+  },
+  {
+   "file": "683411851362030.jpg",
+   "bytes": 113851,
+   "photo_id": "683411851362030",
+   "naming": "photo_id_only",
+   "dims": [
+    1108,
+    1477
+   ],
+   "format": "JPEG",
+   "verified": true,
+   "method": "lookaside:bfs",
+   "content_type": "image/jpeg"
+  },
+  {
+   "file": "683411884695360.jpg",
+   "bytes": 197065,
+   "photo_id": "683411884695360",
+   "naming": "photo_id_only",
+   "dims": [
+    1477,
+    1108
+   ],
+   "format": "JPEG",
+   "verified": true,
+   "method": "lookaside:bfs",
+   "content_type": "image/jpeg"
+  },
+  {
+   "file": "683411921362023.jpg",
+   "bytes": 169439,
+   "photo_id": "683411921362023",
+   "naming": "photo_id_only",
+   "dims": [
+    1108,
+    1477
+   ],
+   "format": "JPEG",
+   "verified": true,
+   "method": "lookaside:bfs",
+   "content_type": "image/jpeg"
+  },
+  {
+   "file": "683411964695352.jpg",
+   "bytes": 198443,
+   "photo_id": "683411964695352",
+   "naming": "photo_id_only",
+   "dims": [
+    1477,
+    1108
+   ],
+   "format": "JPEG",
+   "verified": true,
+   "method": "lookaside:bfs",
+   "content_type": "image/jpeg"
+  },
+  {
+   "file": "727937706909444.jpg",
+   "bytes": 126279,
+   "photo_id": "727937706909444",
+   "naming": "photo_id_only",
+   "dims": [
+    1220,
+    1473
+   ],
+   "format": "JPEG",
+   "verified": true,
+   "method": "lookaside:bfs",
+   "content_type": "image/jpeg"
+  },
+  {
+   "file": "752120801157801.jpg",
+   "bytes": 71392,
+   "photo_id": "752120801157801",
+   "naming": "photo_id_only",
+   "dims": [
+    1220,
+    685
+   ],
+   "format": "JPEG",
+   "verified": true,
+   "method": "lookaside:bfs",
+   "content_type": "image/jpeg"
+  },
+  {
+   "file": "752384594464755.jpg",
+   "bytes": 381907,
+   "photo_id": "752384594464755",
+   "naming": "photo_id_only",
+   "dims": [
+    2048,
+    1152
+   ],
+   "format": "JPEG",
+   "verified": true,
+   "method": "lookaside:bfs",
+   "content_type": "image/jpeg"
+  },
+  {
+   "file": "753278334375381.jpg",
+   "bytes": 31361,
+   "photo_id": "753278334375381",
+   "naming": "photo_id_only",
+   "dims": [
+    640,
+    218
+   ],
+   "format": "JPEG",
+   "verified": true,
+   "method": "lookaside:bfs",
+   "content_type": "image/jpeg"
+  },
+  {
+   "file": "753278374375377.jpg",
+   "bytes": 45498,
+   "photo_id": "753278374375377",
+   "naming": "photo_id_only",
+   "dims": [
+    1220,
+    915
+   ],
+   "format": "JPEG",
+   "verified": true,
+   "method": "lookaside:bfs",
+   "content_type": "image/jpeg"
+  },
+  {
+   "file": "754130034290211.jpg",
+   "bytes": 136303,
+   "photo_id": "754130034290211",
+   "naming": "photo_id_only",
+   "dims": [
+    1618,
+    1297
+   ],
+   "format": "JPEG",
+   "verified": true,
+   "method": "lookaside:bfs",
+   "content_type": "image/jpeg"
+  },
+  {
+   "file": "756803040689577.jpg",
+   "bytes": 29994,
+   "photo_id": "756803040689577",
+   "naming": "photo_id_only",
+   "dims": [
+    399,
+    501
+   ],
+   "format": "JPEG",
+   "verified": true,
+   "method": "lookaside:bfs",
+   "content_type": "image/jpeg"
+  },
+  {
+   "file": "769084266128121.jpg",
+   "bytes": 238043,
+   "photo_id": "769084266128121",
+   "naming": "photo_id_only",
+   "dims": [
+    1920,
+    1440
+   ],
+   "format": "JPEG",
+   "verified": true,
+   "method": "lookaside:bfs",
+   "content_type": "image/jpeg"
+  },
+  {
+   "file": "769084292794785.jpg",
+   "bytes": 154164,
+   "photo_id": "769084292794785",
+   "naming": "photo_id_only",
+   "dims": [
+    1080,
+    810
+   ],
+   "format": "JPEG",
+   "verified": true,
+   "method": "lookaside:bfs",
+   "content_type": "image/jpeg"
+  },
+  {
+   "file": "769084332794781.jpg",
+   "bytes": 161159,
+   "photo_id": "769084332794781",
+   "naming": "photo_id_only",
+   "dims": [
+    1080,
+    1440
+   ],
+   "format": "JPEG",
+   "verified": true,
+   "method": "lookaside:bfs",
+   "content_type": "image/jpeg"
+  },
+  {
+   "file": "769084379461443.jpg",
+   "bytes": 164724,
+   "photo_id": "769084379461443",
+   "naming": "photo_id_only",
+   "dims": [
+    1080,
+    810
+   ],
+   "format": "JPEG",
+   "verified": true,
+   "method": "lookaside:bfs",
+   "content_type": "image/jpeg"
+  },
+  {
+   "file": "771666839203197.jpg",
+   "bytes": 161011,
+   "photo_id": "771666839203197",
+   "naming": "photo_id_only",
+   "dims": [
+    1477,
+    1108
+   ],
+   "format": "JPEG",
+   "verified": true,
+   "method": "lookaside:bfs",
+   "content_type": "image/jpeg"
+  },
+  {
+   "file": "771666882536526.jpg",
+   "bytes": 138777,
+   "photo_id": "771666882536526",
+   "naming": "photo_id_only",
+   "dims": [
+    1477,
+    1108
+   ],
+   "format": "JPEG",
+   "verified": true,
+   "method": "lookaside:bfs",
+   "content_type": "image/jpeg"
+  },
+  {
+   "file": "771666925869855.jpg",
+   "bytes": 141078,
+   "photo_id": "771666925869855",
+   "naming": "photo_id_only",
+   "dims": [
+    1108,
+    1477
+   ],
+   "format": "JPEG",
+   "verified": true,
+   "method": "lookaside:bfs",
+   "content_type": "image/jpeg"
+  },
+  {
+   "file": "772651705771377.jpg",
+   "bytes": 110589,
+   "photo_id": "772651705771377",
+   "naming": "photo_id_only",
+   "dims": [
+    845,
+    646
+   ],
+   "format": "JPEG",
+   "verified": true,
+   "method": "lookaside:bfs",
+   "content_type": "image/jpeg"
+  },
+  {
+   "file": "788870807482800.jpg",
+   "bytes": 143055,
+   "photo_id": "788870807482800",
+   "naming": "photo_id_only",
+   "dims": [
+    1220,
+    1688
+   ],
+   "format": "JPEG",
+   "verified": true,
+   "method": "lookaside:bfs",
+   "content_type": "image/jpeg"
+  },
+  {
+   "file": "804547845915096.jpg",
+   "bytes": 612661,
+   "photo_id": "804547845915096",
+   "naming": "photo_id_only",
+   "dims": [
+    2048,
+    1117
+   ],
+   "format": "JPEG",
+   "verified": true,
+   "method": "lookaside:bfs",
+   "content_type": "image/jpeg"
+  },
+  {
+   "file": "804547955915085.jpg",
+   "bytes": 356672,
+   "photo_id": "804547955915085",
+   "naming": "photo_id_only",
+   "dims": [
+    2048,
+    1117
+   ],
+   "format": "JPEG",
+   "verified": true,
+   "method": "lookaside:bfs",
+   "content_type": "image/jpeg"
+  },
+  {
+   "file": "804548039248410.jpg",
+   "bytes": 312524,
+   "photo_id": "804548039248410",
+   "naming": "photo_id_only",
+   "dims": [
+    2048,
+    1117
+   ],
+   "format": "JPEG",
+   "verified": true,
+   "method": "lookaside:bfs",
+   "content_type": "image/jpeg"
+  },
+  {
+   "file": "804548079248406.jpg",
+   "bytes": 586611,
+   "photo_id": "804548079248406",
+   "naming": "photo_id_only",
+   "dims": [
+    2048,
+    1117
+   ],
+   "format": "JPEG",
+   "verified": true,
+   "method": "lookaside:bfs",
+   "content_type": "image/jpeg"
+  },
+  {
+   "file": "804548112581736.jpg",
+   "bytes": 486979,
+   "photo_id": "804548112581736",
+   "naming": "photo_id_only",
+   "dims": [
+    2048,
+    1117
+   ],
+   "format": "JPEG",
+   "verified": true,
+   "method": "lookaside:bfs",
+   "content_type": "image/jpeg"
+  },
+  {
+   "file": "818196854550195.jpg",
+   "bytes": 158423,
+   "photo_id": "818196854550195",
+   "naming": "photo_id_only",
+   "dims": [
+    1320,
+    1366
+   ],
+   "format": "JPEG",
+   "verified": true,
+   "method": "lookaside:bfs",
+   "content_type": "image/jpeg"
+  },
+  {
+   "file": "866350299734850.jpg",
+   "bytes": 339883,
+   "photo_id": "866350299734850",
+   "naming": "photo_id_only",
+   "dims": [
+    1143,
+    2048
+   ],
+   "format": "JPEG",
+   "verified": true,
+   "method": "lookaside:bfs",
+   "content_type": "image/jpeg"
+  },
+  {
+   "file": "883995274637019.jpg",
+   "bytes": 538727,
+   "photo_id": "883995274637019",
+   "naming": "photo_id_only",
+   "dims": [
+    1536,
+    2048
+   ],
+   "format": "JPEG",
+   "verified": true,
+   "method": "lookaside:bfs",
+   "content_type": "image/jpeg"
+  },
+  {
+   "file": "883995311303682.jpg",
+   "bytes": 171742,
+   "photo_id": "883995311303682",
+   "naming": "photo_id_only",
+   "dims": [
+    1477,
+    1108
+   ],
+   "format": "JPEG",
+   "verified": true,
+   "method": "lookaside:bfs",
+   "content_type": "image/jpeg"
+  },
+  {
+   "file": "883995354637011.jpg",
+   "bytes": 108713,
+   "photo_id": "883995354637011",
+   "naming": "photo_id_only",
+   "dims": [
+    1220,
+    800
+   ],
+   "format": "JPEG",
+   "verified": true,
+   "method": "lookaside:bfs",
+   "content_type": "image/jpeg"
+  },
+  {
+   "file": "885508454485701-1_885508377819042.jpg",
+   "bytes": 58012,
+   "post_id": "885508454485701",
+   "seq": 1,
+   "photo_id": "885508377819042",
+   "naming": "post_mapped",
+   "dims": [
+    1200,
+    675
+   ],
+   "format": "JPEG",
+   "verified": true
+  },
+  {
+   "file": "885508454485701-2_885508414485705.jpg",
+   "bytes": 49335,
+   "post_id": "885508454485701",
+   "seq": 2,
+   "photo_id": "885508414485705",
+   "naming": "post_mapped",
+   "dims": [
+    1024,
+    571
+   ],
+   "format": "JPEG",
+   "verified": true
+  },
+  {
+   "file": "895606786809201-1_895606740142539.jpg",
+   "bytes": 142373,
+   "post_id": "895606786809201",
+   "seq": 1,
+   "photo_id": "895606740142539",
+   "naming": "post_mapped",
+   "dims": [
+    1220,
+    1531
+   ],
+   "format": "JPEG",
+   "verified": true
+  },
+  {
+   "file": "899784503058096-1_899784449724768.jpg",
+   "bytes": 67984,
+   "post_id": "899784503058096",
+   "seq": 1,
+   "photo_id": "899784449724768",
+   "naming": "post_mapped",
+   "dims": [
+    640,
+    408
+   ],
+   "format": "JPEG",
+   "verified": true
+  },
+  {
+   "file": "900334256336454-1_900340386335841.jpg",
+   "bytes": 87541,
+   "post_id": "900334256336454",
+   "seq": 1,
+   "photo_id": "900340386335841",
+   "naming": "post_mapped",
+   "dims": [
+    1220,
+    1116
+   ],
+   "format": "JPEG",
+   "verified": true
+  },
+  {
+   "file": "900334256336454-2_900340436335836.jpg",
+   "bytes": 94066,
+   "post_id": "900334256336454",
+   "seq": 2,
+   "photo_id": "900340436335836",
+   "naming": "post_mapped",
+   "dims": [
+    1220,
+    1170
+   ],
+   "format": "JPEG",
+   "verified": true
+  },
+  {
+   "file": "900334256336454-3_900340483002498.jpg",
+   "bytes": 80688,
+   "post_id": "900334256336454",
+   "seq": 3,
+   "photo_id": "900340483002498",
+   "naming": "post_mapped",
+   "dims": [
+    1220,
+    1100
+   ],
+   "format": "JPEG",
+   "verified": true
+  },
+  {
+   "file": "905717909131422-1_905717879131425.jpg",
+   "bytes": 207393,
+   "post_id": "905717909131422",
+   "seq": 1,
+   "photo_id": "905717879131425",
+   "naming": "post_mapped",
+   "dims": [
+    768,
+    1376
+   ],
+   "format": "JPEG",
+   "verified": true
+  },
+  {
+   "file": "908814315488448-1_908818662154680.jpg",
+   "bytes": 152527,
+   "post_id": "908814315488448",
+   "seq": 1,
+   "photo_id": "908818662154680",
+   "naming": "post_mapped",
+   "dims": [
+    1220,
+    1398
+   ],
+   "format": "JPEG",
+   "verified": true
+  },
+  {
+   "file": "908814315488448-2_908818722154674.jpg",
+   "bytes": 76211,
+   "post_id": "908814315488448",
+   "seq": 2,
+   "photo_id": "908818722154674",
+   "naming": "post_mapped",
+   "dims": [
+    1220,
+    1035
+   ],
+   "format": "JPEG",
+   "verified": true
+  },
+  {
+   "file": "909580665411813-1_909580562078490.jpg",
+   "bytes": 105363,
+   "post_id": "909580665411813",
+   "seq": 1,
+   "photo_id": "909580562078490",
+   "naming": "post_mapped",
+   "dims": [
+    1220,
+    887
+   ],
+   "format": "JPEG",
+   "verified": true
+  },
+  {
+   "file": "909580665411813-2_909580598745153.jpg",
+   "bytes": 198348,
+   "post_id": "909580665411813",
+   "seq": 2,
+   "photo_id": "909580598745153",
+   "naming": "post_mapped",
+   "dims": [
+    1220,
+    1408
+   ],
+   "format": "JPEG",
+   "verified": true
+  },
+  {
+   "file": "909580665411813-3_909580632078483.jpg",
+   "bytes": 10775,
+   "post_id": "909580665411813",
+   "seq": 3,
+   "photo_id": "909580632078483",
+   "naming": "post_mapped",
+   "dims": [
+    350,
+    260
+   ],
+   "format": "JPEG",
+   "verified": true
+  },
+  {
+   "file": "912362921800254-1_912362791800267.jpg",
+   "bytes": 143142,
+   "post_id": "912362921800254",
+   "seq": 1,
+   "photo_id": "912362791800267",
+   "naming": "post_mapped",
+   "dims": [
+    1477,
+    1108
+   ],
+   "format": "JPEG",
+   "verified": true
+  },
+  {
+   "file": "912362921800254-2_912362871800259.jpg",
+   "bytes": 1557885,
+   "post_id": "912362921800254",
+   "seq": 2,
+   "photo_id": "912362871800259",
+   "naming": "post_mapped",
+   "dims": [
+    2048,
+    1536
+   ],
+   "format": "JPEG",
+   "verified": true
+  },
+  {
+   "file": "921131584256721-1_921131290923417.jpg",
+   "bytes": 887495,
+   "post_id": "921131584256721",
+   "seq": 1,
+   "photo_id": "921131290923417",
+   "naming": "post_mapped",
+   "dims": [
+    2048,
+    1536
+   ],
+   "format": "JPEG",
+   "verified": true
+  },
+  {
+   "file": "921131584256721-2_921131370923409.jpg",
+   "bytes": 523087,
+   "post_id": "921131584256721",
+   "seq": 2,
+   "photo_id": "921131370923409",
+   "naming": "post_mapped",
+   "dims": [
+    1536,
+    2048
+   ],
+   "format": "JPEG",
+   "verified": true
+  },
+  {
+   "file": "921131584256721-3_921131447590068.jpg",
+   "bytes": 645414,
+   "post_id": "921131584256721",
+   "seq": 3,
+   "photo_id": "921131447590068",
+   "naming": "post_mapped",
+   "dims": [
+    1536,
+    2048
+   ],
+   "format": "JPEG",
+   "verified": true
+  },
+  {
+   "file": "921131584256721-4_921131527590060.jpg",
+   "bytes": 806061,
+   "post_id": "921131584256721",
+   "seq": 4,
+   "photo_id": "921131527590060",
+   "naming": "post_mapped",
+   "dims": [
+    1536,
+    2048
+   ],
+   "format": "JPEG",
+   "verified": true
+  },
+  {
+   "file": "921131584256721-5_921132560923290.jpg",
+   "bytes": 208870,
+   "post_id": "921131584256721",
+   "seq": 5,
+   "photo_id": "921132560923290",
+   "naming": "post_mapped",
+   "dims": [
+    2048,
+    1536
+   ],
+   "format": "JPEG",
+   "verified": true
+  },
+  {
+   "file": "923222414047638-1_923222387380974.jpg",
+   "bytes": 75427,
+   "post_id": "923222414047638",
+   "seq": 1,
+   "photo_id": "923222387380974",
+   "naming": "post_mapped",
+   "dims": [
+    1200,
+    590
+   ],
+   "format": "JPEG",
+   "verified": true
+  },
+  {
+   "file": "926758937027319-1_926758900360656.jpg",
+   "bytes": 276053,
+   "post_id": "926758937027319",
+   "seq": 1,
+   "photo_id": "926758900360656",
+   "naming": "post_mapped",
+   "dims": [
+    1732,
+    945
+   ],
+   "format": "JPEG",
+   "verified": true
+  },
+  {
+   "file": "932585863111293-1_932585636444649.jpg",
+   "bytes": 220017,
+   "post_id": "932585863111293",
+   "seq": 1,
+   "photo_id": "932585636444649",
+   "naming": "post_mapped",
+   "dims": [
+    1536,
+    2048
+   ],
+   "format": "JPEG",
+   "verified": true
+  },
+  {
+   "file": "932585863111293-2_932585729777973.jpg",
+   "bytes": 130503,
+   "post_id": "932585863111293",
+   "seq": 2,
+   "photo_id": "932585729777973",
+   "naming": "post_mapped",
+   "dims": [
+    1220,
+    763
+   ],
+   "format": "JPEG",
+   "verified": true
+  },
+  {
+   "file": "932585863111293-3_932585829777963.jpg",
+   "bytes": 719058,
+   "post_id": "932585863111293",
+   "seq": 3,
+   "photo_id": "932585829777963",
+   "naming": "post_mapped",
+   "dims": [
+    2048,
+    1536
+   ],
+   "format": "JPEG",
+   "verified": true
+  },
+  {
+   "file": "937865692583310-1_937865649249981.jpg",
+   "bytes": 247961,
+   "post_id": "937865692583310",
+   "seq": 1,
+   "photo_id": "937865649249981",
+   "naming": "post_mapped",
+   "dims": [
+    2048,
+    1536
+   ],
+   "format": "JPEG",
+   "verified": true
+  },
+  {
+   "file": "cover_120021151034439.jpg",
+   "bytes": 104707,
+   "photo_id": "120021151034439",
+   "naming": "cover",
+   "dims": [
+    1366,
+    768
+   ],
+   "format": "JPEG",
+   "verified": true
+  },
+  {
+   "file": "profile.jpg",
+   "bytes": 932808,
+   "photo_id": null,
+   "naming": "profile_picture",
+   "dims": [
+    1365,
+    2048
+   ],
+   "format": "JPEG",
+   "verified": true
+  }
+ ],
+ "failed_or_rejected": [
+  {
+   "id": "866350336401513",
+   "http": 200,
+   "content_type": "text/html; charset=\"utf-8\"",
+   "size": 41608,
+   "method": "bfs",
+   "note": "HTML error page (not a photo id)"
+  },
+  {
+   "id": "818196871216860",
+   "http": 200,
+   "content_type": "text/html; charset=\"utf-8\"",
+   "size": 41608,
+   "method": "bfs",
+   "note": "HTML error page (not a photo id)"
+  },
+  {
+   "id": "772651732438041",
+   "http": 200,
+   "content_type": "text/html; charset=\"utf-8\"",
+   "size": 41608,
+   "method": "bfs",
+   "note": "HTML error page (not a photo id)"
+  },
+  {
+   "id": "100000205247123",
+   "http": 200,
+   "content_type": "text/html; charset=\"utf-8\"",
+   "size": 41608,
+   "method": "bfs",
+   "note": "HTML error page (not a photo id)"
+  },
+  {
+   "id": "1664268609041627",
+   "http": 200,
+   "content_type": "text/html; charset=\"utf-8\"",
+   "size": 41611,
+   "method": "bfs",
+   "note": "HTML error page (not a photo id)"
+  },
+  {
+   "id": "1664544549014033",
+   "http": 200,
+   "content_type": "text/html; charset=\"utf-8\"",
+   "size": 41615,
+   "method": "bfs",
+   "note": "HTML error page (not a photo id)"
+  },
+  {
+   "id": "1665753325559822",
+   "http": 200,
+   "content_type": "text/html; charset=\"utf-8\"",
+   "size": 41611,
+   "method": "bfs",
+   "note": "HTML error page (not a photo id)"
+  },
+  {
+   "id": "1666859218782566",
+   "http": 200,
+   "content_type": "text/html; charset=\"utf-8\"",
+   "size": 41607,
+   "method": "bfs",
+   "note": "HTML error page (not a photo id)"
+  },
+  {
+   "id": "1666868015448353",
+   "http": 200,
+   "content_type": "text/html; charset=\"utf-8\"",
+   "size": 41611,
+   "method": "bfs",
+   "note": "HTML error page (not a photo id)"
+  },
+  {
+   "id": "1670194265115728",
+   "http": 200,
+   "content_type": "text/html; charset=\"utf-8\"",
+   "size": 41606,
+   "method": "bfs",
+   "note": "HTML error page (not a photo id)"
+  },
+  {
+   "id": "1672460134889141",
+   "http": 200,
+   "content_type": "text/html; charset=\"utf-8\"",
+   "size": 41612,
+   "method": "bfs",
+   "note": "HTML error page (not a photo id)"
+  },
+  {
+   "id": "1674930414642113",
+   "http": 200,
+   "content_type": "text/html; charset=\"utf-8\"",
+   "size": 41611,
+   "method": "bfs",
+   "note": "HTML error page (not a photo id)"
+  },
+  {
+   "id": "100063755121747",
+   "note": "not page-owned (other entity's photo/avatar), deleted",
+   "method": "audit"
+  },
+  {
+   "id": "100000162375671",
+   "note": "not page-owned (other entity's photo/avatar), deleted",
+   "method": "audit"
+  },
+  {
+   "id": "100002321386074",
+   "note": "foreign owner {}",
+   "method": "audit",
+   "deleted_file": "100002321386074.jpg"
+  },
+  {
+   "id": "100064030411054",
+   "note": "foreign owner {'100064030411054': 133}",
+   "method": "audit",
+   "deleted_file": "100064030411054.jpg"
+  },
+  {
+   "id": "100076204632209",
+   "note": "foreign owner {'100076204632209': 79, '100092346544023': 24, '100063749812387': 4, '1243304322': 10}",
+   "method": "audit",
+   "deleted_file": "100076204632209.jpg"
+  },
+  {
+   "id": "100090151999139",
+   "note": "foreign owner {'100090151999139': 9, '100063880113335': 16, '100063855934350': 2, '61581467092422': 4, '100005619811829': 10, '100003376847297': 8, '61559627915127': 4, '61569696069093': 8}",
+   "method": "audit",
+   "deleted_file": "100090151999139.jpg"
+  },
+  {
+   "id": "1543430691134597",
+   "note": "foreign owner {'100064030411054': 6}",
+   "method": "audit",
+   "deleted_file": "1543430691134597.jpg"
+  },
+  {
+   "id": "1543430734467926",
+   "note": "foreign owner {'100064030411054': 6}",
+   "method": "audit",
+   "deleted_file": "1543430734467926.jpg"
+  },
+  {
+   "id": "1543430991134567",
+   "note": "foreign owner {'100064030411054': 6}",
+   "method": "audit",
+   "deleted_file": "1543430991134567.jpg"
+  },
+  {
+   "id": "1543431307801202",
+   "note": "foreign owner {'100064030411054': 6}",
+   "method": "audit",
+   "deleted_file": "1543431307801202.jpg"
+  },
+  {
+   "id": "1544386624372337",
+   "note": "foreign owner {'100064030411054': 6}",
+   "method": "audit",
+   "deleted_file": "1544386624372337.jpg"
+  },
+  {
+   "id": "1663830379085450",
+   "note": "foreign owner {'100063755121747': 6}",
+   "method": "audit",
+   "deleted_file": "1663830379085450.jpg"
+  },
+  {
+   "id": "1663830395752115",
+   "note": "foreign owner {'100063755121747': 6}",
+   "method": "audit",
+   "deleted_file": "1663830395752115.jpg"
+  },
+  {
+   "id": "1663830402418781",
+   "note": "foreign owner {'100063755121747': 6}",
+   "method": "audit",
+   "deleted_file": "1663830402418781.jpg"
+  },
+  {
+   "id": "1663830452418776",
+   "note": "foreign owner {'100063755121747': 6}",
+   "method": "audit",
+   "deleted_file": "1663830452418776.jpg"
+  },
+  {
+   "id": "1663830472418774",
+   "note": "foreign owner {'100063755121747': 6}",
+   "method": "audit",
+   "deleted_file": "1663830472418774.jpg"
+  },
+  {
+   "id": "1664268189041669",
+   "note": "foreign owner {'100063755121747': 6}",
+   "method": "audit",
+   "deleted_file": "1664268189041669.jpg"
+  },
+  {
+   "id": "1664268199041668",
+   "note": "foreign owner {'100063755121747': 6}",
+   "method": "audit",
+   "deleted_file": "1664268199041668.jpg"
+  },
+  {
+   "id": "1664268212375000",
+   "note": "foreign owner {'100063755121747': 6}",
+   "method": "audit",
+   "deleted_file": "1664268212375000.jpg"
+  },
+  {
+   "id": "1664268262374995",
+   "note": "foreign owner {'100063755121747': 6}",
+   "method": "audit",
+   "deleted_file": "1664268262374995.jpg"
+  },
+  {
+   "id": "1664268275708327",
+   "note": "foreign owner {'100063755121747': 6}",
+   "method": "audit",
+   "deleted_file": "1664268275708327.jpg"
+  },
+  {
+   "id": "1664540332347788",
+   "note": "foreign owner {'100063755121747': 6}",
+   "method": "audit",
+   "deleted_file": "1664540332347788.jpg"
+  },
+  {
+   "id": "1664792368989251",
+   "note": "foreign owner {'100063755121747': 6}",
+   "method": "audit",
+   "deleted_file": "1664792368989251.jpg"
+  },
+  {
+   "id": "1664792378989250",
+   "note": "foreign owner {'100063755121747': 6}",
+   "method": "audit",
+   "deleted_file": "1664792378989250.jpg"
+  },
+  {
+   "id": "1664792398989248",
+   "note": "foreign owner {'100063755121747': 6}",
+   "method": "audit",
+   "deleted_file": "1664792398989248.jpg"
+  },
+  {
+   "id": "1664792448989243",
+   "note": "foreign owner {'100063755121747': 6}",
+   "method": "audit",
+   "deleted_file": "1664792448989243.jpg"
+  },
+  {
+   "id": "1664792462322575",
+   "note": "foreign owner {'100063755121747': 6}",
+   "method": "audit",
+   "deleted_file": "1664792462322575.jpg"
+  },
+  {
+   "id": "1664854238983064",
+   "note": "foreign owner {'100063755121747': 6}",
+   "method": "audit",
+   "deleted_file": "1664854238983064.jpg"
+  },
+  {
+   "id": "1665746178893870",
+   "note": "foreign owner {'100063755121747': 6}",
+   "method": "audit",
+   "deleted_file": "1665746178893870.jpg"
+  },
+  {
+   "id": "1666858542115967",
+   "note": "foreign owner {'100063755121747': 6}",
+   "method": "audit",
+   "deleted_file": "1666858542115967.jpg"
+  },
+  {
+   "id": "1666858548782633",
+   "note": "foreign owner {'100063755121747': 6}",
+   "method": "audit",
+   "deleted_file": "1666858548782633.jpg"
+  },
+  {
+   "id": "1666858565449298",
+   "note": "foreign owner {'100063755121747': 6}",
+   "method": "audit",
+   "deleted_file": "1666858565449298.jpg"
+  },
+  {
+   "id": "1666858655449289",
+   "note": "foreign owner {'100063755121747': 6}",
+   "method": "audit",
+   "deleted_file": "1666858655449289.jpg"
+  },
+  {
+   "id": "1666858662115955",
+   "note": "foreign owner {'100063755121747': 6}",
+   "method": "audit",
+   "deleted_file": "1666858662115955.jpg"
+  },
+  {
+   "id": "1666862485448906",
+   "note": "foreign owner {'100063755121747': 6}",
+   "method": "audit",
+   "deleted_file": "1666862485448906.jpg"
+  },
+  {
+   "id": "1666976132104208",
+   "note": "foreign owner {'100063755121747': 6}",
+   "method": "audit",
+   "deleted_file": "1666976132104208.jpg"
+  },
+  {
+   "id": "1666976155437539",
+   "note": "foreign owner {'100063755121747': 6}",
+   "method": "audit",
+   "deleted_file": "1666976155437539.jpg"
+  },
+  {
+   "id": "1668577635277391",
+   "note": "foreign owner {'100063755121747': 6}",
+   "method": "audit",
+   "deleted_file": "1668577635277391.jpg"
+  },
+  {
+   "id": "1669889095146245",
+   "note": "foreign owner {'100063755121747': 6}",
+   "method": "audit",
+   "deleted_file": "1669889095146245.jpg"
+  },
+  {
+   "id": "1669889108479577",
+   "note": "foreign owner {'100063755121747': 6}",
+   "method": "audit",
+   "deleted_file": "1669889108479577.jpg"
+  },
+  {
+   "id": "1669889115146243",
+   "note": "foreign owner {'100063755121747': 6}",
+   "method": "audit",
+   "deleted_file": "1669889115146243.jpg"
+  },
+  {
+   "id": "1669889178479570",
+   "note": "foreign owner {'100063755121747': 6}",
+   "method": "audit",
+   "deleted_file": "1669889178479570.jpg"
+  },
+  {
+   "id": "1669889191812902",
+   "note": "foreign owner {'100063755121747': 6}",
+   "method": "audit",
+   "deleted_file": "1669889191812902.jpg"
+  },
+  {
+   "id": "1670193895115765",
+   "note": "foreign owner {'100063755121747': 6}",
+   "method": "audit",
+   "deleted_file": "1670193895115765.jpg"
+  },
+  {
+   "id": "1670193901782431",
+   "note": "foreign owner {'100063755121747': 6}",
+   "method": "audit",
+   "deleted_file": "1670193901782431.jpg"
+  },
+  {
+   "id": "1670193908449097",
+   "note": "foreign owner {'100063755121747': 6}",
+   "method": "audit",
+   "deleted_file": "1670193908449097.jpg"
+  },
+  {
+   "id": "1670193958449092",
+   "note": "foreign owner {'100063755121747': 6}",
+   "method": "audit",
+   "deleted_file": "1670193958449092.jpg"
+  },
+  {
+   "id": "1670193971782424",
+   "note": "foreign owner {'100063755121747': 6}",
+   "method": "audit",
+   "deleted_file": "1670193971782424.jpg"
+  },
+  {
+   "id": "1671759884959166",
+   "note": "foreign owner {'100063755121747': 6}",
+   "method": "audit",
+   "deleted_file": "1671759884959166.jpg"
+  },
+  {
+   "id": "1671759901625831",
+   "note": "foreign owner {'100063755121747': 6}",
+   "method": "audit",
+   "deleted_file": "1671759901625831.jpg"
+  },
+  {
+   "id": "1671759911625830",
+   "note": "foreign owner {'100063755121747': 6}",
+   "method": "audit",
+   "deleted_file": "1671759911625830.jpg"
+  },
+  {
+   "id": "1671760004959154",
+   "note": "foreign owner {'100063755121747': 6}",
+   "method": "audit",
+   "deleted_file": "1671760004959154.jpg"
+  },
+  {
+   "id": "1671760034959151",
+   "note": "foreign owner {'100063755121747': 6}",
+   "method": "audit",
+   "deleted_file": "1671760034959151.jpg"
+  },
+  {
+   "id": "1673559478112540",
+   "note": "foreign owner {'100063755121747': 6}",
+   "method": "audit",
+   "deleted_file": "1673559478112540.jpg"
+  },
+  {
+   "id": "1673559491445872",
+   "note": "foreign owner {'100063755121747': 6}",
+   "method": "audit",
+   "deleted_file": "1673559491445872.jpg"
+  },
+  {
+   "id": "1673559511445870",
+   "note": "foreign owner {'100063755121747': 6}",
+   "method": "audit",
+   "deleted_file": "1673559511445870.jpg"
+  },
+  {
+   "id": "1673559551445866",
+   "note": "foreign owner {'100063755121747': 6}",
+   "method": "audit",
+   "deleted_file": "1673559551445866.jpg"
+  },
+  {
+   "id": "1673559601445861",
+   "note": "foreign owner {'100063755121747': 6}",
+   "method": "audit",
+   "deleted_file": "1673559601445861.jpg"
+  },
+  {
+   "id": "1673718174763337",
+   "note": "foreign owner {'100063755121747': 5}",
+   "method": "audit",
+   "deleted_file": "1673718174763337.jpg"
+  },
+  {
+   "id": "1674763674658787",
+   "note": "foreign owner {'100063755121747': 6}",
+   "method": "audit",
+   "deleted_file": "1674763674658787.jpg"
+  },
+  {
+   "id": "1674763694658785",
+   "note": "foreign owner {'100063755121747': 6}",
+   "method": "audit",
+   "deleted_file": "1674763694658785.jpg"
+  },
+  {
+   "id": "1674874621314359",
+   "note": "foreign owner {'100063755121747': 6}",
+   "method": "audit",
+   "deleted_file": "1674874621314359.jpg"
+  },
+  {
+   "id": "1674874631314358",
+   "note": "foreign owner {'100063755121747': 6}",
+   "method": "audit",
+   "deleted_file": "1674874631314358.jpg"
+  },
+  {
+   "id": "1674874664647688",
+   "note": "foreign owner {'100063755121747': 6}",
+   "method": "audit",
+   "deleted_file": "1674874664647688.jpg"
+  },
+  {
+   "id": "1675094471292374",
+   "note": "foreign owner {'100063755121747': 6}",
+   "method": "audit",
+   "deleted_file": "1675094471292374.jpg"
+  },
+  {
+   "id": "1675094487959039",
+   "note": "foreign owner {'100063755121747': 6}",
+   "method": "audit",
+   "deleted_file": "1675094487959039.jpg"
+  },
+  {
+   "id": "1675094494625705",
+   "note": "foreign owner {'100063755121747': 6}",
+   "method": "audit",
+   "deleted_file": "1675094494625705.jpg"
+  },
+  {
+   "id": "1675094551292366",
+   "note": "foreign owner {'100063755121747': 6}",
+   "method": "audit",
+   "deleted_file": "1675094551292366.jpg"
+  },
+  {
+   "id": "1675094564625698",
+   "note": "foreign owner {'100063755121747': 6}",
+   "method": "audit",
+   "deleted_file": "1675094564625698.jpg"
+  },
+  {
+   "id": "1675094587959029",
+   "note": "foreign owner {'100063755121747': 6}",
+   "method": "audit",
+   "deleted_file": "1675094587959029.jpg"
+  },
+  {
+   "id": "1675094627959025",
+   "note": "foreign owner {'100063755121747': 6}",
+   "method": "audit",
+   "deleted_file": "1675094627959025.jpg"
+  },
+  {
+   "id": "1675094634625691",
+   "note": "foreign owner {'100063755121747': 6}",
+   "method": "audit",
+   "deleted_file": "1675094634625691.jpg"
+  },
+  {
+   "id": "1675094657959022",
+   "note": "foreign owner {'100063755121747': 6}",
+   "method": "audit",
+   "deleted_file": "1675094657959022.jpg"
+  },
+  {
+   "id": "1675094701292351",
+   "note": "foreign owner {'100063755121747': 5}",
+   "method": "audit",
+   "deleted_file": "1675094701292351.jpg"
+  },
+  {
+   "id": "763771899091307",
+   "note": "foreign owner {'100063755121747': 5}",
+   "method": "audit",
+   "deleted_file": "763771899091307.jpg"
+  }
+ ],
+ "videos": {},
+ "sk_tab_findings": {
+  "photos": {
+   "photo_like": [
+    "100002321386074",
+    "100090151999139",
+    "100090796624852",
+    "1009912478711964",
+    "120021151034439",
+    "885508377819042",
+    "885508414485705",
+    "895606740142539",
+    "895606786809201",
+    "899784449724768",
+    "899784503058096",
+    "900340386335841",
+    "900340436335836",
+    "900340483002498",
+    "905717879131425",
+    "905717909131422",
+    "908814315488448",
+    "908818662154680",
+    "908818722154674",
+    "909580562078490",
+    "909580598745153",
+    "909580632078483",
+    "912362791800267",
+    "912362871800259",
+    "921131290923417",
+    "921131370923409",
+    "921131447590068",
+    "921131527590060",
+    "921132560923290",
+    "923222387380974",
+    "926758900360656",
+    "932585636444649",
+    "932585729777973",
+    "932585829777963",
+    "937865649249981",
+    "937865692583310",
+    "989102740792938"
+   ],
+   "video_ids": [],
+   "albums": [
+    "119848247718396",
+    "119880574381830",
+    "161022763600944"
+   ],
+   "size": 1886937
+  },
+  "videos": {
+   "photo_like": [
+    "100002321386074",
+    "100090151999139",
+    "100090796624852",
+    "1009912478711964",
+    "120021151034439",
+    "885508377819042",
+    "885508414485705",
+    "895606740142539",
+    "895606786809201",
+    "899784449724768",
+    "899784503058096",
+    "900340386335841",
+    "900340436335836",
+    "900340483002498",
+    "905717879131425",
+    "905717909131422",
+    "908814315488448",
+    "908818662154680",
+    "908818722154674",
+    "909580562078490",
+    "909580598745153",
+    "909580632078483",
+    "912362791800267",
+    "912362871800259",
+    "921131290923417",
+    "921131370923409",
+    "921131447590068",
+    "921131527590060",
+    "921132560923290",
+    "923222387380974",
+    "926758900360656",
+    "932585636444649",
+    "932585729777973",
+    "932585829777963",
+    "937865649249981",
+    "937865692583310",
+    "989102740792938"
+   ],
+   "video_ids": [],
+   "albums": [
+    "119848247718396",
+    "119880574381830",
+    "161022763600944"
+   ],
+   "size": 1886825
+  },
+  "reels": {
+   "photo_like": [
+    "100002321386074",
+    "100090151999139",
+    "100090796624852",
+    "1009912478711964",
+    "120021151034439",
+    "885508377819042",
+    "885508414485705",
+    "895606740142539",
+    "895606786809201",
+    "899784449724768",
+    "899784503058096",
+    "900340386335841",
+    "900340436335836",
+    "900340483002498",
+    "905717879131425",
+    "905717909131422",
+    "908814315488448",
+    "908818662154680",
+    "908818722154674",
+    "909580562078490",
+    "909580598745153",
+    "909580632078483",
+    "912362791800267",
+    "912362871800259",
+    "921131290923417",
+    "921131370923409",
+    "921131447590068",
+    "921131527590060",
+    "921132560923290",
+    "923222387380974",
+    "926758900360656",
+    "932585636444649",
+    "932585729777973",
+    "932585829777963",
+    "937865649249981",
+    "937865692583310",
+    "989102740792938"
+   ],
+   "video_ids": [],
+   "albums": [
+    "119848247718396",
+    "119880574381830",
+    "161022763600944"
+   ],
+   "size": 1888814
+  },
+  "photos_all": {
+   "photo_like": [
+    "100002321386074",
+    "100090151999139",
+    "100090796624852",
+    "1009912478711964",
+    "120021151034439",
+    "885508377819042",
+    "885508414485705",
+    "895606740142539",
+    "895606786809201",
+    "899784449724768",
+    "899784503058096",
+    "900340386335841",
+    "900340436335836",
+    "900340483002498",
+    "905717879131425",
+    "905717909131422",
+    "908814315488448",
+    "908818662154680",
+    "908818722154674",
+    "909580562078490",
+    "909580598745153",
+    "909580632078483",
+    "912362791800267",
+    "912362871800259",
+    "921131290923417",
+    "921131370923409",
+    "921131447590068",
+    "921131527590060",
+    "921132560923290",
+    "923222387380974",
+    "926758900360656",
+    "932585636444649",
+    "932585729777973",
+    "932585829777963",
+    "937865649249981",
+    "937865692583310",
+    "989102740792938"
+   ],
+   "video_ids": [],
+   "albums": [
+    "119848247718396",
+    "119880574381830",
+    "161022763600944"
+   ],
+   "size": 1890399
+  },
+  "photos_music": {
+   "photo_like": [
+    "100002321386074",
+    "100090151999139",
+    "100090796624852",
+    "1009912478711964",
+    "120021151034439",
+    "885508377819042",
+    "885508414485705",
+    "895606740142539",
+    "895606786809201",
+    "899784449724768",
+    "899784503058096",
+    "900340386335841",
+    "900340436335836",
+    "900340483002498",
+    "905717879131425",
+    "905717909131422",
+    "908814315488448",
+    "908818662154680",
+    "908818722154674",
+    "909580562078490",
+    "909580598745153",
+    "909580632078483",
+    "912362791800267",
+    "912362871800259",
+    "921131290923417",
+    "921131370923409",
+    "921131447590068",
+    "921131527590060",
+    "921132560923290",
+    "923222387380974",
+    "926758900360656",
+    "932585636444649",
+    "932585729777973",
+    "932585829777963",
+    "937865649249981",
+    "937865692583310",
+    "989102740792938"
+   ],
+   "video_ids": [],
+   "albums": [
+    "119848247718396",
+    "119880574381830",
+    "161022763600944"
+   ],
+   "size": 1886833
+  },
+  "albums": {
+   "photo_like": [
+    "100002321386074",
+    "100090151999139",
+    "100090796624852",
+    "1009912478711964",
+    "120021151034439",
+    "885508377819042",
+    "885508414485705",
+    "895606740142539",
+    "895606786809201",
+    "899784449724768",
+    "899784503058096",
+    "900340386335841",
+    "900340436335836",
+    "900340483002498",
+    "905717879131425",
+    "905717909131422",
+    "908814315488448",
+    "908818662154680",
+    "908818722154674",
+    "909580562078490",
+    "909580598745153",
+    "909580632078483",
+    "912362791800267",
+    "912362871800259",
+    "921131290923417",
+    "921131370923409",
+    "921131447590068",
+    "921131527590060",
+    "921132560923290",
+    "923222387380974",
+    "926758900360656",
+    "932585636444649",
+    "932585729777973",
+    "932585829777963",
+    "937865649249981",
+    "937865692583310",
+    "989102740792938"
+   ],
+   "video_ids": [],
+   "albums": [
+    "119848247718396",
+    "119880574381830",
+    "161022763600944"
+   ],
+   "size": 1887032
+  },
+  "about_photos": {
+   "photo_like": [
+    "100002321386074",
+    "100090151999139",
+    "100090796624852",
+    "1009912478711964",
+    "120021151034439",
+    "885508377819042",
+    "885508414485705",
+    "895606740142539",
+    "895606786809201",
+    "899784449724768",
+    "899784503058096",
+    "900340386335841",
+    "900340436335836",
+    "900340483002498",
+    "905717879131425",
+    "905717909131422",
+    "908814315488448",
+    "908818662154680",
+    "908818722154674",
+    "909580562078490",
+    "909580598745153",
+    "909580632078483",
+    "912362791800267",
+    "912362871800259",
+    "921131290923417",
+    "921131370923409",
+    "921131447590068",
+    "921131527590060",
+    "921132560923290",
+    "923222387380974",
+    "926758900360656",
+    "932585636444649",
+    "932585729777973",
+    "932585829777963",
+    "937865649249981",
+    "937865692583310",
+    "989102740792938"
+   ],
+   "video_ids": [],
+   "albums": [
+    "119848247718396",
+    "119880574381830",
+    "161022763600944"
+   ],
+   "size": 1886959
+  },
+  "map": {
+   "photo_like": [
+    "100002321386074",
+    "100090151999139",
+    "100090796624852",
+    "1009912478711964",
+    "120021151034439",
+    "885508377819042",
+    "885508414485705",
+    "895606740142539",
+    "895606786809201",
+    "899784449724768",
+    "899784503058096",
+    "900340386335841",
+    "900340436335836",
+    "900340483002498",
+    "905717879131425",
+    "905717909131422",
+    "908814315488448",
+    "908818662154680",
+    "908818722154674",
+    "909580562078490",
+    "909580598745153",
+    "909580632078483",
+    "912362791800267",
+    "912362871800259",
+    "921131290923417",
+    "921131370923409",
+    "921131447590068",
+    "921131527590060",
+    "921132560923290",
+    "923222387380974",
+    "926758900360656",
+    "932585636444649",
+    "932585729777973",
+    "932585829777963",
+    "937865649249981",
+    "937865692583310",
+    "989102740792938"
+   ],
+   "video_ids": [],
+   "albums": [
+    "119848247718396",
+    "119880574381830",
+    "161022763600944"
+   ],
+   "size": 1886851
+  }
+ },
+ "album_ids_discovered": [
+  "161022763600944",
+  "119880574381830",
+  "119848247718396",
+  "440444706081226",
+  "231783693170029",
+  "117876417018362",
+  "135271220003538",
+  "122122354106320930",
+  "109944478687285",
+  "122102615774656535",
+  "122103434265048903",
+  "109943132020753",
+  "5260514744071035",
+  "1426241077607114",
+  "443430981125402",
+  "443430977792069",
+  "443430991125401",
+  "443430974458736",
+  "325876139556731"
+ ],
+ "notes": [
+  "3 test photos from /tmp/newphoto_*.jpg moved into images/ as {post_id}-1_{photo_id}.jpg after verifying post mapping via post page attachment uris.",
+  "Photos with no discoverable post mapping are named {photo_id}.jpg per task rules.",
+  "fb_history_text.json, social_sources.json, threads_full.json, fb_ig_sources.json untouched."
+ ]
+}

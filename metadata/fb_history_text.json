@@ -1,0 +1,98 @@
+{
+  "collection_info": {
+    "subject": "程皓醫師｜好動人生。運動與家庭醫學 (FB page id 100090796624852) 歷史貼文文字挖掘",
+    "base_dir": "/home/alan_aibox/桌面/DoctorHao_WebData",
+    "collected_at": "2026-09-08T23:40:00+08:00",
+    "timezone": "UTC+8",
+    "new_posts_saved": 3,
+    "existing_posts_before": 20,
+    "notes": "本檔僅記錄歷史貼文挖掘過程；social_sources.json / threads_full.json / fb_ig_sources.json 未更動。"
+  },
+  "breakthroughs": {
+    "single_post_text_extraction": {
+      "method": "Googlebot UA 直抓 https://www.facebook.com/permalink.php?story_fbid={post_id 或 pfbid}&id=100090796624852",
+      "detail": [
+        "og:description 含貼文全文（長文會被 Facebook 截斷，文末帶 ...）",
+        "頁面同時含伺服器端渲染的完整貼文 HTML：<div dir=\"auto\" style=\"text-align:start\"> 連續區塊，可提取完整全文（含 emoji img alt 還原）",
+        "數字 post_id 可從頁面 \"subscription_target_id\":\"...\" 取得（share/p 短連結只給 pfbid 時由此反推）",
+        "og:image 的 lookaside.fbsbx.com/lookaside/crawler/media/?media_id={photo_id} 附帶 photo_id",
+        "og:url 為 /posts/{文字slug} 形式"
+      ],
+      "tested_variants": {
+        "permalink.php?story_fbid=&id=": "成功（HTTP 200，約 670-735KB，og:description + 渲染全文）",
+        "/{page_id}/posts/{post_id}": "成功（同內容）",
+        "/{page_id}/posts/{post_id}?locale=zh_TW": "成功（同內容）",
+        "m.facebook.com/story.php?story_fbid=&id=": "成功（302 轉 www.facebook.com/story.php 後同內容）",
+        "photo.php?fbid=&set=a.": "HTTP 200 但頁面無貼文文字（og:description 不含內文），僅能反查相簿 set=a.{album_id}",
+        "mbasic.facebook.com/photo.php、/photo/?fbid=": "皆 302 回 www 同頁，無文字"
+      },
+      "page_id_to_post_id_trick": "單圖貼文的相簿參數 set=a.{X} 中 X 常等於該貼文 post_id；photo_id 119848211051733（首張大頭貼）→ set=a.119848247718396 → permalink 成功取得 2023-03-15 創頁貼文"
+    },
+    "news_share_link_mining": {
+      "method": "找引用醫師貼文的新聞文章 → 抽取文章內 https://www.facebook.com/share/p/{key}/ 短連結 → Googlebot UA follow redirect → 落在 permalink.php?story_fbid=pfbid...&id=100090796624852 → 抓全文",
+      "usable_search_channels_from_this_environment": [
+        "https://news.google.com/rss/search?q={關鍵字}&hl=zh-TW&gl=TW&ceid=TW:zh-Hant（HTTP 200，可列標題）",
+        "https://search.ltn.com.tw/list?keyword={關鍵字}（自由時報站內搜尋，HTTP 200）",
+        "health.ltn.com.tw / sports.ltn.com.tw 文章頁可直接 curl"
+      ],
+      "google_news_redirect_resolution": "失敗：batchexecute (Fbv4je/garturlreq) 回覆 null；/articles/ 頁面無 data-n-au 也無任何外部 URL；guid 兩個 AU_yqL id 均非可解碼 URL"
+    }
+  },
+  "posts_saved": [
+    {
+      "post_id": "663898493313366",
+      "post_time": "2025-06-04 17:10:01 UTC+8",
+      "source": "https://www.facebook.com/share/p/1Fa9GDmiNE/（LTN 自由健康網文章 https://health.ltn.com.tw/article/breakingnews/5164634 內嵌）",
+      "resolved_to": "https://www.facebook.com/permalink.php?story_fbid=pfbid0MHP2xYyPHhmwp3dNGd4hpTAFzDWeAYfPH3rKnTaKBvfgV3XCV1TjFEqFhYszzUcml&id=100090796624852 → 數字 id 663898493313366",
+      "text": "古林睿煬腹內斜肌拉傷衛教文（全文 6 段）",
+      "file": "facebook/posts/663898493313366.md",
+      "photo_ids": ["663898196646729", "663898399980042"]
+    },
+    {
+      "post_id": "119848247718396",
+      "post_time": "2023-03-15 20:31:45 UTC+8",
+      "source": "photo_id 119848211051733（photos 分頁最舊照片）相簿 set=a.119848247718396 反推",
+      "text": "系統文「更新了大頭貼照」＝頁面創立貼文（粉專創立於 2023-03-15 前後）",
+      "file": "facebook/posts/119848247718396.md",
+      "photo_ids": ["119848211051733"]
+    },
+    {
+      "post_id": "120021151034439",
+      "post_time": "2023-03-15 23:16:49 UTC+8",
+      "source": "封面照 photo_id 120021151034439 直接作 story_fbid 測試成功",
+      "text": "系統文「更新了封面相片」",
+      "file": "facebook/posts/120021151034439.md",
+      "photo_ids": ["120021151034439"]
+    }
+  ],
+  "methods_detail": [
+    {"route": "路線1 單篇URL變體", "status": "success", "detail": "permalink/posts/story 三變體可取全文；photo.php 無文字"},
+    {"route": "路線2 Common Crawl", "status": "failed", "detail": "facebook.com 全域被 robots.txt 擋：2021-43、2023-50、2025-08、2026-34 等索引連 facebook.com/zuck* 都零 captures；本粉專 url=facebook.com/100090796624852*、profile.php?id=...、people/*、Dr.MBeSuperior* 亦全部 No Captures。WARC 抓取不適用"},
+    {"route": "路線3 離線既有HTML挖掘", "status": "partial", "detail": "grep website_blog/hospital_profiles/threads/instagram/youtube/metadata：FB 連結僅 profile 類（profile.php?id=100090796624852、people 長網址、Landseed/memediatw/Panshinhospital 粉專、Dr.MBeSuperior、TASM2016、fb hashtag），無任何舊貼文 permalink/photo 連結。blog 網域為 drchenghao.blogspot.com，7 篇文章與本地已收集一致"},
+    {"route": "路線4 搜尋引擎", "status": "failed", "detail": "Mojeek 403（browser 與 Googlebot UA 皆然）；DDG html/lite 回 202 反爬頁；Bing 回與查詢無關的垃圾結果（datacenter IP 投毒，cookie warmup 無效）；cn.bing format=rss 回空殼 HTML；Startpage 回無結果殼頁；Ecosia Cloudflare 403；Brave 429；Yandex 302 captcha；Yahoo curl 失敗；Google 需 JS（enablejs retry）。唯一可用：Google News RSS（僅新聞）"},
+    {"route": "路線5 Wayback CDX", "status": "failed", "detail": "url=facebook.com/100090796624852* → []；people 長網址 prefix → []；photo.php*/permalink.php* + filter=urlkey:.*100090796624852.* → 504 Gateway Timeout（掃描量大）；drchenghao.blogspot.com* → 無快照"},
+    {"route": "路線6 枚舉貼文URL抓全文", "status": "success", "detail": "新聞引用路線枚舉到 1 個 share/p → 1 篇歷史貼文全文；相簿反推 + photo_id 直接測試 → 2 篇創頁系統文。全部存檔 facebook/posts/"},
+    {"route": "FB bot 視圖其他分頁", "status": "failed", "detail": "sk=featured/notes/reels/reviews/videos_all/timeline&year= 皆回同一份 1.88MB bot 視圖（最新 20 則）；photos 分頁與 timeline feed 的 has_next_page=true organic cursor 存在但需 GraphQL doc_id 重放，頁面無 doc_id、batchexecute 不可用；touch/mtouch/mbasic/p/ slug 變體全 302 回同一視圖"},
+    {"route": "論壇（PTT/Dcard）", "status": "failed", "detail": "PTT baseball 版搜『程皓』僅同名球員楊程皓；全站搜尋 302；Dcard API Cloudflare 403"}
+  ],
+  "articles_citing_doctor_checked": [
+    {"url": "https://health.ltn.com.tw/article/breakingnews/5164634", "title": "健康網》古林睿煬腹斜肌拉傷 醫：復發機率不低", "fb_links": ["https://www.facebook.com/share/p/1Fa9GDmiNE/ → 已收集貼文", "https://www.facebook.com/share/p/19LBrn9i32/（吳易澄，非本粉專）"]},
+    {"url": "https://health.ltn.com.tw/article/breakingnews/5162403", "title": "健康網》林書豪宣布退休 醫：8年前髕骨肌腱斷裂是重擊", "fb_links": []},
+    {"url": "https://health.ltn.com.tw/article/breakingnews/5149146", "title": "健康網》柯文哲踩飛輪爆紅 醫提5招贏得健康", "fb_links": []},
+    {"url": "https://health.ltn.com.tw/article/breakingnews/5217388", "title": "聯新國際醫院30週年慶", "fb_links": []},
+    {"url": "（Google News RSS 無法解析轉址）", "title": "理財周刊：猛健樂有副作用嗎？腸泌素原理到底是什麼？常見瘦瘦針比較（2026-01-20）", "fb_links": "未知——moneyweekly 站內搜尋 /Home/Search 無效、無 sitemap；該文可能引用一則 2025 末~2026 初減重相關貼文"},
+    {"url": "（無法解析）", "title": "UDN：靠瘦瘦針減肥 卻嘔吐、昏倒 誰適合施打？有哪些亂象？", "fb_links": "未知——udn.com search 404"},
+    {"url": "（無法解析）", "title": "UDN：中職／雄鷹好消息！魔鷹復健賽敲安估恢復85% 歸隊時程看隊醫", "fb_links": "未知——可能引用一則魔鷹傷勢貼文"},
+    {"url": "（403）", "title": "天下康健：運動醫學 聯新國際｜3個月療程縮至1個月", "fb_links": "未知"}
+  ],
+  "side_findings": {
+    "page_creation": "粉專首篇系統文時間 2023-03-15 20:31:45 UTC+8（大頭貼），同日 23:16 封面照 → 頁面創立於 2023-03-15",
+    "dr_mbesuperior": "facebook.com/Dr.MBeSuperior = 『Dr. M 林威廷醫師 運動醫學 傷害復健 健康促進』個人檔案（userID 100063601970008），與程皓醫師是不同人（僅為官網 2023-05 文章的外部連結）。其個人檔 bot 視圖分頁開啟（has_next_page=true + organic cursor）且含 10+ 筆 pfbid 貼文 wwwURL——如需林威廷個人檔內容可用，但非本任務目標",
+    "fan_page_has_no_vanity": "粉專無 vanity username，只有 profile.php?id= 與 people 長網址兩種形式（/p/{slug}-{id}/ 為 302 落點）"
+  },
+  "remaining_leads_if_resumed": [
+    "解析 Google News RSS 轉址（需能執行 JS 的瀏覽器或新版 batchexecute RPC）→ 可取回理財周刊/UDN 兩篇減重文與 UDN 魔鷹文，可能各含 1-2 則 2025-12~2026-02 未收集貼文",
+    "GraphQL organic_cursor 重放（timeline feed / photos 分頁）需有效 doc_id——Threads 已知 doc_id 已失效，FB Timeline 的 doc_id 需另尋",
+    "photo set=a.{X}==post_id 機制 + photos 分頁 cursor 枚舉更多 photo_id 可反推更多單圖貼文"
+  ]
+}
