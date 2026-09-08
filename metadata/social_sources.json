@@ -1,0 +1,565 @@
+{
+ "collection_info": {
+  "subject": "程皓醫師（復健科/家庭醫學科/運動醫學科，聯新國際醫院）社群媒體資料收集 — 社群路線（Threads/Facebook/Instagram）",
+  "base_dir": "/home/alan_aibox/桌面/DoctorHao_WebData",
+  "collected_at": "2026-09-08T21:24:18+08:00",
+  "timezone": "UTC+8",
+  "methods_that_worked": [
+   "Threads: 直接 curl https://www.threads.com/@drchenghao 帶 Googlebot User-Agent「Mozilla/5.0 (compatible; Googlebot/2.1; +http://www.google.com/bot.html)」→ 回傳含 <script type=\"application/json\"> 完整 thread_items JSON 的 HTML（31 則貼文全文、時間戳、愛心數、回覆/轉發/引用數、圖片 URL）",
+   "Threads 圖片: curl CDN URL 帶一般瀏覽器 UA，全部 200；下載為 WebP 後以 PIL 轉存 JPEG",
+   "Instagram: 同 Googlebot UA 方法取得個人檔 metadata（追蹤者/貼文數/簡介）與 12 張格線預覽縮圖"
+  ],
+  "limitations": [
+   "Threads 僅能取得個人頁 HTML 內含的 31 則（16 則母貼文 + 15 則同作者連續發文續文），GraphQL 分頁 doc_id 已失效（3 個已知 doc_id 測試皆失敗），較舊貼文未收集",
+   "CDN 圖片 URL 含時效參數（oh/oe），原始 URL 僅在抓取當下有效",
+   "Threads CDN 回傳 WebP，已轉存為 JPEG（品質 92）"
+  ]
+ },
+ "threads": {
+  "status": "success",
+  "account_url": "https://www.threads.com/@drchenghao",
+  "display_name": "程皓醫師｜好動人生。 運動與家庭醫學",
+  "verified": true,
+  "followers": "27.1K",
+  "bio": "運動醫學科，程皓醫師，樂天隊醫。 ▶️ 運動傷害 ▶️ 疼痛治療 ▶️ 減重治療 ▶️ 高壓氧治療 看診地點： 聯新國際醫院：週一早、週四早午、週五早午、週六早診 新北板新醫院：週一晚診 台北聯新國際診所：週二早診",
+  "link": "https://linktr.ee/david020223",
+  "posts_collected": 31,
+  "root_posts": 16,
+  "self_thread_replies": 15,
+  "date_range": {
+   "newest": "2026-09-08T20:42:37+08:00",
+   "oldest": "2025-05-15T12:51:20+08:00"
+  },
+  "images_collected": 7,
+  "posts": [
+   {
+    "url": "https://www.threads.com/@drchenghao/post/DdBtk6ak1Gg",
+    "posted_at": "2026-09-08T20:42:37+08:00",
+    "md_path": "threads/posts/DdBtk6ak1Gg.md",
+    "media_type": "text",
+    "is_reply_self_thread": false,
+    "like_count": 11,
+    "reply_count": 0,
+    "repost_count": 0,
+    "quote_count": 0,
+    "images": []
+   },
+   {
+    "url": "https://www.threads.com/@drchenghao/post/DdBgZU8EyBU",
+    "posted_at": "2026-09-08T18:47:27+08:00",
+    "md_path": "threads/posts/DdBgZU8EyBU.md",
+    "media_type": "text",
+    "is_reply_self_thread": true,
+    "like_count": 5,
+    "reply_count": 0,
+    "repost_count": 0,
+    "quote_count": 2,
+    "images": []
+   },
+   {
+    "url": "https://www.threads.com/@drchenghao/post/DdBgZTdk7Jx",
+    "posted_at": "2026-09-08T18:47:26+08:00",
+    "md_path": "threads/posts/DdBgZTdk7Jx.md",
+    "media_type": "text",
+    "is_reply_self_thread": false,
+    "like_count": 17,
+    "reply_count": 2,
+    "repost_count": 1,
+    "quote_count": 1,
+    "images": []
+   },
+   {
+    "url": "https://www.threads.com/@drchenghao/post/Dc-1ECSEzpm",
+    "posted_at": "2026-09-07T17:50:19+08:00",
+    "md_path": "threads/posts/Dc-1ECSEzpm.md",
+    "media_type": "text",
+    "is_reply_self_thread": true,
+    "like_count": 5,
+    "reply_count": 0,
+    "repost_count": 0,
+    "quote_count": 0,
+    "images": []
+   },
+   {
+    "url": "https://www.threads.com/@drchenghao/post/Dc-Yp6xEwzv",
+    "posted_at": "2026-09-07T13:42:05+08:00",
+    "md_path": "threads/posts/Dc-Yp6xEwzv.md",
+    "media_type": "photo",
+    "is_reply_self_thread": false,
+    "like_count": 55,
+    "reply_count": 21,
+    "repost_count": 4,
+    "quote_count": 1,
+    "images": [
+     "threads/images/Dc-Yp6xEwzv-1.jpg"
+    ]
+   },
+   {
+    "url": "https://www.threads.com/@drchenghao/post/Dc57IfAk2qq",
+    "posted_at": "2026-09-05T20:07:09+08:00",
+    "md_path": "threads/posts/Dc57IfAk2qq.md",
+    "media_type": "text",
+    "is_reply_self_thread": false,
+    "like_count": 190,
+    "reply_count": 11,
+    "repost_count": 0,
+    "quote_count": 1,
+    "images": []
+   },
+   {
+    "url": "https://www.threads.com/@drchenghao/post/Dc57IfhkxCm",
+    "posted_at": "2026-09-05T20:07:09+08:00",
+    "md_path": "threads/posts/Dc57IfhkxCm.md",
+    "media_type": "text",
+    "is_reply_self_thread": true,
+    "like_count": 9,
+    "reply_count": 1,
+    "repost_count": 0,
+    "quote_count": 0,
+    "images": []
+   },
+   {
+    "url": "https://www.threads.com/@drchenghao/post/Dc3SWStExX2",
+    "posted_at": "2026-09-04T19:32:17+08:00",
+    "md_path": "threads/posts/Dc3SWStExX2.md",
+    "media_type": "text",
+    "is_reply_self_thread": false,
+    "like_count": 216,
+    "reply_count": 12,
+    "repost_count": 1,
+    "quote_count": 3,
+    "images": []
+   },
+   {
+    "url": "https://www.threads.com/@drchenghao/post/Dc3SWR1E-ip",
+    "posted_at": "2026-09-04T19:32:17+08:00",
+    "md_path": "threads/posts/Dc3SWR1E-ip.md",
+    "media_type": "text",
+    "is_reply_self_thread": true,
+    "like_count": 52,
+    "reply_count": 2,
+    "repost_count": 1,
+    "quote_count": 0,
+    "images": []
+   },
+   {
+    "url": "https://www.threads.com/@drchenghao/post/Dc3SWS8E1pG",
+    "posted_at": "2026-09-04T19:32:17+08:00",
+    "md_path": "threads/posts/Dc3SWS8E1pG.md",
+    "media_type": "text",
+    "is_reply_self_thread": true,
+    "like_count": 52,
+    "reply_count": 2,
+    "repost_count": 1,
+    "quote_count": 0,
+    "images": []
+   },
+   {
+    "url": "https://www.threads.com/@drchenghao/post/Dc0nICIE4lg",
+    "posted_at": "2026-09-03T18:36:07+08:00",
+    "md_path": "threads/posts/Dc0nICIE4lg.md",
+    "media_type": "text",
+    "is_reply_self_thread": false,
+    "like_count": 573,
+    "reply_count": 29,
+    "repost_count": 25,
+    "quote_count": 1,
+    "images": []
+   },
+   {
+    "url": "https://www.threads.com/@drchenghao/post/Dc0nIAdk4As",
+    "posted_at": "2026-09-03T18:36:07+08:00",
+    "md_path": "threads/posts/Dc0nIAdk4As.md",
+    "media_type": "text",
+    "is_reply_self_thread": true,
+    "like_count": 68,
+    "reply_count": 3,
+    "repost_count": 4,
+    "quote_count": 0,
+    "images": []
+   },
+   {
+    "url": "https://www.threads.com/@drchenghao/post/Dc0nIC5E_-Z",
+    "posted_at": "2026-09-03T18:36:07+08:00",
+    "md_path": "threads/posts/Dc0nIC5E_-Z.md",
+    "media_type": "text",
+    "is_reply_self_thread": true,
+    "like_count": 43,
+    "reply_count": 0,
+    "repost_count": 3,
+    "quote_count": 0,
+    "images": []
+   },
+   {
+    "url": "https://www.threads.com/@drchenghao/post/Dcx0r3sE-cm",
+    "posted_at": "2026-09-02T16:36:53+08:00",
+    "md_path": "threads/posts/Dcx0r3sE-cm.md",
+    "media_type": "text",
+    "is_reply_self_thread": true,
+    "like_count": 10,
+    "reply_count": 1,
+    "repost_count": 0,
+    "quote_count": 0,
+    "images": []
+   },
+   {
+    "url": "https://www.threads.com/@drchenghao/post/Dcx0iOxk-Vi",
+    "posted_at": "2026-09-02T16:35:34+08:00",
+    "md_path": "threads/posts/Dcx0iOxk-Vi.md",
+    "media_type": "photo",
+    "is_reply_self_thread": false,
+    "like_count": 533,
+    "reply_count": 75,
+    "repost_count": 15,
+    "quote_count": 0,
+    "images": [
+     "threads/images/Dcx0iOxk-Vi-1.jpg"
+    ]
+   },
+   {
+    "url": "https://www.threads.com/@drchenghao/post/DcunRb_E_MH",
+    "posted_at": "2026-09-01T10:41:58+08:00",
+    "md_path": "threads/posts/DcunRb_E_MH.md",
+    "media_type": "photo",
+    "is_reply_self_thread": false,
+    "like_count": 32,
+    "reply_count": 1,
+    "repost_count": 0,
+    "quote_count": 0,
+    "images": [
+     "threads/images/DcunRb_E_MH-1.jpg"
+    ]
+   },
+   {
+    "url": "https://www.threads.com/@drchenghao/post/Dcs2x2Ikx-u",
+    "posted_at": "2026-08-31T18:18:59+08:00",
+    "md_path": "threads/posts/Dcs2x2Ikx-u.md",
+    "media_type": "text",
+    "is_reply_self_thread": false,
+    "like_count": 876,
+    "reply_count": 39,
+    "repost_count": 36,
+    "quote_count": 4,
+    "images": []
+   },
+   {
+    "url": "https://www.threads.com/@drchenghao/post/Dcs2x3Pk-W_",
+    "posted_at": "2026-08-31T18:18:59+08:00",
+    "md_path": "threads/posts/Dcs2x3Pk-W_.md",
+    "media_type": "text",
+    "is_reply_self_thread": true,
+    "like_count": 63,
+    "reply_count": 0,
+    "repost_count": 0,
+    "quote_count": 0,
+    "images": []
+   },
+   {
+    "url": "https://www.threads.com/@drchenghao/post/DcqTK8hE0cv",
+    "posted_at": "2026-08-30T18:29:21+08:00",
+    "md_path": "threads/posts/DcqTK8hE0cv.md",
+    "media_type": "carousel",
+    "is_reply_self_thread": false,
+    "like_count": 52,
+    "reply_count": 4,
+    "repost_count": 0,
+    "quote_count": 0,
+    "images": [
+     "threads/images/DcqTK8hE0cv-1.jpg",
+     "threads/images/DcqTK8hE0cv-2.jpg"
+    ]
+   },
+   {
+    "url": "https://www.threads.com/@drchenghao/post/DcoC2Jtk0m4",
+    "posted_at": "2026-08-29T21:28:13+08:00",
+    "md_path": "threads/posts/DcoC2Jtk0m4.md",
+    "media_type": "text",
+    "is_reply_self_thread": false,
+    "like_count": 721,
+    "reply_count": 31,
+    "repost_count": 11,
+    "quote_count": 1,
+    "images": []
+   },
+   {
+    "url": "https://www.threads.com/@drchenghao/post/DcoC2KJkwQx",
+    "posted_at": "2026-08-29T21:28:13+08:00",
+    "md_path": "threads/posts/DcoC2KJkwQx.md",
+    "media_type": "text",
+    "is_reply_self_thread": true,
+    "like_count": 23,
+    "reply_count": 2,
+    "repost_count": 0,
+    "quote_count": 0,
+    "images": []
+   },
+   {
+    "url": "https://www.threads.com/@drchenghao/post/DcnpKzCk9LW",
+    "posted_at": "2026-08-29T17:43:51+08:00",
+    "md_path": "threads/posts/DcnpKzCk9LW.md",
+    "media_type": "text",
+    "is_reply_self_thread": false,
+    "like_count": 66,
+    "reply_count": 5,
+    "repost_count": 1,
+    "quote_count": 0,
+    "images": []
+   },
+   {
+    "url": "https://www.threads.com/@drchenghao/post/DclQqhvk_Wt",
+    "posted_at": "2026-08-28T19:31:15+08:00",
+    "md_path": "threads/posts/DclQqhvk_Wt.md",
+    "media_type": "text",
+    "is_reply_self_thread": false,
+    "like_count": 1358,
+    "reply_count": 30,
+    "repost_count": 27,
+    "quote_count": 1,
+    "images": []
+   },
+   {
+    "url": "https://www.threads.com/@drchenghao/post/DclQqi3k31O",
+    "posted_at": "2026-08-28T19:31:15+08:00",
+    "md_path": "threads/posts/DclQqi3k31O.md",
+    "media_type": "text",
+    "is_reply_self_thread": true,
+    "like_count": 79,
+    "reply_count": 1,
+    "repost_count": 0,
+    "quote_count": 0,
+    "images": []
+   },
+   {
+    "url": "https://www.threads.com/@drchenghao/post/DclQqhIE0J-",
+    "posted_at": "2026-08-28T19:31:15+08:00",
+    "md_path": "threads/posts/DclQqhIE0J-.md",
+    "media_type": "text",
+    "is_reply_self_thread": true,
+    "like_count": 50,
+    "reply_count": 0,
+    "repost_count": 0,
+    "quote_count": 1,
+    "images": []
+   },
+   {
+    "url": "https://www.threads.com/@drchenghao/post/DcimjCvEy0x",
+    "posted_at": "2026-08-27T18:44:45+08:00",
+    "md_path": "threads/posts/DcimjCvEy0x.md",
+    "media_type": "text",
+    "is_reply_self_thread": false,
+    "like_count": 745,
+    "reply_count": 38,
+    "repost_count": 16,
+    "quote_count": 1,
+    "images": []
+   },
+   {
+    "url": "https://www.threads.com/@drchenghao/post/DcimjEUE_7o",
+    "posted_at": "2026-08-27T18:44:45+08:00",
+    "md_path": "threads/posts/DcimjEUE_7o.md",
+    "media_type": "text",
+    "is_reply_self_thread": true,
+    "like_count": 51,
+    "reply_count": 1,
+    "repost_count": 1,
+    "quote_count": 0,
+    "images": []
+   },
+   {
+    "url": "https://www.threads.com/@drchenghao/post/DcimjDvEz0t",
+    "posted_at": "2026-08-27T18:44:45+08:00",
+    "md_path": "threads/posts/DcimjDvEz0t.md",
+    "media_type": "text",
+    "is_reply_self_thread": true,
+    "like_count": 49,
+    "reply_count": 0,
+    "repost_count": 0,
+    "quote_count": 0,
+    "images": []
+   },
+   {
+    "url": "https://www.threads.com/@drchenghao/post/DcimjCuE21l",
+    "posted_at": "2026-08-27T18:44:44+08:00",
+    "md_path": "threads/posts/DcimjCuE21l.md",
+    "media_type": "text",
+    "is_reply_self_thread": true,
+    "like_count": 87,
+    "reply_count": 2,
+    "repost_count": 1,
+    "quote_count": 0,
+    "images": []
+   },
+   {
+    "url": "https://www.threads.com/@drchenghao/post/Dbfv7fWE_Fc",
+    "posted_at": "2026-08-01T19:37:36+08:00",
+    "md_path": "threads/posts/Dbfv7fWE_Fc.md",
+    "media_type": "text",
+    "is_reply_self_thread": false,
+    "like_count": 1963,
+    "reply_count": 79,
+    "repost_count": 41,
+    "quote_count": 11,
+    "images": []
+   },
+   {
+    "url": "https://www.threads.com/@drchenghao/post/DJqVSOiztLz",
+    "posted_at": "2025-05-15T12:51:20+08:00",
+    "md_path": "threads/posts/DJqVSOiztLz.md",
+    "media_type": "photo",
+    "is_reply_self_thread": false,
+    "like_count": 662,
+    "reply_count": 45,
+    "repost_count": 6,
+    "quote_count": 0,
+    "images": [
+     "threads/images/DJqVSOiztLz-1.jpg"
+    ]
+   }
+  ],
+  "images": [
+   {
+    "path": "threads/images/Dc-Yp6xEwzv-1.jpg",
+    "source": "threads/posts/Dc-Yp6xEwzv.md"
+   },
+   {
+    "path": "threads/images/Dcx0iOxk-Vi-1.jpg",
+    "source": "threads/posts/Dcx0iOxk-Vi.md"
+   },
+   {
+    "path": "threads/images/DcunRb_E_MH-1.jpg",
+    "source": "threads/posts/DcunRb_E_MH.md"
+   },
+   {
+    "path": "threads/images/DcqTK8hE0cv-1.jpg",
+    "source": "threads/posts/DcqTK8hE0cv.md"
+   },
+   {
+    "path": "threads/images/DcqTK8hE0cv-2.jpg",
+    "source": "threads/posts/DcqTK8hE0cv.md"
+   },
+   {
+    "path": "threads/images/DJqVSOiztLz-1.jpg",
+    "source": "threads/posts/DJqVSOiztLz.md"
+   },
+   {
+    "path": "threads/images/profile.jpg",
+    "source": "帳號大頭貼（profile_pic_url，150x150）"
+   }
+  ]
+ },
+ "facebook": {
+  "status": "login_required",
+  "page_url": "https://www.facebook.com/people/程皓醫師好動人生-運動與家庭醫學/100090796624852/",
+  "page_id": "100090796624852",
+  "attempted_methods": [
+   {
+    "method": "curl graph.facebook.com/100090796624852/picture?type=large&redirect=false",
+    "result": "HTTP 200，但 is_silhouette=true（回傳預設剪影大頭貼，頁面無公開自訂頭像），已存 facebook/images/profile.jpg（200x200）"
+   },
+   {
+    "method": "Bing 搜尋 site:facebook.com 100090796624852 與「程皓醫師好動人生 運動與家庭醫學 facebook」",
+    "result": "HTTP 200 但結果無關（查詢被混淆），無法取得 FB 貼文內容"
+   },
+   {
+    "method": "DuckDuckGo html endpoint 搜尋",
+    "result": "HTTP 202 bot 驗證頁，無結果"
+   },
+   {
+    "method": "直接 curl facebook.com 頁面 / r.jina.ai 渲染 / mbasic.facebook.com",
+    "result": "（任務前已知）400 或導向登入頁，依指示未重複浪費嘗試"
+   }
+  ],
+  "artifacts": [
+   {
+    "path": "facebook/images/profile.jpg",
+    "note": "graph API 回傳之大頭貼（預設剪影 is_silhouette=true）"
+   }
+  ],
+  "notes": "粉專貼文多與 Threads/IG 同步，Threads 收集結果可視為 FB 貼文內容的大部分；未嘗試偽造登入。"
+ },
+ "instagram": {
+  "status": "partial_profile_only",
+  "account_url": "https://www.instagram.com/drchenghao/",
+  "display_name": "程皓醫師｜好動人生。 運動與家庭醫學",
+  "profile_metadata": {
+   "followers": 733,
+   "following": 64,
+   "posts_count": 25,
+   "biography": "聯新國際醫院 程皓醫師，\n專注於運動醫學、疼痛治療、減重治療\n同時熱愛運動、健身、打球、看球的好動醫師"
+  },
+  "attempted_methods": [
+   {
+    "method": "r.jina.ai 渲染 instagram.com/drchenghao",
+    "result": "HTTP 403 AbuseAlleviationError — jina 對 instagram.com 整網域封鎖至 2026-09-08 13:50 UTC"
+   },
+   {
+    "method": "curl 帶 Googlebot User-Agent",
+    "result": "HTTP 200，取得個人檔 metadata（og:description、簡介、追蹤數）與 12 張格線預覽縮圖（150-320px），但頁面不含貼文 shortcode、文字、時間或互動數（需登入才提供貼文清單）"
+   },
+   {
+    "method": "修改縮圖 URL stp 參數取大圖",
+    "result": "HTTP 403（URL 簽章綁定參數），放棄，以原尺寸存檔"
+   }
+  ],
+  "artifacts": [
+   {
+    "path": "instagram/posts/profile_summary.md",
+    "note": "個人檔 metadata 與限制說明"
+   },
+   {
+    "path": "instagram/images/grid-01.jpg",
+    "note": "個人頁格線預覽縮圖（無法對應到特定貼文）"
+   },
+   {
+    "path": "instagram/images/grid-02.jpg",
+    "note": "個人頁格線預覽縮圖（無法對應到特定貼文）"
+   },
+   {
+    "path": "instagram/images/grid-03.jpg",
+    "note": "個人頁格線預覽縮圖（無法對應到特定貼文）"
+   },
+   {
+    "path": "instagram/images/grid-04.jpg",
+    "note": "個人頁格線預覽縮圖（無法對應到特定貼文）"
+   },
+   {
+    "path": "instagram/images/grid-05.jpg",
+    "note": "個人頁格線預覽縮圖（無法對應到特定貼文）"
+   },
+   {
+    "path": "instagram/images/grid-06.jpg",
+    "note": "個人頁格線預覽縮圖（無法對應到特定貼文）"
+   },
+   {
+    "path": "instagram/images/grid-07.jpg",
+    "note": "個人頁格線預覽縮圖（無法對應到特定貼文）"
+   },
+   {
+    "path": "instagram/images/grid-08.jpg",
+    "note": "個人頁格線預覽縮圖（無法對應到特定貼文）"
+   },
+   {
+    "path": "instagram/images/grid-09.jpg",
+    "note": "個人頁格線預覽縮圖（無法對應到特定貼文）"
+   },
+   {
+    "path": "instagram/images/grid-10.jpg",
+    "note": "個人頁格線預覽縮圖（無法對應到特定貼文）"
+   },
+   {
+    "path": "instagram/images/grid-11.jpg",
+    "note": "個人頁格線預覽縮圖（無法對應到特定貼文）"
+   },
+   {
+    "path": "instagram/images/grid-12.jpg",
+    "note": "個人頁格線預覽縮圖（無法對應到特定貼文）"
+   },
+   {
+    "path": "instagram/images/profile.jpg",
+    "note": "IG 大頭貼"
+   }
+  ],
+  "images_collected": 13,
+  "notes": "Threads 貼文多數同步自 IG（帳號頁有 IG 連結），IG 貼文全文未能取得（登入牆）；已如實記錄。"
+ }
+}

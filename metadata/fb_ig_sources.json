@@ -1,0 +1,104 @@
+{
+  "generated_at": "2026-09-08T22:40:00+08:00",
+  "collector": "web_data_collection_agent (fb_ig)",
+  "note": "此檔僅記錄 FB/IG 收集成敗，不影響 social_sources.json 與 threads_full.json",
+  "facebook": {
+    "page_id": "100090796624852",
+    "page_name": "程皓醫師｜好動人生。 運動與家庭醫學",
+    "followers": 1515,
+    "posts_collected": 20,
+    "images_collected": 26,
+    "images_note": "24 張貼文照片 + 真實大頭貼 profile.jpg（1365x2048，取代舊剪影）+ 封面照 cover_120021151034439.jpg（1366x768）",
+    "methods": [
+      {
+        "method": "1. Googlebot UA 直抓 www.facebook.com/profile.php?id=100090796624852",
+        "status": "SUCCESS",
+        "http": 200,
+        "detail": "Googlebot UA（Mozilla/5.0 compatible; Googlebot/2.1）取得 1.88MB 完整頁面，含 20 則最新貼文全文（message 完整未截斷）、creation_time、15 位追蹤者數等 GraphQL JSON。同時頁面內含 lookaside.fbsbx.com/lookaside/crawler/media/?media_id=<photo_id> 之 crawler 圖片端點（無需登入），取得 24 張貼文照片（最高 2048x1536）+ 真實大頭貼（1365x2048，取代舊剪影）+ 封面照（1366x768）。photo_id 與 post_id 的對應由 JSON 子樹（post_id 節點內之 Photo 節點）精確解析，27 對應關係（24 張成功下載，3 張無 URI）。",
+        "saved": "facebook/posts/*.md 20 檔；facebook/images/ 24 張貼文照片 + profile.jpg + cover_120021151034439.jpg"
+      },
+      {
+        "method": "1b. 其他 URL 變體（/posts/、people/長網址、m.facebook v=timeline、mbasic）+ Googlebot UA",
+        "status": "PARTIAL",
+        "http": 200,
+        "detail": "全部回 200 但內容與 profile.php 完全相同（同樣 20 則、相同 1.88MB），無法分頁取得更舊貼文；&sk=posts&cursor=2 與 /photos 頁對 bot 均不渲染更多資料。此粉專可無登入取得之上限即最新 20 則。"
+      },
+      {
+        "method": "1c. facebookexternalhit/1.1 與 Twitterbot/1.0 UA",
+        "status": "PARTIAL",
+        "http": 200,
+        "detail": "facebookexternalhit 對單篇貼文 URL 回 og:title（頁面名稱）+ og:image（大頭貼），無貼文內容；Twitterbot 對主頁僅回基本殼。此兩 UA 無法取得貼文。"
+      },
+      {
+        "method": "2. Wayback Machine (web.archive.org CDX)",
+        "status": "FAILED",
+        "detail": "web.archive.org 整站回 'Internet Archive: Temporarily Offline'（維護中），CDX API 與快照均無法查詢。三種 URL 模式（/100090796624852*、people/*、profile.php?id=）皆同。未重試無限次。"
+      },
+      {
+        "method": "3. FB 公開嵌入外掛 plugins/page.php 與 plugins/post.php",
+        "status": "FAILED",
+        "http": "200(page.php)/400(post.php)",
+        "detail": "plugins/page.php?href=...&tabs=timeline 回 46KB 殼頁：僅伺服端渲染頁名+1,515 追蹤者，貼文由 JS 載入無法取得。plugins/post.php 對 /posts/<id>、permalink.php、photo.php 三種 href 皆回 HTTP 400（Meta 已限制此外掛）。"
+      },
+      {
+        "method": "4. 搜尋引擎枚舉貼文 URL（Bing / DuckDuckGo html / Google gbv=1）",
+        "status": "FAILED",
+        "detail": "Bing 'site:facebook.com 100090796624852' 回 50 筆垃圾結果（0 筆含此 ID）；中文關鍵字查詢回應中所有外部連結均為 bing redirect 包裝且解碼無 fb/ig 連結。DuckDuckGo html 版回 202 反爬挑戰。Google gbv=1 無相關結果。"
+      }
+    ],
+    "post_ids": ["1009912618711950","997301243306421","990813987288480","989102740792938","970045752698637","941195538916992","937865692583310","932585863111293","926758937027319","923222414047638","921131584256721","912362921800254","909580665411813","908814315488448","905717909131422","900334256336454","899784503058096","899070173129529","895606786809201","885508454485701"],
+    "date_range": "2026-03-06 至 2026-08-01（20 則，均為 2026 年 3-8 月）",
+    "posts_dir": "facebook/posts/",
+    "images_dir": "facebook/images/"
+  },
+  "instagram": {
+    "username": "drchenghao",
+    "followers": 733,
+    "total_posts": 25,
+    "shortcodes_enumerated": 18,
+    "embeds_with_image_success": 12,
+    "shortcodes_invalid_on_ig": 6,
+    "captions_obtained": 0,
+    "methods": [
+      {
+        "method": "1. Googlebot UA 抓 instagram.com/drchenghao/ 枚舉 shortcode",
+        "status": "PARTIAL",
+        "http": 200,
+        "detail": "取得 1.3MB 頁面但僅含 og metadata（25 Posts/733 Followers/大頭貼 og:image）與 12 張格線縮圖 URL（先前 session 已抓）。頁面不含任何貼文 shortcode（timeline 不伺服端渲染給 bot）。格線縮圖 URL 內之 ig_cache_key 為 base64 編碼之 IG media PK，base64 解碼得 12 個 media PK。"
+      },
+      {
+        "method": "1b. IG media PK → shortcode 換算（base64 演算法）",
+        "status": "SUCCESS",
+        "detail": "ALF='A-Za-z0-9-_' 之 base64 進位換算：3883663443987993644 → DXli1NmExQs，經 embed 端點驗證確為真實 IG 貼文（圖片檔名 683434818_17994798227943615 與 grid-01 相符）。12 個格線 PK 全數換算成功。另從 Threads 貼文內嵌 IG CDN 圖片之 ig_cache_key/檔名取得 6 個候選 PK（3632809660971406067→DJqVSOiztLz 等）。"
+      },
+      {
+        "method": "2. embed 端點 /p/<code>/embed/captioned/",
+        "status": "PARTIAL",
+        "http": 200,
+        "detail": "無 Referer 時回 620KB 登入殼（17 處 login 字樣）；帶 Referer: https://www.instagram.com/ 後回 242KB 真實 embed（伺服端渲染大圖、帳號、733 粉絲、讚數顯示 0）。12 個格線 shortcode 全部成功取得原圖（WebP 1080-1440px / JPEG 1080px）。6 個 Threads 來源 shortcode 回「連結可能已損壞或貼文已移除」＝Threads 與 IG 不共用貼文容器 PK（Threads 貼文 PK 對應 IG media PK 而非 IG 貼文頁），誠實記錄為無效。caption 由 JS 動態載入，任何 embed 變體（captioned/?locale=zh_TW&cr=1&v=12&wp=1080、Googlebot UA、plain embed）伺服端 HTML 均不含貼文文字與發文時間。"
+      },
+      {
+        "method": "2b. IG API（web_profile_info / __a=1 / oEmbed）",
+        "status": "FAILED",
+        "http": 401,
+        "detail": "api/v1/users/web_profile_info/?username=drchenghao（含 x-ig-app-id: 936619743392459）回 401 require_login「請幾分鐘後再試一次」（IP 層級限流，重試兩次間隔逾 20 分鐘仍 401）；/?__a=1&__d=dis 回 201 空內容；api.instagram.com/oembed 302 至 www.instagram.com/oembed 後回登入殼 HTML 而非 JSON。"
+      },
+      {
+        "method": "3. 搜尋引擎輔助（Bing site:instagram.com/p drchenghao、Google gbv=1）",
+        "status": "FAILED",
+        "detail": "無任何 instagram.com/p/ 連結（niche 帳號未被索引於可及結果）。"
+      },
+      {
+        "method": "4. metadata/ig_shortcodes_from_threads.txt",
+        "status": "NOT_AVAILABLE",
+        "detail": "收集中途與結束前各檢查一次，另一 agent 之檔案始終未出現。"
+      }
+    ],
+    "shortcodes_valid_with_image": ["DXli1NmExQs","DWujHOik2vR","DWsGDa-kxut","DWiwx89k8WR","DWSLJynk4co","DWQaiufk25S","DWEYdWKk55U","DUnpBfrk4O0","DULsY6Uk5Qj","DQ_x_nGiSNd","DPOW1CijyGF","DLlbVr-zQ4x"],
+    "shortcodes_from_threads_invalid_on_ig": ["DJqVSOiztLz","DcqTKINzRaw","DcqTKNfzgoQ","DcunRb_E_MH","Dcx0iOxk-Vi","Dc-Yp6xEwzv"],
+    "posts_dir": "instagram/posts/",
+    "images_dir": "instagram/images/",
+    "caption_note": "IG 貼文文字（caption）在未登入狀態下所有可及端點均不伺服端渲染，0 則取得文字；12 張貼文圖片已取得。"
+  },
+  "overall_conclusion": "Facebook 以 Googlebot UA 完整突破登入牆：20 則貼文全文+時間+27 張圖（含真實大頭貼與封面）全數入庫；但無分頁機制，僅限最新 20 則（2026-03 至 2026-08）。Instagram 於登入牆內僅能以 embed+Referer 取得 12 張貼文原圖（shortcode 由格線圖 ig_cache_key 換算並驗證），caption/時間/互動數皆不可得；25 則中 13 則無任何圖（12 張格線外的舊貼文無法枚舉，6 個 Threads 換算碼無效）。Wayback Machine 整站維護中、FB plugins post.php 已 400、搜尋引擎對此帳號無索引結果。"
+}

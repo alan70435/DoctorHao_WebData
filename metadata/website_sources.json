@@ -1,0 +1,402 @@
+{
+  "project": "DoctorHao_WebData — website route collection (Blogger / hospital profiles / YouTube)",
+  "target": "程皓醫師（聯新國際醫院；自稱『程皓醫師。好動人生』）",
+  "collected_at": "2026-09-08T21:15:00+08:00",
+  "collector": "website-route agent",
+  "blog_base": "https://drchenghao.blogspot.com/",
+  "stats": {
+    "blog_posts": 7,
+    "blog_images": 21,
+    "hospital_profile_pages": 4,
+    "hospital_extra_files": 1,
+    "youtube_videos_checked": 4,
+    "youtube_own_channel_found": false,
+    "blocked": 0,
+    "not_found": 1
+  },
+  "items": [
+    {
+      "type": "blog_feed",
+      "source_url": "https://drchenghao.blogspot.com/feeds/posts/default?alt=json&max-results=500",
+      "saved_path": null,
+      "fetch_time": "2026-09-08T20:50:00+08:00",
+      "status": "ok",
+      "note": "Atom JSON feed，totalResults=7，單次取回全部 7 篇（無需 start-index 翻頁）。部落格標題『程皓醫師。好動人生』。"
+    },
+    {
+      "type": "blog_post",
+      "title": "林書豪腦震盪後做了哪些檢查呢",
+      "source_url": "https://drchenghao.blogspot.com/2023/05/blog-post_20.html",
+      "published": "2023-05-20",
+      "saved_paths": [
+        "website_blog/posts/2023-05-blog-post_20.md",
+        "website_blog/html/2023-05-blog-post_20.html"
+      ],
+      "content_chars": 27833,
+      "fetch_time": "2026-09-08T20:50:00+08:00",
+      "status": "ok"
+    },
+    {
+      "type": "blog_post",
+      "title": "112年全大運場邊醫師",
+      "source_url": "https://drchenghao.blogspot.com/2023/05/112.html",
+      "published": "2023-05-18",
+      "saved_paths": [
+        "website_blog/posts/2023-05-112.md",
+        "website_blog/html/2023-05-112.html"
+      ],
+      "content_chars": 2900,
+      "fetch_time": "2026-09-08T20:50:00+08:00",
+      "status": "ok"
+    },
+    {
+      "type": "blog_post",
+      "title": "體操相關運動傷害",
+      "source_url": "https://drchenghao.blogspot.com/2023/05/blog-post.html",
+      "published": "2023-05-10",
+      "saved_paths": [
+        "website_blog/posts/2023-05-blog-post.md",
+        "website_blog/html/2023-05-blog-post.html"
+      ],
+      "content_chars": 10936,
+      "fetch_time": "2026-09-08T20:50:00+08:00",
+      "status": "ok"
+    },
+    {
+      "type": "blog_post",
+      "title": "超音波自學大補帖",
+      "source_url": "https://drchenghao.blogspot.com/2023/04/blog-post_30.html",
+      "published": "2023-04-30",
+      "saved_paths": [
+        "website_blog/posts/2023-04-blog-post_30.md",
+        "website_blog/html/2023-04-blog-post_30.html"
+      ],
+      "content_chars": 34326,
+      "fetch_time": "2026-09-08T20:50:00+08:00",
+      "status": "ok"
+    },
+    {
+      "type": "blog_post",
+      "title": "我也想當場邊醫師，我第一步該準備什麼?",
+      "source_url": "https://drchenghao.blogspot.com/2023/04/blog-post.html",
+      "published": "2023-04-20",
+      "saved_paths": [
+        "website_blog/posts/2023-04-blog-post.md",
+        "website_blog/html/2023-04-blog-post.html"
+      ],
+      "content_chars": 8526,
+      "fetch_time": "2026-09-08T20:50:00+08:00",
+      "status": "ok"
+    },
+    {
+      "type": "blog_post",
+      "title": "淺談 Paul George膝傷及落地機制的重要",
+      "source_url": "https://drchenghao.blogspot.com/2023/04/paul-george.html",
+      "published": "2023-04-10",
+      "saved_paths": [
+        "website_blog/posts/2023-04-paul-george.md",
+        "website_blog/html/2023-04-paul-george.html"
+      ],
+      "content_chars": 18377,
+      "fetch_time": "2026-09-08T20:50:00+08:00",
+      "status": "ok"
+    },
+    {
+      "type": "blog_post",
+      "title": "程皓醫師 - 家庭及運動醫學",
+      "source_url": "https://drchenghao.blogspot.com/2023/03/blog-post.html",
+      "published": "2023-03-16",
+      "saved_paths": [
+        "website_blog/posts/2023-03-blog-post.md",
+        "website_blog/html/2023-03-blog-post.html"
+      ],
+      "content_chars": 8965,
+      "fetch_time": "2026-09-08T20:50:00+08:00",
+      "status": "ok"
+    },
+    {
+      "type": "blog_image",
+      "source_url": "https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEgiyrIwwvVM22t21dY3yXypyS-_UraHZ9xdTfoTSwcnO1cb_HEFbpSGh_vlP2d_qv-jomera0A0LFFwaJaEoKHniNHeGDu505TdcGV-WrVuUiknnEcKF8CtEbG1An0man31CxpU84uQr5JfQumGrVM_yCO9N_AlFrs26betRV1KY7MMj1gLG3c6dbpG/w528-h514/%E9%A0%AD%E9%83%A8%E6%92%9E%E6%93%8A.jpg",
+      "saved_path": "website_blog/images/2023-05-20-01.jpg",
+      "belongs_to_post": "https://drchenghao.blogspot.com/2023/05/blog-post_20.html",
+      "fetch_time": "2026-09-08T20:58:00+08:00",
+      "status": "ok",
+      "note": "以 s1600 尺寸參數下載原圖（Blogger 圖床）；fbcdn 連結為文章內 Facebook 表情符號貼圖。"
+    },
+    {
+      "type": "blog_image",
+      "source_url": "https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEjPciX2dIpJD4Hyw4cRgHvOYpIlH8Pyvli0d8G-XRZ7lw8UJfNbA1lPbA5TLMNVKyYGHzH4rr8qHw--HkD9NKKfwgHvdIvGLyRlQHyoU4q3OEIVvs5-WkvjHzS2oMSQi12_PCXkqaXKbsEjIYJZd_3ipyNvhfDQSkpR29aSZRdOGpP3FrI36TowFRxd/s1600/1.jpg",
+      "saved_path": "website_blog/images/2023-05-18-01.jpg",
+      "belongs_to_post": "https://drchenghao.blogspot.com/2023/05/112.html",
+      "fetch_time": "2026-09-08T20:58:00+08:00",
+      "status": "ok",
+      "note": "以 s1600 尺寸參數下載原圖（Blogger 圖床）；fbcdn 連結為文章內 Facebook 表情符號貼圖。"
+    },
+    {
+      "type": "blog_image",
+      "source_url": "https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEhEntJj7vWwjcRGUwHfuzFzonv9fVpZgzc3Kdpc8uajULh2BLoIJ7jYYJjFTcXRlqumhPoT0UJ2AWoC-8xYKk86Z96NgPqIjXH2fE--MFjUMQebuxCN0osFUSwY55DaRTlMszh5AkdYAgdar_NElvEBswXgbP3IaxPkIKY0N5CTVrnZZVeF1cTTF8qB/s1600/2.jpg",
+      "saved_path": "website_blog/images/2023-05-18-02.jpg",
+      "belongs_to_post": "https://drchenghao.blogspot.com/2023/05/112.html",
+      "fetch_time": "2026-09-08T20:58:00+08:00",
+      "status": "ok",
+      "note": "以 s1600 尺寸參數下載原圖（Blogger 圖床）；fbcdn 連結為文章內 Facebook 表情符號貼圖。"
+    },
+    {
+      "type": "blog_image",
+      "source_url": "https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEg24brXaFPMR5DRqmExt8crzm4j2TnCsxtSrKJH4fPkP2ZuHJsUc2qWCv0XhWapTepMf3QlBaE3qHmRQD4DuIneHCKlC_pCR-p9DWGUHxgOiTfx1GvfGshWRfpIYKSyqceKlDpiQm-1kF_lieUVUI8OpSiX1Tux9vIWGRjFqvAxOiGc0OTQmsrKf-Lx/w400-h396/%E9%AB%94%E6%93%8D%E7%9B%B8%E9%97%9C%E9%81%8B%E5%8B%95%E5%82%B7%E5%AE%B32.jpg",
+      "saved_path": "website_blog/images/2023-05-10-01.jpg",
+      "belongs_to_post": "https://drchenghao.blogspot.com/2023/05/blog-post.html",
+      "fetch_time": "2026-09-08T20:58:00+08:00",
+      "status": "ok",
+      "note": "以 s1600 尺寸參數下載原圖（Blogger 圖床）；fbcdn 連結為文章內 Facebook 表情符號貼圖。"
+    },
+    {
+      "type": "blog_image",
+      "source_url": "https://static.xx.fbcdn.net/images/emoji.php/v9/t14/1.5/16/2611.png",
+      "saved_path": "website_blog/images/2023-05-10-02.png",
+      "belongs_to_post": "https://drchenghao.blogspot.com/2023/05/blog-post.html",
+      "fetch_time": "2026-09-08T20:58:00+08:00",
+      "status": "ok",
+      "note": "以 s1600 尺寸參數下載原圖（Blogger 圖床）；fbcdn 連結為文章內 Facebook 表情符號貼圖。"
+    },
+    {
+      "type": "blog_image",
+      "source_url": "https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEiQhZccBb-M1hA7msWZUSX76dkTTHZDCQVWOMkZ1NcRFKiMUVFRTuzffFnmy74qzryN5f9koqeDjY28eCvY8NXptHyhMSUfc8lO1aSK1iO6tRsaGd7Vz2iMuLPW6f0iqeTrO0Kw8Il0AclTqOeBpCxRw5ACFm_MjOC6a8iEdQrzI-ho4Z8B8Gu76veB/s1600/%E9%AB%94%E6%93%8D%E7%9B%B8%E9%97%9C%E9%81%8B%E5%8B%95%E5%82%B7%E5%AE%B33.jpg",
+      "saved_path": "website_blog/images/2023-05-10-03.jpg",
+      "belongs_to_post": "https://drchenghao.blogspot.com/2023/05/blog-post.html",
+      "fetch_time": "2026-09-08T20:58:00+08:00",
+      "status": "ok",
+      "note": "以 s1600 尺寸參數下載原圖（Blogger 圖床）；fbcdn 連結為文章內 Facebook 表情符號貼圖。"
+    },
+    {
+      "type": "blog_image",
+      "source_url": "https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEg08yY77cXetbx-tRzQsgm7kQvHsgPZMOT_nAzlGytGAfk7kAQA4GMILVtdorV92uBI89mlacdCO3Gjwh3IWpAyV3vMvuMZRV1TXepvUP7vE4G7gZpoYaw2ON2yGc7CmbHawjZnZnGq31zNinntOTd9faUlT8BjmytMPFkmumsygJIDeXOETZ9yWgo3/s1600/%E5%A0%B4%E9%82%8A.jpg",
+      "saved_path": "website_blog/images/2023-04-20-01.jpg",
+      "belongs_to_post": "https://drchenghao.blogspot.com/2023/04/blog-post.html",
+      "fetch_time": "2026-09-08T20:58:00+08:00",
+      "status": "ok",
+      "note": "以 s1600 尺寸參數下載原圖（Blogger 圖床）；fbcdn 連結為文章內 Facebook 表情符號貼圖。"
+    },
+    {
+      "type": "blog_image",
+      "source_url": "https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEiTjPRghIExbq8aX9uVdF99g60DPuZGC763pqSLLFulvlDgp4eg1dcDTAlhXGmfrJKJp11dQNZlSyJFv0Xo_-5L2iOTF7Xg9anxTobJhsJBY-wj6difgu9rZpLeScf66eHWpR6eaITQLeALlanXLUEFr87xE_pL06HyFN2byEy2H154d1u1zt-2H_vB/s1600/%E7%B6%93%E5%85%B8%E8%B3%BD.jpg",
+      "saved_path": "website_blog/images/2023-04-20-02.jpg",
+      "belongs_to_post": "https://drchenghao.blogspot.com/2023/04/blog-post.html",
+      "fetch_time": "2026-09-08T20:58:00+08:00",
+      "status": "ok",
+      "note": "以 s1600 尺寸參數下載原圖（Blogger 圖床）；fbcdn 連結為文章內 Facebook 表情符號貼圖。"
+    },
+    {
+      "type": "blog_image",
+      "source_url": "https://static.xx.fbcdn.net/images/emoji.php/v9/tbf/1.5/16/1fac0.png",
+      "saved_path": "website_blog/images/2023-04-20-03.png",
+      "belongs_to_post": "https://drchenghao.blogspot.com/2023/04/blog-post.html",
+      "fetch_time": "2026-09-08T20:58:00+08:00",
+      "status": "ok",
+      "note": "以 s1600 尺寸參數下載原圖（Blogger 圖床）；fbcdn 連結為文章內 Facebook 表情符號貼圖。"
+    },
+    {
+      "type": "blog_image",
+      "source_url": "https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEjbWW2A-dscuJ5O-1TFYBIdNpuTMCAFMjed_i9hCST0QIdk2TASlXM7qxF9SsQeVL4q1S-7RN5rCNDkUL7u-NGcPm1SKdoVTcXRvI2EVvuUzNeKT9kJo3TJ4iWq8XNfXWd6kmEHizNrr4jhxgjp744ix4SVB3V7vGhdoQLpAOSVzxSwrKXoCKbJvShM/s1600/4.jpg",
+      "saved_path": "website_blog/images/2023-04-20-04.jpg",
+      "belongs_to_post": "https://drchenghao.blogspot.com/2023/04/blog-post.html",
+      "fetch_time": "2026-09-08T20:58:00+08:00",
+      "status": "ok",
+      "note": "以 s1600 尺寸參數下載原圖（Blogger 圖床）；fbcdn 連結為文章內 Facebook 表情符號貼圖。"
+    },
+    {
+      "type": "blog_image",
+      "source_url": "https://static.xx.fbcdn.net/images/emoji.php/v9/tc5/1.5/16/1f4aa.png",
+      "saved_path": "website_blog/images/2023-04-20-05.png",
+      "belongs_to_post": "https://drchenghao.blogspot.com/2023/04/blog-post.html",
+      "fetch_time": "2026-09-08T20:58:00+08:00",
+      "status": "ok",
+      "note": "以 s1600 尺寸參數下載原圖（Blogger 圖床）；fbcdn 連結為文章內 Facebook 表情符號貼圖。"
+    },
+    {
+      "type": "blog_image",
+      "source_url": "https://static.xx.fbcdn.net/images/emoji.php/v9/t85/1.5/16/1f631.png",
+      "saved_path": "website_blog/images/2023-04-10-01.png",
+      "belongs_to_post": "https://drchenghao.blogspot.com/2023/04/paul-george.html",
+      "fetch_time": "2026-09-08T20:58:00+08:00",
+      "status": "ok",
+      "note": "以 s1600 尺寸參數下載原圖（Blogger 圖床）；fbcdn 連結為文章內 Facebook 表情符號貼圖。"
+    },
+    {
+      "type": "blog_image",
+      "source_url": "https://static.xx.fbcdn.net/images/emoji.php/v9/tfc/1.5/16/1f9b4.png",
+      "saved_path": "website_blog/images/2023-04-10-02.png",
+      "belongs_to_post": "https://drchenghao.blogspot.com/2023/04/paul-george.html",
+      "fetch_time": "2026-09-08T20:58:00+08:00",
+      "status": "ok",
+      "note": "以 s1600 尺寸參數下載原圖（Blogger 圖床）；fbcdn 連結為文章內 Facebook 表情符號貼圖。"
+    },
+    {
+      "type": "blog_image",
+      "source_url": "https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEhMiA5WQd0sveTa0XE_3iM7uN7R1y9Yfxzx5UlZB7M_2W3nQg_mUZfC5ofY-rCZCT7YuJj9Z8Giju1zvIbEEbSySESTKCbe11bCzDaWRfXJIJVEKTeSogY81FmyLdY_9A4j_JLKTbXD8m6Om0JfXmttY9WJJM6nWGmawDP2ozAU_dUtTwlvjQyvekpe/s1600/%E8%86%9D%E9%81%8E%E5%BA%A6%E4%BC%B8%E7%9B%B4.jpg",
+      "saved_path": "website_blog/images/2023-04-10-03.jpg",
+      "belongs_to_post": "https://drchenghao.blogspot.com/2023/04/paul-george.html",
+      "fetch_time": "2026-09-08T20:58:00+08:00",
+      "status": "ok",
+      "note": "以 s1600 尺寸參數下載原圖（Blogger 圖床）；fbcdn 連結為文章內 Facebook 表情符號貼圖。"
+    },
+    {
+      "type": "blog_image",
+      "source_url": "https://static.xx.fbcdn.net/images/emoji.php/v9/t7d/1.5/16/1f9b5.png",
+      "saved_path": "website_blog/images/2023-04-10-04.png",
+      "belongs_to_post": "https://drchenghao.blogspot.com/2023/04/paul-george.html",
+      "fetch_time": "2026-09-08T20:58:00+08:00",
+      "status": "ok",
+      "note": "以 s1600 尺寸參數下載原圖（Blogger 圖床）；fbcdn 連結為文章內 Facebook 表情符號貼圖。"
+    },
+    {
+      "type": "blog_image",
+      "source_url": "https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEgWlhwCLCmrwRV4Fn_y29OdllT2PSgjkVp3ilJmwU1uLHSUSmUofKG6fVKuo5QHheTlXBu3BcHOAdUBKDtm7fRVanZoc-wjhqnwpVPYQcqTQKVdwXReeVZoGzablAEJTfTIvB0K7qHHVlNEesu26cQyrktx6ZsejQ80QC6VcluwfQdAAxqXlpruFchp/s1600/%E5%89%8D%E5%8D%81%E5%AD%97%E9%9F%8C%E5%B8%B6.jpg",
+      "saved_path": "website_blog/images/2023-04-10-05.jpg",
+      "belongs_to_post": "https://drchenghao.blogspot.com/2023/04/paul-george.html",
+      "fetch_time": "2026-09-08T20:58:00+08:00",
+      "status": "ok",
+      "note": "以 s1600 尺寸參數下載原圖（Blogger 圖床）；fbcdn 連結為文章內 Facebook 表情符號貼圖。"
+    },
+    {
+      "type": "blog_image",
+      "source_url": "https://static.xx.fbcdn.net/images/emoji.php/v9/t7/1.5/16/26f9.png",
+      "saved_path": "website_blog/images/2023-04-10-06.png",
+      "belongs_to_post": "https://drchenghao.blogspot.com/2023/04/paul-george.html",
+      "fetch_time": "2026-09-08T20:58:00+08:00",
+      "status": "ok",
+      "note": "以 s1600 尺寸參數下載原圖（Blogger 圖床）；fbcdn 連結為文章內 Facebook 表情符號貼圖。"
+    },
+    {
+      "type": "blog_image",
+      "source_url": "https://static.xx.fbcdn.net/images/emoji.php/v9/t11/1.5/16/1f3c0.png",
+      "saved_path": "website_blog/images/2023-04-10-07.png",
+      "belongs_to_post": "https://drchenghao.blogspot.com/2023/04/paul-george.html",
+      "fetch_time": "2026-09-08T20:58:00+08:00",
+      "status": "ok",
+      "note": "以 s1600 尺寸參數下載原圖（Blogger 圖床）；fbcdn 連結為文章內 Facebook 表情符號貼圖。"
+    },
+    {
+      "type": "blog_image",
+      "source_url": "https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEg2ArU2GYK8xmWuWDasuF0ZU6a4QW14Cf9lkxm0eMR8q0q_Tg2yAfnSPMBWeA_BDxf0Z0569cXPBtzDZ65X8Q94-RXmzHivWYtcueKnrMdPivjqg67xg_zh0voOMVXIaNrcPy1205zfHtfsmeIQFd_TJiyPwg-CphWfd7NdatGf9a7yPGYfdr70GE73/s1600/%E6%B7%B1%E8%B9%B22.jpg",
+      "saved_path": "website_blog/images/2023-04-10-08.jpg",
+      "belongs_to_post": "https://drchenghao.blogspot.com/2023/04/paul-george.html",
+      "fetch_time": "2026-09-08T20:58:00+08:00",
+      "status": "ok",
+      "note": "以 s1600 尺寸參數下載原圖（Blogger 圖床）；fbcdn 連結為文章內 Facebook 表情符號貼圖。"
+    },
+    {
+      "type": "blog_image",
+      "source_url": "https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEgwvknTgkqjsTovvxZoKxsp6SIX-vPYyktG3W85jOZNT_Tu41DRnLCONCUsu7zW6JS5kn_nE2gznUkYHHTZWANCbNBztN6SnzIzesecVUW941WZLw63e9Uxo1bFC8-5uVuiKJEnqsCmC-stmyOiATo8JfcZkGJft3t2yHKFrdSkOca7gRPaDiNmtWIU/s1600/1.jpg",
+      "saved_path": "website_blog/images/2023-03-16-01.jpg",
+      "belongs_to_post": "https://drchenghao.blogspot.com/2023/03/blog-post.html",
+      "fetch_time": "2026-09-08T20:58:00+08:00",
+      "status": "ok",
+      "note": "以 s1600 尺寸參數下載原圖（Blogger 圖床）；fbcdn 連結為文章內 Facebook 表情符號貼圖。"
+    },
+    {
+      "type": "blog_image",
+      "source_url": "https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEjgxKlFswj1tFmxiMsBZoQCTiNbcmtzKnS_O8eHZN-rqIYA3m10TFDUqIE45OLzhGvS36aGtdiiCowVLME65Nx0k0aiYVRbZcG2fHKC2Yu820-vp_unrwmwW8cZuuXRNdxieP-CsoSWot1PApEJtQQO_2uy-URqgy71gN5AEIyttoCDztCRn9eJtiFc/s1600/3.jpg",
+      "saved_path": "website_blog/images/2023-03-16-02.jpg",
+      "belongs_to_post": "https://drchenghao.blogspot.com/2023/03/blog-post.html",
+      "fetch_time": "2026-09-08T20:58:00+08:00",
+      "status": "ok",
+      "note": "以 s1600 尺寸參數下載原圖（Blogger 圖床）；fbcdn 連結為文章內 Facebook 表情符號貼圖。"
+    },
+    {
+      "source_url": "https://www.landseedhospital.com.tw/tw/team/team_detail/%E5%AE%B6%E5%BA%AD%E9%86%AB%E5%AD%B8%E7%A7%91/%E7%A8%8B%E7%9A%93",
+      "html": "hospital_profiles/landseed_chenghao.html",
+      "md": "hospital_profiles/landseed_chenghao.md",
+      "fetch_time": "2026-09-08T21:01:00+08:00",
+      "status": "ok",
+      "note": "聯新國際醫院醫療團隊頁；含現職/學歷/經歷/主治項目/會員/語言。門診時段為動態載入，靜態頁無時段表。"
+    },
+    {
+      "source_url": "http://www.panshin.com.tw/panshin/policlinic/policlinic0301.php?divCode=3411",
+      "html": "hospital_profiles/panshin_div3411.html",
+      "md": "hospital_profiles/panshin_div3411.md",
+      "fetch_time": "2026-09-08T21:01:00+08:00",
+      "status": "ok",
+      "note": "板新醫院（聯新體系）門診時間表/醫師介紹頁，程皓列於『內科(運醫)/家庭醫學科』；含學經歷、主治項目、賽事經歷。"
+    },
+    {
+      "source_url": "http://www.panshin.com.tw/panshin/files/department/drPhoto/013775.jpg",
+      "saved_path": "hospital_profiles/panshin_chenghao_photo.jpg",
+      "fetch_time": "2026-09-08T21:06:00+08:00",
+      "status": "ok",
+      "note": "板新頁面中程皓醫師照片原圖（2051x2735 JPEG）。"
+    },
+    {
+      "source_url": "https://memedia.com.tw/finddoc-755.html",
+      "html": "hospital_profiles/memedia_finddoc755.html",
+      "md": "hospital_profiles/memedia_finddoc755.md",
+      "fetch_time": "2026-09-08T21:01:00+08:00",
+      "status": "ok",
+      "note": "ME美醫誌找醫師頁；含經歷（聯新運動醫學科主治、板新主治、樂天桃猿隊醫等）與賽事經歷。"
+    },
+    {
+      "source_url": "https://doctoreasyfind.com/doctor/%E7%A8%8B%E7%9A%93/%E6%A1%83%E5%9C%92%E5%B8%82/%E5%AE%B6%E5%BA%AD%E9%86%AB%E5%AD%B8%E7%A7%91",
+      "html": "hospital_profiles/doctoreasyfind_chenghao.html",
+      "md": "hospital_profiles/doctoreasyfind_chenghao.md",
+      "fetch_time": "2026-09-08T21:01:00+08:00",
+      "status": "ok",
+      "note": "醫生查彙整頁（宣稱來源衛福部）：桃園市、西醫師、家庭醫學科專科。"
+    },
+    {
+      "type": "youtube_video",
+      "source_url": "https://www.youtube.com/watch?v=V2mLhFtZed0",
+      "title": "如何擺脫【肌肉關節疼痛】?!",
+      "channel": "聯新國際醫院Landseed Hospital",
+      "saved_path": "youtube/videos.json",
+      "fetch_time": "2026-09-08T21:10:00+08:00",
+      "status": "ok",
+      "note": "聯新國際醫院官方頻道影片，介紹程皓醫師的運動醫學科；影片說明欄『🎯諮詢程皓醫師』並有 #程皓 hashtag，與程皓直接相關。"
+    },
+    {
+      "type": "youtube_video",
+      "source_url": "https://www.youtube.com/watch?v=VpVQ1n4Ojbg",
+      "title": "瘦瘦針詳解，猛健樂、胰妥讚、週纖達全比較！瘦瘦筆成分、副作用揭密ft.程皓醫師【ME美醫誌】",
+      "channel": "ME Media 美醫誌",
+      "saved_path": "youtube/videos.json",
+      "fetch_time": "2026-09-08T21:10:00+08:00",
+      "status": "ok",
+      "note": "ME美醫誌（memedia.com.tw）節目影片，程皓醫師以來賓（ft.）身分參與，標題明確標示『ft.程皓醫師』。"
+    },
+    {
+      "type": "youtube_video",
+      "source_url": "https://www.youtube.com/watch?v=x6AR0QYf7ac",
+      "title": "【血尿不可輕忽】詹皓程醫師-成大e學堂",
+      "channel": "NCKUH成大醫院",
+      "saved_path": "youtube/videos.json",
+      "fetch_time": "2026-09-08T21:10:00+08:00",
+      "status": "ok",
+      "note": "非程皓醫師：此影片為成大醫院『詹皓程』醫師（姓名與程皓為字序不同之另一人），主題為血尿（泌尿科），與復健/家醫/運動醫學之程皓無關。"
+    },
+    {
+      "type": "youtube_video",
+      "source_url": "https://www.youtube.com/watch?v=Q17y3-mixGA",
+      "title": null,
+      "channel": null,
+      "saved_path": "youtube/videos.json",
+      "fetch_time": "2026-09-08T21:10:00+08:00",
+      "status": "not_found",
+      "note": "oEmbed 回 Not Found；影片頁 title 為空，影片已移除/私人/ID 無效。"
+    },
+    {
+      "type": "youtube_search",
+      "source_url": "https://www.youtube.com/results?search_query=%E7%A8%8B%E7%9A%93%E9%86%AB%E5%B8%AB+%E5%A5%BD%E5%8B%95%E4%BA%BA%E7%94%9F",
+      "fetch_time": "2026-09-08T21:13:00+08:00",
+      "status": "ok",
+      "saved_path": "youtube/videos.json",
+      "note": "查無『程皓醫師。好動人生』個人 YouTube 頻道；搜尋結果僅出現無關頻道。"
+    },
+    {
+      "type": "blog_embedded_youtube_links",
+      "source_url": "https://drchenghao.blogspot.com/2023/04/blog-post_30.html",
+      "saved_path": "youtube/videos.json",
+      "fetch_time": "2026-09-08T21:15:00+08:00",
+      "status": "ok",
+      "note": "『超音波自學大補帖』文章內 16 支推薦學習影片連結（非程皓本人上傳），清單存於 youtube/videos.json 之 blog_embedded_videos。"
+    }
+  ]
+}

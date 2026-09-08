@@ -1,0 +1,142 @@
+{
+  "collected_at": "2026-09-08T21:15:00+08:00",
+  "collector": "website-route agent",
+  "summary": "程皓醫師（聯新國際醫院）查無個人 YouTube 頻道。任務給定 4 支影片中：1 支為聯新國際醫院官方頻道介紹其運動醫學科、1 支為 ME美醫誌來賓影片、1 支屬另一位醫師『詹皓程』（誤植）、1 支已失效。另從其部落格『超音波自學大補帖』文章收錄 16 支內嵌推薦影片連結。",
+  "known_videos": [
+    {
+      "video_id": "V2mLhFtZed0",
+      "url": "https://www.youtube.com/watch?v=V2mLhFtZed0",
+      "oembed_status": "ok",
+      "title": "如何擺脫【肌肉關節疼痛】?!",
+      "channel": "聯新國際醫院Landseed Hospital",
+      "channel_url": "https://www.youtube.com/@LandseedInternationalHospital",
+      "thumbnail_url": "https://i.ytimg.com/vi/V2mLhFtZed0/hqdefault.jpg",
+      "belongs_to_chenghao_own_channel": false,
+      "relevance": "聯新國際醫院官方頻道影片，介紹程皓醫師的運動醫學科；影片說明欄『🎯諮詢程皓醫師』並有 #程皓 hashtag，與程皓直接相關。",
+      "note": "從影片頁 HTML 抽得 shortDescription 確認內容；頁面 HTTP 200。"
+    },
+    {
+      "video_id": "VpVQ1n4Ojbg",
+      "url": "https://www.youtube.com/watch?v=VpVQ1n4Ojbg",
+      "oembed_status": "ok",
+      "title": "瘦瘦針詳解，猛健樂、胰妥讚、週纖達全比較！瘦瘦筆成分、副作用揭密ft.程皓醫師【ME美醫誌】",
+      "channel": "ME Media 美醫誌",
+      "channel_url": "https://www.youtube.com/@MeMedia",
+      "thumbnail_url": "https://i.ytimg.com/vi/VpVQ1n4Ojbg/hqdefault.jpg",
+      "belongs_to_chenghao_own_channel": false,
+      "relevance": "ME美醫誌（memedia.com.tw）節目影片，程皓醫師以來賓（ft.）身分參與，標題明確標示『ft.程皓醫師』。",
+      "note": "與 hospital_profiles/memedia_finddoc755.html 為同一媒體。"
+    },
+    {
+      "video_id": "x6AR0QYf7ac",
+      "url": "https://www.youtube.com/watch?v=x6AR0QYf7ac",
+      "oembed_status": "ok",
+      "title": "【血尿不可輕忽】詹皓程醫師-成大e學堂",
+      "channel": "NCKUH成大醫院",
+      "channel_url": "https://www.youtube.com/@nckuh9916",
+      "thumbnail_url": "https://i.ytimg.com/vi/x6AR0QYf7ac/hqdefault.jpg",
+      "belongs_to_chenghao_own_channel": false,
+      "relevance": "非程皓醫師：此影片為成大醫院『詹皓程』醫師（姓名與程皓為字序不同之另一人），主題為血尿（泌尿科），與復健/家醫/運動醫學之程皓無關。",
+      "note": "判斷為任務清單中同名誤植項目。"
+    },
+    {
+      "video_id": "Q17y3-mixGA",
+      "url": "https://www.youtube.com/watch?v=Q17y3-mixGA",
+      "oembed_status": "not_found",
+      "title": null,
+      "channel": null,
+      "belongs_to_chenghao_own_channel": null,
+      "relevance": "無法確認：oEmbed 回應『Not Found』；影片頁 HTTP 200 但 <title> 為空，影片已移除/轉私人或 ID 無效。",
+      "note": "不下載影片檔，僅記錄狀態。"
+    }
+  ],
+  "blog_embedded_videos": {
+    "source_post": "https://drchenghao.blogspot.com/2023/04/blog-post_30.html",
+    "source_post_title": "超音波自學大補帖",
+    "note": "文章內以超連結分享的骨骼肌肉超音波自學資源影片（非程皓本人上傳，為其推薦之學習資源）。",
+    "count": 16,
+    "videos": [
+      {
+        "video_id": "6auX64TGPUc",
+        "url": "https://www.youtube.com/watch?v=6auX64TGPUc",
+        "found_via": "https://www.youtube.com/watch?v=6auX64TGPUc&amp;fbclid=IwAR16fRO3X390UH6VQiTiscNtfo2uDN_MqvwmfA6qWsKB4Hk2hoGxBzGoNIw"
+      },
+      {
+        "video_id": "79cWeL_cvsw",
+        "url": "https://www.youtube.com/watch?v=79cWeL_cvsw",
+        "found_via": "https://www.youtube.com/watch?v=79cWeL_cvsw"
+      },
+      {
+        "video_id": "8Ho0ihXLEYA",
+        "url": "https://www.youtube.com/watch?v=8Ho0ihXLEYA",
+        "found_via": "https://www.youtube.com/watch?v=8Ho0ihXLEYA"
+      },
+      {
+        "video_id": "E_ydH_Slt2o",
+        "url": "https://www.youtube.com/watch?v=E_ydH_Slt2o",
+        "found_via": "https://www.youtube.com/watch?v=E_ydH_Slt2o&amp;t=544s&amp;fbclid=IwAR3mP2qx8ZlZfp9pJqddjZMF9-O7C4gVqFN-TUhF8NghB-NGxqmuBV0PXRI"
+      },
+      {
+        "video_id": "G7ATOjferY8",
+        "url": "https://www.youtube.com/watch?v=G7ATOjferY8",
+        "found_via": "https://www.youtube.com/watch?v=G7ATOjferY8"
+      },
+      {
+        "video_id": "Sn99ZFvT6cI",
+        "url": "https://www.youtube.com/watch?v=Sn99ZFvT6cI",
+        "found_via": "https://www.youtube.com/watch?v=Sn99ZFvT6cI"
+      },
+      {
+        "video_id": "SsgIzzVY1do",
+        "url": "https://www.youtube.com/watch?v=SsgIzzVY1do",
+        "found_via": "https://www.youtube.com/watch?v=SsgIzzVY1do&amp;t=1250s"
+      },
+      {
+        "video_id": "YS2ilW-hLro",
+        "url": "https://www.youtube.com/watch?v=YS2ilW-hLro",
+        "found_via": "https://www.youtube.com/watch?v=YS2ilW-hLro"
+      },
+      {
+        "video_id": "eglplbWaqxA",
+        "url": "https://www.youtube.com/watch?v=eglplbWaqxA",
+        "found_via": "https://www.youtube.com/watch?v=eglplbWaqxA&amp;t=1012s&amp;fbclid=IwAR2EG0fQMbEddnj2muaYKiu8HhrEsygjGJ2TWJ-daTWD65tp3itqTg1CfkE"
+      },
+      {
+        "video_id": "h8kyW4dOcok",
+        "url": "https://www.youtube.com/watch?v=h8kyW4dOcok",
+        "found_via": "https://www.youtube.com/watch?v=h8kyW4dOcok"
+      },
+      {
+        "video_id": "oxSdpQM7P2g",
+        "url": "https://www.youtube.com/watch?v=oxSdpQM7P2g",
+        "found_via": "https://www.youtube.com/watch?v=oxSdpQM7P2g&amp;fbclid=IwAR2sI38osdPS9TmbuIrGv3OZmBnRh8Kcm6a_LiOFQFDc0-2-zonwrLNY4Zo"
+      },
+      {
+        "video_id": "qecZx2jIr0Y",
+        "url": "https://www.youtube.com/watch?v=qecZx2jIr0Y",
+        "found_via": "https://www.youtube.com/watch?v=qecZx2jIr0Y"
+      },
+      {
+        "video_id": "s19fUK-0uho",
+        "url": "https://www.youtube.com/watch?v=s19fUK-0uho",
+        "found_via": "https://www.youtube.com/watch?v=s19fUK-0uho"
+      },
+      {
+        "video_id": "sNTze0Mqsbo",
+        "url": "https://www.youtube.com/watch?v=sNTze0Mqsbo",
+        "found_via": "https://www.youtube.com/watch?v=sNTze0Mqsbo"
+      },
+      {
+        "video_id": "uq2Rsh5HaNw",
+        "url": "https://www.youtube.com/watch?v=uq2Rsh5HaNw",
+        "found_via": "https://www.youtube.com/watch?v=uq2Rsh5HaNw&amp;fbclid=IwAR131iwybvnQ9wS3Ap0IILBa_HQP60vN-jig20kx0raCjZcPguhnZQMrErs"
+      },
+      {
+        "video_id": "xpniKrieUB8",
+        "url": "https://www.youtube.com/watch?v=xpniKrieUB8",
+        "found_via": "https://www.youtube.com/watch?v=xpniKrieUB8&amp;t=71s"
+      }
+    ]
+  },
+  "conclusion": "4 支已知影片均非『程皓本人頻道』所屬；YouTube 上未搜尋到名為『程皓醫師。好動人生』之頻道（搜尋結果僅出現無關頻道）。"
+}

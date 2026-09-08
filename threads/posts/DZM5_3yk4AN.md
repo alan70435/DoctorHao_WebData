@@ -1,0 +1,31 @@
+---
+source_url: https://www.threads.com/@drchenghao/post/DZM5_3yk4AN
+fetched_at: 2026-09-08T22:40:47+08:00
+posted_at: 2026-06-05T18:57:14+08:00
+account: drchenghao (程皓醫師｜好動人生。 運動與家庭醫學)
+media_type: text
+like_count: 2346
+reply_count: 72
+repost_count: 78
+quote_count: 2
+reshare_count: 426
+is_reply: false
+image_count: 0
+---
+
+# Threads 貼文 DZM5_3yk4AN
+
+- 帳號: [@drchenghao](https://www.threads.com/@drchenghao)（程皓醫師｜好動人生。 運動與家庭醫學，已認證）
+- 貼文 URL: https://www.threads.com/@drchenghao/post/DZM5_3yk4AN
+- 發文時間: 2026-06-05T18:57:14+08:00（UTC+8，時間戳 1780657034）
+- 類型: text
+- 愛心數: 2346
+- 回覆數: 72
+- 轉發數: 78
+- 引用數: 2
+
+## 貼文文字
+
+身為運動醫學科醫師，我想說，
+跳繩是很不錯的運動，但跳前你可以先知道..
+
