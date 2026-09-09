@@ -2,6 +2,23 @@
 
 版本規則見 `docs/06-design-versions.md`。每個版本對應 git tag `design-vX.Y.Z`。
 
+## design-v1.2.0 — 2026-09-10
+
+**主題：合併另一個 AI 推送的「醫學圖解與 3D 素材庫」，並加上顯示開關。**
+
+新增（來自遠端 `main`，由 CI bot 產生）
+- `public/medical-visuals/`：52 篇文章各 6 個靜態圖（封面 1600/800/480、SVG＋WebP 圖卡、OG 分享圖）、47 組 GLB 3D 模型與預覽、膝屈曲 MP4；`src/data/medical-visuals.json` 資料表。
+- `MedicalVisual.astro`／`MedicalModel.astro`：文章頁「醫學圖解」區塊（三點解說、注意事項、可下載圖卡、按下按鈕才載入的 `@google/model-viewer` 3D 檢視器）。
+- `/medical-visuals/` 圖庫索引頁。
+
+本版整合調整
+- `src/data/site.js` 新增 `MEDICAL_VISUALS` 開關：`covers`（3D 渲染圖作為無照片文章的封面，預設開）、`section`（醫學圖解區塊位置，預設 `'after'`＝內文之後；原整合為內文之前）、`galleryIndexable`（預設 false：圖庫頁 noindex 並排除於 sitemap，待醫師審閱通過再開）。
+- 封面優先順序統一為：frontmatter 真實照片 → GPT 生成圖（`src/assets/generated/`）→ 3D 醫學示意圖 → 分類幾何封面。
+- 所有 3D 素材維持原標記 `clinician-review-pending`（尚待醫師審閱），前台顯示「示意草稿・尚待醫師審閱」。
+
+注意
+- `.github/workflows/medical-visuals.yml` 會在 `main` 上的文章、ArticleCard、ArticleLayout 等檔案變動時重建素材並由 bot 自動 commit 到 `main`；推送前請先 `git pull`。
+
 ## design-v1.1.0 — 2026-09-10
 
 **主題：整合 SVG 視覺素材包與醫學解說圖，建立生成圖片放置區。**

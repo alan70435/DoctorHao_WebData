@@ -70,7 +70,19 @@ website/
 
 ## 外觀版本控制
 
-網站外觀以 `design-vX.Y.Z` 版本追蹤（目前 **v1.1.0**；第一版本為 `design-v1.0.0`）。規則與步驟見 `docs/06-design-versions.md`，紀錄見 `CHANGELOG.md`。每頁 `<meta name="design-version">` 會輸出目前版本。
+網站外觀以 `design-vX.Y.Z` 版本追蹤（目前 **v1.2.0**；第一版本為 `design-v1.0.0`）。規則與步驟見 `docs/06-design-versions.md`，紀錄見 `CHANGELOG.md`。每頁 `<meta name="design-version">` 會輸出目前版本。
+
+## 醫學圖解與 3D 素材庫（待醫師審閱）
+
+`public/medical-visuals/` 與 `MedicalVisual.astro` 由另一個 AI 透過 CI 產生（見 `docs/06-medical-visuals.md`、`docs/07-medical-visual-review.md`）。顯示方式集中在 `src/data/site.js` 的 `MEDICAL_VISUALS`：
+
+| 開關 | 預設 | 說明 |
+|---|---|---|
+| `covers` | `true` | 無真實照片、無 GPT 生成圖的文章，以 3D 渲染圖作封面；設 `false` 回到分類幾何封面 |
+| `section` | `'after'` | 文章頁「醫學圖解」區塊放在內文之後；可改 `'before'` 或 `'off'` |
+| `galleryIndexable` | `false` | `/medical-visuals/` 圖庫頁 noindex 且不列入 sitemap；醫師審閱通過後改 `true` |
+
+注意：`.github/workflows/medical-visuals.yml` 會在文章或相關元件變動並推送到 `main` 後，由 GitHub Actions bot 重建素材並自動 commit；本機推送前請先 `git pull`。
 
 ## 生成圖片（GPT Image）工作流程
 

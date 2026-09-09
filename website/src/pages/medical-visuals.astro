@@ -3,10 +3,11 @@ import BaseLayout from '@/layouts/BaseLayout.astro';
 import MedicalModel from '@/components/MedicalModel.astro';
 import { medicalVisuals } from '@/lib/medical-visuals';
 import { categories } from '@/data/categories';
+import { MEDICAL_VISUALS } from '@/data/site.js';
 const visuals = Object.values(medicalVisuals.articles);
 const motion = medicalVisuals.models['knee-motion'];
 ---
-<BaseLayout title="醫學圖解與 3D 素材" description="程皓醫師網站文章的原創 3D 示意素材：逐篇圖解、GLB 模型與膝屈曲示意短片。素材尚待醫師審閱，不是診斷影像。">
+<BaseLayout title="醫學圖解與 3D 素材" description="程皓醫師網站文章的原創 3D 示意素材：逐篇圖解、GLB 模型與膝屈曲示意短片。素材尚待醫師審閱，不是診斷影像。" noindex={!MEDICAL_VISUALS.galleryIndexable}>
   <div class="visual-library container">
     <header class="visual-library__header">
       <p class="visual-library__eyebrow">程皓醫師・好動人生 / MEDICAL VISUAL LIBRARY</p>

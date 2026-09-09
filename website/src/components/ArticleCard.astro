@@ -6,6 +6,7 @@ import Icon from './Icon.astro';
 import { categories } from '@/data/categories';
 import { formatDate, isoDate, type Article } from '@/lib/articles';
 import { generatedArticleCover } from '@/lib/generated';
+import { MEDICAL_VISUALS } from '@/data/site.js';
 
 interface Props {
   article: Article;
@@ -16,10 +17,10 @@ interface Props {
 }
 const { article, variant = 'default', headingLevel: H = 'h3', loading = 'lazy' } = Astro.props;
 const { data } = article;
-const visual = getMedicalVisual(article.id);
+/** 封面優先順序：frontmatter 真實照片 → 生成圖（src/assets/generated/articles/{slug}）→ 3D 醫學示意圖（可由 site.js 關閉）→ 分類幾何封面 */
+const visual = MEDICAL_VISUALS.covers ? getMedicalVisual(article.id) : undefined;
 const cat = categories[data.category];
 const href = `/articles/${article.id}/`;
-/** 封面優先順序：frontmatter 真實照片 → 生成圖（src/assets/generated/articles/{slug}）→ 分類幾何封面 */
 const cover = data.cover ?? generatedArticleCover(article.id);
 ---
 
