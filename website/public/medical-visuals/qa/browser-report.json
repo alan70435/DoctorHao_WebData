@@ -1,0 +1,27 @@
+{
+  "status": "passed",
+  "articleRoutes": 52,
+  "glbModels": 47,
+  "gltfErrors": 0,
+  "gltfWarnings": 0,
+  "browser": "Chromium / software WebGL",
+  "widths": [
+    375,
+    1440
+  ],
+  "tests": [
+    "52 article routes",
+    "no eager GLB downloads",
+    "3D load and rotation/reset",
+    "static fallback",
+    "no-JS poster",
+    "mobile overflow",
+    "gallery filter",
+    "motion slider",
+    "explicit play/pause",
+    "reduced-motion default pause",
+    "axe serious/critical issues",
+    "no local HTTP or JS errors"
+  ],
+  "consoleErrors": []
+}

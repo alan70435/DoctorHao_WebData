@@ -7,6 +7,8 @@ import ArticleCard from '@/components/ArticleCard.astro';
 import Callout from '@/components/Callout.astro';
 import Icon from '@/components/Icon.astro';
 import CategoryCover from '@/components/CategoryCover.astro';
+import MedicalVisual from '@/components/MedicalVisual.astro';
+import { getMedicalVisual } from '@/lib/medical-visuals';
 import { categories } from '@/data/categories';
 import { topicById } from '@/data/topics';
 import { doctor } from '@/data/doctor';
@@ -18,6 +20,7 @@ interface Props {
 }
 const { article } = Astro.props;
 const { data } = article;
+const visual = getMedicalVisual(article.id);
 const cat = categories[data.category];
 const related = await getRelatedArticles({ tags: data.tags, exclude: article.id, limit: 3 });
 const minutes = readingMinutes(article.body);
@@ -33,6 +36,8 @@ let ogImage;
 if (data.cover) {
   const og = await getImage({ src: data.cover, width: 1200, height: 630, fit: 'cover', format: 'jpg' });
   ogImage = { src: og.src, width: 1200, height: 630, alt: data.coverAlt ?? data.title };
+} else if (visual) {
+  ogImage = { src: visual.og, width: 1200, height: 630, alt: visual.alt };
 }
 
 const articleLd = {
@@ -88,6 +93,8 @@ const articleLd = {
               priority
               class="article__cover-img"
             />
+          ) : visual ? (
+            <img src={visual.cover} srcset={`${visual.coverSmall} 480w, ${visual.coverMedium} 800w, ${visual.cover} 1600w`} sizes="(min-width: 900px) 860px, 96vw" width="1600" height="900" alt={visual.alt} loading="eager" fetchpriority="high" decoding="async" class="article__cover-img" />
           ) : (
             <CategoryCover category={data.category} seed={article.id} class="article__cover-generated" />
           )
@@ -96,6 +103,7 @@ const articleLd = {
     </header>
 
     <div class="container container--narrow article__body">
+      {visual && <MedicalVisual visual={visual} />}
       <div class="prose">
         <slot />
       </div>

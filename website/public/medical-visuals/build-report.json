@@ -1,0 +1,15 @@
+{
+  "articles": 52,
+  "models": 47,
+  "perArticleFormats": [
+    "cover.webp",
+    "cover-800.webp",
+    "cover-480.webp",
+    "explain.svg",
+    "explain.webp",
+    "og.jpg"
+  ],
+  "reviewStatus": "clinician-review-pending",
+  "sourceMarkdownPreserved": true,
+  "totalAssetBytes": 33667865
+}
