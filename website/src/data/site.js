@@ -12,7 +12,7 @@ export const LOCALE = 'zh_TW';
  * MAJOR：版面／風格重大改版；MINOR：視覺素材或區塊調整；PATCH：微調。
  * 每次變更外觀請同步更新此值、CHANGELOG.md，並建立 git tag `design-vX.Y.Z`。
  */
-export const DESIGN_VERSION = '1.2.0';
+export const DESIGN_VERSION = '1.3.0';
 
 /**
  * 醫學圖解與 3D 素材（public/medical-visuals/，由另一個 AI 產生，狀態 clinician-review-pending）的顯示開關。

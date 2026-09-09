@@ -12,7 +12,7 @@
 
 ## 未完成／不能宣稱通過的項目
 
-- GPT Image 2.5 生成：本對話未提供可呼叫工具，沒有任何圖片生成 API 請求。
+- GPT Image 2.5 生成：未使用。2026-09-10 改以 xAI Imagine 依同一批提示詞產出 65 張編輯靜物（64 張自動啟用、BMA 1 張暫存 `_hold`）。見 `GENERATION.md`。
 - 完整 Astro production build：未執行。容器無法解析 GitHub 主機，無法 clone 完整專案；檔案透過 GitHub 連接工具讀取及提交。
 - 真實瀏覽器桌機／手機檢查：Playwright 預設瀏覽器檔案不存在；使用系統 Chromium 後，file:// 與本機 HTTP 預覽均被環境政策拒絕（ERR_BLOCKED_BY_ADMINISTRATOR），因此沒有完成瀏覽器截圖、互動、水平溢出或實際手機版測試。
 - 本機完整來源檔案覆蓋比對：隔離素材包不包含原始文章，因此 validator 跳過此項；在完整 repo 執行時會檢查 52 個檔案路徑是否完全吻合。

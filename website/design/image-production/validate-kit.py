@@ -58,8 +58,16 @@ def main() -> None:
               for key in ('sports-injury', 'weight-management', 'training')}
     require(counts == {'sports-injury': 27, 'weight-management': 13, 'training': 12},
             'Article category counts differ from source inventory')
-    require(spec['gptImageOutputCount'] == 0 and spec['actualGenerationModel'] is None,
-            'This delivery must not claim GPT image outputs')
+    require(spec.get('gptImageOutputCount', 0) == 0,
+            'Do not claim GPT Image outputs unless GPT Image 2.5 was actually used')
+    generated_root = WEBSITE / 'src/assets/generated'
+    imagine_count = spec.get('imagineOutputCount', 0)
+    if generated_root.exists() and imagine_count:
+        live = {p for p in generated_root.rglob('*.webp') if '_hold' not in p.parts}
+        hold = {p for p in generated_root.rglob('*.webp') if '_hold' in p.parts}
+        require(len(live) == spec.get('liveEnabledCount', 0), 'Live generated WebP count differs from spec')
+        require(len(hold) == spec.get('holdCount', 0), 'Hold generated WebP count differs from spec')
+        require(len(live) + len(hold) == imagine_count, 'imagineOutputCount does not match files on disk')
     source_dir = WEBSITE / 'src/content/articles'
     parity = 'skipped: source directory not included in isolated kit'
     if source_dir.exists():
@@ -68,7 +76,12 @@ def main() -> None:
         parity = 'passed: all current article paths covered'
     report = {'svgAssets': len(files), 'svgChecks': 'passed', 'briefCount': 65,
               'articleBriefs': 52, 'articleCategoryCounts': counts, 'articleSourceParity': parity,
-              'gptImageOutputs': 0, 'astroProductionBuild': 'not run by this validator'}
+              'gptImageOutputs': 0,
+              'imagineOutputs': spec.get('imagineOutputCount', 0),
+              'liveGeneratedWebp': spec.get('liveEnabledCount', 0),
+              'holdGeneratedWebp': spec.get('holdCount', 0),
+              'actualGenerationModel': spec.get('actualGenerationModel'),
+              'astroProductionBuild': 'not run by this validator'}
     print(json.dumps(report, ensure_ascii=False, indent=2))
 
 

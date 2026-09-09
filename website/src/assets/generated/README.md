@@ -14,4 +14,5 @@
 - 文章 slug 即 `src/content/articles/` 的檔名（不含 `.md`）。
 - 若文章 frontmatter 已有 `cover`（真實照片），仍以 frontmatter 為優先。
 - 提示詞與逐張規格：`design/image-production/`（`QUEUE.md`、`spec.json`、`articles-01/02.json`、`supplemental.json`）；對應表：`design/image-production/PLACEMENT.md`。
-- BMA 治療圖在服務確認前請勿上線（見 `docs/05-todo-for-owner.md` B1）。
+- BMA 治療圖已生成但放在 `treatments/_hold/bma.webp`，服務確認前不要移到 `treatments/bma.webp`（見 `docs/05-todo-for-owner.md` B1）。
+- 目前已放入：文章封面 52、治療主圖 3（葡萄糖／PRP／體重管理）、分類橫幅 3、裝飾背景 6。生成紀錄見 `design/image-production/GENERATION.md`。

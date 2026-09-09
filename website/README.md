@@ -70,7 +70,7 @@ website/
 
 ## 外觀版本控制
 
-網站外觀以 `design-vX.Y.Z` 版本追蹤（目前 **v1.2.0**；第一版本為 `design-v1.0.0`）。規則與步驟見 `docs/06-design-versions.md`，紀錄見 `CHANGELOG.md`。每頁 `<meta name="design-version">` 會輸出目前版本。
+網站外觀以 `design-vX.Y.Z` 版本追蹤（目前 **v1.3.0**；第一版本為 `design-v1.0.0`）。規則與步驟見 `docs/06-design-versions.md`，紀錄見 `CHANGELOG.md`。每頁 `<meta name="design-version">` 會輸出目前版本。
 
 ## 醫學圖解與 3D 素材庫（待醫師審閱）
 
