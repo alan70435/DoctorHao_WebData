@@ -132,6 +132,14 @@ def publish(root,out,archive,manifest,integrate=True):
     docs=root/'website/docs/08-ultrasound-atlas.md';docs.parent.mkdir(parents=True,exist_ok=True)
     docs.write_text('# 超音波六部位系列：交付與審閱\n\n'+NOTICE+'\n\n## 交付\n\n6 張主圖卡（18 個格式檔）、12 個 GLB 變體、12 張 3D 海報、來源與雜湊索引。這是六個代表性視窗，不是 24 個建模視窗；24 項清單僅用於引導延伸閱讀。\n\n## 待完成的醫師審閱\n\n- 核對每一圖的骨性地標、肌腱附著、神經位置與編號引線。\n- 核對各部位的擺位、主視窗選擇、長短軸及探頭標記約定。\n- 檢查腕隧道 9 條屈肌腱、正中神經與支持帶的相對關係。\n- 確認髖關節囊的青色線條不被誤解為積液；確認膝與踝的範圍說明。\n- 以真實設備和正式教材核對，不以生成模型作為診斷參照。\n- 在另一次人工審閱提交中，記錄審閱者、日期、異動與通過範圍；本次 `reviewStatus` 保持 `needs-clinician-review`。\n\n## 維護\n\n生成來源為 `website/scripts/ultrasound-atlas/`；互動頁為 `/ultrasound-atlas/`；圖庫為 `website/public/medical-visuals/ultrasound/`。文章插入以 HTML 標記界定，重建只更新該區塊，不覆寫原有影片、课程或書籍資料。'.replace('课程','課程')+'\n\n原有其他 47 組模型與醫學圖庫不屬於本次修改範圍。CI 報告僅證明檔案和網頁檢查，不代表臨床審核通過。\n',encoding='utf-8')
     if integrate:
+        # Keep the legacy root-level knee close-up from cropping this nested atlas.
+        viewer=root/'website/src/scripts/medical-model.ts'
+        if viewer.exists():
+            code=viewer.read_text(encoding='utf-8')
+            needle='(root.dataset.src || "").includes("/knee-")'
+            if needle in code:
+                code=code.replace(needle,'(root.dataset.src || "").startsWith("/medical-visuals/knee-")',1)
+                viewer.write_text(code,encoding='utf-8')
         page_path=root/'website/src/pages/ultrasound-atlas.astro';page_path.parent.mkdir(parents=True,exist_ok=True)
         if page_path.exists() and '<!-- ultrasound-atlas:generated-page -->' not in page_path.read_text(encoding='utf-8'):raise ValueError('Refusing to overwrite a non-generated atlas page.')
         page_path.write_text(PAGE,encoding='utf-8')
@@ -143,4 +151,8 @@ def publish(root,out,archive,manifest,integrate=True):
             source.write_text(article[:date.start()]+'updatedDate: '+DATE+article[date.end():],encoding='utf-8')
         replace_block(root/'website_blog/posts/2023-04-blog-post_30.md',article_section(archive=True))
         parent=root/'website_blog/medical_3d_assets/README.md'
+        # Earlier asset indexes may have been removed during repository migration.
+        if not parent.exists():
+            parent.parent.mkdir(parents=True,exist_ok=True)
+            parent.write_text('# 醫學立體解說素材\n\n各系列的用途、來源與醫師審閱狀態請見各自的說明。\n',encoding='utf-8')
         replace_block(parent,'## 超音波六部位新系列\n\n[肩／肘／腕／髖／膝／踝圖卡與完整素材索引](ultrasound/README.md)\n\n新增六張立體圖卡，以及網站內十二個長短軸 GLB 變體。已嵌入超音波文章；全部保持「待醫師審閱」，未改動外部 Blogger 網站。')

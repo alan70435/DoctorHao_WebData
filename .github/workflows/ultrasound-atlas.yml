@@ -51,6 +51,11 @@ jobs:
         run: |
           npm ci
           npm run build
+      - name: Verify responsive pages and all twelve WebGL models
+        run: |
+          python -m pip install playwright==1.56.0
+          python -m playwright install --with-deps chromium
+          python website/scripts/ultrasound-atlas/browser_qa.py
       - name: Preserve technical QA report
         uses: actions/upload-artifact@v4
         with:
@@ -58,6 +63,8 @@ jobs:
           path: |
             website/public/medical-visuals/ultrasound/manifest.json
             website/public/medical-visuals/ultrasound/validation-report.json
+            website/public/medical-visuals/ultrasound/browser-qa.json
+            website/qa/ultrasound-atlas/
           retention-days: 14
       - name: Commit only atlas assets and integration
         env:
@@ -72,6 +79,7 @@ jobs:
             website_blog/posts/2023-04-blog-post_30.md
             website/src/content/articles/msk-ultrasound-self-study.md
             website/src/pages/ultrasound-atlas.astro
+            website/src/scripts/medical-model.ts
             website/docs/08-ultrasound-atlas.md
           )
           git add -- "${paths[@]}"
@@ -102,4 +110,4 @@ jobs:
           echo "### Ultrasound atlas committed" >> "$GITHUB_STEP_SUMMARY"
           echo "Commit: $(git rev-parse HEAD)" >> "$GITHUB_STEP_SUMMARY"
           echo '6 illustrated cards, 12 GLB axis variants, 12 posters; archive and website articles integrated.' >> "$GITHUB_STEP_SUMMARY"
-          echo 'Technical QA and site build passed. Clinical review remains pending.' >> "$GITHUB_STEP_SUMMARY"
+          echo 'Technical QA, site build, mobile layout and 12 real WebGL model loads passed. Clinical review remains pending.' >> "$GITHUB_STEP_SUMMARY"
