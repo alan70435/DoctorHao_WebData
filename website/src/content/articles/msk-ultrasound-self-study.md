@@ -4,7 +4,7 @@ description: 骨骼肌肉超音波是運動醫學科醫師的必備夥伴。程�
 category: sports-injury
 tags: [sports-injury]
 pubDate: 2023-04-30
-updatedDate: 2026-09-09
+updatedDate: 2026-09-10
 forProfessionals: true
 sources:
   - platform: Blog
@@ -24,6 +24,11 @@ sources:
 程皓醫師整理了自學兩年的資源，分享給在超音波大海中迷茫的朋友（初至入門最有效）。內容也包含**超音波導引注射**的相關技巧——超音波導引能大幅提升注射治療的成功率、避開神經血管、減少不必要的組織損傷。
 
 > 目前依然還在努力精進的階段，期待未來能與超音波同好們一起持續學習！
+
+<figure class="figure">
+  <img src="/medical/msk-ultrasound-guidance-3d.svg" alt="概念示意圖：骨骼肌肉超音波導引注射——探頭下可見目標組織、需避開的神經與血管，針尖全程保持可視；並列出超音波導引三要點：辨識解剖層次、規劃安全進針路徑、全程確認針尖位置" width="1600" height="1000" loading="lazy" />
+  <figcaption>超音波導引注射的概念示意（非操作教學，侵入性治療須由醫療專業人員執行）。</figcaption>
+</figure>
 
 ## 影片資源
 

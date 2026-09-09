@@ -559,6 +559,21 @@ a.chip:hover {
 .prose img {
   border-radius: var(--r-lg);
 }
+.prose .figure {
+  margin: 1.6em 0;
+}
+.prose .figure img {
+  width: 100%;
+  height: auto;
+  border: 1px solid var(--c-line);
+  background: #0b1a22;
+}
+.prose .figure figcaption {
+  margin-top: var(--sp-2);
+  font-size: var(--fs-xs);
+  color: var(--c-muted);
+  text-align: center;
+}
 .prose table {
   display: table;
   width: 100%;

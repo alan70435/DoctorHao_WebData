@@ -6,6 +6,7 @@ import ClinicCard from './ClinicCard.astro';
 import SectionHead from './SectionHead.astro';
 import Icon from './Icon.astro';
 import { clinics, lastConfirmed } from '@/data/clinics';
+import { decorBackground } from '@/lib/generated';
 
 interface Props {
   title?: string;
@@ -25,9 +26,10 @@ const {
   surface = true,
 } = Astro.props;
 const list = primaryOnly ? clinics.filter((c) => c.primary) : clinics;
+const panelBg = await decorBackground('clinicPanel', 1600);
 ---
 
-<section class:list={['section', { 'section--surface': surface }]} aria-labelledby="clinic-section-title">
+<section class:list={['section clinic-section', { 'section--surface': surface }]} aria-labelledby="clinic-section-title" style={`--clinic-bg:url('${panelBg}')`}>
   <div class="container">
     <SectionHead eyebrow={eyebrow} title={title} lede={lede} id="clinic-section-title" withAction>
       <a slot="action" href="/clinic/" class="btn btn--secondary">完整門診資訊 <Icon name="arrow-right" class="icon" /></a>
@@ -40,6 +42,13 @@ const list = primaryOnly ? clinics.filter((c) => c.primary) : clinics;
 </section>
 
 <style>
+  .clinic-section {
+    background-color: #f1f8f9;
+    background-image: var(--clinic-bg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: right center;
+  }
   .grid--1 {
     grid-template-columns: minmax(0, 560px);
   }

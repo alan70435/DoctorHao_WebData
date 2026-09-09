@@ -1,6 +1,7 @@
 ---
 import Icon from './Icon.astro';
 import type { Treatment } from '@/data/treatments';
+import { treatmentIcon } from '@/data/visualKit';
 
 interface Props {
   treatment: Treatment;
@@ -12,9 +13,10 @@ const href = `/${t.slug}/`;
 
 <article class="tcard card card--link">
   <div class="tcard__top">
+    <img src={treatmentIcon(t.slug)} alt="" width="64" height="64" loading="lazy" class="tcard__icon" />
     <span class="tcard__num" aria-hidden="true">{String(index + 1).padStart(2, '0')}</span>
-    <span class="tcard__en">{t.englishName}</span>
   </div>
+  <span class="tcard__en">{t.englishName}</span>
   <h3 class="tcard__title"><a href={href}>{t.name}</a></h3>
   <p class="tcard__desc">{t.cardSummary}</p>
   <span class="tcard__more">了解治療說明 <Icon name="arrow-right" class="icon" /></span>
@@ -32,8 +34,13 @@ const href = `/${t.slug}/`;
   .tcard__top {
     display: flex;
     justify-content: space-between;
-    align-items: baseline;
+    align-items: flex-start;
     gap: var(--sp-3);
+  }
+  .tcard__icon {
+    width: 64px;
+    height: 64px;
+    border-radius: 18px;
   }
   .tcard__num {
     font-size: var(--fs-sm);
@@ -45,6 +52,7 @@ const href = `/${t.slug}/`;
     font-size: var(--fs-xs);
     color: var(--c-muted);
     letter-spacing: 0.04em;
+    margin-top: var(--sp-1);
   }
   .tcard__title {
     margin: 0;

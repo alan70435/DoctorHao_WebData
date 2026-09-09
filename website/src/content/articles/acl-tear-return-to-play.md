@@ -4,7 +4,7 @@ description: ACL 撕裂是運動員最害怕的傷之一，但研究顯示 NBA �
 category: sports-injury
 tags: [knee, sports-injury, training]
 pubDate: 2025-03-05
-updatedDate: 2026-09-09
+updatedDate: 2026-09-10
 sources:
   - platform: Facebook
     date: 2025-03-05
@@ -49,11 +49,21 @@ sources:
 
 造成前十字韌帶最大承重的動作包含：**膝關節過度伸直**，以及**膝外翻外轉**（股骨內轉合併脛骨外轉）。在膝過度伸直的情況下，若同時單腳落地並合併其他外力，就可能造成巨大傷害。
 
+<figure class="figure">
+  <img src="/medical/knee-acl-hyperextension-3d.svg" alt="概念示意圖：膝關節過度伸直時前十字韌帶承受較大負荷；右下標示較佳落地策略——髖、膝微彎、肌肉主動減速，避免直膝單腳硬著地" width="1600" height="1000" loading="lazy" />
+  <figcaption>膝關節過度伸直與前十字韌帶受力（概念示意圖，非診斷影像）。</figcaption>
+</figure>
+
 ### 直膝單腳落地為什麼危險？
 
 籃球員的運動傷害大多集中在下肢。當球員沒有好的落地機制時，會對髖、膝、踝三個關節產生超過十倍體重的負荷。尤其膝關節保持伸直落地時，地板的反作用力無法藉由其他組織吸收，完全依靠膝軟骨與半月板吸震，大幅提升受傷機率。
 
 **最好的落地姿勢**是保持膝關節與髖關節微彎，讓股四頭肌、臀大肌及腿後肌協助減速並吸收力道。（此段引自運動視界文章，程皓醫師於原文中引用。）
+
+<figure class="figure">
+  <img src="/medical/landing-mechanics-3d.svg" alt="概念示意圖：直膝落地（高風險模式，地面反作用力較集中）與髖膝屈曲吸震（較佳模式，臀肌、股四頭肌、腿後肌協助減速）的比較" width="1600" height="1000" loading="lazy" />
+  <figcaption>落地機制：直膝 vs. 髖膝屈曲吸震（概念示意圖）。</figcaption>
+</figure>
 
 ### 該練什麼？
 

@@ -4,7 +4,7 @@ description: 從林書豪與棒球選手的腦震盪案例，程皓醫師整理�
 category: sports-injury
 tags: [sports-injury]
 pubDate: 2023-05-20
-updatedDate: 2026-09-09
+updatedDate: 2026-09-10
 sources:
   - platform: Blog
     date: 2023-05-20
@@ -22,6 +22,11 @@ sources:
 「腦震盪」是指頭部受到直接或間接力量撞擊，使腦部神經纖維受損或出血，導致腦部功能混亂並誘發相關症狀。**腦震盪依靠臨床症狀的綜合評估作為診斷，而非單一影像或檢查。**
 
 關於 SRC 的識別、診斷與處置，共有關鍵的 11 個 R：Recognise、Remove、Re-evaluate、Rest、Rehabilitation、Refer、Recover、Return to sport、Reconsider、Residual effects and sequelae、Risk reduction。以下討論前四項。
+
+<figure class="figure">
+  <img src="/medical/sport-concussion-pathway-3d.svg" alt="示意圖：運動性腦震盪場邊流程——Recognise 辨識、Remove 疑似腦震盪立即停止參賽、Re-evaluate 完整神經學與認知評估、Relative rest 短暫休息後漸進增加活動；當天確診者不得回場，並列出需立即升級處置的警訊" width="1600" height="1000" loading="lazy" />
+  <figcaption>運動性腦震盪：辨識、退場、再評估、恢復（衛教示意圖，診斷以臨床綜合評估為核心）。</figcaption>
+</figure>
 
 ## Recognise & Remove：辨識與移除
 

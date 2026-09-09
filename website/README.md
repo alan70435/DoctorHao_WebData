@@ -54,14 +54,29 @@ website/
 │   ├── content.config.ts     #   文章 schema
 │   ├── assets/photos/        #   醫師照片（由 import-assets 產生）
 │   ├── assets/articles/      #   文章封面（由 import-assets 產生）
+│   ├── assets/generated/     # ★ GPT 生成圖放置區（放入即自動啟用，見其 README）
 │   ├── components/           #   Header、Footer、卡片、FAQ、Callout…
 │   ├── layouts/              #   BaseLayout（SEO head）、ArticleLayout
 │   ├── pages/                #   路由
-│   ├── lib/                  #   文章查詢、JSON-LD 產生
+│   ├── lib/                  #   文章查詢、JSON-LD、生成圖偵測（generated.ts）
 │   └── styles/global.css     #   Design tokens 與基礎樣式
+├── public/visual-kit/        #   33 張 SVG 視覺素材（圖示、插畫、裝飾背景）＋預覽頁 /visual-kit/
+├── public/medical/           #   6 張醫學解說圖（嵌入文章）
+├── design/image-production/  #   65 份 GPT Image 提示詞規格、PLACEMENT.md／placement.json 放置對應表
 ├── scripts/import-assets.mjs #   照片匯入／縮圖腳本（來源對照表在檔內）
-└── docs/                     #   盤點、設計、資料使用說明、待確認清單
+├── CHANGELOG.md              #   外觀版本紀錄（design-vX.Y.Z）
+└── docs/                     #   盤點、設計、資料使用說明、待確認清單、版本規則
 ```
+
+## 外觀版本控制
+
+網站外觀以 `design-vX.Y.Z` 版本追蹤（目前 **v1.1.0**；第一版本為 `design-v1.0.0`）。規則與步驟見 `docs/06-design-versions.md`，紀錄見 `CHANGELOG.md`。每頁 `<meta name="design-version">` 會輸出目前版本。
+
+## 生成圖片（GPT Image）工作流程
+
+1. 依 `design/image-production/QUEUE.md`／`spec.json` 產生圖片（提示詞可用 `export-prompts.py` 匯出）。
+2. 依 `design/image-production/PLACEMENT.md` 的檔名放入 `src/assets/generated/{articles|treatments|categories|decor}/`。
+3. `npm run build`：build log 會顯示 `[generated] 文章封面 N、治療主圖 N…`，對應頁面自動改用生成圖；SVG／幾何封面自動退為備援。
 
 ## 常見維護
 
@@ -105,3 +120,5 @@ sources:
 - `docs/03-design-system.md` Design System 摘要
 - `docs/04-data-usage.md` 本機資料如何被整理／使用
 - `docs/05-todo-for-owner.md` 尚待確認的內容清單
+- `docs/06-design-versions.md` 外觀版本控制規則與版本表
+- `docs/07-medical-figures.md` 醫學解說圖來源與文章對應

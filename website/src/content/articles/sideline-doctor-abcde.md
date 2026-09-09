@@ -4,7 +4,7 @@ description: 擔任 2023 世界棒球經典賽場邊醫師後，程皓醫師整�
 category: sports-injury
 tags: [sports-injury]
 pubDate: 2023-04-20
-updatedDate: 2026-09-09
+updatedDate: 2026-09-10
 cover: ../../assets/articles/wbc-2023-stadium.jpg
 coverAlt: 程皓醫師於 2023 年世界棒球經典賽球場看台
 forProfessionals: true
@@ -29,6 +29,11 @@ sources:
 - **C**irculation：循環及出血控制
 - **D**isability：評估意識及神經學檢查
 - **E**valuation / Extremities：露身檢查及環境控制
+
+<figure class="figure">
+  <img src="/medical/sideline-abcde-3d.svg" alt="示意圖：場邊急性傷害 ABCDE 初步評估——Airway 呼吸道與頸椎保護、Breathing 呼吸與換氣、Circulation 循環與出血控制、Disability 意識與神經學評估、Exposure/Extremities 露身檢查與肢體評估" width="1600" height="1000" loading="lazy" />
+  <figcaption>場邊急性傷害 ABCDE 初步評估（衛教示意圖）。</figcaption>
+</figure>
 
 ## 第二步：評估肢體
 

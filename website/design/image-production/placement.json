@@ -1,0 +1,1063 @@
+{
+ "schemaVersion": 1,
+ "generatedAt": "2026-09-10",
+ "note": "檔案放入 targetFile 後重新 build 即自動啟用；副檔名可為 webp/png/jpg/avif。詳見 PLACEMENT.md。",
+ "detector": "website/src/lib/generated.ts",
+ "count": 65,
+ "items": [
+  {
+   "id": "article-achilles-rupture-return",
+   "kind": "article-cover",
+   "targetFile": "website/src/assets/generated/articles/achilles-rupture-return.webp",
+   "targetPixels": [
+    1600,
+    900
+   ],
+   "usedBy": [
+    "/articles/",
+    "/articles/sports-injury/",
+    "/articles/achilles-rupture-return/",
+    "OG image"
+   ],
+   "fallback": "CategoryCover（幾何封面）",
+   "source": "website/src/content/articles/achilles-rupture-return.md"
+  },
+  {
+   "id": "article-acl-tear-return-to-play",
+   "kind": "article-cover",
+   "targetFile": "website/src/assets/generated/articles/acl-tear-return-to-play.webp",
+   "targetPixels": [
+    1600,
+    900
+   ],
+   "usedBy": [
+    "/articles/",
+    "/articles/sports-injury/",
+    "/articles/acl-tear-return-to-play/",
+    "OG image"
+   ],
+   "fallback": "CategoryCover（幾何封面）",
+   "source": "website/src/content/articles/acl-tear-return-to-play.md"
+  },
+  {
+   "id": "article-alcohol-and-weight-loss",
+   "kind": "article-cover",
+   "targetFile": "website/src/assets/generated/articles/alcohol-and-weight-loss.webp",
+   "targetPixels": [
+    1600,
+    900
+   ],
+   "usedBy": [
+    "/articles/",
+    "/articles/weight-management/",
+    "/articles/alcohol-and-weight-loss/",
+    "OG image"
+   ],
+   "fallback": "CategoryCover（幾何封面）",
+   "source": "website/src/content/articles/alcohol-and-weight-loss.md"
+  },
+  {
+   "id": "article-athletes-and-blood-clots",
+   "kind": "article-cover",
+   "targetFile": "website/src/assets/generated/articles/athletes-and-blood-clots.webp",
+   "targetPixels": [
+    1600,
+    900
+   ],
+   "usedBy": [
+    "/articles/",
+    "/articles/sports-injury/",
+    "/articles/athletes-and-blood-clots/",
+    "OG image"
+   ],
+   "fallback": "CategoryCover（幾何封面）",
+   "source": "website/src/content/articles/athletes-and-blood-clots.md"
+  },
+  {
+   "id": "article-badminton-is-not-leisure",
+   "kind": "article-cover",
+   "targetFile": "website/src/assets/generated/articles/badminton-is-not-leisure.webp",
+   "targetPixels": [
+    1600,
+    900
+   ],
+   "usedBy": [
+    "/articles/",
+    "/articles/sports-injury/",
+    "/articles/badminton-is-not-leisure/",
+    "OG image"
+   ],
+   "fallback": "CategoryCover（幾何封面）",
+   "source": "website/src/content/articles/badminton-is-not-leisure.md"
+  },
+  {
+   "id": "article-basketball-injury-prevention",
+   "kind": "article-cover",
+   "targetFile": "website/src/assets/generated/articles/basketball-injury-prevention.webp",
+   "targetPixels": [
+    1600,
+    900
+   ],
+   "usedBy": [
+    "/articles/",
+    "/articles/sports-injury/",
+    "/articles/basketball-injury-prevention/",
+    "OG image"
+   ],
+   "fallback": "CategoryCover（幾何封面）",
+   "source": "website/src/content/articles/basketball-injury-prevention.md"
+  },
+  {
+   "id": "article-calf-muscle-tear",
+   "kind": "article-cover",
+   "targetFile": "website/src/assets/generated/articles/calf-muscle-tear.webp",
+   "targetPixels": [
+    1600,
+    900
+   ],
+   "usedBy": [
+    "/articles/",
+    "/articles/sports-injury/",
+    "/articles/calf-muscle-tear/",
+    "OG image"
+   ],
+   "fallback": "CategoryCover（幾何封面）",
+   "source": "website/src/content/articles/calf-muscle-tear.md"
+  },
+  {
+   "id": "article-deadlift-everyone-should-learn",
+   "kind": "article-cover",
+   "targetFile": "website/src/assets/generated/articles/deadlift-everyone-should-learn.webp",
+   "targetPixels": [
+    1600,
+    900
+   ],
+   "usedBy": [
+    "/articles/",
+    "/articles/training/",
+    "/articles/deadlift-everyone-should-learn/",
+    "OG image"
+   ],
+   "fallback": "CategoryCover（幾何封面）",
+   "source": "website/src/content/articles/deadlift-everyone-should-learn.md"
+  },
+  {
+   "id": "article-diabetes-aunt-three-things",
+   "kind": "article-cover",
+   "targetFile": "website/src/assets/generated/articles/diabetes-aunt-three-things.webp",
+   "targetPixels": [
+    1600,
+    900
+   ],
+   "usedBy": [
+    "/articles/",
+    "/articles/weight-management/",
+    "/articles/diabetes-aunt-three-things/",
+    "OG image"
+   ],
+   "fallback": "CategoryCover（幾何封面）",
+   "source": "website/src/content/articles/diabetes-aunt-three-things.md"
+  },
+  {
+   "id": "article-does-jogging-hurt-knees",
+   "kind": "article-cover",
+   "targetFile": "website/src/assets/generated/articles/does-jogging-hurt-knees.webp",
+   "targetPixels": [
+    1600,
+    900
+   ],
+   "usedBy": [
+    "/articles/",
+    "/articles/sports-injury/",
+    "/articles/does-jogging-hurt-knees/",
+    "OG image"
+   ],
+   "fallback": "CategoryCover（幾何封面）",
+   "source": "website/src/content/articles/does-jogging-hurt-knees.md"
+  },
+  {
+   "id": "article-eating-for-training",
+   "kind": "article-cover",
+   "targetFile": "website/src/assets/generated/articles/eating-for-training.webp",
+   "targetPixels": [
+    1600,
+    900
+   ],
+   "usedBy": [
+    "/articles/",
+    "/articles/training/",
+    "/articles/eating-for-training/",
+    "OG image"
+   ],
+   "fallback": "CategoryCover（幾何封面）",
+   "source": "website/src/content/articles/eating-for-training.md"
+  },
+  {
+   "id": "article-fish-oil-and-vitamin-d",
+   "kind": "article-cover",
+   "targetFile": "website/src/assets/generated/articles/fish-oil-and-vitamin-d.webp",
+   "targetPixels": [
+    1600,
+    900
+   ],
+   "usedBy": [
+    "/articles/",
+    "/articles/training/",
+    "/articles/fish-oil-and-vitamin-d/",
+    "OG image"
+   ],
+   "fallback": "CategoryCover（幾何封面）",
+   "source": "website/src/content/articles/fish-oil-and-vitamin-d.md"
+  },
+  {
+   "id": "article-fried-food-and-mood",
+   "kind": "article-cover",
+   "targetFile": "website/src/assets/generated/articles/fried-food-and-mood.webp",
+   "targetPixels": [
+    1600,
+    900
+   ],
+   "usedBy": [
+    "/articles/",
+    "/articles/weight-management/",
+    "/articles/fried-food-and-mood/",
+    "OG image"
+   ],
+   "fallback": "CategoryCover（幾何封面）",
+   "source": "website/src/content/articles/fried-food-and-mood.md"
+  },
+  {
+   "id": "article-frozen-shoulder-self-check",
+   "kind": "article-cover",
+   "targetFile": "website/src/assets/generated/articles/frozen-shoulder-self-check.webp",
+   "targetPixels": [
+    1600,
+    900
+   ],
+   "usedBy": [
+    "/articles/",
+    "/articles/sports-injury/",
+    "/articles/frozen-shoulder-self-check/",
+    "OG image"
+   ],
+   "fallback": "CategoryCover（幾何封面）",
+   "source": "website/src/content/articles/frozen-shoulder-self-check.md"
+  },
+  {
+   "id": "article-glp1-during-treatment",
+   "kind": "article-cover",
+   "targetFile": "website/src/assets/generated/articles/glp1-during-treatment.webp",
+   "targetPixels": [
+    1600,
+    900
+   ],
+   "usedBy": [
+    "/articles/",
+    "/articles/weight-management/",
+    "/articles/glp1-during-treatment/",
+    "OG image"
+   ],
+   "fallback": "CategoryCover（幾何封面）",
+   "source": "website/src/content/articles/glp1-during-treatment.md"
+  },
+  {
+   "id": "article-glp1-precautions-and-contraindications",
+   "kind": "article-cover",
+   "targetFile": "website/src/assets/generated/articles/glp1-precautions-and-contraindications.webp",
+   "targetPixels": [
+    1600,
+    900
+   ],
+   "usedBy": [
+    "/articles/",
+    "/articles/weight-management/",
+    "/articles/glp1-precautions-and-contraindications/",
+    "OG image"
+   ],
+   "fallback": "CategoryCover（幾何封面）",
+   "source": "website/src/content/articles/glp1-precautions-and-contraindications.md"
+  },
+  {
+   "id": "article-glp1-what-it-is-and-who-fits",
+   "kind": "article-cover",
+   "targetFile": "website/src/assets/generated/articles/glp1-what-it-is-and-who-fits.webp",
+   "targetPixels": [
+    1600,
+    900
+   ],
+   "usedBy": [
+    "/articles/",
+    "/articles/weight-management/",
+    "/articles/glp1-what-it-is-and-who-fits/",
+    "OG image"
+   ],
+   "fallback": "CategoryCover（幾何封面）",
+   "source": "website/src/content/articles/glp1-what-it-is-and-who-fits.md"
+  },
+  {
+   "id": "article-glute-training-best-exercises",
+   "kind": "article-cover",
+   "targetFile": "website/src/assets/generated/articles/glute-training-best-exercises.webp",
+   "targetPixels": [
+    1600,
+    900
+   ],
+   "usedBy": [
+    "/articles/",
+    "/articles/training/",
+    "/articles/glute-training-best-exercises/",
+    "OG image"
+   ],
+   "fallback": "CategoryCover（幾何封面）",
+   "source": "website/src/content/articles/glute-training-best-exercises.md"
+  },
+  {
+   "id": "article-gym-trap-cards",
+   "kind": "article-cover",
+   "targetFile": "website/src/assets/generated/articles/gym-trap-cards.webp",
+   "targetPixels": [
+    1600,
+    900
+   ],
+   "usedBy": [
+    "/articles/",
+    "/articles/training/",
+    "/articles/gym-trap-cards/",
+    "OG image"
+   ],
+   "fallback": "CategoryCover（幾何封面）",
+   "source": "website/src/content/articles/gym-trap-cards.md"
+  },
+  {
+   "id": "article-gymnastics-injuries",
+   "kind": "article-cover",
+   "targetFile": "website/src/assets/generated/articles/gymnastics-injuries.webp",
+   "targetPixels": [
+    1600,
+    900
+   ],
+   "usedBy": [
+    "/articles/",
+    "/articles/sports-injury/",
+    "/articles/gymnastics-injuries/",
+    "OG image"
+   ],
+   "fallback": "CategoryCover（幾何封面）",
+   "source": "website/src/content/articles/gymnastics-injuries.md"
+  },
+  {
+   "id": "article-hamstring-strain-curry",
+   "kind": "article-cover",
+   "targetFile": "website/src/assets/generated/articles/hamstring-strain-curry.webp",
+   "targetPixels": [
+    1600,
+    900
+   ],
+   "usedBy": [
+    "/articles/",
+    "/articles/sports-injury/",
+    "/articles/hamstring-strain-curry/",
+    "OG image"
+   ],
+   "fallback": "CategoryCover（幾何封面）",
+   "source": "website/src/content/articles/hamstring-strain-curry.md"
+  },
+  {
+   "id": "article-hiking-is-strength-training",
+   "kind": "article-cover",
+   "targetFile": "website/src/assets/generated/articles/hiking-is-strength-training.webp",
+   "targetPixels": [
+    1600,
+    900
+   ],
+   "usedBy": [
+    "/articles/",
+    "/articles/sports-injury/",
+    "/articles/hiking-is-strength-training/",
+    "OG image"
+   ],
+   "fallback": "CategoryCover（幾何封面）",
+   "source": "website/src/content/articles/hiking-is-strength-training.md"
+  },
+  {
+   "id": "article-how-much-exercise-per-week",
+   "kind": "article-cover",
+   "targetFile": "website/src/assets/generated/articles/how-much-exercise-per-week.webp",
+   "targetPixels": [
+    1600,
+    900
+   ],
+   "usedBy": [
+    "/articles/",
+    "/articles/training/",
+    "/articles/how-much-exercise-per-week/",
+    "OG image"
+   ],
+   "fallback": "CategoryCover（幾何封面）",
+   "source": "website/src/content/articles/how-much-exercise-per-week.md"
+  },
+  {
+   "id": "article-knee-oa-treatment-options",
+   "kind": "article-cover",
+   "targetFile": "website/src/assets/generated/articles/knee-oa-treatment-options.webp",
+   "targetPixels": [
+    1600,
+    900
+   ],
+   "usedBy": [
+    "/articles/",
+    "/articles/sports-injury/",
+    "/articles/knee-oa-treatment-options/",
+    "OG image"
+   ],
+   "fallback": "CategoryCover（幾何封面）",
+   "source": "website/src/content/articles/knee-oa-treatment-options.md"
+  },
+  {
+   "id": "article-knee-pain-diagnosis-first",
+   "kind": "article-cover",
+   "targetFile": "website/src/assets/generated/articles/knee-pain-diagnosis-first.webp",
+   "targetPixels": [
+    1600,
+    900
+   ],
+   "usedBy": [
+    "/articles/",
+    "/articles/sports-injury/",
+    "/articles/knee-pain-diagnosis-first/",
+    "OG image"
+   ],
+   "fallback": "CategoryCover（幾何封面）",
+   "source": "website/src/content/articles/knee-pain-diagnosis-first.md"
+  },
+  {
+   "id": "article-mcl-sprain-grades",
+   "kind": "article-cover",
+   "targetFile": "website/src/assets/generated/articles/mcl-sprain-grades.webp",
+   "targetPixels": [
+    1600,
+    900
+   ],
+   "usedBy": [
+    "/articles/",
+    "/articles/sports-injury/",
+    "/articles/mcl-sprain-grades/",
+    "OG image"
+   ],
+   "fallback": "CategoryCover（幾何封面）",
+   "source": "website/src/content/articles/mcl-sprain-grades.md"
+  },
+  {
+   "id": "article-meal-order-veg-protein-carb",
+   "kind": "article-cover",
+   "targetFile": "website/src/assets/generated/articles/meal-order-veg-protein-carb.webp",
+   "targetPixels": [
+    1600,
+    900
+   ],
+   "usedBy": [
+    "/articles/",
+    "/articles/weight-management/",
+    "/articles/meal-order-veg-protein-carb/",
+    "OG image"
+   ],
+   "fallback": "CategoryCover（幾何封面）",
+   "source": "website/src/content/articles/meal-order-veg-protein-carb.md"
+  },
+  {
+   "id": "article-meniscus-tear-embiid",
+   "kind": "article-cover",
+   "targetFile": "website/src/assets/generated/articles/meniscus-tear-embiid.webp",
+   "targetPixels": [
+    1600,
+    900
+   ],
+   "usedBy": [
+    "/articles/",
+    "/articles/sports-injury/",
+    "/articles/meniscus-tear-embiid/",
+    "OG image"
+   ],
+   "fallback": "CategoryCover（幾何封面）",
+   "source": "website/src/content/articles/meniscus-tear-embiid.md"
+  },
+  {
+   "id": "article-msk-ultrasound-self-study",
+   "kind": "article-cover",
+   "targetFile": "website/src/assets/generated/articles/msk-ultrasound-self-study.webp",
+   "targetPixels": [
+    1600,
+    900
+   ],
+   "usedBy": [
+    "/articles/",
+    "/articles/sports-injury/",
+    "/articles/msk-ultrasound-self-study/",
+    "OG image"
+   ],
+   "fallback": "CategoryCover（幾何封面）",
+   "source": "website/src/content/articles/msk-ultrasound-self-study.md"
+  },
+  {
+   "id": "article-numbness-nerve-hydrodissection",
+   "kind": "article-cover",
+   "targetFile": "website/src/assets/generated/articles/numbness-nerve-hydrodissection.webp",
+   "targetPixels": [
+    1600,
+    900
+   ],
+   "usedBy": [
+    "/articles/",
+    "/articles/sports-injury/",
+    "/articles/numbness-nerve-hydrodissection/",
+    "OG image"
+   ],
+   "fallback": "CategoryCover（幾何封面）",
+   "source": "website/src/content/articles/numbness-nerve-hydrodissection.md"
+  },
+  {
+   "id": "article-painkillers-headache-menstrual",
+   "kind": "article-cover",
+   "targetFile": "website/src/assets/generated/articles/painkillers-headache-menstrual.webp",
+   "targetPixels": [
+    1600,
+    900
+   ],
+   "usedBy": [
+    "/articles/",
+    "/articles/sports-injury/",
+    "/articles/painkillers-headache-menstrual/",
+    "OG image"
+   ],
+   "fallback": "CategoryCover（幾何封面）",
+   "source": "website/src/content/articles/painkillers-headache-menstrual.md"
+  },
+  {
+   "id": "article-pes-anserine-bursitis",
+   "kind": "article-cover",
+   "targetFile": "website/src/assets/generated/articles/pes-anserine-bursitis.webp",
+   "targetPixels": [
+    1600,
+    900
+   ],
+   "usedBy": [
+    "/articles/",
+    "/articles/sports-injury/",
+    "/articles/pes-anserine-bursitis/",
+    "OG image"
+   ],
+   "fallback": "CategoryCover（幾何封面）",
+   "source": "website/src/content/articles/pes-anserine-bursitis.md"
+  },
+  {
+   "id": "article-pickleball-injury-risks",
+   "kind": "article-cover",
+   "targetFile": "website/src/assets/generated/articles/pickleball-injury-risks.webp",
+   "targetPixels": [
+    1600,
+    900
+   ],
+   "usedBy": [
+    "/articles/",
+    "/articles/sports-injury/",
+    "/articles/pickleball-injury-risks/",
+    "OG image"
+   ],
+   "fallback": "CategoryCover（幾何封面）",
+   "source": "website/src/content/articles/pickleball-injury-risks.md"
+  },
+  {
+   "id": "article-plantar-fasciitis-morning-heel-pain",
+   "kind": "article-cover",
+   "targetFile": "website/src/assets/generated/articles/plantar-fasciitis-morning-heel-pain.webp",
+   "targetPixels": [
+    1600,
+    900
+   ],
+   "usedBy": [
+    "/articles/",
+    "/articles/sports-injury/",
+    "/articles/plantar-fasciitis-morning-heel-pain/",
+    "OG image"
+   ],
+   "fallback": "CategoryCover（幾何封面）",
+   "source": "website/src/content/articles/plantar-fasciitis-morning-heel-pain.md"
+  },
+  {
+   "id": "article-quick-weight-loss-pill-bags",
+   "kind": "article-cover",
+   "targetFile": "website/src/assets/generated/articles/quick-weight-loss-pill-bags.webp",
+   "targetPixels": [
+    1600,
+    900
+   ],
+   "usedBy": [
+    "/articles/",
+    "/articles/weight-management/",
+    "/articles/quick-weight-loss-pill-bags/",
+    "OG image"
+   ],
+   "fallback": "CategoryCover（幾何封面）",
+   "source": "website/src/content/articles/quick-weight-loss-pill-bags.md"
+  },
+  {
+   "id": "article-rotator-cuff-housework",
+   "kind": "article-cover",
+   "targetFile": "website/src/assets/generated/articles/rotator-cuff-housework.webp",
+   "targetPixels": [
+    1600,
+    900
+   ],
+   "usedBy": [
+    "/articles/",
+    "/articles/sports-injury/",
+    "/articles/rotator-cuff-housework/",
+    "OG image"
+   ],
+   "fallback": "CategoryCover（幾何封面）",
+   "source": "website/src/content/articles/rotator-cuff-housework.md"
+  },
+  {
+   "id": "article-runners-knee-and-patellar-strap",
+   "kind": "article-cover",
+   "targetFile": "website/src/assets/generated/articles/runners-knee-and-patellar-strap.webp",
+   "targetPixels": [
+    1600,
+    900
+   ],
+   "usedBy": [
+    "/articles/",
+    "/articles/sports-injury/",
+    "/articles/runners-knee-and-patellar-strap/",
+    "OG image"
+   ],
+   "fallback": "CategoryCover（幾何封面）",
+   "source": "website/src/content/articles/runners-knee-and-patellar-strap.md"
+  },
+  {
+   "id": "article-runners-need-strength",
+   "kind": "article-cover",
+   "targetFile": "website/src/assets/generated/articles/runners-need-strength.webp",
+   "targetPixels": [
+    1600,
+    900
+   ],
+   "usedBy": [
+    "/articles/",
+    "/articles/training/",
+    "/articles/runners-need-strength/",
+    "OG image"
+   ],
+   "fallback": "CategoryCover（幾何封面）",
+   "source": "website/src/content/articles/runners-need-strength.md"
+  },
+  {
+   "id": "article-sideline-doctor-abcde",
+   "kind": "article-cover",
+   "targetFile": "website/src/assets/generated/articles/sideline-doctor-abcde.webp",
+   "targetPixels": [
+    1600,
+    900
+   ],
+   "usedBy": [
+    "/articles/",
+    "/articles/sports-injury/",
+    "/articles/sideline-doctor-abcde/",
+    "OG image"
+   ],
+   "fallback": "CategoryCover（幾何封面）",
+   "source": "website/src/content/articles/sideline-doctor-abcde.md"
+  },
+  {
+   "id": "article-sport-related-concussion",
+   "kind": "article-cover",
+   "targetFile": "website/src/assets/generated/articles/sport-related-concussion.webp",
+   "targetPixels": [
+    1600,
+    900
+   ],
+   "usedBy": [
+    "/articles/",
+    "/articles/sports-injury/",
+    "/articles/sport-related-concussion/",
+    "OG image"
+   ],
+   "fallback": "CategoryCover（幾何封面）",
+   "source": "website/src/content/articles/sport-related-concussion.md"
+  },
+  {
+   "id": "article-squat-essentials",
+   "kind": "article-cover",
+   "targetFile": "website/src/assets/generated/articles/squat-essentials.webp",
+   "targetPixels": [
+    1600,
+    900
+   ],
+   "usedBy": [
+    "/articles/",
+    "/articles/training/",
+    "/articles/squat-essentials/",
+    "OG image"
+   ],
+   "fallback": "CategoryCover（幾何封面）",
+   "source": "website/src/content/articles/squat-essentials.md"
+  },
+  {
+   "id": "article-start-exercise-with-weight-loss",
+   "kind": "article-cover",
+   "targetFile": "website/src/assets/generated/articles/start-exercise-with-weight-loss.webp",
+   "targetPixels": [
+    1600,
+    900
+   ],
+   "usedBy": [
+    "/articles/",
+    "/articles/weight-management/",
+    "/articles/start-exercise-with-weight-loss/",
+    "OG image"
+   ],
+   "fallback": "CategoryCover（幾何封面）",
+   "source": "website/src/content/articles/start-exercise-with-weight-loss.md"
+  },
+  {
+   "id": "article-strength-is-maintenance-and-treatment",
+   "kind": "article-cover",
+   "targetFile": "website/src/assets/generated/articles/strength-is-maintenance-and-treatment.webp",
+   "targetPixels": [
+    1600,
+    900
+   ],
+   "usedBy": [
+    "/articles/",
+    "/articles/training/",
+    "/articles/strength-is-maintenance-and-treatment/",
+    "OG image"
+   ],
+   "fallback": "CategoryCover（幾何封面）",
+   "source": "website/src/content/articles/strength-is-maintenance-and-treatment.md"
+  },
+  {
+   "id": "article-supplements-overview-ranking",
+   "kind": "article-cover",
+   "targetFile": "website/src/assets/generated/articles/supplements-overview-ranking.webp",
+   "targetPixels": [
+    1600,
+    900
+   ],
+   "usedBy": [
+    "/articles/",
+    "/articles/training/",
+    "/articles/supplements-overview-ranking/",
+    "OG image"
+   ],
+   "fallback": "CategoryCover（幾何封面）",
+   "source": "website/src/content/articles/supplements-overview-ranking.md"
+  },
+  {
+   "id": "article-supplements-vs-medication-cholesterol",
+   "kind": "article-cover",
+   "targetFile": "website/src/assets/generated/articles/supplements-vs-medication-cholesterol.webp",
+   "targetPixels": [
+    1600,
+    900
+   ],
+   "usedBy": [
+    "/articles/",
+    "/articles/weight-management/",
+    "/articles/supplements-vs-medication-cholesterol/",
+    "OG image"
+   ],
+   "fallback": "CategoryCover（幾何封面）",
+   "source": "website/src/content/articles/supplements-vs-medication-cholesterol.md"
+  },
+  {
+   "id": "article-trigger-point-injection",
+   "kind": "article-cover",
+   "targetFile": "website/src/assets/generated/articles/trigger-point-injection.webp",
+   "targetPixels": [
+    1600,
+    900
+   ],
+   "usedBy": [
+    "/articles/",
+    "/articles/sports-injury/",
+    "/articles/trigger-point-injection/",
+    "OG image"
+   ],
+   "fallback": "CategoryCover（幾何封面）",
+   "source": "website/src/content/articles/trigger-point-injection.md"
+  },
+  {
+   "id": "article-varicose-veins-and-lifting",
+   "kind": "article-cover",
+   "targetFile": "website/src/assets/generated/articles/varicose-veins-and-lifting.webp",
+   "targetPixels": [
+    1600,
+    900
+   ],
+   "usedBy": [
+    "/articles/",
+    "/articles/sports-injury/",
+    "/articles/varicose-veins-and-lifting/",
+    "OG image"
+   ],
+   "fallback": "CategoryCover（幾何封面）",
+   "source": "website/src/content/articles/varicose-veins-and-lifting.md"
+  },
+  {
+   "id": "article-weight-and-joint-pain",
+   "kind": "article-cover",
+   "targetFile": "website/src/assets/generated/articles/weight-and-joint-pain.webp",
+   "targetPixels": [
+    1600,
+    900
+   ],
+   "usedBy": [
+    "/articles/",
+    "/articles/weight-management/",
+    "/articles/weight-and-joint-pain/",
+    "OG image"
+   ],
+   "fallback": "CategoryCover（幾何封面）",
+   "source": "website/src/content/articles/weight-and-joint-pain.md"
+  },
+  {
+   "id": "article-weight-is-not-the-only-number",
+   "kind": "article-cover",
+   "targetFile": "website/src/assets/generated/articles/weight-is-not-the-only-number.webp",
+   "targetPixels": [
+    1600,
+    900
+   ],
+   "usedBy": [
+    "/articles/",
+    "/articles/weight-management/",
+    "/articles/weight-is-not-the-only-number/",
+    "OG image"
+   ],
+   "fallback": "CategoryCover（幾何封面）",
+   "source": "website/src/content/articles/weight-is-not-the-only-number.md"
+  },
+  {
+   "id": "article-why-diet-and-exercise-alone-is-hard",
+   "kind": "article-cover",
+   "targetFile": "website/src/assets/generated/articles/why-diet-and-exercise-alone-is-hard.webp",
+   "targetPixels": [
+    1600,
+    900
+   ],
+   "usedBy": [
+    "/articles/",
+    "/articles/weight-management/",
+    "/articles/why-diet-and-exercise-alone-is-hard/",
+    "OG image"
+   ],
+   "fallback": "CategoryCover（幾何封面）",
+   "source": "website/src/content/articles/why-diet-and-exercise-alone-is-hard.md"
+  },
+  {
+   "id": "article-yamamoto-no-weight-training",
+   "kind": "article-cover",
+   "targetFile": "website/src/assets/generated/articles/yamamoto-no-weight-training.webp",
+   "targetPixels": [
+    1600,
+    900
+   ],
+   "usedBy": [
+    "/articles/",
+    "/articles/training/",
+    "/articles/yamamoto-no-weight-training/",
+    "OG image"
+   ],
+   "fallback": "CategoryCover（幾何封面）",
+   "source": "website/src/content/articles/yamamoto-no-weight-training.md"
+  },
+  {
+   "id": "article-you-need-a-coach",
+   "kind": "article-cover",
+   "targetFile": "website/src/assets/generated/articles/you-need-a-coach.webp",
+   "targetPixels": [
+    1600,
+    900
+   ],
+   "usedBy": [
+    "/articles/",
+    "/articles/training/",
+    "/articles/you-need-a-coach/",
+    "OG image"
+   ],
+   "fallback": "CategoryCover（幾何封面）",
+   "source": "website/src/content/articles/you-need-a-coach.md"
+  },
+  {
+   "id": "treatment-prolotherapy",
+   "kind": "treatment-illustration",
+   "targetFile": "website/src/assets/generated/treatments/prolotherapy.webp",
+   "targetPixels": [
+    1200,
+    900
+   ],
+   "usedBy": [
+    "/prolotherapy/"
+   ],
+   "fallback": "visual-kit/treatments/prolotherapy.svg"
+  },
+  {
+   "id": "treatment-prp",
+   "kind": "treatment-illustration",
+   "targetFile": "website/src/assets/generated/treatments/prp.webp",
+   "targetPixels": [
+    1200,
+    900
+   ],
+   "usedBy": [
+    "/prp/"
+   ],
+   "fallback": "visual-kit/treatments/prp.svg"
+  },
+  {
+   "id": "treatment-bma",
+   "kind": "treatment-illustration",
+   "targetFile": "website/src/assets/generated/treatments/bma.webp",
+   "targetPixels": [
+    1200,
+    900
+   ],
+   "usedBy": [
+    "/bma/"
+   ],
+   "fallback": "visual-kit/treatments/bma.svg",
+   "blocked": "Existing inventory records workshop attendance but no confirmed clinical service. Confirm actual service, technique and approved wording before BMA imagery is generated or published."
+  },
+  {
+   "id": "treatment-weight-management",
+   "kind": "treatment-illustration",
+   "targetFile": "website/src/assets/generated/treatments/weight-management.webp",
+   "targetPixels": [
+    1200,
+    900
+   ],
+   "usedBy": [
+    "/weight-management/"
+   ],
+   "fallback": "visual-kit/treatments/weight-management.svg"
+  },
+  {
+   "id": "category-sports-injury",
+   "kind": "category-banner",
+   "targetFile": "website/src/assets/generated/categories/sports-injury.webp",
+   "targetPixels": [
+    1800,
+    600
+   ],
+   "usedBy": [
+    "/articles/sports-injury/ + 首頁專欄區"
+   ],
+   "fallback": "visual-kit/categories/sports-injury.svg"
+  },
+  {
+   "id": "category-weight-management",
+   "kind": "category-banner",
+   "targetFile": "website/src/assets/generated/categories/weight-management.webp",
+   "targetPixels": [
+    1800,
+    600
+   ],
+   "usedBy": [
+    "/articles/weight-management/ + 首頁專欄區"
+   ],
+   "fallback": "visual-kit/categories/weight-management.svg"
+  },
+  {
+   "id": "category-training",
+   "kind": "category-banner",
+   "targetFile": "website/src/assets/generated/categories/training.webp",
+   "targetPixels": [
+    1800,
+    600
+   ],
+   "usedBy": [
+    "/articles/training/ + 首頁專欄區"
+   ],
+   "fallback": "visual-kit/categories/training.svg"
+  },
+  {
+   "id": "home-hero-desktop",
+   "kind": "homepage-decoration",
+   "targetFile": "website/src/assets/generated/decor/home-hero-desktop.webp",
+   "targetPixels": [
+    1920,
+    1080
+   ],
+   "usedBy": [
+    "首頁 Hero 背景（≥900px）"
+   ],
+   "fallback": "visual-kit/decor/hero-flow.svg"
+  },
+  {
+   "id": "home-hero-mobile",
+   "kind": "homepage-decoration",
+   "targetFile": "website/src/assets/generated/decor/home-hero-mobile.webp",
+   "targetPixels": [
+    1200,
+    1500
+   ],
+   "usedBy": [
+    "首頁 Hero 背景（<900px）"
+   ],
+   "fallback": "visual-kit/decor/hero-flow-mobile.svg"
+  },
+  {
+   "id": "home-portrait-surround",
+   "kind": "homepage-decoration",
+   "targetFile": "website/src/assets/generated/decor/home-portrait-surround.webp",
+   "targetPixels": [
+    1200,
+    1500
+   ],
+   "usedBy": [
+    "首頁醫師照片後方"
+   ],
+   "fallback": "visual-kit/decor/portrait-halo.svg"
+  },
+  {
+   "id": "home-section-divider",
+   "kind": "homepage-decoration",
+   "targetFile": "website/src/assets/generated/decor/home-section-divider.webp",
+   "targetPixels": [
+    1920,
+    240
+   ],
+   "usedBy": [
+    "首頁專欄區與門診區之間"
+   ],
+   "fallback": "visual-kit/decor/section-wave.svg"
+  },
+  {
+   "id": "home-clinic-backdrop",
+   "kind": "homepage-decoration",
+   "targetFile": "website/src/assets/generated/decor/home-clinic-backdrop.webp",
+   "targetPixels": [
+    1600,
+    800
+   ],
+   "usedBy": [
+    "門診資訊區塊背景（首頁／關於／治療頁尾）"
+   ],
+   "fallback": "visual-kit/decor/clinic-panel.svg"
+  },
+  {
+   "id": "home-footer-backdrop",
+   "kind": "homepage-decoration",
+   "targetFile": "website/src/assets/generated/decor/home-footer-backdrop.webp",
+   "targetPixels": [
+    1600,
+    400
+   ],
+   "usedBy": [
+    "全站頁尾背景"
+   ],
+   "fallback": "visual-kit/decor/footer-flow.svg"
+  }
+ ]
+}

@@ -2,11 +2,14 @@
 /**
  * 專欄列表共用版面（總覽／分類／主題）。
  */
+import { Image } from 'astro:assets';
 import Breadcrumb from './Breadcrumb.astro';
 import ArticleCard from './ArticleCard.astro';
 import SectionHead from './SectionHead.astro';
 import { categoryList, type CategoryId } from '@/data/categories';
 import type { Article } from '@/lib/articles';
+import { generatedCategoryBanner } from '@/lib/generated';
+import { categoryIllustration } from '@/data/visualKit';
 
 interface Props {
   eyebrow: string;
@@ -18,15 +21,22 @@ interface Props {
   /** 顯示分類切換 */
   showCategoryNav?: boolean;
   emptyMessage?: string;
+  /** 主題入口頁的圖示（/visual-kit/topics/*.svg） */
+  topicIcon?: string;
 }
-const { eyebrow, title, lede, crumbs, articles, activeCategory = 'all', showCategoryNav = true, emptyMessage = '目前尚無文章。' } = Astro.props;
+const { eyebrow, title, lede, crumbs, articles, activeCategory = 'all', showCategoryNav = true, emptyMessage = '目前尚無文章。', topicIcon } = Astro.props;
+/** 分類頁視覺：生成橫幅優先，否則 SVG 插畫 */
+const banner = activeCategory !== 'all' ? generatedCategoryBanner(activeCategory) : undefined;
+const illustration = activeCategory !== 'all' ? categoryIllustration(activeCategory) : undefined;
 ---
 
 <section class="list-head">
   <div class="container">
     <Breadcrumb items={crumbs} />
-    <div class="list-head__body">
-      <SectionHead eyebrow={eyebrow} title={title} lede={lede} as="h1" />
+    <div class:list={['list-head__body', { 'list-head__body--visual': !!(illustration || topicIcon) }]}>
+      <div>
+        {topicIcon && <img src={topicIcon} alt="" width="72" height="72" class="list-head__topic-icon" />}
+        <SectionHead eyebrow={eyebrow} title={title} lede={lede} as="h1" />
       {
         showCategoryNav && (
           <nav class="cat-nav" aria-label="專欄分類">
@@ -39,6 +49,18 @@ const { eyebrow, title, lede, crumbs, articles, activeCategory = 'all', showCate
               </a>
             ))}
           </nav>
+        )
+      }
+      </div>
+      {
+        illustration && (
+          <div class="list-head__visual">
+            {banner ? (
+              <Image src={banner} alt="" widths={[480, 720, 960]} sizes="(min-width: 900px) 420px, 92vw" loading="eager" class="list-head__img" />
+            ) : (
+              <img src={illustration} alt="" width="600" height="400" loading="eager" class="list-head__img" />
+            )}
+          </div>
         )
       }
     </div>
@@ -71,6 +93,31 @@ const { eyebrow, title, lede, crumbs, articles, activeCategory = 'all', showCate
   }
   .list-head__body {
     margin-top: var(--sp-5);
+  }
+  .list-head__body--visual {
+    display: grid;
+    gap: var(--sp-6);
+    align-items: center;
+  }
+  @media (min-width: 900px) {
+    .list-head__body--visual {
+      grid-template-columns: 1.3fr 0.9fr;
+      gap: var(--sp-12);
+    }
+  }
+  .list-head__topic-icon {
+    width: 72px;
+    height: 72px;
+    border-radius: 20px;
+    margin-bottom: var(--sp-4);
+  }
+  .list-head__visual :global(.list-head__img) {
+    width: 100%;
+    max-width: 420px;
+    aspect-ratio: 3 / 2;
+    object-fit: cover;
+    border-radius: var(--r-xl);
+    margin-inline: auto;
   }
   .list-head :global(.section-head) {
     margin-bottom: var(--sp-5);

@@ -4,6 +4,7 @@ import CategoryCover from './CategoryCover.astro';
 import Icon from './Icon.astro';
 import { categories } from '@/data/categories';
 import { formatDate, isoDate, type Article } from '@/lib/articles';
+import { generatedArticleCover } from '@/lib/generated';
 
 interface Props {
   article: Article;
@@ -16,14 +17,16 @@ const { article, variant = 'default', headingLevel: H = 'h3', loading = 'lazy' }
 const { data } = article;
 const cat = categories[data.category];
 const href = `/articles/${article.id}/`;
+/** 封面優先順序：frontmatter 真實照片 → 生成圖（src/assets/generated/articles/{slug}）→ 分類幾何封面 */
+const cover = data.cover ?? generatedArticleCover(article.id);
 ---
 
 <article class:list={['acard card card--link', `acard--${variant}`]}>
   <a href={href} class="acard__media" tabindex="-1" aria-hidden="true">
     {
-      data.cover ? (
+      cover ? (
         <Image
-          src={data.cover}
+          src={cover}
           alt=""
           widths={variant === 'compact' ? [240, 480] : [400, 640, 960]}
           sizes={variant === 'compact' ? '160px' : '(min-width: 1024px) 380px, (min-width: 640px) 45vw, 92vw'}

@@ -69,4 +69,14 @@
 
 已匯入但目前未用（保留供日後文章）：clinic-sketch-hip、atls-abcde-card、gymnastics-injury-card、diet-education-1~4、rakuten-monkeys-sign、event-2023-nig-booth、lecture-coaches-screen、conference-pain-2025/2026。
 
-**刻意不用**：NBA 球員照片與新聞截圖（第三方版權）、Threads 手機截圖、IG 低解析縮圖、家庭／旅遊照片。無合適照片的文章以 `CategoryCover` 幾何封面呈現。
+**刻意不用**：NBA 球員照片與新聞截圖（第三方版權）、Threads 手機截圖、IG 低解析縮圖、家庭／旅遊照片。無合適照片的文章以 `CategoryCover` 幾何封面呈現（未來可由 `src/assets/generated/articles/` 的生成圖取代）。
+
+## 外部 AI 製作的素材（design-v1.1.0 納入）
+
+| 素材 | 來源 | 放置位置 | 說明 |
+|---|---|---|---|
+| 33 張 SVG（圖示、插畫、裝飾） | 分支 `assets/visual-kit-gpt25-briefs`（已合併） | `website/public/visual-kit/` | 程式繪製、無外部資源；`manifest.json` 含 sha256 |
+| 65 份 GPT Image 提示詞 | 同上 | `website/design/image-production/` | 尚未生成任何圖片；放置對應表 `PLACEMENT.md`／`placement.json` |
+| 6 張醫學解說圖 SVG | `main` 上另一 AI 的 commit（原放於 `website_blog/medical_3d_assets/`） | `website/public/medical/`（已 git mv） | 依部落格文章製作；已嵌入對應文章 |
+
+原始爬蟲資料夾（`website_blog/` 等）已恢復為僅含爬蟲資料。

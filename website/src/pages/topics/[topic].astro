@@ -4,6 +4,7 @@ import ArticleListPage from '@/components/ArticleListPage.astro';
 import Icon from '@/components/Icon.astro';
 import { topics, type Topic } from '@/data/topics';
 import { treatmentBySlug } from '@/data/treatments';
+import { topicIcon, treatmentIcon } from '@/data/visualKit';
 import { getArticlesByTags } from '@/lib/articles';
 import { breadcrumbJsonLd } from '@/lib/jsonld';
 
@@ -32,6 +33,7 @@ const related = (topic.treatments ?? []).map((s) => treatmentBySlug[s as keyof t
     articles={articles}
     showCategoryNav={false}
     emptyMessage="這個主題的文章整理中，可先瀏覽專欄總覽。"
+    topicIcon={topicIcon(topic.id)}
   >
     {
       related.length > 0 && (
@@ -41,6 +43,7 @@ const related = (topic.treatments ?? []).map((s) => treatmentBySlug[s as keyof t
             {related.map((t) => (
               <li>
                 <a href={`/${t.slug}/`} class="card card--link topic-treatment">
+                  <img src={treatmentIcon(t.slug)} alt="" width="44" height="44" loading="lazy" class="topic-treatment__icon" />
                   <span class="topic-treatment__name">{t.name}</span>
                   <span class="topic-treatment__en">{t.englishName}</span>
                   <Icon name="arrow-right" class="icon" />
@@ -79,23 +82,31 @@ const related = (topic.treatments ?? []).map((s) => treatmentBySlug[s as keyof t
   }
   .topic-treatment {
     display: grid;
-    grid-template-columns: 1fr auto;
+    grid-template-columns: 44px 1fr auto;
     align-items: center;
     gap: 2px var(--sp-3);
     padding: var(--sp-4) var(--sp-5);
     text-decoration: none;
     color: var(--c-ink);
   }
+  .topic-treatment__icon {
+    grid-column: 1;
+    grid-row: 1 / span 2;
+    width: 44px;
+    height: 44px;
+    border-radius: 12px;
+  }
   .topic-treatment__name {
+    grid-column: 2;
     font-weight: 700;
   }
   .topic-treatment__en {
-    grid-column: 1;
+    grid-column: 2;
     font-size: var(--fs-xs);
     color: var(--c-muted);
   }
   .topic-treatment :global(.icon) {
-    grid-column: 2;
+    grid-column: 3;
     grid-row: 1 / span 2;
     width: 1.1rem;
     height: 1.1rem;

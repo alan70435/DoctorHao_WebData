@@ -3,12 +3,14 @@ import Icon from './Icon.astro';
 import { doctor } from '@/data/doctor';
 import { clinics, lastConfirmed } from '@/data/clinics';
 import { footerNav } from '@/data/nav';
+import { decorBackground } from '@/lib/generated';
 
 const year = new Date().getFullYear();
 const primary = clinics.find((c) => c.primary) ?? clinics[0];
+const footerBg = await decorBackground('footerFlow', 1600);
 ---
 
-<footer class="site-footer">
+<footer class="site-footer" style={`--footer-bg:url('${footerBg}')`}>
   <div class="container">
     <div class="footer-grid">
       <div class="footer-brand">
@@ -79,7 +81,11 @@ const primary = clinics.find((c) => c.primary) ?? clinics[0];
 
 <style>
   .site-footer {
-    background: var(--c-brand-900);
+    background-color: var(--c-brand-900);
+    background-image: var(--footer-bg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: right top;
     color: rgba(255, 255, 255, 0.82);
     padding-block: clamp(2.5rem, 5vw, 4rem) clamp(1.5rem, 3vw, 2.5rem);
     margin-top: auto;

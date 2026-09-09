@@ -12,6 +12,8 @@ import { treatments } from '@/data/treatments';
 import { categoryList } from '@/data/categories';
 import { getFeaturedArticles } from '@/lib/articles';
 import { physicianJsonLd } from '@/lib/jsonld';
+import { decorBackground, generatedCategoryBanner } from '@/lib/generated';
+import { categoryIllustration } from '@/data/visualKit';
 import { SITE_NAME, DEFAULT_DESCRIPTION } from '@/data/site.js';
 import heroPhoto from '@/assets/photos/doctor-portrait-studio.jpg';
 import aboutPhoto from '@/assets/photos/event-2023-nig-tennis.jpg';
@@ -19,11 +21,29 @@ import aboutPhoto from '@/assets/photos/event-2023-nig-tennis.jpg';
 const featured = await getFeaturedArticles(6);
 const ogPortrait = await getImage({ src: heroPhoto, width: 1200, height: 630, fit: 'cover', position: 'top', format: 'jpg' });
 const jsonLd = physicianJsonLd(Astro.site, new URL(ogPortrait.src, Astro.site).toString());
+
+// 裝飾背景：有生成圖則用生成圖，否則使用 SVG 素材（皆為純裝飾）
+const [heroDesktopBg, heroMobileBg, portraitHalo, sectionWave] = await Promise.all([
+  decorBackground('heroDesktop', 1920),
+  decorBackground('heroMobile', 1200),
+  decorBackground('portraitHalo', 1200),
+  decorBackground('sectionWave', 1920),
+]);
+const heroStyle = `--hero-bg-desktop:url('${heroDesktopBg}');--hero-bg-mobile:url('${heroMobileBg}');--portrait-halo:url('${portraitHalo}')`;
+const waveStyle = `--wave:url('${sectionWave}')`;
+
+// 專欄分類圖：生成橫幅優先，否則 SVG 插畫
+const categoryTiles = await Promise.all(
+  categoryList.map(async (c) => {
+    const banner = generatedCategoryBanner(c.id);
+    return { ...c, banner, illustration: categoryIllustration(c.id) };
+  }),
+);
 ---
 
 <BaseLayout title={SITE_NAME} rawTitle description={DEFAULT_DESCRIPTION} ogType="profile" jsonLd={jsonLd}>
   <!-- Section 1: Hero -->
-  <section class="hero" aria-labelledby="hero-title">
+  <section class="hero" aria-labelledby="hero-title" style={heroStyle}>
     <div class="container hero__inner">
       <div class="hero__text">
         <p class="hero__eyebrow">{doctor.hospital} {doctor.department}・樂天桃猿棒球隊醫療團隊醫師</p>
@@ -136,8 +156,24 @@ const jsonLd = physicianJsonLd(Astro.site, new URL(ogPortrait.src, Astro.site).t
       >
         <a slot="action" href="/articles/" class="btn btn--secondary">全部文章 <Icon name="arrow-right" class="icon" /></a>
       </SectionHead>
-      <ul class="cat-links" aria-label="專欄分類">
-        {categoryList.map((c) => <li><a href={c.path} class:list={['chip', `chip--${c.tone}`]}>{c.name}</a></li>)}
+      <ul class="cat-tiles" aria-label="專欄分類">
+        {
+          categoryTiles.map((c) => (
+            <li>
+              <a href={c.path} class:list={['cat-tile', 'card', 'card--link', `cat-tile--${c.tone}`]}>
+                {c.banner ? (
+                  <Image src={c.banner} alt="" widths={[360, 720]} sizes="(min-width: 900px) 360px, 92vw" loading="lazy" class="cat-tile__img" />
+                ) : (
+                  <img src={c.illustration} alt="" width="600" height="400" loading="lazy" class="cat-tile__img" />
+                )}
+                <span class="cat-tile__body">
+                  <span class="cat-tile__name">{c.name}</span>
+                  <span class="cat-tile__desc">{c.description}</span>
+                </span>
+              </a>
+            </li>
+          ))
+        }
       </ul>
       <div class="grid grid--3">
         {featured.map((a) => <ArticleCard article={a} />)}
@@ -145,17 +181,34 @@ const jsonLd = physicianJsonLd(Astro.site, new URL(ogPortrait.src, Astro.site).t
     </div>
   </section>
 
+  <div class="wave" aria-hidden="true" style={waveStyle}></div>
+
   <!-- Section 6: 門診 -->
   <ClinicSection surface={false} />
 </BaseLayout>
 
 <style>
-  /* Hero */
+  /* Hero：背景使用裝飾素材（SVG 或生成圖），左側保留給文字 */
   .hero {
-    background:
-      radial-gradient(60% 80% at 100% 0%, var(--c-brand-50) 0%, transparent 60%),
-      linear-gradient(180deg, #fff 0%, var(--c-surface) 100%);
+    background-color: #fcfaf7;
+    background-image: var(--hero-bg-mobile);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center bottom;
     border-bottom: 1px solid var(--c-line);
+  }
+  @media (min-width: 900px) {
+    .hero {
+      background-image: var(--hero-bg-desktop);
+      background-position: right center;
+    }
+  }
+  .wave {
+    height: clamp(56px, 8vw, 120px);
+    background-image: var(--wave);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
   }
   .hero__inner {
     display: grid;
@@ -231,10 +284,13 @@ const jsonLd = physicianJsonLd(Astro.site, new URL(ogPortrait.src, Astro.site).t
   .hero__media::before {
     content: '';
     position: absolute;
-    inset: 8% -6% -6% 8%;
-    border-radius: var(--r-xl);
-    background: var(--c-brand-100);
+    inset: -6% -10% -8% -10%;
+    background-image: var(--portrait-halo);
+    background-repeat: no-repeat;
+    background-size: contain;
+    background-position: center;
     z-index: 0;
+    opacity: 0.95;
   }
   .hero__media :global(.hero__img) {
     position: relative;
@@ -323,16 +379,55 @@ const jsonLd = physicianJsonLd(Astro.site, new URL(ogPortrait.src, Astro.site).t
     color: var(--c-text);
   }
 
-  /* Articles */
-  .cat-links {
+  /* Articles：分類磁磚（插畫＋名稱） */
+  .cat-tiles {
     list-style: none;
-    margin: 0 0 var(--sp-6);
+    margin: 0 0 var(--sp-8);
     padding: 0;
-    display: flex;
-    flex-wrap: wrap;
-    gap: var(--sp-2);
+    display: grid;
+    gap: var(--sp-4);
+    grid-template-columns: repeat(auto-fit, minmax(min(100%, 280px), 1fr));
   }
-  .cat-links li {
+  .cat-tiles li {
     margin: 0;
+  }
+  .cat-tile {
+    display: grid;
+    grid-template-columns: 112px 1fr;
+    align-items: center;
+    gap: var(--sp-4);
+    padding: var(--sp-3) var(--sp-4) var(--sp-3) var(--sp-3);
+    text-decoration: none;
+    color: var(--c-ink);
+    background: #fff;
+  }
+  .cat-tile :global(.cat-tile__img) {
+    width: 112px;
+    height: 76px;
+    object-fit: cover;
+    border-radius: var(--r-md);
+  }
+  .cat-tile__body {
+    display: flex;
+    flex-direction: column;
+    gap: 2px;
+    min-width: 0;
+  }
+  .cat-tile__name {
+    font-weight: 700;
+  }
+  .cat-tile--teal .cat-tile__name {
+    color: var(--cat-teal);
+  }
+  .cat-tile--amber .cat-tile__name {
+    color: var(--cat-amber);
+  }
+  .cat-tile--green .cat-tile__name {
+    color: var(--cat-green);
+  }
+  .cat-tile__desc {
+    font-size: var(--fs-xs);
+    color: var(--c-muted);
+    line-height: 1.55;
   }
 </style>

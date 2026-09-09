@@ -12,6 +12,7 @@ import { topicById } from '@/data/topics';
 import { doctor } from '@/data/doctor';
 import { formatDate, isoDate, readingMinutes, getRelatedArticles, type Article } from '@/lib/articles';
 import { breadcrumbJsonLd } from '@/lib/jsonld';
+import { generatedArticleCover } from '@/lib/generated';
 
 interface Props {
   article: Article;
@@ -29,9 +30,14 @@ const crumbs = [
   { label: data.title },
 ];
 
+/** 封面優先順序：frontmatter 真實照片 → 生成圖 → 分類幾何封面 */
+const generated = generatedArticleCover(article.id);
+const cover = data.cover ?? generated;
+const coverAlt = data.cover ? (data.coverAlt ?? '') : generated ? `「${data.title}」主題插畫` : '';
+
 let ogImage;
-if (data.cover) {
-  const og = await getImage({ src: data.cover, width: 1200, height: 630, fit: 'cover', format: 'jpg' });
+if (cover) {
+  const og = await getImage({ src: cover, width: 1200, height: 630, fit: 'cover', format: 'jpg' });
   ogImage = { src: og.src, width: 1200, height: 630, alt: data.coverAlt ?? data.title };
 }
 
@@ -79,10 +85,10 @@ const articleLd = {
       </div>
       <div class="container container--narrow article__cover">
         {
-          data.cover ? (
+          cover ? (
             <Image
-              src={data.cover}
-              alt={data.coverAlt ?? ''}
+              src={cover}
+              alt={coverAlt}
               widths={[640, 960, 1280]}
               sizes="(min-width: 900px) 860px, 96vw"
               priority

@@ -7,10 +7,13 @@ import DoctorQuote from '@/components/DoctorQuote.astro';
 import ArticleCard from '@/components/ArticleCard.astro';
 import ClinicSection from '@/components/ClinicSection.astro';
 import Icon from '@/components/Icon.astro';
+import { Image } from 'astro:assets';
 import { treatments, type Treatment } from '@/data/treatments';
 import { doctor } from '@/data/doctor';
 import { getRelatedArticles } from '@/lib/articles';
 import { breadcrumbJsonLd } from '@/lib/jsonld';
+import { generatedTreatmentImage } from '@/lib/generated';
+import { treatmentIcon } from '@/data/visualKit';
 
 export function getStaticPaths() {
   return treatments.map((t) => ({ params: { treatment: t.slug }, props: { t } }));
@@ -21,6 +24,8 @@ interface Props {
 const { t } = Astro.props;
 const crumbs = [{ label: '主要治療' }, { label: t.name }];
 const related = await getRelatedArticles({ slugs: t.relatedSlugs, tags: t.relatedTags, limit: 4 });
+/** 主圖：生成插畫（src/assets/generated/treatments/{slug}）優先，否則使用 SVG 圖示 */
+const heroImage = generatedTreatmentImage(t.slug);
 
 const toc = [
   ['what', '治療是什麼'],
@@ -55,17 +60,36 @@ const webPageLd = {
       <Breadcrumb items={crumbs} />
       <div class="t-hero__grid">
         <div>
-          <p class="eyebrow">主要治療・{t.englishName}</p>
-          <h1>{t.name}</h1>
+          <div class="t-hero__title-row">
+            <img src={treatmentIcon(t.slug)} alt="" width="72" height="72" class="t-hero__icon" />
+            <div>
+              <p class="eyebrow">主要治療・{t.englishName}</p>
+              <h1>{t.name}</h1>
+            </div>
+          </div>
           <p class="lede">{t.lede}</p>
           <div class="t-hero__actions">
             <a href="#applications" class="btn btn--secondary">哪些狀況可能適用</a>
             <a href="/clinic/" class="btn"><Icon name="calendar" class="icon" />查看程皓醫師門診資訊</a>
           </div>
         </div>
-        <Callout tone="warm" icon="alert" title="請先知道" class="t-hero__callout">
-          <p>本頁為一般醫療衛教資訊整理，非治療承諾。治療方式會依患者狀況有所不同，是否適合仍需經實際診察與醫師評估；本網站不提供價格或方案資訊。</p>
-        </Callout>
+        <div class="t-hero__side">
+          {
+            heroImage && (
+              <Image
+                src={heroImage}
+                alt={`${t.name}主題插畫`}
+                widths={[480, 720, 960]}
+                sizes="(min-width: 900px) 420px, 92vw"
+                loading="eager"
+                class="t-hero__img"
+              />
+            )
+          }
+          <Callout tone="warm" icon="alert" title="請先知道" class="t-hero__callout">
+            <p>本頁為一般醫療衛教資訊整理，非治療承諾。治療方式會依患者狀況有所不同，是否適合仍需經實際診察與醫師評估；本網站不提供價格或方案資訊。</p>
+          </Callout>
+        </div>
       </div>
     </div>
   </header>
@@ -219,8 +243,39 @@ const webPageLd = {
     gap: var(--sp-3);
     margin-top: var(--sp-6);
   }
-  .t-hero__callout {
+  .t-hero__title-row {
+    display: flex;
+    align-items: flex-start;
+    gap: var(--sp-4);
+    margin-bottom: var(--sp-3);
+  }
+  .t-hero__icon {
+    width: 72px;
+    height: 72px;
+    border-radius: 20px;
+    flex: none;
+    margin-top: 4px;
+  }
+  .t-hero__title-row h1 {
+    margin-bottom: 0;
+  }
+  .t-hero__side {
+    display: grid;
+    gap: var(--sp-4);
     align-self: center;
+  }
+  .t-hero__side :global(.t-hero__img) {
+    width: 100%;
+    aspect-ratio: 4 / 3;
+    object-fit: cover;
+    border-radius: var(--r-xl);
+    box-shadow: var(--shadow-md);
+  }
+  @media (max-width: 480px) {
+    .t-hero__title-row {
+      flex-direction: column;
+      gap: var(--sp-3);
+    }
   }
 
   .t-layout {

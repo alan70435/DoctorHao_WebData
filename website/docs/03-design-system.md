@@ -65,6 +65,19 @@
 - `ArticleLayout`：Breadcrumb、分類 chip、H1、導言、meta（作者／原始發布／網站更新／閱讀時間）、封面、`.prose` 內文、免責、原始來源、相關主題、作者卡、相關文章、門診 CTA；Article JSON-LD 含 author／datePublished／dateModified。
 - 治療頁（`[treatment].astro`）：11 段固定結構＋側邊目錄（桌機 sticky）＋「程皓醫師曾這樣說」＋ FAQPage JSON-LD ＋ MedicalWebPage。
 
+## 視覺素材（design-v1.1.0 起）
+
+| 素材 | 位置 | 用途 |
+|---|---|---|
+| 治療圖示 ×4 | `public/visual-kit/treatments/` | 首頁治療卡、治療頁標題、主題頁「可能相關的治療」 |
+| 主題圖示 ×8 | `public/visual-kit/topics/` | 首頁「從問題開始找資訊」、主題頁標題（`tendon` 主題對應 `muscle-tendon.svg`） |
+| 分類插畫 ×3 | `public/visual-kit/categories/` | 首頁專欄區分類磁磚、分類列表頁標題右側 |
+| 裝飾背景 ×6 | `public/visual-kit/decor/` | Hero 桌機／手機背景、醫師照片光環、區塊分隔曲線、門診區背景、頁尾背景（皆為 CSS 背景，純裝飾） |
+| UI 圖示 ×12 | `public/visual-kit/ui/` | 目前未使用（網站沿用 `Icon.astro` 的 inline SVG 以支援 currentColor／hover），保留供未來替換 |
+| 醫學解說圖 ×6 | `public/medical/` | 嵌入 5 篇文章的 `<figure>`（見 `docs/07-medical-figures.md`） |
+
+對應表集中於 `src/data/visualKit.ts`；生成圖（GPT Image）放入 `src/assets/generated/` 後由 `src/lib/generated.ts` 自動優先採用，上述 SVG 退為備援。
+
 ## 圖片策略
 
 - 原始素材保留於上層資料夾；`scripts/import-assets.mjs` 複製並縮至最長邊 1600px（JPEG q84）至 `src/assets/`。
