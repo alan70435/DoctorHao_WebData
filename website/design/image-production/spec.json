@@ -1,0 +1,52 @@
+{
+  "schemaVersion": 1,
+  "status": "briefs-only; no GPT Image outputs generated",
+  "sourceRepository": "alan70435/DoctorHao_WebData",
+  "sourceCommit": "44ec3cca8a22ea31a3df7074602be6994c10e5bb",
+  "requestedModelFamily": "GPT Image 2.5",
+  "preferredModelId": "gpt-image-2.5-sunburst",
+  "modelDocumentation": "https://developers.openai.com/api/docs/models/gpt-image-2.5-sunburst",
+  "actualGenerationModel": null,
+  "gptImageOutputCount": 0,
+  "briefCount": 65,
+  "articleRowColumns": [
+    "slug",
+    "category",
+    "topicLabelNotVerbatimTitle",
+    "scene",
+    "avoid"
+  ],
+  "articleFiles": [
+    "articles-01.json",
+    "articles-02.json"
+  ],
+  "supplementalFile": "supplemental.json",
+  "articleSourceTemplate": "website/src/content/articles/{slug}.md",
+  "articleOutputTemplate": "website/src/assets/generated/articles/{slug}.webp",
+  "articleTargetPixels": [
+    1600,
+    900
+  ],
+  "articleCrop": "16:9, with primary subject centered for the existing square compact card crop",
+  "readInFull": [
+    "website/src/content/articles/achilles-rupture-return.md",
+    "website/src/content/articles/glp1-what-it-is-and-who-fits.md"
+  ],
+  "remainingArticleReview": "Topic-derived from filenames and the existing editorial inventory; full article must be read before generation.",
+  "medicalReview": "Required before publishing medically meaningful images. Editorial illustrations must not be treated as clinical diagrams.",
+  "bmaBlocker": "Existing inventory records workshop attendance but no confirmed clinical service. Confirm actual service, technique and approved wording before BMA imagery is generated or published.",
+  "commonPrompt": "Create one original premium editorial illustration for the personal website of Dr Cheng Hao, Taiwan. Professional, warm, calm and approachable; not a beauty-clinic advertisement. Restrained teal #0F5C6E, deep teal #0B3F4C, pale teal #DCEEF1, warm ivory #FDF7F0 and a small orange #E0862E accent. Soft diffuse daylight, fine tactile paper/material texture, clear large shapes, realistic object proportions, spacious contemporary composition. Keep the main subject inside the central 55% so a centered square crop and 16:9 crop both remain usable. No embedded title, letters, numbers, logo, watermark, price, testimonial, brand packaging, fabricated medical scan or before/after comparison. Do not generate Dr Cheng or imitate a real patient. This is an editorial concept image, not a diagnostic or procedural teaching image. ",
+  "promptComposition": "commonPrompt + SCENE: scene + EXCLUSIONS: avoid + LAYOUT: target aspect ratio and crop-safe composition",
+  "preserve": [
+    "All original photos and source captures",
+    "Authentic physician portraits",
+    "Existing article covers until an approved replacement exists"
+  ],
+  "sourceDocuments": [
+    "website/docs/01-content-inventory.md",
+    "website/docs/03-design-system.md",
+    "website/docs/04-data-usage.md",
+    "website/src/pages/index.astro",
+    "website/src/components/ArticleCard.astro"
+  ]
+}
