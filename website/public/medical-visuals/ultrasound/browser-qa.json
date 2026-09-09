@@ -1,0 +1,107 @@
+{
+  "status": "pass",
+  "clinicalReview": "needs-clinician-review",
+  "static": [
+    {
+      "viewport": 390,
+      "images": 6,
+      "overflow": false,
+      "noAutomaticGLBDownloads": true,
+      "anchors": "pass"
+    },
+    {
+      "viewport": 1440,
+      "images": 6,
+      "overflow": false,
+      "noAutomaticGLBDownloads": true,
+      "anchors": "pass"
+    }
+  ],
+  "models": [
+    {
+      "region": "shoulder",
+      "axis": "long",
+      "loaded": true,
+      "nonblank": true,
+      "rotateReset": "pass"
+    },
+    {
+      "region": "shoulder",
+      "axis": "short",
+      "loaded": true,
+      "nonblank": true,
+      "rotateReset": "pass"
+    },
+    {
+      "region": "elbow",
+      "axis": "long",
+      "loaded": true,
+      "nonblank": true,
+      "rotateReset": "pass"
+    },
+    {
+      "region": "elbow",
+      "axis": "short",
+      "loaded": true,
+      "nonblank": true,
+      "rotateReset": "pass"
+    },
+    {
+      "region": "wrist",
+      "axis": "long",
+      "loaded": true,
+      "nonblank": true,
+      "rotateReset": "pass"
+    },
+    {
+      "region": "wrist",
+      "axis": "short",
+      "loaded": true,
+      "nonblank": true,
+      "rotateReset": "pass"
+    },
+    {
+      "region": "hip",
+      "axis": "long",
+      "loaded": true,
+      "nonblank": true,
+      "rotateReset": "pass"
+    },
+    {
+      "region": "hip",
+      "axis": "short",
+      "loaded": true,
+      "nonblank": true,
+      "rotateReset": "pass"
+    },
+    {
+      "region": "knee",
+      "axis": "long",
+      "loaded": true,
+      "nonblank": true,
+      "rotateReset": "pass"
+    },
+    {
+      "region": "knee",
+      "axis": "short",
+      "loaded": true,
+      "nonblank": true,
+      "rotateReset": "pass"
+    },
+    {
+      "region": "ankle",
+      "axis": "long",
+      "loaded": true,
+      "nonblank": true,
+      "rotateReset": "pass"
+    },
+    {
+      "region": "ankle",
+      "axis": "short",
+      "loaded": true,
+      "nonblank": true,
+      "rotateReset": "pass"
+    }
+  ],
+  "articleImages": 6
+}

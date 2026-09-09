@@ -14,7 +14,7 @@ function setup() {
     const play = root.querySelector<HTMLButtonElement>('[data-play]');
     const reduce = window.matchMedia('(prefers-reduced-motion: reduce)');
     const camera: number[] = JSON.parse(root.dataset.camera || '[0.35,0.25]');
-    const closeKnee = (root.dataset.src || "").includes("/knee-") && !(root.dataset.src || "").includes("knee-motion");
+    const closeKnee = (root.dataset.src || "").startsWith("/medical-visuals/knee-") && !(root.dataset.src || "").includes("knee-motion");
     const defaultOrbit = `${camera[0]}rad ${Math.PI / 2 - camera[1]}rad ${closeKnee ? "70%" : "105%"}`;
     let model: ModelViewerElement | undefined;
     let frame = 0;

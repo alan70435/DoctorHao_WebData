@@ -1,0 +1,63 @@
+{
+  "status": "pass",
+  "checks": "file integrity, image dimensions, XML, glTF, text bounds, archive synchronization, insertion idempotence",
+  "integrationChecked": true,
+  "clinicalReview": "needs-clinician-review",
+  "note": "Technical QA is not clinical validation.",
+  "regions": [
+    {
+      "region": "shoulder",
+      "svg": "pass",
+      "raster": "pass",
+      "glbLong": "pass",
+      "glbShort": "pass",
+      "sha256": "pass",
+      "clinicalReview": "needs-clinician-review"
+    },
+    {
+      "region": "elbow",
+      "svg": "pass",
+      "raster": "pass",
+      "glbLong": "pass",
+      "glbShort": "pass",
+      "sha256": "pass",
+      "clinicalReview": "needs-clinician-review"
+    },
+    {
+      "region": "wrist",
+      "svg": "pass",
+      "raster": "pass",
+      "glbLong": "pass",
+      "glbShort": "pass",
+      "sha256": "pass",
+      "clinicalReview": "needs-clinician-review"
+    },
+    {
+      "region": "hip",
+      "svg": "pass",
+      "raster": "pass",
+      "glbLong": "pass",
+      "glbShort": "pass",
+      "sha256": "pass",
+      "clinicalReview": "needs-clinician-review"
+    },
+    {
+      "region": "knee",
+      "svg": "pass",
+      "raster": "pass",
+      "glbLong": "pass",
+      "glbShort": "pass",
+      "sha256": "pass",
+      "clinicalReview": "needs-clinician-review"
+    },
+    {
+      "region": "ankle",
+      "svg": "pass",
+      "raster": "pass",
+      "glbLong": "pass",
+      "glbShort": "pass",
+      "sha256": "pass",
+      "clinicalReview": "needs-clinician-review"
+    }
+  ]
+}

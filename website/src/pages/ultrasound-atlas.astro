@@ -1,0 +1,59 @@
+---
+import BaseLayout from '@/layouts/BaseLayout.astro';
+import MedicalModel from '@/components/MedicalModel.astro';
+import atlas from '../../public/medical-visuals/ultrasound/manifest.json';
+const base = '/medical-visuals/ultrasound/';
+const modes = ['long', 'short'] as const;
+const modeName = { long: '長軸', short: '短軸' };
+---
+<!-- ultrasound-atlas:generated-page -->
+<BaseLayout title="超音波六部位：立體解剖與探頭位置" description="肩、肘、腕、髖、膝、踝的原創超音波教學圖卡，含長短軸探頭位置與可旋轉 GLB 概念模型。尚待醫師審閱。">
+  <div class="atlas container">
+    <header>
+      <p class="eyebrow">DOCTOR HAO / MSK ULTRASOUND ATLAS</p>
+      <h1>六個部位，從解剖到探頭位置。</h1>
+      <p class="lede">每一部位選定一個代表性視窗，並排觀察長軸、短軸與方向標記。六張圖卡與十二個可旋轉模型變體，均來自同一組原創三維幾何。</p>
+      <p class="notice"><strong>示意草稿・尚待程皓醫師審閱。</strong>模型結構與比例經簡化，不是病人影像或聲學模擬。完整六部位系列不等於完整臨床檢查；不能據此診斷、量測或自行進行侵入性處置。</p>
+      <p><a href="/articles/msk-ultrasound-self-study/">回到超音波自學文章</a> · <a href="/medical-visuals/">全部醫學素材</a></p>
+      <nav aria-label="選擇關節">{atlas.items.map(v => <a href={`#${v.id}`}>{v.name}</a>)}</nav>
+    </header>
+    {atlas.items.map((v, i) => <section id={v.id} class="region" aria-labelledby={`${v.id}-title`}>
+      <p class="eyebrow">{String(i + 1).padStart(2, '0')} / 06</p>
+      <h2 id={`${v.id}-title`}>{v.name}：{v.target}</h2>
+      <figure>
+        <a href={base + v.png} aria-label={`開啟${v.name}大圖`}>
+          <picture><source srcset={base + v.image} type="image/webp" /><img src={base + v.png} width="1800" height="1200" alt={v.alt} loading="lazy" decoding="async" /></picture>
+        </a>
+        <figcaption>{v.alt}</figcaption>
+      </figure>
+      <div class="reading"><div><h3>擺位與辨識</h3>{v.position.map(t => <p>{t}</p>)}{v.caution.map(t => <p>{t}</p>)}</div>
+        <div><h3>其他區域的閱讀路線</h3><dl>{v.windows.map(([region, targets]) => <><dt>{region}</dt><dd>{targets}</dd></>)}</dl><p class="small">此清單用於銜接文章資源；本組 3D 模型僅示範上方主視窗，未提供清單中每一視窗的完整操作示範。</p></div></div>
+      <details class="models"><summary>展開{v.name}的長、短軸 3D 模型</summary>
+        <p class="small">方向標記為本系列的顯示約定；須與實際設備、側別及科室規範核對。局部皮膚接觸片是分層示意，不是病人皮膚模型。</p>
+        <div class="model-grid">{modes.map(mode => <div><h3>{modeName[mode]}探頭位置</h3><MedicalModel src={base + v.models[mode]} poster={`${base}${v.id}-${mode}-poster.webp`} alt={`${v.name}${modeName[mode]}探頭位置，概念性三維解剖示意。`} notes="不模擬超音波聲束傳播、組織變形或診斷結果；圖中解剖不完整且不能量測。" camera={v.camera} /></div>)}</div>
+      </details>
+      <p class="downloads"><a href={base + v.svg} download>SVG 圖卡</a><a href={base + v.png} download>PNG 圖卡</a><a href={base + v.image} download>WebP 圖卡</a></p>
+      <p class="small">查核來源：<a href={v.references[0].url} target="_blank" rel="noopener noreferrer">ESSR {v.name}技術指引</a>（{v.references[0].locator}）；<a href={v.references[1].url} target="_blank" rel="noopener noreferrer">AIUM 2023 MSK Practice Parameter</a>。</p>
+    </section>)}
+    <footer class="small"><p>青色平面不表示積液，暖色不表示病變分級；沒有合成 B 模式超音波影像。參考文件是製作依據，不代表學會背書。</p><p>版本：{atlas.created} · 審閱狀態：尚待醫師審閱 · <a href={base + 'manifest.json'}>素材索引與 SHA-256</a></p></footer>
+  </div>
+</BaseLayout>
+<style>
+  .atlas { padding-block: 3rem; max-width: 1200px; }
+  .eyebrow { color: #297c86; font-size: .8rem; letter-spacing: .1em; font-weight: 700; }
+  h1 { font-size: clamp(2rem,5vw,3.3rem); line-height: 1.3; max-width: 18em; }
+  .lede { font-size: 1.15rem; line-height: 1.9; max-width: 50em; }
+  .notice { background: #fff3df; color: #765321; border-radius: 14px; padding: 1.1rem 1.3rem; line-height: 1.9; }
+  nav, .downloads { display: flex; flex-wrap: wrap; gap: 1rem; }
+  nav { margin-block: 2rem; } nav a { padding: .65rem 1rem; border: 1px solid var(--c-line,#cbd9de); border-radius: 10px; }
+  .region { border-top: 1px solid var(--c-line,#cbd9de); padding-block: 2rem; scroll-margin-top: 6rem; }
+  h2 { font-size: clamp(1.5rem,3vw,2rem); line-height: 1.5; }
+  figure { margin: 1.5rem 0; } figure img { display: block; width: 100%; height: auto; border-radius: 16px; }
+  figcaption, .small { font-size: .88rem; line-height: 1.8; color: var(--c-muted,#50666e); }
+  figcaption { margin-top: .7rem; } .reading, .model-grid { display: grid; grid-template-columns: repeat(2,minmax(0,1fr)); gap: 2rem; }
+  .reading p { line-height: 1.85; } dl { display: grid; grid-template-columns: 5em 1fr; gap: .6rem; line-height: 1.8; } dt { font-weight: 600; } dd { margin: 0; }
+  .models { margin-block: 1rem; padding: 1.1rem; border: 1px solid var(--c-line,#cbd9de); border-radius: 12px; }
+  summary { cursor: pointer; min-height: 44px; font-weight: 600; }
+  a:focus-visible, summary:focus-visible { outline: 3px solid #168195; outline-offset: 4px; }
+  @media (max-width: 760px) { .reading,.model-grid { grid-template-columns: 1fr; } .atlas { padding-block: 2rem; } }
+</style>

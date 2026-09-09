@@ -1,0 +1,563 @@
+{
+  "schemaVersion": 1,
+  "created": "2026-09-10",
+  "scope": "Six adult regions, one representative window per region, long and short axes. Not a complete clinical examination.",
+  "clinicalReview": {
+    "status": "needs-clinician-review",
+    "reviewedBy": null
+  },
+  "imageSize": [
+    1800,
+    1200
+  ],
+  "containsPatientData": false,
+  "containsSyntheticSonograms": false,
+  "items": [
+    {
+      "id": "shoulder",
+      "name": "肩關節",
+      "target": "肱二頭肌長頭肌腱・結節間溝",
+      "alt": "以結節間溝為骨性地標辨識肱二頭肌長頭肌腱；此圖不等於完整旋轉肌袖檢查。",
+      "position": [
+        "坐姿，肘彎曲約 90°，掌心向上。",
+        "前臂朝對側膝，肩採輕度內旋。"
+      ],
+      "windows": [
+        [
+          "前方",
+          "肱二頭肌長頭肌腱；肩胛下肌腱"
+        ],
+        [
+          "上外側",
+          "棘上肌腱與肩峰下－三角肌下滑囊"
+        ],
+        [
+          "後方",
+          "棘下肌、小圓肌腱與後方關節隱窩"
+        ],
+        [
+          "肩頂",
+          "肩鎖關節"
+        ]
+      ],
+      "caution": [
+        "先以短軸找到大、小結節間的肌腱，再轉長軸。",
+        "旋轉探頭不等於任意壓迫；輕微傾斜以調整各向異性。"
+      ],
+      "models": {
+        "long": "shoulder-long.glb",
+        "short": "shoulder-short.glb"
+      },
+      "camera": [
+        0.46365,
+        0.30919
+      ],
+      "image": "shoulder-anatomy-probe.webp",
+      "svg": "shoulder-anatomy-probe.svg",
+      "png": "shoulder-anatomy-probe.png",
+      "reviewStatus": "needs-clinician-review",
+      "references": [
+        {
+          "url": "https://essr.org/content-essr/uploads/2016/10/shoulder.pdf",
+          "locator": "PDF pp. 2–8；主視窗 p. 2"
+        },
+        {
+          "url": "https://doi.org/10.1002/jum.16228",
+          "year": 2023
+        }
+      ],
+      "files": [
+        {
+          "path": "shoulder-anatomy-probe.svg",
+          "sha256": "467973e9384efb73454d5fb9d35946e927e6391aebd7ae36172840ed63f8a84d",
+          "bytes": 534073
+        },
+        {
+          "path": "shoulder-anatomy-probe.png",
+          "sha256": "8b7d17b13265d5833242463fc54f725fd5c5fe7355611481452254213f664c08",
+          "bytes": 407734
+        },
+        {
+          "path": "shoulder-anatomy-probe.webp",
+          "sha256": "b3d30eb397c4a636a2976b269aa49c930747dfdd33a583408d3bd025d8760198",
+          "bytes": 140678
+        },
+        {
+          "path": "shoulder-long.glb",
+          "sha256": "bd395e572448340528809d2845a72d10737e24ea6e4ea1021e8449960895d79a",
+          "bytes": 192424
+        },
+        {
+          "path": "shoulder-long-poster.webp",
+          "sha256": "dcced973fd7977a982e9f8e8d640aaa7ab47772b5b4faec1b08f4b68bec2d45b",
+          "bytes": 18120
+        },
+        {
+          "path": "shoulder-short.glb",
+          "sha256": "c77378cbdb4d7d69425e8cb566515044788c054c58cc20362fe744f16cbbe545",
+          "bytes": 192460
+        },
+        {
+          "path": "shoulder-short-poster.webp",
+          "sha256": "e65c3f07a2307fd7ed65c59058b49451df366e9c7d2716c53f2f2ce51ef78126",
+          "bytes": 17670
+        }
+      ]
+    },
+    {
+      "id": "elbow",
+      "name": "肘關節",
+      "target": "外上髁・共同伸肌腱",
+      "alt": "外上髁是共同伸肌腱的近端骨性地標；本視窗不取代前、內、後側的適應症導向評估。",
+      "position": [
+        "坐姿，上肢有支撐，拇指朝上。",
+        "肘可伸直或採舒適屈曲位，露出外側。"
+      ],
+      "windows": [
+        [
+          "前方",
+          "遠端肱二頭肌腱、肱肌與神經血管"
+        ],
+        [
+          "外側",
+          "共同伸肌腱、橈肱關節與橈神經分支"
+        ],
+        [
+          "內側",
+          "共同屈肌腱與尺側副韌帶"
+        ],
+        [
+          "後方",
+          "肱三頭肌腱、鷹嘴隱窩與尺神經"
+        ]
+      ],
+      "caution": [
+        "探頭近端置於外上髁，順肌腱方向取得長軸。",
+        "同時取得短軸；深層韌帶與表層肌腱不可混為一談。"
+      ],
+      "models": {
+        "long": "elbow-long.glb",
+        "short": "elbow-short.glb"
+      },
+      "camera": [
+        0.60554,
+        0.30628
+      ],
+      "image": "elbow-anatomy-probe.webp",
+      "svg": "elbow-anatomy-probe.svg",
+      "png": "elbow-anatomy-probe.png",
+      "reviewStatus": "needs-clinician-review",
+      "references": [
+        {
+          "url": "https://essr.org/content-essr/uploads/2016/10/elbow.pdf",
+          "locator": "PDF pp. 2–7；主視窗 p. 4"
+        },
+        {
+          "url": "https://doi.org/10.1002/jum.16228",
+          "year": 2023
+        }
+      ],
+      "files": [
+        {
+          "path": "elbow-anatomy-probe.svg",
+          "sha256": "ecabd7eb1fb413cb44391e7a47eb128d682dc419a6025e4b561c84f3d2b12444",
+          "bytes": 464295
+        },
+        {
+          "path": "elbow-anatomy-probe.png",
+          "sha256": "33df198825a428732adeb2cdd8e013f393f839589d3e828a4906b5bb54628968",
+          "bytes": 354597
+        },
+        {
+          "path": "elbow-anatomy-probe.webp",
+          "sha256": "ca3377c35ddd6cb6c5567eb7f7095b0239cc8e8ffc076678db566456c7010b8c",
+          "bytes": 131100
+        },
+        {
+          "path": "elbow-long.glb",
+          "sha256": "1d8deccae4a4e725ecf01f019f394df0840340eb83c75b3999d241c0db09aa34",
+          "bytes": 249636
+        },
+        {
+          "path": "elbow-long-poster.webp",
+          "sha256": "45581d99e62b5664f69e33ad6b29857814fae6979ef71fc62f556fd74befca07",
+          "bytes": 11810
+        },
+        {
+          "path": "elbow-short.glb",
+          "sha256": "01f6425f2f492027512461013dd5840607ccfb93f818bee128cdc118aec1fa1d",
+          "bytes": 249668
+        },
+        {
+          "path": "elbow-short-poster.webp",
+          "sha256": "a8513b6b267ad49323c8984e501b491c6f1bd3148aa8fa68715205e2f78f5c1d",
+          "bytes": 11742
+        }
+      ]
+    },
+    {
+      "id": "wrist",
+      "name": "腕關節",
+      "target": "近端腕隧道・正中神經",
+      "alt": "模型分別保留四條淺指屈肌腱、四條深指屈肌腱及一條拇長屈肌腱；支持帶透明化僅為顯示層次。",
+      "position": [
+        "前臂旋後、掌心向上，手背有支撐。",
+        "手腕放鬆，避免過度伸展或重壓。"
+      ],
+      "windows": [
+        [
+          "掌側",
+          "正中神經、腕隧道入口與出口"
+        ],
+        [
+          "尺掌側",
+          "Guyon 管內的尺神經與尺動脈"
+        ],
+        [
+          "背側",
+          "六個伸肌腱腔室、腕關節與背側韌帶"
+        ]
+      ],
+      "caution": [
+        "入口短軸以舟骨結節與豌豆骨定位，正中神經在支持帶深面。",
+        "腕隧道含 9 條屈肌腱；尺神經、尺動脈不在腕隧道內。"
+      ],
+      "models": {
+        "long": "wrist-long.glb",
+        "short": "wrist-short.glb"
+      },
+      "camera": [
+        0.34302,
+        0.44007
+      ],
+      "image": "wrist-anatomy-probe.webp",
+      "svg": "wrist-anatomy-probe.svg",
+      "png": "wrist-anatomy-probe.png",
+      "reviewStatus": "needs-clinician-review",
+      "references": [
+        {
+          "url": "https://essr.org/content-essr/uploads/2016/10/wrist.pdf",
+          "locator": "PDF pp. 2–7；主視窗 pp. 6–7"
+        },
+        {
+          "url": "https://doi.org/10.1002/jum.16228",
+          "year": 2023
+        }
+      ],
+      "files": [
+        {
+          "path": "wrist-anatomy-probe.svg",
+          "sha256": "3dc1edcdf73abe96d8feeb1bd40ffa4c72d2d95e2b3be60e85b94040d8ea4b43",
+          "bytes": 478763
+        },
+        {
+          "path": "wrist-anatomy-probe.png",
+          "sha256": "014dd2dfe6f7e66a1ffdccae0a2d45b73a94987a25e6666ea40fd4840cb4c072",
+          "bytes": 384936
+        },
+        {
+          "path": "wrist-anatomy-probe.webp",
+          "sha256": "e46b187d58f17ddf99bf722a7f391b879a76f07e94debd6dcacd8dc928fb3412",
+          "bytes": 145228
+        },
+        {
+          "path": "wrist-long.glb",
+          "sha256": "58e09ec0bf4ac0d9fcd1cdff81d9bf862e05a2cffbc5ec16c9fe19ae0c4d4ad5",
+          "bytes": 285724
+        },
+        {
+          "path": "wrist-long-poster.webp",
+          "sha256": "96a213676a65fc4cf3933f12d798f2c196e58ed2187ad39296914f99575f60ab",
+          "bytes": 16500
+        },
+        {
+          "path": "wrist-short.glb",
+          "sha256": "bff47b15715b372e12dabaa2750dbc1a6ff59d9a19af09a6cbec558f93002402",
+          "bytes": 285756
+        },
+        {
+          "path": "wrist-short-poster.webp",
+          "sha256": "6679da5b21b76bd4ba34e95e6ba8e8bfefecf7bb73f29a48a8774ec2d709c7ba",
+          "bytes": 16724
+        }
+      ]
+    },
+    {
+      "id": "hip",
+      "name": "髖關節",
+      "target": "前方關節隱窩・股骨頭頸",
+      "alt": "成人前髖示意；斜長軸以股骨頭、股骨頸定位。不是嬰兒髖發育評估，也不能據此排除盂唇病變。",
+      "position": [
+        "成人仰躺，以下肢舒適姿勢檢查。",
+        "較深部位依穿透需求選擇較低頻探頭。"
+      ],
+      "windows": [
+        [
+          "前方",
+          "股骨頭頸、前方隱窩與髂腰肌腱"
+        ],
+        [
+          "外側",
+          "大轉子、臀中肌與臀小肌腱"
+        ],
+        [
+          "內側",
+          "內收肌起點及周邊軟組織"
+        ],
+        [
+          "後方",
+          "坐骨結節與近端腿後肌腱"
+        ]
+      ],
+      "caution": [
+        "前方主視窗沿股骨頸斜長軸，不是直接沿大腿長軸。",
+        "先辨識內側神經血管；藍色囊線不是積液或疾病的判定。"
+      ],
+      "models": {
+        "long": "hip-long.glb",
+        "short": "hip-short.glb"
+      },
+      "camera": [
+        0.46365,
+        0.30919
+      ],
+      "image": "hip-anatomy-probe.webp",
+      "svg": "hip-anatomy-probe.svg",
+      "png": "hip-anatomy-probe.png",
+      "reviewStatus": "needs-clinician-review",
+      "references": [
+        {
+          "url": "https://essr.org/content-essr/uploads/2016/10/hip.pdf",
+          "locator": "PDF pp. 2–7；主視窗 pp. 2–3"
+        },
+        {
+          "url": "https://doi.org/10.1002/jum.16228",
+          "year": 2023
+        }
+      ],
+      "files": [
+        {
+          "path": "hip-anatomy-probe.svg",
+          "sha256": "57c7069053793533f4cb31e4bb016b3ee6fd9d81945ffbcabff39ab62445f87b",
+          "bytes": 601402
+        },
+        {
+          "path": "hip-anatomy-probe.png",
+          "sha256": "5c6bb1c4fabb9a33da3b37cea775e7b4b1da433b4974ede85889b6d66ac2fe56",
+          "bytes": 431108
+        },
+        {
+          "path": "hip-anatomy-probe.webp",
+          "sha256": "df23b1aebb3e13d1964ae476d56fd39e46a3788819783bf6e0f8133c775f73c4",
+          "bytes": 147172
+        },
+        {
+          "path": "hip-long.glb",
+          "sha256": "f579bc71078d601c1cd6e5c5ce6dc80d9cefc85712893d977e8f33f55f0f3a92",
+          "bytes": 269996
+        },
+        {
+          "path": "hip-long-poster.webp",
+          "sha256": "0b068b3edb0dc4ec7f498fde30b960513b66a0bc8be14f9d82b52a09e773ae7f",
+          "bytes": 17844
+        },
+        {
+          "path": "hip-short.glb",
+          "sha256": "c9468ab1b08df14e3a46bf1ba494549ed08dc67ddd494d057cfe14b000cf6e6d",
+          "bytes": 269984
+        },
+        {
+          "path": "hip-short-poster.webp",
+          "sha256": "568f7cb4e7898714058b0e14bd2adfc31d6627f85844789943fe7772e326b637",
+          "bytes": 17318
+        }
+      ]
+    },
+    {
+      "id": "knee",
+      "name": "膝關節",
+      "target": "髕骨下極・髕腱・脛骨粗隆",
+      "alt": "以髕腱為主要示範，髕骨未移開；骨形、軟組織厚度與間隙均為概念比例，不能量測或判讀病變。",
+      "position": [
+        "仰躺，膝下墊枕，微屈約 20–30°。",
+        "依舒適度與檢查目的調整支撐。"
+      ],
+      "windows": [
+        [
+          "前方",
+          "股四頭肌腱、髕上隱窩與髕腱"
+        ],
+        [
+          "內側",
+          "內側副韌帶與鵝足肌腱"
+        ],
+        [
+          "外側",
+          "髂脛束、外側副韌帶與股二頭肌腱"
+        ],
+        [
+          "後方",
+          "膕窩、半膜肌與內側腓腸肌間區域"
+        ]
+      ],
+      "caution": [
+        "長軸從髕骨下極追到脛骨粗隆；短軸需涵蓋肌腱全寬。",
+        "前方超音波不能單獨完整排除十字韌帶或半月板病變。"
+      ],
+      "models": {
+        "long": "knee-long.glb",
+        "short": "knee-short.glb"
+      },
+      "camera": [
+        0.46365,
+        0.2502
+      ],
+      "image": "knee-anatomy-probe.webp",
+      "svg": "knee-anatomy-probe.svg",
+      "png": "knee-anatomy-probe.png",
+      "reviewStatus": "needs-clinician-review",
+      "references": [
+        {
+          "url": "https://essr.org/content-essr/uploads/2016/10/knee.pdf",
+          "locator": "PDF pp. 2–8；主視窗 pp. 2, 4"
+        },
+        {
+          "url": "https://doi.org/10.1002/jum.16228",
+          "year": 2023
+        }
+      ],
+      "files": [
+        {
+          "path": "knee-anatomy-probe.svg",
+          "sha256": "38b618932940d6de72b2425adb7d7d95377ca7c63adf9f804e1ff18fe2b178ac",
+          "bytes": 470079
+        },
+        {
+          "path": "knee-anatomy-probe.png",
+          "sha256": "004c8e4232682e4a00feaed1479a46ce38bbac8abdde27fc8bfcaaa78cdb6cfe",
+          "bytes": 360479
+        },
+        {
+          "path": "knee-anatomy-probe.webp",
+          "sha256": "33d7bab0fdfe71ad93ca1c511255e70ef10312027cc0a69a1e2fc2d0233c5fbd",
+          "bytes": 134060
+        },
+        {
+          "path": "knee-long.glb",
+          "sha256": "2d7227ceb3dbf25a125c2b73f7280f965c7881ff749204bd5ed9ea0de37c0d71",
+          "bytes": 311316
+        },
+        {
+          "path": "knee-long-poster.webp",
+          "sha256": "ca0b053cb6ecac0b3aba6fb64b875fb4fb18e5f4f346098612863d12376f1287",
+          "bytes": 10144
+        },
+        {
+          "path": "knee-short.glb",
+          "sha256": "44dba5e0882ee6ba0be6bf077cde5d82b090ccae079a6dff12621c2bf6a7a4e9",
+          "bytes": 311340
+        },
+        {
+          "path": "knee-short-poster.webp",
+          "sha256": "63e6ff5e2a7fd5d1f59711cfa6b5d199b7f893a55d20d1dc5986de7c0bd44547",
+          "bytes": 10684
+        }
+      ]
+    },
+    {
+      "id": "ankle",
+      "name": "踝關節",
+      "target": "阿基里斯腱・跟骨附著處",
+      "alt": "主模型為後外側概念視角，足部姿勢不是病人擺位指令；示範肌腱連續走向，不呈現合成超音波影像。",
+      "position": [
+        "俯臥，小腿有支撐，足部伸出床緣。",
+        "以舒適範圍調整足部，避免強迫背屈。"
+      ],
+      "windows": [
+        [
+          "前方",
+          "脛前肌、伸肌腱與踝前方隱窩"
+        ],
+        [
+          "外側",
+          "腓骨肌腱、前距腓韌帶與跟腓韌帶"
+        ],
+        [
+          "內側",
+          "脛後肌腱、屈肌腱與跗管"
+        ],
+        [
+          "後方",
+          "阿基里斯腱及周邊滑囊"
+        ],
+        [
+          "足底延伸",
+          "足底筋膜的跟骨附著處"
+        ]
+      ],
+      "caution": [
+        "從肌腱肌肉交界追至跟骨附著處，取得長、短軸。",
+        "附著處需微調入射角；低回音不應直接等同肌腱斷裂。"
+      ],
+      "models": {
+        "long": "ankle-long.glb",
+        "short": "ankle-short.glb"
+      },
+      "camera": [
+        2.67795,
+        0.2502
+      ],
+      "image": "ankle-anatomy-probe.webp",
+      "svg": "ankle-anatomy-probe.svg",
+      "png": "ankle-anatomy-probe.png",
+      "reviewStatus": "needs-clinician-review",
+      "references": [
+        {
+          "url": "https://essr.org/content-essr/uploads/2016/10/ankle.pdf",
+          "locator": "PDF pp. 2–9；主視窗 p. 8"
+        },
+        {
+          "url": "https://doi.org/10.1002/jum.16228",
+          "year": 2023
+        }
+      ],
+      "files": [
+        {
+          "path": "ankle-anatomy-probe.svg",
+          "sha256": "4bd565062f4ad2201e2ba9a00acfd4afdec7237fce6e0d07f0756b9b5dfd644c",
+          "bytes": 461021
+        },
+        {
+          "path": "ankle-anatomy-probe.png",
+          "sha256": "24b25c21375d7d56ac841ee096801f50188720d82ccefb7383d1725e3b1762c0",
+          "bytes": 374323
+        },
+        {
+          "path": "ankle-anatomy-probe.webp",
+          "sha256": "65e62c5c79b51e453961fe48f420b2a0a7b535d2145e1646198c5568365621e2",
+          "bytes": 134260
+        },
+        {
+          "path": "ankle-long.glb",
+          "sha256": "15c813f4b421782a1215c124c243829d2981cbb58c11e85806d610320e4b870c",
+          "bytes": 222004
+        },
+        {
+          "path": "ankle-long-poster.webp",
+          "sha256": "48f179cdc92861dd66ec3aac6583223746e6c88e73cc578b9924b7212add2850",
+          "bytes": 11542
+        },
+        {
+          "path": "ankle-short.glb",
+          "sha256": "c28471ee7bbd4e9ecc9d1d1aaa6f8c6bfd4b1beb93c71c25c041642c53489bd0",
+          "bytes": 222020
+        },
+        {
+          "path": "ankle-short-poster.webp",
+          "sha256": "309ccd10435e30781fee3d7f7fcece8e98d68a0be174dd9e62a380d9c1876daf",
+          "bytes": 11766
+        }
+      ]
+    }
+  ]
+}
