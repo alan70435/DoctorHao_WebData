@@ -1,0 +1,105 @@
+name: Ultrasound anatomy and probe atlas
+
+on:
+  workflow_dispatch:
+  push:
+    branches: [main]
+    paths:
+      - '.github/workflows/ultrasound-atlas.yml'
+      - 'website/scripts/ultrasound-atlas/**'
+
+permissions:
+  contents: read
+
+concurrency:
+  group: ultrasound-atlas-${{ github.ref }}
+  cancel-in-progress: false
+
+jobs:
+  build-validate-publish:
+    if: github.actor != 'github-actions[bot]'
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    permissions:
+      contents: write
+    env:
+      LIBGL_ALWAYS_SOFTWARE: '1'
+      ASTRO_TELEMETRY_DISABLED: '1'
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: main
+          fetch-depth: 0
+          persist-credentials: false
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+      - name: Install rendering runtime
+        run: |
+          sudo apt-get update
+          sudo apt-get install -y --no-install-recommends fonts-noto-cjk libcairo2 libegl1 libgl1
+          python -m pip install -r website/scripts/ultrasound-atlas/requirements.txt
+      - name: Build six-region atlas and integrate articles
+        run: python website/scripts/ultrasound-atlas/build.py
+      - name: Check files, models, text, links, and insertion safety
+        run: python website/scripts/ultrasound-atlas/validate.py --integration
+      - name: Build the website
+        working-directory: website
+        run: |
+          npm ci
+          npm run build
+      - name: Preserve technical QA report
+        uses: actions/upload-artifact@v4
+        with:
+          name: ultrasound-atlas-technical-qa
+          path: |
+            website/public/medical-visuals/ultrasound/manifest.json
+            website/public/medical-visuals/ultrasound/validation-report.json
+          retention-days: 14
+      - name: Commit only atlas assets and integration
+        env:
+          GH_TOKEN: ${{ github.token }}
+        shell: bash
+        run: |
+          set -euo pipefail
+          paths=(
+            website/public/medical-visuals/ultrasound
+            website_blog/medical_3d_assets/ultrasound
+            website_blog/medical_3d_assets/README.md
+            website_blog/posts/2023-04-blog-post_30.md
+            website/src/content/articles/msk-ultrasound-self-study.md
+            website/src/pages/ultrasound-atlas.astro
+            website/docs/08-ultrasound-atlas.md
+          )
+          git add -- "${paths[@]}"
+          if git diff --cached --quiet; then
+            echo 'Atlas is already up to date.'
+            exit 0
+          fi
+          git config user.name 'github-actions[bot]'
+          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+          git commit -m 'feat: publish six-region ultrasound atlas with 12 probe-axis 3D models [skip ci]'
+          auth="AUTHORIZATION: basic $(printf 'x-access-token:%s' "$GH_TOKEN" | base64 -w0)"
+          pushed=false
+          for attempt in 1 2 3; do
+            if git -c "http.https://github.com/.extraheader=$auth" push origin HEAD:main; then
+              pushed=true
+              break
+            fi
+            git -c "http.https://github.com/.extraheader=$auth" fetch origin main
+            base=$(git merge-base HEAD origin/main)
+            if ! git diff --quiet "$base" origin/main -- "${paths[@]}"; then
+              echo 'Concurrent edits touch atlas paths; refusing to overwrite them.' >&2
+              exit 1
+            fi
+            git rebase origin/main || { git rebase --abort; exit 1; }
+            sleep 2
+          done
+          test "$pushed" = true
+          echo "### Ultrasound atlas committed" >> "$GITHUB_STEP_SUMMARY"
+          echo "Commit: $(git rev-parse HEAD)" >> "$GITHUB_STEP_SUMMARY"
+          echo '6 illustrated cards, 12 GLB axis variants, 12 posters; archive and website articles integrated.' >> "$GITHUB_STEP_SUMMARY"
+          echo 'Technical QA and site build passed. Clinical review remains pending.' >> "$GITHUB_STEP_SUMMARY"
