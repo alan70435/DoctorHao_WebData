@@ -1,0 +1,110 @@
+---
+/**
+ * 專欄列表共用版面（總覽／分類／主題）。
+ */
+import Breadcrumb from './Breadcrumb.astro';
+import ArticleCard from './ArticleCard.astro';
+import SectionHead from './SectionHead.astro';
+import { categoryList, type CategoryId } from '@/data/categories';
+import type { Article } from '@/lib/articles';
+
+interface Props {
+  eyebrow: string;
+  title: string;
+  lede?: string;
+  crumbs: { label: string; href?: string }[];
+  articles: Article[];
+  activeCategory?: CategoryId | 'all';
+  /** 顯示分類切換 */
+  showCategoryNav?: boolean;
+  emptyMessage?: string;
+}
+const { eyebrow, title, lede, crumbs, articles, activeCategory = 'all', showCategoryNav = true, emptyMessage = '目前尚無文章。' } = Astro.props;
+---
+
+<section class="list-head">
+  <div class="container">
+    <Breadcrumb items={crumbs} />
+    <div class="list-head__body">
+      <SectionHead eyebrow={eyebrow} title={title} lede={lede} as="h1" />
+      {
+        showCategoryNav && (
+          <nav class="cat-nav" aria-label="專欄分類">
+            <a href="/articles/" class:list={['cat-nav__link', { 'is-active': activeCategory === 'all' }]} aria-current={activeCategory === 'all' ? 'page' : undefined}>
+              全部
+            </a>
+            {categoryList.map((c) => (
+              <a href={c.path} class:list={['cat-nav__link', { 'is-active': activeCategory === c.id }]} aria-current={activeCategory === c.id ? 'page' : undefined}>
+                {c.name}
+              </a>
+            ))}
+          </nav>
+        )
+      }
+    </div>
+  </div>
+</section>
+
+<section class="section section--tight" aria-label="文章列表">
+  <div class="container">
+    <p class="list-count">共 {articles.length} 篇</p>
+    {
+      articles.length > 0 ? (
+        <div class="grid grid--3">
+          {articles.map((a, i) => (
+            <ArticleCard article={a} headingLevel="h2" loading={i < 3 ? 'eager' : 'lazy'} />
+          ))}
+        </div>
+      ) : (
+        <p class="list-empty">{emptyMessage}</p>
+      )
+    }
+    <slot />
+  </div>
+</section>
+
+<style>
+  .list-head {
+    padding-block: clamp(1.5rem, 3vw, 2.5rem) clamp(1.5rem, 3vw, 2.5rem);
+    background: linear-gradient(180deg, #fff 0%, var(--c-surface) 100%);
+    border-bottom: 1px solid var(--c-line);
+  }
+  .list-head__body {
+    margin-top: var(--sp-5);
+  }
+  .list-head :global(.section-head) {
+    margin-bottom: var(--sp-5);
+  }
+  .cat-nav {
+    display: flex;
+    flex-wrap: wrap;
+    gap: var(--sp-2);
+  }
+  .cat-nav__link {
+    padding: 8px 14px;
+    border-radius: var(--r-pill);
+    border: 1px solid var(--c-line-strong);
+    background: #fff;
+    color: var(--c-text);
+    font-size: var(--fs-sm);
+    font-weight: 600;
+    text-decoration: none;
+  }
+  .cat-nav__link:hover {
+    border-color: var(--c-brand-500);
+    color: var(--c-brand-700);
+  }
+  .cat-nav__link.is-active {
+    background: var(--c-brand-700);
+    border-color: var(--c-brand-700);
+    color: #fff;
+  }
+  .list-count {
+    font-size: var(--fs-xs);
+    color: var(--c-muted);
+    margin-bottom: var(--sp-5);
+  }
+  .list-empty {
+    color: var(--c-muted);
+  }
+</style>

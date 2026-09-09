@@ -1,0 +1,473 @@
+---
+import Icon from './Icon.astro';
+import { primaryNav, clinicCta, facebookLink, mobileNavGroups } from '@/data/nav';
+import { doctor } from '@/data/doctor';
+
+const current = Astro.url.pathname;
+const isActive = (href: string) => (href === '/' ? current === '/' : current.startsWith(href));
+---
+
+<header class="site-header" id="site-header">
+  <div class="container site-header__inner">
+    <a href="/" class="brand" aria-label={`${doctor.displayName} 首頁`}>
+      <span class="brand__mark" aria-hidden="true">程</span>
+      <span class="brand__text">
+        <span class="brand__name">程皓醫師</span>
+        <span class="brand__sub">運動醫學・疼痛治療・體重管理</span>
+      </span>
+    </a>
+
+    <nav class="nav-desktop" aria-label="主選單">
+      <ul class="nav-desktop__list">
+        {
+          primaryNav.map((item) =>
+            item.children ? (
+              <li class="nav-item nav-item--has-children" data-dropdown>
+                <button
+                  type="button"
+                  class:list={['nav-link', 'nav-link--btn', { 'is-active': isActive(item.href) }]}
+                  aria-expanded="false"
+                  aria-controls="nav-dropdown-articles"
+                >
+                  {item.short ?? item.label}
+                  <Icon name="chevron-down" class="nav-link__chevron" />
+                </button>
+                <div class="dropdown" id="nav-dropdown-articles">
+                  <a href={item.href} class="dropdown__all">專欄總覽<Icon name="arrow-right" class="icon" /></a>
+                  <ul class="dropdown__list">
+                    {item.children.map((c) => (
+                      <li>
+                        <a href={c.href} class:list={['dropdown__link', { 'is-active': isActive(c.href) }]}>
+                          {c.label}
+                        </a>
+                      </li>
+                    ))}
+                  </ul>
+                </div>
+              </li>
+            ) : (
+              <li class="nav-item">
+                <a href={item.href} class:list={['nav-link', { 'is-active': isActive(item.href) }]} aria-current={isActive(item.href) ? 'page' : undefined}>
+                  {item.short ?? item.label}
+                </a>
+              </li>
+            ),
+          )
+        }
+      </ul>
+    </nav>
+
+    <div class="site-header__actions">
+      <a
+        href={facebookLink.href}
+        class="fb-link"
+        target="_blank"
+        rel="noopener noreferrer"
+        aria-label={`${facebookLink.label}（另開新視窗）`}
+        title={facebookLink.label}
+      >
+        <Icon name="facebook" class="icon" />
+      </a>
+      <a href={clinicCta.href} class="btn btn--sm header-cta" aria-current={isActive(clinicCta.href) ? 'page' : undefined}>
+        <Icon name="calendar" class="icon" />
+        {clinicCta.label}
+      </a>
+      <button
+        type="button"
+        class="menu-toggle"
+        aria-expanded="false"
+        aria-controls="mobile-menu"
+        aria-label="開啟選單"
+        data-menu-toggle
+      >
+        <Icon name="menu" class="icon icon--menu" />
+        <Icon name="close" class="icon icon--close" />
+      </button>
+    </div>
+  </div>
+
+  <div class="mobile-menu" id="mobile-menu" hidden>
+    <nav class="container mobile-menu__inner" aria-label="手機選單">
+      {
+        mobileNavGroups.map((group) => (
+          <div class="mobile-group">
+            {group.heading && <p class="mobile-group__heading">{group.heading}</p>}
+            <ul class="mobile-group__list">
+              {group.items.map((it) => (
+                <li>
+                  <a href={it.href} class:list={['mobile-link', { 'is-active': isActive(it.href) }]}>
+                    {it.label}
+                  </a>
+                </li>
+              ))}
+            </ul>
+          </div>
+        ))
+      }
+      <div class="mobile-group mobile-group--cta">
+        <a href={clinicCta.href} class="btn btn--lg btn--block">
+          <Icon name="calendar" class="icon" />
+          {clinicCta.label}
+        </a>
+        <a href={facebookLink.href} class="btn btn--secondary btn--block" target="_blank" rel="noopener noreferrer">
+          <Icon name="facebook" class="icon" />
+          {facebookLink.label}
+        </a>
+      </div>
+    </nav>
+  </div>
+</header>
+
+<style>
+  .site-header {
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    background: rgba(255, 255, 255, 0.92);
+    backdrop-filter: saturate(1.4) blur(10px);
+    -webkit-backdrop-filter: saturate(1.4) blur(10px);
+    border-bottom: 1px solid var(--c-line);
+  }
+  .site-header__inner {
+    display: flex;
+    align-items: center;
+    gap: var(--sp-4);
+    min-height: var(--header-h);
+  }
+
+  /* Brand */
+  .brand {
+    display: inline-flex;
+    align-items: center;
+    gap: var(--sp-3);
+    text-decoration: none;
+    color: var(--c-ink);
+    flex: none;
+    margin-right: auto;
+  }
+  .brand__mark {
+    display: grid;
+    place-items: center;
+    width: 38px;
+    height: 38px;
+    border-radius: 10px;
+    background: var(--c-brand-700);
+    color: #fff;
+    font-weight: 700;
+    font-size: 1.15rem;
+    letter-spacing: 0;
+  }
+  .brand__text {
+    display: flex;
+    flex-direction: column;
+    line-height: 1.15;
+  }
+  .brand__name {
+    font-weight: 700;
+    font-size: 1.125rem;
+    letter-spacing: 0.02em;
+  }
+  .brand__sub {
+    font-size: 0.6875rem;
+    color: var(--c-muted);
+    letter-spacing: 0.06em;
+  }
+  @media (max-width: 420px) {
+    .brand__sub {
+      display: none;
+    }
+  }
+
+  /* Desktop nav */
+  .nav-desktop {
+    display: none;
+  }
+  .nav-desktop__list {
+    display: flex;
+    align-items: center;
+    gap: 2px;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+  }
+  .nav-item {
+    position: relative;
+    margin: 0;
+  }
+  .nav-link {
+    display: inline-flex;
+    align-items: center;
+    gap: 4px;
+    padding: 10px 12px;
+    border-radius: var(--r-sm);
+    color: var(--c-text);
+    font-weight: 500;
+    font-size: 0.9375rem;
+    text-decoration: none;
+    background: transparent;
+    border: 0;
+    cursor: pointer;
+    white-space: nowrap;
+    transition:
+      background var(--dur) var(--ease),
+      color var(--dur) var(--ease);
+  }
+  .nav-link:hover,
+  .nav-link[aria-expanded='true'] {
+    background: var(--c-surface);
+    color: var(--c-brand-700);
+  }
+  .nav-link.is-active {
+    color: var(--c-brand-700);
+    font-weight: 600;
+  }
+  .nav-link.is-active::after {
+    content: '';
+    position: absolute;
+    left: 12px;
+    right: 12px;
+    bottom: 4px;
+    height: 2px;
+    border-radius: 2px;
+    background: var(--c-brand-500);
+  }
+  .nav-link :global(.nav-link__chevron) {
+    width: 1em;
+    height: 1em;
+    transition: transform var(--dur) var(--ease);
+  }
+  .nav-link[aria-expanded='true'] :global(.nav-link__chevron) {
+    transform: rotate(180deg);
+  }
+
+  .dropdown {
+    position: absolute;
+    top: calc(100% + 8px);
+    left: 0;
+    min-width: 260px;
+    background: #fff;
+    border: 1px solid var(--c-line);
+    border-radius: var(--r-lg);
+    box-shadow: var(--shadow-lg);
+    padding: var(--sp-2);
+    display: none;
+  }
+  .nav-item--has-children.is-open .dropdown {
+    display: block;
+  }
+  .dropdown__all {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 12px;
+    font-weight: 600;
+    text-decoration: none;
+    color: var(--c-brand-700);
+    border-radius: var(--r-sm);
+    border-bottom: 1px solid var(--c-line);
+    margin-bottom: var(--sp-1);
+  }
+  .dropdown__all :global(.icon) {
+    width: 1em;
+    height: 1em;
+  }
+  .dropdown__all:hover {
+    background: var(--c-brand-50);
+  }
+  .dropdown__list {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+  }
+  .dropdown__list li {
+    margin: 0;
+  }
+  .dropdown__link {
+    display: block;
+    padding: 10px 12px;
+    border-radius: var(--r-sm);
+    text-decoration: none;
+    color: var(--c-text);
+    font-size: 0.9375rem;
+  }
+  .dropdown__link:hover,
+  .dropdown__link.is-active {
+    background: var(--c-surface);
+    color: var(--c-brand-700);
+  }
+
+  /* Actions */
+  .site-header__actions {
+    display: flex;
+    align-items: center;
+    gap: var(--sp-2);
+    flex: none;
+  }
+  .fb-link {
+    display: none;
+    width: 40px;
+    height: 40px;
+    place-items: center;
+    border-radius: var(--r-sm);
+    color: var(--c-muted);
+  }
+  .fb-link :global(.icon) {
+    width: 22px;
+    height: 22px;
+  }
+  .fb-link:hover {
+    background: var(--c-surface);
+    color: var(--c-brand-700);
+  }
+  .header-cta {
+    display: none;
+  }
+  .menu-toggle {
+    display: grid;
+    place-items: center;
+    width: 44px;
+    height: 44px;
+    border-radius: var(--r-sm);
+    border: 1px solid var(--c-line);
+    background: #fff;
+    cursor: pointer;
+  }
+  .menu-toggle :global(.icon) {
+    width: 22px;
+    height: 22px;
+  }
+  .menu-toggle :global(.icon--close) {
+    display: none;
+  }
+  .menu-toggle[aria-expanded='true'] :global(.icon--menu) {
+    display: none;
+  }
+  .menu-toggle[aria-expanded='true'] :global(.icon--close) {
+    display: block;
+  }
+
+  /* Mobile menu */
+  .mobile-menu {
+    border-top: 1px solid var(--c-line);
+    background: #fff;
+    max-height: calc(100dvh - var(--header-h));
+    overflow-y: auto;
+  }
+  .mobile-menu__inner {
+    padding-block: var(--sp-4) var(--sp-6);
+    display: grid;
+    gap: var(--sp-5);
+  }
+  .mobile-group__heading {
+    margin: 0 0 var(--sp-1);
+    font-size: var(--fs-xs);
+    font-weight: 700;
+    letter-spacing: 0.08em;
+    color: var(--c-muted);
+  }
+  .mobile-group__list {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+  }
+  .mobile-group__list li {
+    margin: 0;
+  }
+  .mobile-link {
+    display: block;
+    padding: 12px 0;
+    border-bottom: 1px solid var(--c-line);
+    color: var(--c-ink);
+    text-decoration: none;
+    font-weight: 500;
+    font-size: 1.0625rem;
+  }
+  .mobile-link.is-active {
+    color: var(--c-brand-700);
+    font-weight: 700;
+  }
+  .mobile-group--cta {
+    display: grid;
+    gap: var(--sp-3);
+    padding-top: var(--sp-2);
+  }
+
+  @media (min-width: 1024px) {
+    .nav-desktop {
+      display: block;
+    }
+    .header-cta,
+    .fb-link {
+      display: inline-flex;
+    }
+    .fb-link {
+      display: grid;
+    }
+    .menu-toggle,
+    .mobile-menu {
+      display: none !important;
+    }
+  }
+</style>
+
+<script>
+  // 手機選單
+  const toggle = document.querySelector<HTMLButtonElement>('[data-menu-toggle]');
+  const menu = document.getElementById('mobile-menu');
+  if (toggle && menu) {
+    const setOpen = (open: boolean) => {
+      toggle.setAttribute('aria-expanded', String(open));
+      toggle.setAttribute('aria-label', open ? '關閉選單' : '開啟選單');
+      menu.hidden = !open;
+      document.documentElement.style.overflow = open ? 'hidden' : '';
+    };
+    toggle.addEventListener('click', () => setOpen(toggle.getAttribute('aria-expanded') !== 'true'));
+    document.addEventListener('keydown', (e) => {
+      if (e.key === 'Escape' && toggle.getAttribute('aria-expanded') === 'true') {
+        setOpen(false);
+        toggle.focus();
+      }
+    });
+    window.matchMedia('(min-width: 1024px)').addEventListener('change', (e) => {
+      if (e.matches) setOpen(false);
+    });
+  }
+
+  // 桌機 dropdown（滑鼠 hover、鍵盤、觸控皆可）
+  document.querySelectorAll<HTMLElement>('[data-dropdown]').forEach((item) => {
+    const btn = item.querySelector<HTMLButtonElement>('button[aria-expanded]');
+    if (!btn) return;
+    let closeTimer: number | undefined;
+    const open = () => {
+      window.clearTimeout(closeTimer);
+      item.classList.add('is-open');
+      btn.setAttribute('aria-expanded', 'true');
+    };
+    const close = () => {
+      item.classList.remove('is-open');
+      btn.setAttribute('aria-expanded', 'false');
+    };
+    btn.addEventListener('click', () => (item.classList.contains('is-open') ? close() : open()));
+    item.addEventListener('mouseenter', open);
+    item.addEventListener('mouseleave', () => {
+      closeTimer = window.setTimeout(close, 120);
+    });
+    item.addEventListener('focusout', (e) => {
+      if (!item.contains(e.relatedTarget as Node)) close();
+    });
+    item.addEventListener('keydown', (e) => {
+      if (e.key === 'Escape') {
+        close();
+        btn.focus();
+      }
+    });
+  });
+  document.addEventListener('click', (e) => {
+    document.querySelectorAll<HTMLElement>('[data-dropdown].is-open').forEach((item) => {
+      if (!item.contains(e.target as Node)) {
+        item.classList.remove('is-open');
+        item.querySelector('button[aria-expanded]')?.setAttribute('aria-expanded', 'false');
+      }
+    });
+  });
+</script>

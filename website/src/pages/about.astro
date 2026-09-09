@@ -1,0 +1,397 @@
+---
+import { Image, getImage } from 'astro:assets';
+import BaseLayout from '@/layouts/BaseLayout.astro';
+import Breadcrumb from '@/components/Breadcrumb.astro';
+import SectionHead from '@/components/SectionHead.astro';
+import DoctorQuote from '@/components/DoctorQuote.astro';
+import ClinicSection from '@/components/ClinicSection.astro';
+import Icon from '@/components/Icon.astro';
+import { doctor } from '@/data/doctor';
+import { physicianJsonLd, breadcrumbJsonLd } from '@/lib/jsonld';
+import portrait from '@/assets/photos/doctor-portrait-formal.jpg';
+import photoTennis from '@/assets/photos/event-2023-nig-tennis.jpg';
+import photoLecture from '@/assets/photos/lecture-coaches-stage.jpg';
+import photoRakuten from '@/assets/photos/rakuten-stadium-selfie.jpg';
+import photoWbc from '@/assets/photos/wbc-2023-medical-station.jpg';
+import photoNthu from '@/assets/photos/teaching-nthu-selfie.jpg';
+import photoResident from '@/assets/photos/teaching-resident-clinic.jpg';
+import photoGym from '@/assets/photos/event-2026-nig-gymnastics.jpg';
+import photoXinyi from '@/assets/photos/lecture-xinyi-sports-center.jpg';
+
+const crumbs = [{ label: '關於程皓醫師' }];
+const og = await getImage({ src: portrait, width: 1200, height: 630, fit: 'cover', position: 'top', format: 'jpg' });
+const jsonLd = [physicianJsonLd(Astro.site, new URL(og.src, Astro.site).toString()), breadcrumbJsonLd(Astro.site, crumbs)];
+
+const gallery = [
+  { src: photoWbc, alt: '2023 年世界棒球經典賽，程皓醫師與同事於醫護站前合影', caption: '2023 世界棒球經典賽 場邊醫師' },
+  { src: photoGym, alt: '程皓醫師身穿白袍站在 2026 年全國大專運動會競技體操看板前', caption: '2026 全國大專運動會 競技體操' },
+  { src: photoRakuten, alt: '程皓醫師於樂天桃園棒球場看台自拍', caption: '樂天桃猿 球場出診' },
+  { src: photoLecture, alt: '程皓醫師在大型演講廳舞台上對教練群演講', caption: '對百位教練分享運動醫學' },
+  { src: photoNthu, alt: '程皓醫師於清華大學校園自拍', caption: '清華大學 運動醫學課程講師' },
+  { src: photoResident, alt: '程皓醫師與前來跟診的住院醫師合影', caption: '住院醫師跟診學習' },
+  { src: photoXinyi, alt: '程皓醫師於信義運動中心演講青少年與婦女運動傷害預防', caption: '社區與運動中心演講' },
+  { src: photoTennis, alt: '程皓醫師身穿白袍站在全國大專運動會網球場邊', caption: '2023 全國大專運動會 網球' },
+];
+---
+
+<BaseLayout
+  title="關於程皓醫師"
+  description="程皓醫師：聯新國際醫院運動醫學科醫師、樂天桃猿棒球隊醫療團隊醫師、家庭醫學科專科醫師、ACSM-CPT。醫療理念、專業領域、學經歷、賽事醫療與運動背景。"
+  ogType="profile"
+  ogImage={{ src: og.src, width: 1200, height: 630, alt: doctor.displayName }}
+  jsonLd={jsonLd}
+>
+  <section class="intro">
+    <div class="container">
+      <Breadcrumb items={crumbs} />
+      <div class="intro__grid">
+        <div class="intro__media">
+          <Image
+            src={portrait}
+            alt="程皓醫師身穿白袍、佩戴識別證的正式肖像"
+            widths={[420, 640, 880]}
+            sizes="(min-width: 900px) 420px, (min-width: 640px) 60vw, 92vw"
+            priority
+            class="intro__img"
+          />
+        </div>
+        <div class="intro__text">
+          <p class="eyebrow">關於程皓醫師</p>
+          <h1>程皓醫師</h1>
+          <p class="intro__title">{doctor.jobTitle}・樂天桃猿棒球隊醫療團隊醫師</p>
+          <p class="lede">{doctor.intro}</p>
+          <ul class="intro__tags" aria-label="專業重點">
+            <li>家庭醫學科專科醫師</li>
+            <li>美國運動醫學會 ACSM-CPT</li>
+            <li>骨骼肌肉超音波醫學會會員</li>
+            <li>國語、英語</li>
+          </ul>
+          <div class="intro__actions">
+            <a href="/clinic/" class="btn"><Icon name="calendar" class="icon" />門診時間及預約</a>
+            <a href={doctor.social.facebook.url} class="btn btn--secondary" target="_blank" rel="noopener noreferrer"
+              ><Icon name="facebook" class="icon" />Facebook 粉絲專頁</a
+            >
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 醫療理念 -->
+  <section class="section section--surface" aria-labelledby="philosophy-title">
+    <div class="container">
+      <SectionHead
+        eyebrow="醫療理念"
+        title="不只處理疼痛，更希望你回到原本的生活"
+        lede="以下皆為程皓醫師在社群公開寫下的話。他的門診時間偏長，因為初診常需要 30 分鐘以上的完整評估——從問診、理學檢查到超音波，先把診斷弄清楚，再談治療。"
+        id="philosophy-title"
+      />
+      <div class="grid grid--2">
+        {doctor.philosophy.map((p) => <DoctorQuote quote={p.quote} source={p.source} />)}
+      </div>
+      <div class="philosophy-more prose">
+        <p>
+          程皓醫師形容運動醫學的工作，是「協助運動員和喜好運動、需要活動的人快速回到原本職業和生活，甚至超越過往表現」。他也提到，走運動醫學科幾年後發現，自己真正喜歡的不只是治療運動員，而是治療充滿熱情的運動愛好者——想到可以讓他們回去打球就很開心。
+        </p>
+        <p>
+          在體重管理上，他強調「上醫醫未病之病」：治療肥胖是因為它與三高、心血管疾病、退化性關節炎等問題密切相關；藥物只是讓過程更簡單，飲食與運動才是根本。門診裡也常花時間「勸退」不需要藥物的朋友，因為找到幫助健康的關鍵，比體重數字更重要。
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- 專業領域 -->
+  <section class="section" aria-labelledby="specialty-title">
+    <div class="container">
+      <SectionHead eyebrow="專業領域" title="主治項目" lede="依聯新國際醫院官網醫師介紹整理。" id="specialty-title" />
+      <ul class="spec-grid" role="list">
+        {doctor.specialties.map((s) => <li><Icon name="check" class="icon" />{s}</li>)}
+      </ul>
+    </div>
+  </section>
+
+  <!-- 學經歷 -->
+  <section class="section section--surface" aria-labelledby="cv-title">
+    <div class="container">
+      <SectionHead eyebrow="學經歷" title="現職、學歷、經歷與資格" id="cv-title" />
+      <div class="cv">
+        <div class="cv__col">
+          <h3>現職</h3>
+          <ul>{doctor.currentPositions.map((i) => <li>{i.title}</li>)}</ul>
+          <h3>學歷</h3>
+          <ul>{doctor.education.map((i) => <li>{i.title}</li>)}</ul>
+          <h3>專科／證照</h3>
+          <ul>{doctor.credentials.map((i) => <li>{i.title}</li>)}</ul>
+          <h3>學會會員</h3>
+          <ul>{doctor.memberships.map((i) => <li>{i.title}</li>)}</ul>
+        </div>
+        <div class="cv__col">
+          <h3>經歷</h3>
+          <ul>{doctor.experience.map((i) => <li>{i.title}</li>)}</ul>
+          <h3>賽事與運動醫療</h3>
+          <ul>{doctor.sportsMedicine.map((i) => <li>{i.title}</li>)}</ul>
+        </div>
+      </div>
+      <p class="cv__note">以上資料整理自聯新國際醫院、板新醫院官網醫師介紹及程皓醫師公開社群內容。</p>
+    </div>
+  </section>
+
+  <!-- 運動背景 + 相片 -->
+  <section class="section" aria-labelledby="life-title">
+    <div class="container">
+      <SectionHead
+        eyebrow="運動與教學"
+        title="自己也打球的醫師"
+        lede="程皓醫師從國中起幾乎每週固定打籃球，並以深蹲、硬舉等肌力訓練保護自己。他常說：「我打，我也要讓你繼續打下去。」除了門診與球場，他也持續在大學、運動中心與教練研習中分享運動醫學。"
+        id="life-title"
+      />
+      <ul class="gallery" role="list">
+        {
+          gallery.map((g) => (
+            <li>
+              <figure>
+                <Image src={g.src} alt={g.alt} widths={[320, 480, 640]} sizes="(min-width: 900px) 280px, (min-width: 600px) 45vw, 92vw" loading="lazy" class="gallery__img" />
+                <figcaption>{g.caption}</figcaption>
+              </figure>
+            </li>
+          ))
+        }
+      </ul>
+    </div>
+  </section>
+
+  <!-- 社群 -->
+  <section class="section section--brand" aria-labelledby="social-title">
+    <div class="container">
+      <SectionHead eyebrow="社群媒體" title="追蹤程皓醫師" lede="門診異動與最新衛教內容會優先在社群公告。" id="social-title" />
+      <ul class="social-cards" role="list">
+        <li>
+          <a href={doctor.social.facebook.url} target="_blank" rel="noopener noreferrer" class="card card--link social-card">
+            <Icon name="facebook" class="icon" />
+            <span class="social-card__name">Facebook 粉絲專頁</span>
+            <span class="social-card__meta">{doctor.social.facebook.name}</span>
+          </a>
+        </li>
+        <li>
+          <a href={doctor.social.threads.url} target="_blank" rel="noopener noreferrer" class="card card--link social-card">
+            <Icon name="threads" class="icon" />
+            <span class="social-card__name">Threads</span>
+            <span class="social-card__meta">{doctor.social.threads.handle}</span>
+          </a>
+        </li>
+        <li>
+          <a href={doctor.social.instagram.url} target="_blank" rel="noopener noreferrer" class="card card--link social-card">
+            <Icon name="instagram" class="icon" />
+            <span class="social-card__name">Instagram</span>
+            <span class="social-card__meta">{doctor.social.instagram.handle}</span>
+          </a>
+        </li>
+      </ul>
+      <p class="social-videos">
+        相關影片：
+        {
+          doctor.videos.map((v, i) => (
+            <>
+              <a href={v.url} target="_blank" rel="noopener noreferrer">
+                {v.title}（{v.channel}）
+              </a>
+              {i < doctor.videos.length - 1 && '、'}
+            </>
+          ))
+        }
+      </p>
+    </div>
+  </section>
+
+  <ClinicSection surface={false} />
+</BaseLayout>
+
+<style>
+  .intro {
+    padding-block: clamp(1.5rem, 3vw, 2.5rem) clamp(2.5rem, 5vw, 4.5rem);
+    background: linear-gradient(180deg, #fff 0%, var(--c-surface) 100%);
+    border-bottom: 1px solid var(--c-line);
+  }
+  .intro__grid {
+    display: grid;
+    gap: var(--sp-8);
+    margin-top: var(--sp-6);
+    align-items: center;
+  }
+  @media (min-width: 900px) {
+    .intro__grid {
+      grid-template-columns: 0.8fr 1.2fr;
+      gap: var(--sp-16);
+    }
+  }
+  .intro__media :global(.intro__img) {
+    width: 100%;
+    max-width: 420px;
+    aspect-ratio: 4 / 5;
+    object-fit: cover;
+    object-position: top;
+    border-radius: var(--r-xl);
+    box-shadow: var(--shadow-lg);
+    margin-inline: auto;
+  }
+  .intro__title {
+    font-weight: 600;
+    color: var(--c-brand-700);
+    margin-bottom: var(--sp-4);
+  }
+  .intro__tags {
+    list-style: none;
+    padding: 0;
+    margin: var(--sp-5) 0;
+    display: flex;
+    flex-wrap: wrap;
+    gap: var(--sp-2);
+  }
+  .intro__tags li {
+    margin: 0;
+    padding: 6px 12px;
+    border-radius: var(--r-pill);
+    background: #fff;
+    border: 1px solid var(--c-line);
+    font-size: var(--fs-xs);
+    font-weight: 600;
+    color: var(--c-text);
+  }
+  .intro__actions {
+    display: flex;
+    flex-wrap: wrap;
+    gap: var(--sp-3);
+  }
+  .philosophy-more {
+    margin-top: var(--sp-8);
+    max-width: 52em;
+  }
+  .spec-grid {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: grid;
+    gap: var(--sp-3);
+    grid-template-columns: repeat(auto-fill, minmax(min(100%, 240px), 1fr));
+  }
+  .spec-grid li {
+    margin: 0;
+    display: flex;
+    gap: var(--sp-2);
+    align-items: center;
+    padding: var(--sp-3) var(--sp-4);
+    border: 1px solid var(--c-line);
+    border-radius: var(--r-md);
+    font-weight: 500;
+    color: var(--c-ink);
+  }
+  .spec-grid :global(.icon) {
+    width: 18px;
+    height: 18px;
+    color: var(--c-brand-500);
+    flex: none;
+  }
+  .cv {
+    display: grid;
+    gap: var(--sp-8);
+  }
+  @media (min-width: 800px) {
+    .cv {
+      grid-template-columns: 1fr 1fr;
+      gap: var(--sp-12);
+    }
+  }
+  .cv h3 {
+    font-size: var(--fs-xs);
+    letter-spacing: 0.1em;
+    color: var(--c-brand-600);
+    margin: var(--sp-6) 0 var(--sp-3);
+    text-transform: uppercase;
+  }
+  .cv h3:first-child {
+    margin-top: 0;
+  }
+  .cv ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+  }
+  .cv li {
+    padding: var(--sp-2) 0;
+    border-bottom: 1px solid var(--c-line);
+    margin: 0;
+    color: var(--c-text);
+  }
+  .cv__note {
+    margin-top: var(--sp-6);
+    font-size: var(--fs-xs);
+    color: var(--c-muted);
+  }
+  .gallery {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: grid;
+    gap: var(--sp-4);
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+  @media (min-width: 900px) {
+    .gallery {
+      grid-template-columns: repeat(4, minmax(0, 1fr));
+    }
+  }
+  .gallery li {
+    margin: 0;
+  }
+  .gallery figure {
+    margin: 0;
+  }
+  .gallery :global(.gallery__img) {
+    width: 100%;
+    aspect-ratio: 4 / 5;
+    object-fit: cover;
+    border-radius: var(--r-lg);
+  }
+  .gallery figcaption {
+    margin-top: var(--sp-2);
+    font-size: var(--fs-xs);
+    color: var(--c-muted);
+  }
+  .social-cards {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: grid;
+    gap: var(--sp-4);
+    grid-template-columns: repeat(auto-fit, minmax(min(100%, 240px), 1fr));
+  }
+  .social-cards li {
+    margin: 0;
+  }
+  .social-card {
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+    padding: var(--sp-5);
+    text-decoration: none;
+    color: var(--c-ink);
+  }
+  .social-card :global(.icon) {
+    width: 26px;
+    height: 26px;
+    color: var(--c-brand-600);
+    margin-bottom: var(--sp-2);
+  }
+  .social-card__name {
+    font-weight: 700;
+  }
+  .social-card__meta {
+    font-size: var(--fs-xs);
+    color: var(--c-muted);
+  }
+  .social-videos {
+    margin-top: var(--sp-6);
+    font-size: var(--fs-sm);
+    color: var(--c-muted);
+  }
+</style>

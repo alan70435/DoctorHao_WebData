@@ -1,0 +1,36 @@
+---
+interface Props {
+  eyebrow?: string;
+  title: string;
+  lede?: string;
+  align?: 'left' | 'center';
+  as?: 'h1' | 'h2' | 'h3';
+  /** 右側動作（例如「查看全部」） */
+  withAction?: boolean;
+  id?: string;
+}
+const { eyebrow, title, lede, align = 'left', as: Tag = 'h2', withAction = false, id } = Astro.props;
+---
+
+<div class:list={['section-head', { 'section-head--center': align === 'center', 'section-head--row': withAction }]}>
+  <div>
+    {eyebrow && <span class="eyebrow">{eyebrow}</span>}
+    <Tag id={id}>{title}</Tag>
+    {lede && <p class="lede">{lede}</p>}
+  </div>
+  {withAction && <div class="section-head__action"><slot name="action" /></div>}
+</div>
+
+<style>
+  .section-head h1,
+  .section-head h2,
+  .section-head h3 {
+    margin-bottom: var(--sp-3);
+  }
+  .section-head .lede {
+    margin-bottom: 0;
+  }
+  .section-head__action {
+    flex: none;
+  }
+</style>

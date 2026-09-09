@@ -1,0 +1,76 @@
+---
+import { Image } from 'astro:assets';
+import Icon from './Icon.astro';
+import { doctor } from '@/data/doctor';
+import portrait from '@/assets/photos/doctor-portrait-formal.jpg';
+---
+
+<aside class="author card" aria-label="作者">
+  <Image src={portrait} alt={`${doctor.displayName}`} widths={[96, 192]} sizes="96px" class="author__img" loading="lazy" />
+  <div class="author__body">
+    <p class="author__eyebrow">作者</p>
+    <p class="author__name">{doctor.displayName}</p>
+    <p class="author__title">{doctor.hospital} {doctor.department}醫師・樂天桃猿棒球隊醫療團隊醫師・ACSM-CPT</p>
+    <div class="author__links">
+      <a href="/about/">認識程皓醫師 <Icon name="arrow-right" class="icon" /></a>
+      <a href="/clinic/">門診時間及預約 <Icon name="arrow-right" class="icon" /></a>
+    </div>
+  </div>
+</aside>
+
+<style>
+  .author {
+    display: flex;
+    gap: var(--sp-5);
+    padding: var(--sp-5);
+    align-items: flex-start;
+  }
+  .author :global(.author__img) {
+    width: 84px;
+    height: 84px;
+    border-radius: 50%;
+    object-fit: cover;
+    object-position: top;
+    flex: none;
+  }
+  .author__eyebrow {
+    margin: 0;
+    font-size: var(--fs-xs);
+    letter-spacing: 0.08em;
+    color: var(--c-muted);
+  }
+  .author__name {
+    margin: 2px 0 2px;
+    font-weight: 700;
+    color: var(--c-ink);
+    font-size: var(--fs-md);
+  }
+  .author__title {
+    margin: 0 0 var(--sp-3);
+    font-size: var(--fs-sm);
+    color: var(--c-muted);
+    line-height: 1.6;
+  }
+  .author__links {
+    display: flex;
+    flex-wrap: wrap;
+    gap: var(--sp-4);
+    font-size: var(--fs-sm);
+    font-weight: 600;
+  }
+  .author__links a {
+    display: inline-flex;
+    align-items: center;
+    gap: 4px;
+    text-decoration: none;
+  }
+  .author__links :global(.icon) {
+    width: 1em;
+    height: 1em;
+  }
+  @media (max-width: 480px) {
+    .author {
+      flex-direction: column;
+    }
+  }
+</style>

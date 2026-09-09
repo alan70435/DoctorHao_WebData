@@ -1,0 +1,70 @@
+---
+/**
+ * 無實體照片時使用的「分類視覺封面」：以幾何線條與分類色構成，避免使用 stock photo 或第三方圖片。
+ */
+import type { CategoryId } from '@/data/categories';
+import { categories } from '@/data/categories';
+
+interface Props {
+  category: CategoryId;
+  /** 用於產生不同的線條變化（同分類文章封面不至於完全相同） */
+  seed?: string;
+  class?: string;
+  compact?: boolean;
+}
+const { category, seed = '', class: className, compact = false } = Astro.props;
+const cat = categories[category];
+
+// 簡單 hash → 0..1
+let h = 0;
+for (const ch of seed) h = (h * 31 + ch.charCodeAt(0)) >>> 0;
+const r = (n: number) => ((h >> (n * 3)) % 100) / 100;
+
+const cx = 62 + r(1) * 26; // 62..88 (%)
+const cy = 40 + r(2) * 30;
+const rings = [18, 30, 42, 54, 66];
+---
+
+<div class:list={['cat-cover', `cat-cover--${cat.tone}`, { 'cat-cover--compact': compact }, className]} aria-hidden="true">
+  <svg viewBox="0 0 160 90" preserveAspectRatio="xMidYMid slice">
+    <defs>
+      <radialGradient id={`g-${cat.id}-${h}`} cx={`${cx}%`} cy={`${cy}%`} r="70%">
+        <stop offset="0" stop-color="currentColor" stop-opacity="0.22" />
+        <stop offset="1" stop-color="currentColor" stop-opacity="0" />
+      </radialGradient>
+    </defs>
+    <rect width="160" height="90" fill={`url(#g-${cat.id}-${h})`} />
+    {rings.map((rr, i) => <circle cx={cx * 1.6} cy={cy * 0.9} r={rr} fill="none" stroke="currentColor" stroke-opacity={0.28 - i * 0.045} stroke-width="0.8" />)}
+    <line x1="0" y1={70 + r(3) * 10} x2="160" y2={30 + r(4) * 20} stroke="currentColor" stroke-opacity="0.18" stroke-width="0.8" />
+  </svg>
+</div>
+
+<style>
+  .cat-cover {
+    position: relative;
+    aspect-ratio: 16 / 9;
+    width: 100%;
+    overflow: hidden;
+    border-radius: inherit;
+    background: var(--cover-bg);
+    color: var(--cover-fg);
+  }
+  .cat-cover svg {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+  }
+  .cat-cover--teal {
+    --cover-bg: var(--c-brand-50);
+    --cover-fg: var(--c-brand-700);
+  }
+  .cat-cover--amber {
+    --cover-bg: var(--c-warm-50);
+    --cover-fg: var(--c-warm-700);
+  }
+  .cat-cover--green {
+    --cover-bg: #edf6f1;
+    --cover-fg: var(--cat-green);
+  }
+</style>

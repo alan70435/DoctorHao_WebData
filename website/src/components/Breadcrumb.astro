@@ -1,0 +1,58 @@
+---
+interface Crumb {
+  label: string;
+  href?: string;
+}
+interface Props {
+  items: Crumb[];
+}
+const { items } = Astro.props;
+const all: Crumb[] = [{ label: '首頁', href: '/' }, ...items];
+---
+
+<nav class="breadcrumb" aria-label="路徑">
+  <ol>
+    {
+      all.map((c, i) => (
+        <li>
+          {c.href && i < all.length - 1 ? <a href={c.href}>{c.label}</a> : <span aria-current="page">{c.label}</span>}
+        </li>
+      ))
+    }
+  </ol>
+</nav>
+
+<style>
+  .breadcrumb ol {
+    list-style: none;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0 var(--sp-2);
+    margin: 0;
+    padding: 0;
+    font-size: var(--fs-xs);
+    color: var(--c-muted);
+  }
+  .breadcrumb li {
+    margin: 0;
+    display: inline-flex;
+    align-items: center;
+    gap: var(--sp-2);
+  }
+  .breadcrumb li + li::before {
+    content: '/';
+    color: var(--c-subtle);
+  }
+  .breadcrumb a {
+    color: var(--c-muted);
+    text-decoration: none;
+  }
+  .breadcrumb a:hover {
+    color: var(--c-brand-700);
+    text-decoration: underline;
+  }
+  .breadcrumb [aria-current] {
+    color: var(--c-ink);
+    font-weight: 500;
+  }
+</style>

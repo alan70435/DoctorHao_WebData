@@ -1,0 +1,36 @@
+---
+import BaseLayout from '@/layouts/BaseLayout.astro';
+import Icon from '@/components/Icon.astro';
+---
+
+<BaseLayout title="找不到頁面" description="您要找的頁面不存在。" noindex>
+  <section class="section nf">
+    <div class="container container--narrow">
+      <p class="eyebrow">404</p>
+      <h1>找不到這個頁面</h1>
+      <p class="lede">網址可能已變更或輸入有誤。您可以回到首頁，或從下列入口繼續瀏覽。</p>
+      <div class="nf__actions">
+        <a href="/" class="btn">回首頁</a>
+        <a href="/articles/" class="btn btn--secondary">程皓醫師專欄</a>
+        <a href="/clinic/" class="btn btn--secondary"><Icon name="calendar" class="icon" />門診時間及預約</a>
+      </div>
+    </div>
+  </section>
+</BaseLayout>
+
+<style>
+  .nf {
+    text-align: center;
+    padding-block: clamp(4rem, 10vw, 8rem);
+  }
+  .nf .lede {
+    margin-inline: auto;
+  }
+  .nf__actions {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: var(--sp-3);
+    margin-top: var(--sp-6);
+  }
+</style>

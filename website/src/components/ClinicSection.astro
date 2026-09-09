@@ -1,0 +1,51 @@
+---
+/**
+ * 門診資訊區塊（首頁底部、治療頁尾、關於頁共用）。
+ */
+import ClinicCard from './ClinicCard.astro';
+import SectionHead from './SectionHead.astro';
+import Icon from './Icon.astro';
+import { clinics, lastConfirmed } from '@/data/clinics';
+
+interface Props {
+  title?: string;
+  lede?: string;
+  eyebrow?: string;
+  compact?: boolean;
+  /** 只顯示 primary 院所（治療頁尾使用） */
+  primaryOnly?: boolean;
+  surface?: boolean;
+}
+const {
+  title = '程皓醫師門診資訊',
+  lede = '目前於桃園、新北、台北三處看診。掛號請透過各院方系統，本網站不另設掛號流程。',
+  eyebrow = '門診時間及預約',
+  compact = true,
+  primaryOnly = false,
+  surface = true,
+} = Astro.props;
+const list = primaryOnly ? clinics.filter((c) => c.primary) : clinics;
+---
+
+<section class:list={['section', { 'section--surface': surface }]} aria-labelledby="clinic-section-title">
+  <div class="container">
+    <SectionHead eyebrow={eyebrow} title={title} lede={lede} id="clinic-section-title" withAction>
+      <a slot="action" href="/clinic/" class="btn btn--secondary">完整門診資訊 <Icon name="arrow-right" class="icon" /></a>
+    </SectionHead>
+    <div class:list={['grid', primaryOnly ? 'grid--1' : 'grid--3']}>
+      {list.map((c) => <ClinicCard clinic={c} compact={compact} />)}
+    </div>
+    <p class="clinic-foot">門診資訊最後確認日期：{lastConfirmed}。門診可能因學會、賽事支援或天候異動，出發前建議先以院方公告或粉絲專頁確認。</p>
+  </div>
+</section>
+
+<style>
+  .grid--1 {
+    grid-template-columns: minmax(0, 560px);
+  }
+  .clinic-foot {
+    margin: var(--sp-6) 0 0;
+    font-size: var(--fs-xs);
+    color: var(--c-muted);
+  }
+</style>

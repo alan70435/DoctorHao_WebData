@@ -1,0 +1,54 @@
+---
+import Icon from './Icon.astro';
+interface Props {
+  quote: string;
+  source?: string;
+  compact?: boolean;
+}
+const { quote, source, compact = false } = Astro.props;
+---
+
+<figure class:list={['dq', { 'dq--compact': compact }]}>
+  <Icon name="quote" class="dq__icon" />
+  <blockquote>
+    <p>{quote}</p>
+  </blockquote>
+  {source && <figcaption>程皓醫師，{source}</figcaption>}
+</figure>
+
+<style>
+  .dq {
+    margin: 0;
+    padding: var(--sp-5) var(--sp-6);
+    border-radius: var(--r-lg);
+    background: var(--c-brand-50);
+    border: 1px solid var(--c-brand-100);
+    position: relative;
+  }
+  .dq--compact {
+    padding: var(--sp-4) var(--sp-5);
+  }
+  .dq :global(.dq__icon) {
+    width: 22px;
+    height: 22px;
+    color: var(--c-brand-300);
+    margin-bottom: var(--sp-2);
+  }
+  .dq blockquote {
+    margin: 0;
+  }
+  .dq p {
+    margin: 0;
+    color: var(--c-ink);
+    font-size: var(--fs-base);
+    line-height: 1.8;
+  }
+  .dq--compact p {
+    font-size: var(--fs-sm);
+  }
+  .dq figcaption {
+    margin-top: var(--sp-3);
+    font-size: var(--fs-xs);
+    color: var(--c-muted);
+  }
+</style>

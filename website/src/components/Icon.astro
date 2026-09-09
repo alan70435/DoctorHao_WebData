@@ -1,0 +1,78 @@
+---
+/**
+ * 極簡 inline SVG 圖示集（僅保留網站真正需要的幾個）。
+ */
+interface Props {
+  name:
+    | 'arrow-right'
+    | 'chevron-down'
+    | 'menu'
+    | 'close'
+    | 'phone'
+    | 'map-pin'
+    | 'calendar'
+    | 'clock'
+    | 'external'
+    | 'info'
+    | 'alert'
+    | 'facebook'
+    | 'threads'
+    | 'instagram'
+    | 'check'
+    | 'quote';
+  class?: string;
+  size?: number;
+  title?: string;
+}
+const { name, class: className = 'icon', size, title } = Astro.props;
+const attrs = {
+  class: className,
+  width: size,
+  height: size,
+  viewBox: '0 0 24 24',
+  fill: 'none',
+  stroke: 'currentColor',
+  'stroke-width': 1.8,
+  'stroke-linecap': 'round',
+  'stroke-linejoin': 'round',
+  'aria-hidden': title ? undefined : 'true',
+  role: title ? 'img' : undefined,
+  focusable: 'false',
+} as Record<string, unknown>;
+---
+
+<svg {...attrs}>
+  {title && <title>{title}</title>}
+  {name === 'arrow-right' && <path d="M5 12h14M13 6l6 6-6 6" />}
+  {name === 'chevron-down' && <path d="M6 9l6 6 6-6" />}
+  {name === 'menu' && <path d="M4 7h16M4 12h16M4 17h16" />}
+  {name === 'close' && <path d="M6 6l12 12M18 6L6 18" />}
+  {name === 'phone' && <path d="M5 4h4l2 5-2.5 1.5a11 11 0 0 0 5 5L15 13l5 2v4a2 2 0 0 1-2 2A16 16 0 0 1 3 6a2 2 0 0 1 2-2z" />}
+  {name === 'map-pin' && <><path d="M12 22s7-6.2 7-12a7 7 0 1 0-14 0c0 5.8 7 12 7 12z" /><circle cx="12" cy="10" r="2.5" /></>}
+  {name === 'calendar' && <><rect x="3" y="5" width="18" height="16" rx="2" /><path d="M3 10h18M8 3v4M16 3v4" /></>}
+  {name === 'clock' && <><circle cx="12" cy="12" r="9" /><path d="M12 7v5l3 2" /></>}
+  {name === 'external' && <path d="M14 4h6v6M20 4l-9 9M19 14v5a1 1 0 0 1-1 1H5a1 1 0 0 1-1-1V6a1 1 0 0 1 1-1h5" />}
+  {name === 'info' && <><circle cx="12" cy="12" r="9" /><path d="M12 11v5M12 8h.01" /></>}
+  {name === 'alert' && <><path d="M12 3l10 18H2L12 3z" /><path d="M12 10v4M12 17h.01" /></>}
+  {name === 'check' && <path d="M5 12l4.5 4.5L19 7" />}
+  {name === 'quote' && <path d="M7 7h4v6H7v4H4V11a4 4 0 0 1 3-4zM17 7h4v6h-4v4h-3V11a4 4 0 0 1 3-4z" fill="currentColor" stroke="none" />}
+  {
+    name === 'facebook' && (
+      <path
+        d="M14 8h3V4h-3a4 4 0 0 0-4 4v3H7v4h3v6h4v-6h3l1-4h-4V9a1 1 0 0 1 1-1z"
+        fill="currentColor"
+        stroke="none"
+      />
+    )
+  }
+  {
+    name === 'threads' && (
+      <path d="M12 3c-4.6 0-8 3.2-8 9s3.4 9 8 9c3.6 0 6.6-1.9 7.2-5.3.5-2.8-1-5.3-4-5.9-.2-1.7-1.3-3-3.3-3-1.6 0-2.9.8-3.5 2.1l1.9.8c.3-.6.9-1 1.6-1 .9 0 1.4.5 1.5 1.3-2.9-.2-5.6.9-5.6 3.5 0 2 1.7 3.2 3.7 3.2 2.5 0 3.9-1.7 4.1-4.2 1.5.6 2 2 1.7 3.4-.5 2.4-2.6 3.6-5.3 3.6-3.4 0-6-2.4-6-7.5S8.6 5 12 5c2.4 0 4.3 1 5.3 2.9l1.8-1C17.7 4.3 15.2 3 12 3zm.4 11.1c-.1 1.5-.9 2.6-2.3 2.6-.9 0-1.7-.5-1.7-1.3 0-1.3 1.9-1.6 4-1.3z" fill="currentColor" stroke="none" />
+    )
+  }
+  {
+    name === 'instagram' && (
+      <><rect x="3" y="3" width="18" height="18" rx="5" /><circle cx="12" cy="12" r="4" /><path d="M17.5 6.5h.01" /></>
+    )
+  }
+</svg>

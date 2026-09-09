@@ -1,0 +1,118 @@
+---
+import '@fontsource-variable/noto-sans-tc';
+import '@/styles/global.css';
+import { getImage } from 'astro:assets';
+import Header from '@/components/Header.astro';
+import Footer from '@/components/Footer.astro';
+import MobileCtaBar from '@/components/MobileCtaBar.astro';
+import { SITE_NAME, SITE_SHORT_NAME, DEFAULT_DESCRIPTION, LOCALE } from '@/data/site.js';
+import { doctor } from '@/data/doctor';
+import portrait from '@/assets/photos/doctor-portrait-studio.jpg';
+
+export interface Props {
+  title: string;
+  description?: string;
+  /** 不含網站名稱後綴 */
+  rawTitle?: boolean;
+  ogType?: 'website' | 'article' | 'profile';
+  ogImage?: { src: string; width: number; height: number; alt?: string };
+  /** 額外 JSON-LD（物件或陣列） */
+  jsonLd?: Record<string, unknown> | Record<string, unknown>[];
+  noindex?: boolean;
+  bodyClass?: string;
+  /** 顯示手機底部固定 CTA */
+  mobileCta?: boolean;
+  publishedTime?: string;
+  modifiedTime?: string;
+}
+
+const {
+  title,
+  description = DEFAULT_DESCRIPTION,
+  rawTitle = false,
+  ogType = 'website',
+  ogImage,
+  jsonLd,
+  noindex = false,
+  bodyClass = '',
+  mobileCta = true,
+  publishedTime,
+  modifiedTime,
+} = Astro.props;
+
+const fullTitle = rawTitle ? title : `${title}｜${SITE_SHORT_NAME}`;
+const canonical = new URL(Astro.url.pathname, Astro.site);
+
+const defaultOg = await getImage({ src: portrait, width: 1200, height: 630, fit: 'cover', position: 'top', format: 'jpg' });
+const og = ogImage ?? { src: defaultOg.src, width: 1200, height: 630, alt: `${doctor.displayName}` };
+const ogUrl = new URL(og.src, Astro.site).toString();
+
+const baseJsonLd = [
+  {
+    '@context': 'https://schema.org',
+    '@type': 'WebSite',
+    name: SITE_NAME,
+    url: Astro.site?.toString(),
+    inLanguage: 'zh-Hant-TW',
+  },
+];
+const ld = [...baseJsonLd, ...(Array.isArray(jsonLd) ? jsonLd : jsonLd ? [jsonLd] : [])];
+---
+
+<!doctype html>
+<html lang="zh-Hant-TW">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>{fullTitle}</title>
+    <meta name="description" content={description} />
+    {!noindex && <link rel="canonical" href={canonical.toString()} />}
+    {noindex && <meta name="robots" content="noindex, nofollow" />}
+    <meta name="theme-color" content="#0f5c6e" />
+    <meta name="color-scheme" content="light" />
+    <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
+    <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
+    <link rel="sitemap" href="/sitemap-index.xml" />
+
+    <meta property="og:type" content={ogType} />
+    <meta property="og:site_name" content={SITE_NAME} />
+    <meta property="og:locale" content={LOCALE} />
+    <meta property="og:title" content={fullTitle} />
+    <meta property="og:description" content={description} />
+    <meta property="og:url" content={canonical.toString()} />
+    <meta property="og:image" content={ogUrl} />
+    <meta property="og:image:width" content={String(og.width)} />
+    <meta property="og:image:height" content={String(og.height)} />
+    {og.alt && <meta property="og:image:alt" content={og.alt} />}
+    {publishedTime && <meta property="article:published_time" content={publishedTime} />}
+    {modifiedTime && <meta property="article:modified_time" content={modifiedTime} />}
+    {ogType === 'article' && <meta property="article:author" content={doctor.displayName} />}
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content={fullTitle} />
+    <meta name="twitter:description" content={description} />
+    <meta name="twitter:image" content={ogUrl} />
+
+    <script is:inline type="application/ld+json" set:html={JSON.stringify(ld)} />
+  </head>
+  <body class:list={[bodyClass, { 'has-mobile-cta': mobileCta }]}>
+    <a href="#main" class="skip-link">跳到主要內容</a>
+    <Header />
+    <main id="main" tabindex="-1">
+      <slot />
+    </main>
+    <Footer />
+    {mobileCta && <MobileCtaBar />}
+  </body>
+</html>
+
+<style is:global>
+  body {
+    min-height: 100dvh;
+    display: flex;
+    flex-direction: column;
+  }
+  main {
+    flex: 1 0 auto;
+    outline: none;
+  }
+</style>

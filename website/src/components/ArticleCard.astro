@@ -1,0 +1,163 @@
+---
+import { Image } from 'astro:assets';
+import CategoryCover from './CategoryCover.astro';
+import Icon from './Icon.astro';
+import { categories } from '@/data/categories';
+import { formatDate, isoDate, type Article } from '@/lib/articles';
+
+interface Props {
+  article: Article;
+  /** 橫向小卡（相關文章區） */
+  variant?: 'default' | 'compact';
+  headingLevel?: 'h2' | 'h3';
+  loading?: 'lazy' | 'eager';
+}
+const { article, variant = 'default', headingLevel: H = 'h3', loading = 'lazy' } = Astro.props;
+const { data } = article;
+const cat = categories[data.category];
+const href = `/articles/${article.id}/`;
+---
+
+<article class:list={['acard card card--link', `acard--${variant}`]}>
+  <a href={href} class="acard__media" tabindex="-1" aria-hidden="true">
+    {
+      data.cover ? (
+        <Image
+          src={data.cover}
+          alt=""
+          widths={variant === 'compact' ? [240, 480] : [400, 640, 960]}
+          sizes={variant === 'compact' ? '160px' : '(min-width: 1024px) 380px, (min-width: 640px) 45vw, 92vw'}
+          loading={loading}
+          class="acard__img"
+        />
+      ) : (
+        <CategoryCover category={data.category} seed={article.id} compact={variant === 'compact'} />
+      )
+    }
+  </a>
+  <div class="acard__body">
+    <div class="acard__meta">
+      <a href={cat.path} class:list={['chip', `chip--${cat.tone}`]}>{cat.shortName}</a>
+      <time datetime={isoDate(data.pubDate)}>{formatDate(data.pubDate)}</time>
+    </div>
+    <H class="acard__title"><a href={href}>{data.title}</a></H>
+    {variant === 'default' && <p class="acard__desc">{data.description}</p>}
+    {
+      variant === 'default' && (
+        <span class="acard__more">
+          閱讀更多 <Icon name="arrow-right" class="icon" />
+        </span>
+      )
+    }
+  </div>
+</article>
+
+<style>
+  .acard {
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+    height: 100%;
+  }
+  .acard__media {
+    display: block;
+    aspect-ratio: 16 / 9;
+    overflow: hidden;
+    background: var(--c-surface);
+    border-radius: var(--r-lg) var(--r-lg) 0 0;
+  }
+  .acard__media :global(img) {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 400ms var(--ease);
+  }
+  .acard:hover .acard__media :global(img) {
+    transform: scale(1.03);
+  }
+  .acard__body {
+    display: flex;
+    flex-direction: column;
+    gap: var(--sp-3);
+    padding: var(--sp-5);
+    flex: 1;
+  }
+  .acard__meta {
+    display: flex;
+    align-items: center;
+    gap: var(--sp-3);
+    font-size: var(--fs-xs);
+    color: var(--c-muted);
+  }
+  .acard__title {
+    font-size: var(--fs-md);
+    line-height: 1.45;
+    margin: 0;
+  }
+  .acard__title a {
+    color: var(--c-ink);
+    text-decoration: none;
+  }
+  .acard__title a::after {
+    content: '';
+    position: absolute;
+    inset: 0;
+  }
+  .acard {
+    position: relative;
+  }
+  .acard:hover .acard__title a {
+    color: var(--c-brand-700);
+  }
+  .acard__desc {
+    font-size: var(--fs-sm);
+    color: var(--c-muted);
+    line-height: 1.7;
+    margin: 0;
+    display: -webkit-box;
+    -webkit-line-clamp: 3;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+  }
+  .acard__more {
+    margin-top: auto;
+    display: inline-flex;
+    align-items: center;
+    gap: 4px;
+    font-size: var(--fs-xs);
+    font-weight: 600;
+    color: var(--c-brand-700);
+  }
+  .acard__more :global(.icon) {
+    width: 1em;
+    height: 1em;
+    transition: transform var(--dur) var(--ease);
+  }
+  .acard:hover .acard__more :global(.icon) {
+    transform: translateX(3px);
+  }
+
+  /* compact */
+  .acard--compact {
+    flex-direction: row;
+    align-items: stretch;
+  }
+  .acard--compact .acard__media {
+    flex: none;
+    width: 128px;
+    aspect-ratio: 1;
+    border-radius: var(--r-lg) 0 0 var(--r-lg);
+  }
+  .acard--compact .acard__body {
+    padding: var(--sp-4);
+    gap: var(--sp-2);
+  }
+  .acard--compact .acard__title {
+    font-size: var(--fs-base);
+  }
+  @media (max-width: 480px) {
+    .acard--compact .acard__media {
+      width: 100px;
+    }
+  }
+</style>

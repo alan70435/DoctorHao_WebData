@@ -1,0 +1,450 @@
+---
+import BaseLayout from '@/layouts/BaseLayout.astro';
+import Breadcrumb from '@/components/Breadcrumb.astro';
+import Callout from '@/components/Callout.astro';
+import Faq from '@/components/Faq.astro';
+import DoctorQuote from '@/components/DoctorQuote.astro';
+import ArticleCard from '@/components/ArticleCard.astro';
+import ClinicSection from '@/components/ClinicSection.astro';
+import Icon from '@/components/Icon.astro';
+import { treatments, type Treatment } from '@/data/treatments';
+import { doctor } from '@/data/doctor';
+import { getRelatedArticles } from '@/lib/articles';
+import { breadcrumbJsonLd } from '@/lib/jsonld';
+
+export function getStaticPaths() {
+  return treatments.map((t) => ({ params: { treatment: t.slug }, props: { t } }));
+}
+interface Props {
+  t: Treatment;
+}
+const { t } = Astro.props;
+const crumbs = [{ label: '主要治療' }, { label: t.name }];
+const related = await getRelatedArticles({ slugs: t.relatedSlugs, tags: t.relatedTags, limit: 4 });
+
+const toc = [
+  ['what', '治療是什麼'],
+  ['mechanism', '治療原理'],
+  ['applications', '可能評估應用的狀況'],
+  ['who', '哪些人可能需要進一步評估'],
+  ['process', '治療流程'],
+  ['before', '治療前注意事項'],
+  ['after', '治療後注意事項'],
+  ['risks', '可能風險與限制'],
+  ['faq', '常見問題'],
+  ['articles', '相關文章'],
+  ['clinic-section-title', '門診資訊'],
+] as const;
+
+const webPageLd = {
+  '@context': 'https://schema.org',
+  '@type': 'MedicalWebPage',
+  name: t.seoTitle,
+  description: t.seoDescription,
+  inLanguage: 'zh-Hant-TW',
+  url: new URL(Astro.url.pathname, Astro.site).toString(),
+  about: { '@type': 'MedicalTherapy', name: t.name, alternateName: t.englishName },
+  reviewedBy: { '@type': 'Person', name: doctor.displayName },
+  lastReviewed: '2026-09-09',
+};
+---
+
+<BaseLayout title={t.seoTitle} rawTitle description={t.seoDescription} jsonLd={[webPageLd, breadcrumbJsonLd(Astro.site, crumbs)]}>
+  <header class="t-hero">
+    <div class="container">
+      <Breadcrumb items={crumbs} />
+      <div class="t-hero__grid">
+        <div>
+          <p class="eyebrow">主要治療・{t.englishName}</p>
+          <h1>{t.name}</h1>
+          <p class="lede">{t.lede}</p>
+          <div class="t-hero__actions">
+            <a href="#applications" class="btn btn--secondary">哪些狀況可能適用</a>
+            <a href="/clinic/" class="btn"><Icon name="calendar" class="icon" />查看程皓醫師門診資訊</a>
+          </div>
+        </div>
+        <Callout tone="warm" icon="alert" title="請先知道" class="t-hero__callout">
+          <p>本頁為一般醫療衛教資訊整理，非治療承諾。治療方式會依患者狀況有所不同，是否適合仍需經實際診察與醫師評估；本網站不提供價格或方案資訊。</p>
+        </Callout>
+      </div>
+    </div>
+  </header>
+
+  <div class="container t-layout">
+    <nav class="t-toc" aria-label="本頁目錄">
+      <p class="t-toc__title">本頁內容</p>
+      <ol>
+        {toc.map(([id, label]) => <li><a href={`#${id}`}>{label}</a></li>)}
+      </ol>
+    </nav>
+
+    <div class="t-content">
+      <section id="what" class="t-section">
+        <h2><span class="t-num">01</span>治療是什麼</h2>
+        <div class="prose">{t.what.map((p) => <p>{p}</p>)}</div>
+      </section>
+
+      <section id="mechanism" class="t-section">
+        <h2><span class="t-num">02</span>治療原理</h2>
+        <div class="prose">{t.mechanism.map((p) => <p>{p}</p>)}</div>
+      </section>
+
+      <section id="applications" class="t-section">
+        <h2><span class="t-num">03</span>臨床上可能評估應用的狀況</h2>
+        <p class="t-section__note">以下為文獻與臨床上常見的評估方向，不代表所有患者皆適用，實際仍需依個別狀況判斷。</p>
+        <div class="app-grid">
+          {
+            t.applications.map((g) => (
+              <div class="app-group">
+                <h3>{g.group}</h3>
+                <ul>
+                  {g.items.map((i) => <li>{i}</li>)}
+                </ul>
+              </div>
+            ))
+          }
+        </div>
+      </section>
+
+      <section id="who" class="t-section">
+        <h2><span class="t-num">04</span>哪些人可能需要進一步醫療評估</h2>
+        <ul class="check-list">
+          {t.whoShouldConsider.map((i) => <li><Icon name="check" class="icon" />{i}</li>)}
+        </ul>
+      </section>
+
+      <section id="process" class="t-section">
+        <h2><span class="t-num">05</span>治療流程</h2>
+        <ol class="steps">
+          {
+            t.process.map((s, i) => (
+              <li>
+                <span class="steps__n" aria-hidden="true">{i + 1}</span>
+                <div>
+                  <h3>{s.title}</h3>
+                  <p>{s.desc}</p>
+                </div>
+              </li>
+            ))
+          }
+        </ol>
+      </section>
+
+      <section id="before" class="t-section">
+        <h2><span class="t-num">06</span>治療前注意事項</h2>
+        <ul class="plain-list">{t.before.map((i) => <li>{i}</li>)}</ul>
+      </section>
+
+      <section id="after" class="t-section">
+        <h2><span class="t-num">07</span>治療後注意事項</h2>
+        <ul class="plain-list">{t.after.map((i) => <li>{i}</li>)}</ul>
+      </section>
+
+      <section id="risks" class="t-section">
+        <h2><span class="t-num">08</span>可能風險與限制</h2>
+        <ul class="plain-list">{t.risks.map((i) => <li>{i}</li>)}</ul>
+      </section>
+
+      {
+        t.doctorQuotes.length > 0 && (
+          <section class="t-section t-section--quotes" aria-labelledby={`quotes-${t.slug}`}>
+            <h2 id={`quotes-${t.slug}`}>程皓醫師曾這樣說</h2>
+            <p class="t-section__note">以下引用程皓醫師公開社群文字，僅反映其個人臨床觀點與經驗分享。</p>
+            <div class="quotes">
+              {t.doctorQuotes.map((q) => (
+                <DoctorQuote quote={q.quote} source={q.source} compact />
+              ))}
+            </div>
+          </section>
+        )
+      }
+
+      <section id="faq" class="t-section">
+        <h2><span class="t-num">09</span>常見問題</h2>
+        <Faq items={t.faq} withJsonLd />
+      </section>
+
+      <section id="articles" class="t-section">
+        <h2><span class="t-num">10</span>相關程皓醫師文章</h2>
+        {
+          related.length > 0 ? (
+            <div class="grid grid--2">
+              {related.map((a) => (
+                <ArticleCard article={a} variant="compact" />
+              ))}
+            </div>
+          ) : (
+            <p class="t-section__note">相關文章整理中。</p>
+          )
+        }
+      </section>
+
+      <div class="t-cta">
+        <h2>想進一步了解是否適合？</h2>
+        <p>治療是否適合、預期效果與流程，需要經由門診實際評估。歡迎於門診時提出您的問題與需求。</p>
+        <div class="t-cta__actions">
+          <a href="/clinic/" class="btn btn--lg"><Icon name="calendar" class="icon" />查看程皓醫師門診資訊</a>
+          <a href={doctor.social.facebook.url} class="btn btn--secondary btn--lg" target="_blank" rel="noopener noreferrer">
+            <Icon name="facebook" class="icon" />門診相關詢問（Facebook）
+          </a>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <ClinicSection title="程皓醫師門診資訊" primaryOnly={false} />
+</BaseLayout>
+
+<style>
+  .t-hero {
+    padding-block: clamp(1.5rem, 3vw, 2.5rem) clamp(2rem, 4vw, 3.5rem);
+    background: linear-gradient(180deg, #fff 0%, var(--c-brand-50) 100%);
+    border-bottom: 1px solid var(--c-line);
+  }
+  .t-hero__grid {
+    display: grid;
+    gap: var(--sp-8);
+    margin-top: var(--sp-5);
+    align-items: start;
+  }
+  @media (min-width: 900px) {
+    .t-hero__grid {
+      grid-template-columns: 1.4fr 0.9fr;
+      gap: var(--sp-12);
+    }
+  }
+  .t-hero__actions {
+    display: flex;
+    flex-wrap: wrap;
+    gap: var(--sp-3);
+    margin-top: var(--sp-6);
+  }
+  .t-hero__callout {
+    align-self: center;
+  }
+
+  .t-layout {
+    display: grid;
+    gap: var(--sp-10);
+    padding-block: clamp(2rem, 4vw, 3.5rem);
+  }
+  @media (min-width: 1024px) {
+    .t-layout {
+      grid-template-columns: 220px minmax(0, 1fr);
+      gap: var(--sp-16);
+      align-items: start;
+    }
+    .t-toc {
+      position: sticky;
+      top: calc(var(--header-h) + 1.5rem);
+    }
+  }
+  .t-toc__title {
+    font-size: var(--fs-xs);
+    font-weight: 700;
+    letter-spacing: 0.08em;
+    color: var(--c-muted);
+    margin-bottom: var(--sp-2);
+  }
+  .t-toc ol {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-wrap: wrap;
+    gap: var(--sp-1) var(--sp-3);
+    border-left: 0;
+  }
+  @media (min-width: 1024px) {
+    .t-toc ol {
+      display: block;
+      border-left: 2px solid var(--c-line);
+    }
+  }
+  .t-toc li {
+    margin: 0;
+  }
+  .t-toc a {
+    display: inline-block;
+    padding: 4px 0;
+    font-size: var(--fs-sm);
+    color: var(--c-muted);
+    text-decoration: none;
+  }
+  @media (min-width: 1024px) {
+    .t-toc a {
+      display: block;
+      padding: 5px 0 5px 12px;
+      margin-left: -2px;
+      border-left: 2px solid transparent;
+    }
+    .t-toc a:hover {
+      border-left-color: var(--c-brand-500);
+    }
+  }
+  .t-toc a:hover {
+    color: var(--c-brand-700);
+  }
+
+  .t-content {
+    display: grid;
+    gap: clamp(2.5rem, 4vw, 3.5rem);
+    max-width: 780px;
+  }
+  .t-section h2 {
+    display: flex;
+    align-items: baseline;
+    gap: var(--sp-3);
+    margin-bottom: var(--sp-4);
+    scroll-margin-top: calc(var(--header-h) + 1rem);
+  }
+  .t-num {
+    font-size: var(--fs-sm);
+    font-weight: 700;
+    color: var(--c-brand-600);
+    letter-spacing: 0.05em;
+  }
+  .t-section__note {
+    font-size: var(--fs-sm);
+    color: var(--c-muted);
+    margin-bottom: var(--sp-4);
+  }
+  .app-grid {
+    display: grid;
+    gap: var(--sp-4);
+    grid-template-columns: repeat(auto-fit, minmax(min(100%, 240px), 1fr));
+  }
+  .app-group {
+    padding: var(--sp-5);
+    border: 1px solid var(--c-line);
+    border-radius: var(--r-lg);
+    background: var(--c-surface);
+  }
+  .app-group h3 {
+    font-size: var(--fs-sm);
+    color: var(--c-brand-700);
+    letter-spacing: 0.04em;
+    margin-bottom: var(--sp-3);
+  }
+  .app-group ul {
+    margin: 0;
+    padding-left: 1.2em;
+    font-size: var(--fs-sm);
+  }
+  .check-list,
+  .plain-list {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    display: grid;
+    gap: var(--sp-3);
+  }
+  .check-list li {
+    margin: 0;
+    display: flex;
+    gap: var(--sp-3);
+    align-items: flex-start;
+    padding: var(--sp-3) var(--sp-4);
+    border-radius: var(--r-md);
+    background: var(--c-brand-50);
+    color: var(--c-ink);
+  }
+  .check-list :global(.icon) {
+    width: 20px;
+    height: 20px;
+    color: var(--c-brand-600);
+    flex: none;
+    margin-top: 0.25em;
+  }
+  .plain-list li {
+    margin: 0;
+    padding-left: 1.4em;
+    position: relative;
+    color: var(--c-text);
+  }
+  .plain-list li::before {
+    content: '';
+    position: absolute;
+    left: 0.35em;
+    top: 0.75em;
+    width: 6px;
+    height: 6px;
+    border-radius: 50%;
+    background: var(--c-brand-500);
+  }
+  .steps {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: grid;
+    gap: var(--sp-4);
+  }
+  .steps li {
+    margin: 0;
+    display: grid;
+    grid-template-columns: 40px 1fr;
+    gap: var(--sp-4);
+    padding: var(--sp-4) 0;
+    border-bottom: 1px solid var(--c-line);
+  }
+  .steps__n {
+    display: grid;
+    place-items: center;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    background: var(--c-brand-700);
+    color: #fff;
+    font-weight: 700;
+  }
+  .steps h3 {
+    font-size: var(--fs-md);
+    margin-bottom: var(--sp-1);
+  }
+  .steps p {
+    margin: 0;
+    color: var(--c-muted);
+    font-size: var(--fs-sm);
+    line-height: 1.75;
+  }
+  .quotes {
+    display: grid;
+    gap: var(--sp-4);
+  }
+  .t-cta {
+    padding: var(--sp-8);
+    border-radius: var(--r-xl);
+    background: var(--c-brand-900);
+    color: rgba(255, 255, 255, 0.85);
+  }
+  .t-cta h2 {
+    color: #fff;
+    margin-bottom: var(--sp-2);
+  }
+  .t-cta p {
+    margin-bottom: var(--sp-5);
+  }
+  .t-cta__actions {
+    display: flex;
+    flex-wrap: wrap;
+    gap: var(--sp-3);
+  }
+  .t-cta .btn {
+    --btn-bg: #fff;
+    --btn-fg: var(--c-brand-800);
+    --btn-bd: #fff;
+  }
+  .t-cta .btn:hover {
+    --btn-bg: var(--c-brand-50);
+    color: var(--c-brand-900);
+  }
+  .t-cta .btn--secondary {
+    --btn-bg: transparent;
+    --btn-fg: #fff;
+    --btn-bd: rgba(255, 255, 255, 0.5);
+  }
+  .t-cta .btn--secondary:hover {
+    --btn-bg: rgba(255, 255, 255, 0.1);
+    color: #fff;
+  }
+</style>

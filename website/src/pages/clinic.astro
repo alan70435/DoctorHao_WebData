@@ -1,0 +1,271 @@
+---
+import BaseLayout from '@/layouts/BaseLayout.astro';
+import Breadcrumb from '@/components/Breadcrumb.astro';
+import SectionHead from '@/components/SectionHead.astro';
+import ClinicCard from '@/components/ClinicCard.astro';
+import Callout from '@/components/Callout.astro';
+import Icon from '@/components/Icon.astro';
+import { clinics, sessionTimes, weekdays, lastConfirmed, visitTips } from '@/data/clinics';
+import { doctor } from '@/data/doctor';
+import { clinicsJsonLd, breadcrumbJsonLd } from '@/lib/jsonld';
+
+const crumbs = [{ label: '門診時間及預約' }];
+const sessions = ['morning', 'afternoon', 'evening'] as const;
+const activeDays = weekdays.filter((d) => clinics.some((c) => c.schedule[d]?.length));
+---
+
+<BaseLayout
+  title="門診時間及預約"
+  description={`程皓醫師門診資訊：聯新國際醫院運動醫學科（桃園平鎮）、板新醫院（新北板橋）、台北聯新國際診所。各院所看診時段、地址、電話與院方掛號連結。門診表最後確認 ${lastConfirmed}。`}
+  jsonLd={[...clinicsJsonLd(Astro.site), breadcrumbJsonLd(Astro.site, crumbs)]}
+  mobileCta={false}
+>
+  <section class="clinic-head">
+    <div class="container">
+      <Breadcrumb items={crumbs} />
+      <div class="clinic-head__body">
+        <SectionHead
+          eyebrow="門診時間及預約"
+          title="程皓醫師門診資訊"
+          lede="目前於桃園聯新國際醫院、新北板新醫院、台北聯新國際診所看診。掛號請透過各院方系統或電話；本網站不另設掛號流程。"
+          as="h1"
+        />
+        <Callout tone="warm" icon="alert">
+          <p>
+            門診表依程皓醫師 {lastConfirmed} 公告整理，可能因學會、賽事支援、進修或天候（停班停課）異動。出發前建議先至院方掛號系統或
+            <a href={doctor.social.facebook.url} target="_blank" rel="noopener noreferrer">Facebook 粉絲專頁</a>確認最新公告。
+          </p>
+        </Callout>
+      </div>
+    </div>
+  </section>
+
+  <section class="section section--tight" aria-labelledby="week-title">
+    <div class="container">
+      <h2 id="week-title" class="week-title">每週門診一覽</h2>
+      <div class="week-wrap">
+        <table class="week">
+          <caption class="visually-hidden">程皓醫師每週各院所門診時段</caption>
+          <thead>
+            <tr>
+              <th scope="col">時段</th>
+              {activeDays.map((d) => <th scope="col">{d}</th>)}
+            </tr>
+          </thead>
+          <tbody>
+            {
+              sessions.map((s) => (
+                <tr>
+                  <th scope="row">
+                    <span class="week__session">{sessionTimes[s].label}</span>
+                    <span class="week__time">{sessionTimes[s].time}</span>
+                  </th>
+                  {activeDays.map((d) => {
+                    const here = clinics.filter((c) => c.schedule[d]?.includes(s));
+                    return (
+                      <td>
+                        {here.length ? (
+                          here.map((c) => (
+                            <a href={`#clinic-${c.id}`} class:list={['week__cell', `week__cell--${c.id}`]}>
+                              {c.shortName}
+                              {c.id === 'landseed-taipei' && s === 'morning' && <small>08:30 起</small>}
+                            </a>
+                          ))
+                        ) : (
+                          <span class="week__empty" aria-label="無門診">—</span>
+                        )}
+                      </td>
+                    );
+                  })}
+                </tr>
+              ))
+            }
+          </tbody>
+        </table>
+      </div>
+      <p class="week-note">週三、週日無門診。早診 09:00–12:00、午診 13:30–16:45、晚診 18:30–21:00（台北聯新國際診所週二早診自 08:30 開始）。</p>
+    </div>
+  </section>
+
+  <section class="section section--surface" aria-labelledby="clinics-title">
+    <div class="container">
+      <SectionHead eyebrow="院所" title="各院所資訊與掛號" id="clinics-title" />
+      <div class="grid grid--3">
+        {
+          clinics.map((c) => (
+            <div id={`clinic-${c.id}`} class="clinic-anchor">
+              <ClinicCard clinic={c} compact={false} />
+            </div>
+          ))
+        }
+      </div>
+    </div>
+  </section>
+
+  <section class="section" aria-labelledby="tips-title">
+    <div class="container tips">
+      <div>
+        <SectionHead eyebrow="就診須知" title="看診前先知道" id="tips-title" />
+        <ul class="tips__list">
+          {visitTips.map((t) => <li><Icon name="check" class="icon" />{t}</li>)}
+        </ul>
+      </div>
+      <div class="tips__aside">
+        <h3>門診相關詢問</h3>
+        <p>掛號、時段異動請洽各院方；一般問題可透過 Facebook 粉絲專頁私訊，惟社群訊息無法提供個別診斷或處方。</p>
+        <a href={doctor.social.facebook.url} class="btn btn--secondary" target="_blank" rel="noopener noreferrer">
+          <Icon name="facebook" class="icon" />前往 Facebook 粉絲專頁
+        </a>
+        <h3>其他社群</h3>
+        <p>
+          <a href={doctor.social.threads.url} target="_blank" rel="noopener noreferrer">Threads {doctor.social.threads.handle}</a>・
+          <a href={doctor.social.instagram.url} target="_blank" rel="noopener noreferrer">Instagram {doctor.social.instagram.handle}</a>
+        </p>
+      </div>
+    </div>
+  </section>
+</BaseLayout>
+
+<style>
+  .clinic-head {
+    padding-block: clamp(1.5rem, 3vw, 2.5rem) clamp(1.5rem, 3vw, 2.5rem);
+    background: linear-gradient(180deg, #fff 0%, var(--c-brand-50) 100%);
+    border-bottom: 1px solid var(--c-line);
+  }
+  .clinic-head__body {
+    margin-top: var(--sp-5);
+    display: grid;
+    gap: var(--sp-5);
+  }
+  .clinic-head :global(.section-head) {
+    margin-bottom: 0;
+  }
+  .week-title {
+    margin-bottom: var(--sp-4);
+  }
+  .week-wrap {
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+    border: 1px solid var(--c-line);
+    border-radius: var(--r-lg);
+  }
+  .week {
+    min-width: 640px;
+    font-size: var(--fs-sm);
+  }
+  .week th,
+  .week td {
+    text-align: center;
+    padding: var(--sp-3);
+    vertical-align: middle;
+  }
+  .week thead th {
+    background: var(--c-surface);
+    font-weight: 700;
+    color: var(--c-ink);
+  }
+  .week tbody th {
+    text-align: left;
+    background: #fff;
+    white-space: nowrap;
+  }
+  .week__session {
+    display: block;
+    font-weight: 700;
+    color: var(--c-ink);
+  }
+  .week__time {
+    display: block;
+    font-size: var(--fs-xs);
+    color: var(--c-muted);
+    font-weight: 400;
+  }
+  .week__cell {
+    display: inline-flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 6px 10px;
+    border-radius: var(--r-sm);
+    background: var(--c-brand-50);
+    color: var(--c-brand-800);
+    font-weight: 600;
+    text-decoration: none;
+    line-height: 1.3;
+  }
+  .week__cell small {
+    font-size: var(--fs-xs);
+    font-weight: 400;
+    color: var(--c-muted);
+  }
+  .week__cell--panshin {
+    background: var(--c-warm-100);
+    color: var(--c-warm-700);
+  }
+  .week__cell--landseed-taipei {
+    background: var(--cat-green-bg);
+    color: var(--cat-green);
+  }
+  .week__cell:hover {
+    filter: brightness(0.96);
+  }
+  .week__empty {
+    color: var(--c-line-strong);
+  }
+  .week-note {
+    margin-top: var(--sp-4);
+    font-size: var(--fs-xs);
+    color: var(--c-muted);
+  }
+  .clinic-anchor {
+    scroll-margin-top: calc(var(--header-h) + 1rem);
+    height: 100%;
+  }
+  .tips {
+    display: grid;
+    gap: var(--sp-8);
+  }
+  @media (min-width: 900px) {
+    .tips {
+      grid-template-columns: 1.4fr 1fr;
+      gap: var(--sp-16);
+    }
+  }
+  .tips__list {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: grid;
+    gap: var(--sp-3);
+  }
+  .tips__list li {
+    margin: 0;
+    display: flex;
+    gap: var(--sp-3);
+    align-items: flex-start;
+    color: var(--c-text);
+  }
+  .tips__list :global(.icon) {
+    width: 20px;
+    height: 20px;
+    color: var(--c-brand-600);
+    flex: none;
+    margin-top: 0.25em;
+  }
+  .tips__aside {
+    padding: var(--sp-6);
+    border-radius: var(--r-lg);
+    background: var(--c-surface);
+    border: 1px solid var(--c-line);
+  }
+  .tips__aside h3 {
+    font-size: var(--fs-md);
+    margin-bottom: var(--sp-2);
+  }
+  .tips__aside h3 + p {
+    color: var(--c-muted);
+    font-size: var(--fs-sm);
+  }
+  .tips__aside .btn {
+    margin: var(--sp-2) 0 var(--sp-6);
+  }
+</style>

@@ -1,0 +1,338 @@
+---
+import { Image, getImage } from 'astro:assets';
+import BaseLayout from '@/layouts/BaseLayout.astro';
+import Icon from '@/components/Icon.astro';
+import SectionHead from '@/components/SectionHead.astro';
+import TreatmentCard from '@/components/TreatmentCard.astro';
+import TopicGrid from '@/components/TopicGrid.astro';
+import ArticleCard from '@/components/ArticleCard.astro';
+import ClinicSection from '@/components/ClinicSection.astro';
+import { doctor } from '@/data/doctor';
+import { treatments } from '@/data/treatments';
+import { categoryList } from '@/data/categories';
+import { getFeaturedArticles } from '@/lib/articles';
+import { physicianJsonLd } from '@/lib/jsonld';
+import { SITE_NAME, DEFAULT_DESCRIPTION } from '@/data/site.js';
+import heroPhoto from '@/assets/photos/doctor-portrait-studio.jpg';
+import aboutPhoto from '@/assets/photos/event-2023-nig-tennis.jpg';
+
+const featured = await getFeaturedArticles(6);
+const ogPortrait = await getImage({ src: heroPhoto, width: 1200, height: 630, fit: 'cover', position: 'top', format: 'jpg' });
+const jsonLd = physicianJsonLd(Astro.site, new URL(ogPortrait.src, Astro.site).toString());
+---
+
+<BaseLayout title={SITE_NAME} rawTitle description={DEFAULT_DESCRIPTION} ogType="profile" jsonLd={jsonLd}>
+  <!-- Section 1: Hero -->
+  <section class="hero" aria-labelledby="hero-title">
+    <div class="container hero__inner">
+      <div class="hero__text">
+        <p class="hero__eyebrow">{doctor.hospital} {doctor.department}・樂天桃猿棒球隊醫療團隊醫師</p>
+        <h1 id="hero-title" class="hero__title">程皓醫師</h1>
+        <p class="hero__subtitle">{doctor.heroSubtitle}</p>
+        <p class="hero__tagline">{doctor.tagline}</p>
+        <div class="hero__actions">
+          <a href="/about/" class="btn btn--secondary btn--lg">了解程皓醫師</a>
+          <a href="/clinic/" class="btn btn--lg"><Icon name="calendar" class="icon" />門診時間及預約</a>
+        </div>
+        <ul class="hero__creds" aria-label="專業資格摘要">
+          <li>家庭醫學科專科醫師</li>
+          <li>美國運動醫學會 ACSM-CPT</li>
+          <li>2023 WBC・2025 世壯運 場邊醫師</li>
+        </ul>
+      </div>
+      <div class="hero__media">
+        <Image
+          src={heroPhoto}
+          alt="程皓醫師身穿白袍的專業形象照"
+          widths={[420, 640, 880]}
+          sizes="(min-width: 1024px) 440px, (min-width: 640px) 60vw, 92vw"
+          priority
+          class="hero__img"
+        />
+      </div>
+    </div>
+  </section>
+
+  <!-- Section 2: 主要治療 -->
+  <section class="section" aria-labelledby="treatments-title">
+    <div class="container">
+      <SectionHead
+        eyebrow="主要治療"
+        title="程皓醫師提供的主要治療"
+        lede="以完整評估與正確診斷為前提，依個別狀況選擇合適的注射修復治療或體重管理方式，並搭配運動訓練。是否適合仍需經實際診察。"
+        id="treatments-title"
+      />
+      <div class="grid grid--2 treatments-grid">
+        {treatments.map((t, i) => <TreatmentCard treatment={t} index={i} />)}
+      </div>
+    </div>
+  </section>
+
+  <!-- Section 3: 從問題開始找 -->
+  <section class="section section--surface" aria-labelledby="topics-title">
+    <div class="container">
+      <SectionHead
+        eyebrow="從問題開始找資訊"
+        title="你正在找哪方面的資訊？"
+        lede="不確定自己需要什麼治療？先從症狀或需求開始，看看程皓醫師寫過哪些相關內容。"
+        id="topics-title"
+      />
+      <TopicGrid />
+    </div>
+  </section>
+
+  <!-- Section 4: 關於 -->
+  <section class="section" aria-labelledby="about-title">
+    <div class="container about">
+      <div class="about__media">
+        <Image
+          src={aboutPhoto}
+          alt="程皓醫師身穿白袍站在全國大專運動會網球場邊"
+          widths={[400, 640, 900]}
+          sizes="(min-width: 1024px) 460px, (min-width: 640px) 70vw, 92vw"
+          loading="lazy"
+          class="about__img"
+        />
+      </div>
+      <div class="about__text">
+        <SectionHead eyebrow="關於程皓醫師" title="懂運動，也願意把話說清楚的運動醫學科醫師" id="about-title" />
+        <p>{doctor.intro}</p>
+        <blockquote class="about__quote">
+          <p>「{doctor.philosophy[0].quote}」</p>
+          <footer>— 程皓醫師，{doctor.philosophy[0].source}</footer>
+        </blockquote>
+        <dl class="about__facts">
+          <div>
+            <dt>現職</dt>
+            <dd>{doctor.hospital} {doctor.department}醫師；樂天桃猿棒球隊醫療團隊醫師</dd>
+          </div>
+          <div>
+            <dt>學歷</dt>
+            <dd>{doctor.education[0].title}</dd>
+          </div>
+          <div>
+            <dt>專科／證照</dt>
+            <dd>家庭醫學科專科醫師；美國運動醫學會私人教練 ACSM-CPT</dd>
+          </div>
+          <div>
+            <dt>運動醫學經歷</dt>
+            <dd>2023 世界棒球經典賽、2023／2026 全大運、2025 世界壯年運動會場邊醫師</dd>
+          </div>
+        </dl>
+        <a href="/about/" class="btn btn--secondary">更多關於程皓醫師 <Icon name="arrow-right" class="icon" /></a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Section 5: 專欄 -->
+  <section class="section section--brand" aria-labelledby="articles-title">
+    <div class="container">
+      <SectionHead
+        eyebrow="程皓醫師專欄"
+        title="從社群整理而來的衛教文章"
+        lede="程皓醫師在 Facebook 與 Threads 分享的運動醫學、疼痛、體重管理與訓練內容，重新整理成適合閱讀的文章。"
+        id="articles-title"
+        withAction
+      >
+        <a slot="action" href="/articles/" class="btn btn--secondary">全部文章 <Icon name="arrow-right" class="icon" /></a>
+      </SectionHead>
+      <ul class="cat-links" aria-label="專欄分類">
+        {categoryList.map((c) => <li><a href={c.path} class:list={['chip', `chip--${c.tone}`]}>{c.name}</a></li>)}
+      </ul>
+      <div class="grid grid--3">
+        {featured.map((a) => <ArticleCard article={a} />)}
+      </div>
+    </div>
+  </section>
+
+  <!-- Section 6: 門診 -->
+  <ClinicSection surface={false} />
+</BaseLayout>
+
+<style>
+  /* Hero */
+  .hero {
+    background:
+      radial-gradient(60% 80% at 100% 0%, var(--c-brand-50) 0%, transparent 60%),
+      linear-gradient(180deg, #fff 0%, var(--c-surface) 100%);
+    border-bottom: 1px solid var(--c-line);
+  }
+  .hero__inner {
+    display: grid;
+    gap: var(--sp-8);
+    padding-block: clamp(2.5rem, 6vw, 5rem) clamp(2rem, 5vw, 4rem);
+    align-items: center;
+  }
+  @media (min-width: 900px) {
+    .hero__inner {
+      grid-template-columns: 1.15fr 0.85fr;
+      gap: var(--sp-12);
+    }
+  }
+  .hero__eyebrow {
+    font-size: var(--fs-sm);
+    font-weight: 600;
+    color: var(--c-brand-600);
+    margin-bottom: var(--sp-3);
+  }
+  .hero__title {
+    font-size: clamp(2.6rem, 2rem + 3vw, 4.25rem);
+    letter-spacing: 0.02em;
+    margin-bottom: var(--sp-3);
+  }
+  .hero__subtitle {
+    font-size: clamp(1.05rem, 0.95rem + 0.6vw, 1.375rem);
+    font-weight: 600;
+    color: var(--c-ink);
+    letter-spacing: 0.04em;
+    margin-bottom: var(--sp-4);
+  }
+  .hero__tagline {
+    font-size: var(--fs-md);
+    color: var(--c-muted);
+    max-width: 30em;
+    margin-bottom: var(--sp-6);
+  }
+  .hero__actions {
+    display: flex;
+    flex-wrap: wrap;
+    gap: var(--sp-3);
+    margin-bottom: var(--sp-6);
+  }
+  .hero__creds {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-wrap: wrap;
+    gap: var(--sp-2) var(--sp-5);
+    font-size: var(--fs-xs);
+    color: var(--c-muted);
+  }
+  .hero__creds li {
+    margin: 0;
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+  }
+  .hero__creds li::before {
+    content: '';
+    width: 6px;
+    height: 6px;
+    border-radius: 50%;
+    background: var(--c-brand-500);
+  }
+  .hero__media {
+    position: relative;
+    max-width: 440px;
+    margin-inline: auto;
+    width: 100%;
+  }
+  .hero__media::before {
+    content: '';
+    position: absolute;
+    inset: 8% -6% -6% 8%;
+    border-radius: var(--r-xl);
+    background: var(--c-brand-100);
+    z-index: 0;
+  }
+  .hero__media :global(.hero__img) {
+    position: relative;
+    z-index: 1;
+    width: 100%;
+    aspect-ratio: 4 / 5;
+    object-fit: cover;
+    object-position: top;
+    border-radius: var(--r-xl);
+    box-shadow: var(--shadow-lg);
+  }
+  @media (max-width: 899px) {
+    .hero__media {
+      max-width: 360px;
+    }
+    .hero__inner {
+      text-align: left;
+    }
+  }
+
+  /* Treatments */
+  .treatments-grid {
+    gap: var(--sp-5);
+  }
+  @media (min-width: 1024px) {
+    .treatments-grid {
+      grid-template-columns: repeat(4, minmax(0, 1fr));
+    }
+  }
+
+  /* About */
+  .about {
+    display: grid;
+    gap: var(--sp-8);
+    align-items: center;
+  }
+  @media (min-width: 900px) {
+    .about {
+      grid-template-columns: 0.9fr 1.1fr;
+      gap: var(--sp-16);
+    }
+  }
+  .about__media :global(.about__img) {
+    width: 100%;
+    max-width: 460px;
+    aspect-ratio: 4 / 5;
+    object-fit: cover;
+    border-radius: var(--r-xl);
+    margin-inline: auto;
+  }
+  .about__quote {
+    margin: var(--sp-5) 0;
+    padding: var(--sp-4) var(--sp-5);
+    border-left: 4px solid var(--c-brand-300);
+    background: var(--c-brand-50);
+    border-radius: 0 var(--r-md) var(--r-md) 0;
+  }
+  .about__quote p {
+    margin: 0 0 var(--sp-2);
+    color: var(--c-ink);
+    font-weight: 500;
+  }
+  .about__quote footer {
+    font-size: var(--fs-xs);
+    color: var(--c-muted);
+  }
+  .about__facts {
+    display: grid;
+    gap: var(--sp-3);
+    margin: 0 0 var(--sp-6);
+    font-size: var(--fs-sm);
+  }
+  .about__facts > div {
+    display: grid;
+    grid-template-columns: 7em 1fr;
+    gap: var(--sp-3);
+    padding-bottom: var(--sp-3);
+    border-bottom: 1px solid var(--c-line);
+  }
+  .about__facts dt {
+    color: var(--c-muted);
+    font-weight: 600;
+  }
+  .about__facts dd {
+    margin: 0;
+    color: var(--c-text);
+  }
+
+  /* Articles */
+  .cat-links {
+    list-style: none;
+    margin: 0 0 var(--sp-6);
+    padding: 0;
+    display: flex;
+    flex-wrap: wrap;
+    gap: var(--sp-2);
+  }
+  .cat-links li {
+    margin: 0;
+  }
+</style>

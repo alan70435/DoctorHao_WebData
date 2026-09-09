@@ -1,0 +1,24 @@
+---
+import BaseLayout from '@/layouts/BaseLayout.astro';
+import ArticleListPage from '@/components/ArticleListPage.astro';
+import { getPublishedArticles } from '@/lib/articles';
+import { breadcrumbJsonLd } from '@/lib/jsonld';
+
+const articles = await getPublishedArticles();
+const crumbs = [{ label: '程皓醫師專欄' }];
+---
+
+<BaseLayout
+  title="程皓醫師專欄"
+  description="程皓醫師在社群分享的運動傷害與疼痛、體重控制與減重、運動訓練內容，重新整理為適合閱讀的衛教文章，忠於原始觀點並附上來源。"
+  jsonLd={breadcrumbJsonLd(Astro.site, crumbs)}
+>
+  <ArticleListPage
+    eyebrow="程皓醫師專欄"
+    title="運動醫學、疼痛與體重管理的衛教文章"
+    lede="以下文章整理自程皓醫師在 Facebook、Threads 與部落格公開發表的內容。我們重新排版、加上標題與重點整理，但醫療觀點以原文為準，並在每篇文末附上原始來源與日期。"
+    crumbs={crumbs}
+    articles={articles}
+    activeCategory="all"
+  />
+</BaseLayout>

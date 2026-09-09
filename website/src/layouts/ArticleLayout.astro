@@ -1,0 +1,287 @@
+---
+import { Image, getImage } from 'astro:assets';
+import BaseLayout from './BaseLayout.astro';
+import Breadcrumb from '@/components/Breadcrumb.astro';
+import AuthorCard from '@/components/AuthorCard.astro';
+import ArticleCard from '@/components/ArticleCard.astro';
+import Callout from '@/components/Callout.astro';
+import Icon from '@/components/Icon.astro';
+import CategoryCover from '@/components/CategoryCover.astro';
+import { categories } from '@/data/categories';
+import { topicById } from '@/data/topics';
+import { doctor } from '@/data/doctor';
+import { formatDate, isoDate, readingMinutes, getRelatedArticles, type Article } from '@/lib/articles';
+import { breadcrumbJsonLd } from '@/lib/jsonld';
+
+interface Props {
+  article: Article;
+}
+const { article } = Astro.props;
+const { data } = article;
+const cat = categories[data.category];
+const related = await getRelatedArticles({ tags: data.tags, exclude: article.id, limit: 3 });
+const minutes = readingMinutes(article.body);
+const topicChips = data.tags.map((t) => topicById[t]).filter(Boolean);
+
+const crumbs = [
+  { label: '程皓醫師專欄', href: '/articles/' },
+  { label: cat.name, href: cat.path },
+  { label: data.title },
+];
+
+let ogImage;
+if (data.cover) {
+  const og = await getImage({ src: data.cover, width: 1200, height: 630, fit: 'cover', format: 'jpg' });
+  ogImage = { src: og.src, width: 1200, height: 630, alt: data.coverAlt ?? data.title };
+}
+
+const articleLd = {
+  '@context': 'https://schema.org',
+  '@type': 'Article',
+  headline: data.title,
+  description: data.description,
+  inLanguage: 'zh-Hant-TW',
+  datePublished: isoDate(data.pubDate),
+  dateModified: isoDate(data.updatedDate),
+  author: { '@type': 'Person', name: doctor.displayName, url: new URL('/about/', Astro.site).toString() },
+  publisher: { '@type': 'Person', name: doctor.displayName },
+  mainEntityOfPage: new URL(Astro.url.pathname, Astro.site).toString(),
+  articleSection: cat.name,
+  image: ogImage ? new URL(ogImage.src, Astro.site).toString() : undefined,
+};
+---
+
+<BaseLayout
+  title={data.title}
+  description={data.description}
+  ogType="article"
+  ogImage={ogImage}
+  publishedTime={isoDate(data.pubDate)}
+  modifiedTime={isoDate(data.updatedDate)}
+  jsonLd={[articleLd, breadcrumbJsonLd(Astro.site, crumbs)]}
+>
+  <article class="article">
+    <header class="article__header">
+      <div class="container container--narrow">
+        <Breadcrumb items={crumbs} />
+        <div class="article__meta-top">
+          <a href={cat.path} class:list={['chip', `chip--${cat.tone}`]}>{cat.name}</a>
+          {data.forProfessionals && <span class="chip">給醫療同業</span>}
+        </div>
+        <h1>{data.title}</h1>
+        <p class="article__lede">{data.description}</p>
+        <dl class="article__meta">
+          <div><dt>作者</dt><dd>{doctor.displayName}</dd></div>
+          <div><dt>原始發布</dt><dd><time datetime={isoDate(data.pubDate)}>{formatDate(data.pubDate)}</time></dd></div>
+          <div><dt>網站更新</dt><dd><time datetime={isoDate(data.updatedDate)}>{formatDate(data.updatedDate)}</time></dd></div>
+          <div><dt>閱讀時間</dt><dd>約 {minutes} 分鐘</dd></div>
+        </dl>
+      </div>
+      <div class="container container--narrow article__cover">
+        {
+          data.cover ? (
+            <Image
+              src={data.cover}
+              alt={data.coverAlt ?? ''}
+              widths={[640, 960, 1280]}
+              sizes="(min-width: 900px) 860px, 96vw"
+              priority
+              class="article__cover-img"
+            />
+          ) : (
+            <CategoryCover category={data.category} seed={article.id} class="article__cover-generated" />
+          )
+        }
+      </div>
+    </header>
+
+    <div class="container container--narrow article__body">
+      <div class="prose">
+        <slot />
+      </div>
+
+      <Callout tone="neutral" icon="info" class="article__disclaimer">
+        <p>
+          本文整理自程皓醫師公開發表的社群內容，經重新排版與潤飾以利閱讀；醫療觀點以原文為準。內容為一般衛教資訊，無法取代實際診察，治療方式會依個別情況有所不同。
+        </p>
+      </Callout>
+
+      {
+        data.sources.length > 0 && (
+          <section class="article__sources" aria-labelledby="sources-title">
+            <h2 id="sources-title">原始來源</h2>
+            <ul>
+              {data.sources.map((s) => (
+                <li>
+                  {s.platform}，{s.date}
+                  {s.note && <span class="article__source-note">：{s.note}</span>}
+                  {s.url && (
+                    <a href={s.url} target="_blank" rel="noopener noreferrer">
+                      原文 <Icon name="external" class="icon" />
+                    </a>
+                  )}
+                </li>
+              ))}
+            </ul>
+          </section>
+        )
+      }
+
+      {
+        topicChips.length > 0 && (
+          <div class="article__topics">
+            <span>相關主題：</span>
+            {topicChips.map((t) => (
+              <a href={`/topics/${t.id}/`} class="chip">
+                {t.name}
+              </a>
+            ))}
+          </div>
+        )
+      }
+
+      <AuthorCard />
+    </div>
+
+    {
+      related.length > 0 && (
+        <section class="section section--surface" aria-labelledby="related-title">
+          <div class="container">
+            <h2 id="related-title" class="related-title">相關文章</h2>
+            <div class="grid grid--3">
+              {related.map((a) => (
+                <ArticleCard article={a} />
+              ))}
+            </div>
+          </div>
+        </section>
+      )
+    }
+
+    <section class="section article__cta" aria-labelledby="cta-title">
+      <div class="container container--narrow">
+        <h2 id="cta-title">有相關的疼痛或運動問題？</h2>
+        <p>文章內容無法取代診察。若有持續的症狀，歡迎於門診諮詢，程皓醫師會依您的狀況完整評估。</p>
+        <div class="article__cta-actions">
+          <a href="/clinic/" class="btn btn--lg"><Icon name="calendar" class="icon" />查看程皓醫師門診資訊</a>
+          <a href={doctor.social.facebook.url} class="btn btn--secondary btn--lg" target="_blank" rel="noopener noreferrer"
+            ><Icon name="facebook" class="icon" />Facebook 粉絲專頁</a
+          >
+        </div>
+      </div>
+    </section>
+  </article>
+</BaseLayout>
+
+<style>
+  .article__header {
+    padding-top: clamp(1.5rem, 3vw, 2.5rem);
+  }
+  .article__meta-top {
+    display: flex;
+    gap: var(--sp-2);
+    margin: var(--sp-5) 0 var(--sp-4);
+  }
+  .article__header h1 {
+    max-width: 24em;
+  }
+  .article__lede {
+    font-size: var(--fs-md);
+    color: var(--c-muted);
+    line-height: 1.75;
+    max-width: 40em;
+  }
+  .article__meta {
+    display: flex;
+    flex-wrap: wrap;
+    gap: var(--sp-3) var(--sp-6);
+    margin: var(--sp-5) 0 0;
+    padding: var(--sp-4) 0;
+    border-top: 1px solid var(--c-line);
+    border-bottom: 1px solid var(--c-line);
+    font-size: var(--fs-xs);
+  }
+  .article__meta > div {
+    display: flex;
+    gap: var(--sp-2);
+  }
+  .article__meta dt {
+    color: var(--c-muted);
+  }
+  .article__meta dd {
+    margin: 0;
+    color: var(--c-ink);
+    font-weight: 500;
+  }
+  .article__cover {
+    margin-top: var(--sp-6);
+  }
+  .article__cover :global(.article__cover-img) {
+    width: 100%;
+    max-height: 520px;
+    object-fit: cover;
+    border-radius: var(--r-xl);
+  }
+  .article__cover :global(.article__cover-generated) {
+    border-radius: var(--r-xl);
+    aspect-ratio: 21 / 9;
+  }
+  .article__body {
+    padding-block: clamp(2rem, 4vw, 3rem) clamp(2rem, 4vw, 3rem);
+    display: grid;
+    gap: var(--sp-8);
+  }
+  .article__disclaimer {
+    max-width: var(--measure);
+  }
+  .article__sources h2 {
+    font-size: var(--fs-md);
+    margin-bottom: var(--sp-3);
+  }
+  .article__sources ul {
+    margin: 0;
+    padding-left: 1.2em;
+    font-size: var(--fs-sm);
+    color: var(--c-muted);
+  }
+  .article__sources a {
+    display: inline-flex;
+    align-items: center;
+    gap: 3px;
+    margin-left: var(--sp-2);
+    font-size: var(--fs-xs);
+  }
+  .article__sources :global(.icon) {
+    width: 1em;
+    height: 1em;
+  }
+  .article__source-note {
+    color: var(--c-muted);
+  }
+  .article__topics {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: var(--sp-2);
+    font-size: var(--fs-sm);
+    color: var(--c-muted);
+  }
+  .related-title {
+    margin-bottom: var(--sp-6);
+  }
+  .article__cta {
+    text-align: center;
+  }
+  .article__cta p {
+    color: var(--c-muted);
+    max-width: 36em;
+    margin-inline: auto;
+  }
+  .article__cta-actions {
+    display: flex;
+    flex-wrap: wrap;
+    gap: var(--sp-3);
+    justify-content: center;
+    margin-top: var(--sp-6);
+  }
+</style>

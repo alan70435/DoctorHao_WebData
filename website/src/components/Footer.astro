@@ -1,0 +1,208 @@
+---
+import Icon from './Icon.astro';
+import { doctor } from '@/data/doctor';
+import { clinics, lastConfirmed } from '@/data/clinics';
+import { footerNav } from '@/data/nav';
+
+const year = new Date().getFullYear();
+const primary = clinics.find((c) => c.primary) ?? clinics[0];
+---
+
+<footer class="site-footer">
+  <div class="container">
+    <div class="footer-grid">
+      <div class="footer-brand">
+        <p class="footer-brand__name">程皓醫師</p>
+        <p class="footer-brand__desc">
+          {doctor.hospital} {doctor.department}醫師、樂天桃猿棒球隊醫療團隊醫師。運動傷害、疼痛治療、醫療體重管理與運動訓練。
+        </p>
+        <ul class="social">
+          <li>
+            <a href={doctor.social.facebook.url} target="_blank" rel="noopener noreferrer" aria-label="Facebook 粉絲專頁（另開新視窗）">
+              <Icon name="facebook" class="icon" /><span>Facebook</span>
+            </a>
+          </li>
+          <li>
+            <a href={doctor.social.threads.url} target="_blank" rel="noopener noreferrer" aria-label="Threads（另開新視窗）">
+              <Icon name="threads" class="icon" /><span>Threads</span>
+            </a>
+          </li>
+          <li>
+            <a href={doctor.social.instagram.url} target="_blank" rel="noopener noreferrer" aria-label="Instagram（另開新視窗）">
+              <Icon name="instagram" class="icon" /><span>Instagram</span>
+            </a>
+          </li>
+        </ul>
+      </div>
+
+      <nav class="footer-col" aria-label="主要治療">
+        <p class="footer-col__title">主要治療</p>
+        <ul>
+          {footerNav.treatments.map((l) => <li><a href={l.href}>{l.label}</a></li>)}
+        </ul>
+      </nav>
+
+      <nav class="footer-col" aria-label="程皓醫師專欄">
+        <p class="footer-col__title">程皓醫師專欄</p>
+        <ul>
+          {footerNav.articles.map((l) => <li><a href={l.href}>{l.label}</a></li>)}
+        </ul>
+      </nav>
+
+      <div class="footer-col footer-col--clinic">
+        <p class="footer-col__title">主要門診</p>
+        <p class="footer-clinic__name">{primary.name} {primary.department}</p>
+        <p class="footer-clinic__meta">
+          <Icon name="map-pin" class="icon" />
+          {primary.address}
+        </p>
+        {
+          primary.phone && (
+            <p class="footer-clinic__meta">
+              <Icon name="phone" class="icon" />
+              <a href={`tel:${primary.phone.replace(/-/g, '')}`}>{primary.phone}</a>
+            </p>
+          )
+        }
+        <a href="/clinic/" class="btn btn--secondary btn--sm footer-clinic__btn">完整門診時間及預約 <Icon name="arrow-right" class="icon" /></a>
+      </div>
+    </div>
+
+    <div class="footer-bottom">
+      <p>
+        © {year} 程皓醫師。本網站內容為一般醫療衛教資訊，不能取代實際診察；治療方式會依個別狀況有所不同，是否適合仍需經醫師評估。
+      </p>
+      <p class="footer-bottom__meta">門診資訊最後確認：{lastConfirmed}。如有異動以院方公告為準。</p>
+    </div>
+  </div>
+</footer>
+
+<style>
+  .site-footer {
+    background: var(--c-brand-900);
+    color: rgba(255, 255, 255, 0.82);
+    padding-block: clamp(2.5rem, 5vw, 4rem) clamp(1.5rem, 3vw, 2.5rem);
+    margin-top: auto;
+  }
+  .site-footer a {
+    color: #fff;
+    text-decoration: none;
+  }
+  .site-footer a:hover {
+    text-decoration: underline;
+    text-underline-offset: 0.2em;
+  }
+  .footer-grid {
+    display: grid;
+    gap: var(--sp-8);
+    grid-template-columns: 1fr;
+  }
+  @media (min-width: 640px) {
+    .footer-grid {
+      grid-template-columns: 1fr 1fr;
+    }
+  }
+  @media (min-width: 1024px) {
+    .footer-grid {
+      grid-template-columns: 1.6fr 1fr 1fr 1.4fr;
+      gap: var(--sp-10);
+    }
+  }
+  .footer-brand__name {
+    font-size: var(--fs-lg);
+    font-weight: 700;
+    color: #fff;
+    margin-bottom: var(--sp-2);
+  }
+  .footer-brand__desc {
+    font-size: var(--fs-sm);
+    line-height: 1.7;
+    max-width: 34em;
+  }
+  .social {
+    list-style: none;
+    padding: 0;
+    margin: var(--sp-4) 0 0;
+    display: flex;
+    flex-wrap: wrap;
+    gap: var(--sp-2);
+  }
+  .social li {
+    margin: 0;
+  }
+  .social a {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    padding: 6px 10px;
+    border-radius: var(--r-pill);
+    background: rgba(255, 255, 255, 0.08);
+    font-size: var(--fs-xs);
+    font-weight: 600;
+  }
+  .social a:hover {
+    background: rgba(255, 255, 255, 0.16);
+    text-decoration: none;
+  }
+  .social :global(.icon) {
+    width: 16px;
+    height: 16px;
+  }
+  .footer-col__title {
+    font-size: var(--fs-xs);
+    font-weight: 700;
+    letter-spacing: 0.1em;
+    color: rgba(255, 255, 255, 0.6);
+    margin-bottom: var(--sp-3);
+  }
+  .footer-col ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+  }
+  .footer-col li {
+    margin-bottom: var(--sp-2);
+    font-size: var(--fs-sm);
+  }
+  .footer-clinic__name {
+    font-weight: 600;
+    color: #fff;
+    margin-bottom: var(--sp-2);
+  }
+  .footer-clinic__meta {
+    display: flex;
+    gap: var(--sp-2);
+    align-items: flex-start;
+    font-size: var(--fs-sm);
+    margin-bottom: var(--sp-2);
+  }
+  .footer-clinic__meta :global(.icon) {
+    width: 18px;
+    height: 18px;
+    flex: none;
+    margin-top: 0.2em;
+    opacity: 0.8;
+  }
+  .footer-clinic__btn {
+    --btn-fg: #fff;
+    --btn-bd: rgba(255, 255, 255, 0.4);
+    margin-top: var(--sp-2);
+  }
+  .footer-clinic__btn:hover {
+    --btn-bg: rgba(255, 255, 255, 0.1);
+    --btn-bd: #fff;
+    color: #fff;
+    text-decoration: none;
+  }
+  .footer-bottom {
+    margin-top: clamp(2rem, 4vw, 3rem);
+    padding-top: var(--sp-5);
+    border-top: 1px solid rgba(255, 255, 255, 0.14);
+    font-size: var(--fs-xs);
+    color: rgba(255, 255, 255, 0.62);
+    line-height: 1.7;
+  }
+  .footer-bottom p {
+    margin: 0 0 var(--sp-2);
+  }
+</style>

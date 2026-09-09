@@ -1,0 +1,89 @@
+---
+import Icon from './Icon.astro';
+import type { Treatment } from '@/data/treatments';
+
+interface Props {
+  treatment: Treatment;
+  index?: number;
+}
+const { treatment: t, index = 0 } = Astro.props;
+const href = `/${t.slug}/`;
+---
+
+<article class="tcard card card--link">
+  <div class="tcard__top">
+    <span class="tcard__num" aria-hidden="true">{String(index + 1).padStart(2, '0')}</span>
+    <span class="tcard__en">{t.englishName}</span>
+  </div>
+  <h3 class="tcard__title"><a href={href}>{t.name}</a></h3>
+  <p class="tcard__desc">{t.cardSummary}</p>
+  <span class="tcard__more">了解治療說明 <Icon name="arrow-right" class="icon" /></span>
+</article>
+
+<style>
+  .tcard {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    gap: var(--sp-3);
+    padding: var(--sp-6);
+    height: 100%;
+  }
+  .tcard__top {
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+    gap: var(--sp-3);
+  }
+  .tcard__num {
+    font-size: var(--fs-sm);
+    font-weight: 700;
+    color: var(--c-brand-700);
+    letter-spacing: 0.05em;
+  }
+  .tcard__en {
+    font-size: var(--fs-xs);
+    color: var(--c-muted);
+    letter-spacing: 0.04em;
+  }
+  .tcard__title {
+    margin: 0;
+    font-size: var(--fs-lg);
+  }
+  .tcard__title a {
+    color: var(--c-ink);
+    text-decoration: none;
+  }
+  .tcard__title a::after {
+    content: '';
+    position: absolute;
+    inset: 0;
+  }
+  .tcard:hover .tcard__title a {
+    color: var(--c-brand-700);
+  }
+  .tcard__desc {
+    margin: 0;
+    color: var(--c-muted);
+    font-size: var(--fs-sm);
+    line-height: 1.75;
+  }
+  .tcard__more {
+    margin-top: auto;
+    padding-top: var(--sp-2);
+    display: inline-flex;
+    align-items: center;
+    gap: 4px;
+    font-size: var(--fs-sm);
+    font-weight: 600;
+    color: var(--c-brand-700);
+  }
+  .tcard__more :global(.icon) {
+    width: 1em;
+    height: 1em;
+    transition: transform var(--dur) var(--ease);
+  }
+  .tcard:hover .tcard__more :global(.icon) {
+    transform: translateX(3px);
+  }
+</style>

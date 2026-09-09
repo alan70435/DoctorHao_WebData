@@ -1,0 +1,18 @@
+---
+import Icon from './Icon.astro';
+interface Props {
+  tone?: 'brand' | 'warm' | 'neutral';
+  icon?: 'info' | 'alert' | 'check';
+  title?: string;
+  class?: string;
+}
+const { tone = 'brand', icon = 'info', title, class: className } = Astro.props;
+---
+
+<div class:list={['callout', { 'callout--warm': tone === 'warm', 'callout--neutral': tone === 'neutral' }, className]} role="note">
+  <Icon name={icon} class="icon" />
+  <div>
+    {title && <p><strong>{title}</strong></p>}
+    <slot />
+  </div>
+</div>

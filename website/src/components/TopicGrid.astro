@@ -1,0 +1,82 @@
+---
+import Icon from './Icon.astro';
+import { topics } from '@/data/topics';
+---
+
+<ul class="topics" role="list">
+  {
+    topics.map((t) => (
+      <li>
+        <a href={`/topics/${t.id}/`} class="topic">
+          <span class="topic__name">{t.name}</span>
+          <span class="topic__desc">{t.description}</span>
+          <Icon name="arrow-right" class="topic__arrow" />
+        </a>
+      </li>
+    ))
+  }
+</ul>
+
+<style>
+  .topics {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: grid;
+    gap: var(--sp-3);
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+  @media (min-width: 720px) {
+    .topics {
+      grid-template-columns: repeat(4, minmax(0, 1fr));
+    }
+  }
+  .topics li {
+    margin: 0;
+  }
+  .topic {
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+    height: 100%;
+    padding: var(--sp-4) var(--sp-4) var(--sp-4);
+    border: 1px solid var(--c-line);
+    border-radius: var(--r-lg);
+    background: #fff;
+    text-decoration: none;
+    color: var(--c-ink);
+    position: relative;
+    transition:
+      border-color var(--dur) var(--ease),
+      box-shadow var(--dur) var(--ease),
+      transform var(--dur) var(--ease);
+  }
+  .topic:hover,
+  .topic:focus-visible {
+    border-color: var(--c-brand-300);
+    box-shadow: var(--shadow-md);
+    transform: translateY(-2px);
+  }
+  .topic__name {
+    font-weight: 700;
+    font-size: var(--fs-base);
+  }
+  .topic__desc {
+    font-size: var(--fs-xs);
+    color: var(--c-muted);
+    line-height: 1.55;
+    padding-right: 1.4rem;
+  }
+  .topic :global(.topic__arrow) {
+    position: absolute;
+    right: 12px;
+    bottom: 12px;
+    width: 1rem;
+    height: 1rem;
+    color: var(--c-brand-500);
+    transition: transform var(--dur) var(--ease);
+  }
+  .topic:hover :global(.topic__arrow) {
+    transform: translateX(3px);
+  }
+</style>

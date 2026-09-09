@@ -1,0 +1,28 @@
+{
+  "name": "drchenghao-website",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "description": "程皓醫師個人專業網站（聯新國際醫院 運動醫學科）",
+  "scripts": {
+    "dev": "ASTRO_TELEMETRY_DISABLED=1 astro dev",
+    "build": "ASTRO_TELEMETRY_DISABLED=1 astro build",
+    "preview": "ASTRO_TELEMETRY_DISABLED=1 astro preview",
+    "check": "ASTRO_TELEMETRY_DISABLED=1 astro check",
+    "import-assets": "node scripts/import-assets.mjs"
+  },
+  "dependencies": {
+    "@astrojs/sitemap": "^3.7.4",
+    "@fontsource-variable/noto-sans-tc": "^5.2.6",
+    "astro": "^7.3.2",
+    "sharp": "^0.35.4"
+  },
+  "engines": {
+    "node": ">=22.12.0"
+  },
+  "devDependencies": {
+    "@astrojs/check": "^0.9.10",
+    "axe-core": "^4.13.0",
+    "typescript": "^6.0.3"
+  }
+}

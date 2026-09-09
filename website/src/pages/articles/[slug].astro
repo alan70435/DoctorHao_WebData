@@ -1,0 +1,64 @@
+---
+/**
+ * /articles/<category>/  → 分類列表
+ * /articles/<article>/   → 單篇文章
+ * 兩者共用同一動態區段，於此統一產生以避免路由衝突。
+ */
+import { render } from 'astro:content';
+import BaseLayout from '@/layouts/BaseLayout.astro';
+import ArticleLayout from '@/layouts/ArticleLayout.astro';
+import ArticleListPage from '@/components/ArticleListPage.astro';
+import { categoryList, type Category } from '@/data/categories';
+import { getPublishedArticles, getArticlesByCategory, type Article } from '@/lib/articles';
+import { breadcrumbJsonLd } from '@/lib/jsonld';
+
+export async function getStaticPaths() {
+  const articles = await getPublishedArticles();
+  const categoryIds = new Set(categoryList.map((c) => c.id as string));
+  const articlePaths = articles
+    .filter((a) => {
+      if (categoryIds.has(a.id)) throw new Error(`文章 slug「${a.id}」與分類路徑衝突，請改名。`);
+      return true;
+    })
+    .map((article) => ({ params: { slug: article.id }, props: { kind: 'article' as const, article } }));
+  const categoryPaths = categoryList.map((cat) => ({ params: { slug: cat.id }, props: { kind: 'category' as const, cat } }));
+  return [...categoryPaths, ...articlePaths];
+}
+
+type Props = { kind: 'article'; article: Article } | { kind: 'category'; cat: Category };
+const props = Astro.props as Props;
+
+let Content: any = null;
+let categoryArticles: Article[] = [];
+let crumbs: { label: string; href?: string }[] = [];
+if (props.kind === 'article') {
+  ({ Content } = await render(props.article));
+} else {
+  categoryArticles = await getArticlesByCategory(props.cat.id);
+  crumbs = [{ label: '程皓醫師專欄', href: '/articles/' }, { label: props.cat.name }];
+}
+---
+
+{
+  props.kind === 'article' ? (
+    <ArticleLayout article={props.article}>
+      <Content />
+    </ArticleLayout>
+  ) : (
+    <BaseLayout
+      title={`${props.cat.name}｜程皓醫師專欄`}
+      rawTitle
+      description={`程皓醫師專欄「${props.cat.name}」：${props.cat.description}`}
+      jsonLd={breadcrumbJsonLd(Astro.site, crumbs)}
+    >
+      <ArticleListPage
+        eyebrow="程皓醫師專欄"
+        title={props.cat.name}
+        lede={props.cat.description}
+        crumbs={crumbs}
+        articles={categoryArticles}
+        activeCategory={props.cat.id}
+      />
+    </BaseLayout>
+  )
+}
