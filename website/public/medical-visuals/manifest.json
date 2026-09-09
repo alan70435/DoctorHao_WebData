@@ -1,7 +1,7 @@
 {
   "schemaVersion": 1,
   "generatedOn": "2026-09-10",
-  "sourceRevision": "454ed422277265d7d9d6eeabd09ebc1d9a69f59d",
+  "sourceRevision": "65074c0c41e033f094dccbd61eb04138664b6838",
   "reviewStatus": "clinician-review-pending",
   "provenance": "Original parametric 3-D geometry and rendered teaching images. No source photographs, video pixels, third-party meshes or patient data were copied.",
   "limitations": "Schematic geometry is not anatomically complete or dimensionally validated. Motion is not a biomechanical simulation. Clinical review is pending.",
