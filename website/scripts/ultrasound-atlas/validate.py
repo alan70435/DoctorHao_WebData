@@ -35,6 +35,16 @@ def main():
     check([x['id'] for x in manifest['items']]==[x['id'] for x in ITEMS],'Missing, extra, or reordered regions')
     check(sum(len(x['windows']) for x in manifest['items'])==24,'Unexpected reading-route count')
     check(len(list(OUT.glob('*.glb')))==12,'Expected twelve axis variants')
+    # Check the primary landmark lies within the long-axis probe's modeled footprint.
+    # This is a geometric alignment check, not a clinical anatomy validation.
+    for item in ITEMS:
+        n=np.asarray(item['normal'],float);n/=np.linalg.norm(n)
+        u=np.asarray(item['axis_vector'],float);u/=np.linalg.norm(u)
+        v=np.cross(n,u);v/=np.linalg.norm(v)
+        delta=np.asarray(item['points'][0])-np.asarray(item['contact'])
+        check(abs(float(delta@v))<=.095,'Long-axis probe misses primary target: '+item['id'])
+        check(abs(float(delta@u))<=.43,'Primary target beyond active probe length: '+item['id'])
+        check(0<float(delta@(-n))<.92,'Primary target outside illustrative depth: '+item['id'])
     results=[]
     font_path=Path('/usr/share/fonts/opentype/noto/NotoSansCJK-Regular.ttc')
     for entry in manifest['items']:
@@ -79,7 +89,7 @@ def main():
         check((OUT/entry['models']['long']).read_bytes()!=(OUT/entry['models']['short']).read_bytes(),'Axis variants are identical')
         copy=ROOT/'website_blog/medical_3d_assets/ultrasound'/entry['svg']
         check(copy.read_bytes()==(OUT/entry['svg']).read_bytes(),'Archive/public SVG drift')
-        results.append({'region':entry['id'],'svg':'pass','raster':'pass','glbLong':'pass','glbShort':'pass','sha256':'pass','clinicalReview':'needs-clinician-review'})
+        results.append({'region':entry['id'],'svg':'pass','raster':'pass','glbLong':'pass','glbShort':'pass','sha256':'pass','probeTargetGeometry':'pass','clinicalReview':'needs-clinician-review'})
     # These fixtures verify preservation and idempotence independently of live article content.
     with tempfile.TemporaryDirectory() as d:
         p=Path(d)/'article.md';original='---\ntitle: unchanged\n---\n\n原文\n\n## 影片資源\n既有網址與內容\n'

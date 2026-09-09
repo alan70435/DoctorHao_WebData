@@ -99,7 +99,7 @@ jobs:
             fi
             git -c "http.https://github.com/.extraheader=$auth" fetch origin main
             base=$(git merge-base HEAD origin/main)
-            if ! git diff --quiet "$base" origin/main -- "${paths[@]}"; then
+            if ! git diff --quiet "$base" origin/main -- "${paths[@]}" website/scripts/ultrasound-atlas .github/workflows/ultrasound-atlas.yml; then
               echo 'Concurrent edits touch atlas paths; refusing to overwrite them.' >&2
               exit 1
             fi
