@@ -1,0 +1,53 @@
+name: Medical visual assets
+
+on:
+  workflow_dispatch:
+  push:
+    branches: [main]
+    paths:
+      - '.github/workflows/medical-visuals.yml'
+      - 'website/scripts/medical-visuals/**'
+      - 'website/src/data/medical-visuals.*'
+      - 'website/src/content/articles/**'
+
+permissions:
+  contents: read
+
+concurrency:
+  group: medical-visuals-${{ github.ref }}
+  cancel-in-progress: false
+
+jobs:
+  audit:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          persist-credentials: false
+      - name: Inventory article sources without modifying them
+        run: |
+          python3 - <<'PY'
+          from pathlib import Path
+          import hashlib, json, zipfile
+          root = Path('website')
+          articles = []
+          for p in sorted((root / 'src/content/articles').glob('*.md')):
+              text = p.read_text(encoding='utf-8')
+              articles.append({'slug': p.stem, 'path': str(p), 'sha256': hashlib.sha256(p.read_bytes()).hexdigest(), 'content': text})
+              print(p.stem)
+          Path('medical-article-inventory.json').write_text(json.dumps(articles, ensure_ascii=False, indent=2), encoding='utf-8')
+          print('ARTICLE_COUNT=' + str(len(articles)))
+          allowed = {'.md', '.astro', '.ts', '.js', '.mjs', '.json', '.css'}
+          with zipfile.ZipFile('medical-visual-source-audit.zip', 'w', zipfile.ZIP_DEFLATED) as z:
+              for p in sorted(root.rglob('*')):
+                  if p.is_file() and p.suffix in allowed and not any(part.startswith('.') or part in {'node_modules', 'dist'} for part in p.parts):
+                      z.write(p, str(p))
+              z.write('medical-article-inventory.json')
+          PY
+      - uses: actions/upload-artifact@v4
+        with:
+          name: medical-visual-source-audit
+          path: medical-visual-source-audit.zip
+          retention-days: 7
+          if-no-files-found: error
