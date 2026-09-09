@@ -1,0 +1,4769 @@
+{
+  "schemaVersion": 1,
+  "generatedOn": "2026-09-10",
+  "sourceRevision": "454ed422277265d7d9d6eeabd09ebc1d9a69f59d",
+  "reviewStatus": "clinician-review-pending",
+  "provenance": "Original parametric 3-D geometry and rendered teaching images. No source photographs, video pixels, third-party meshes or patient data were copied.",
+  "limitations": "Schematic geometry is not anatomically complete or dimensionally validated. Motion is not a biomechanical simulation. Clinical review is pending.",
+  "sources": {
+    "acl": {
+      "label": "AAOS • ACL injury",
+      "url": "https://www.orthoinfo.org/treatment/acl-injury-does-it-require-surgery",
+      "checkedOn": "2026-09-10"
+    },
+    "meniscus": {
+      "label": "AAOS • Meniscus tears",
+      "url": "https://www.orthoinfo.org/en/diseases--conditions/meniscus-tears-video/",
+      "checkedOn": "2026-09-10"
+    },
+    "shoulder": {
+      "label": "AAOS • Rotator cuff tears",
+      "url": "https://www.orthoinfo.org/diseases--conditions/rotator-cuff-tears/",
+      "checkedOn": "2026-09-10"
+    },
+    "capsule": {
+      "label": "AAOS • Frozen shoulder",
+      "url": "https://www.orthoinfo.org/diseases--conditions/frozen-shoulder/",
+      "checkedOn": "2026-09-10"
+    },
+    "achilles": {
+      "label": "AAOS • Achilles tendon rupture",
+      "url": "https://www.orthoinfo.org/diseases--conditions/achilles-tendon-rupture-tear-video/",
+      "checkedOn": "2026-09-10"
+    },
+    "pes": {
+      "label": "AAOS • Pes anserine bursitis",
+      "url": "https://www.orthoinfo.org/diseases--conditions/pes-anserine-knee-tendon-bursitis",
+      "checkedOn": "2026-09-10"
+    },
+    "foot": {
+      "label": "AAOS • Plantar fasciitis",
+      "url": "https://www.orthoinfo.org/diseases--conditions/plantar-fasciitis-and-bone-spurs",
+      "checkedOn": "2026-09-10"
+    },
+    "hamstring": {
+      "label": "AAOS • Hamstring muscle injuries",
+      "url": "https://www.orthoinfo.org/en/diseases--conditions/hamstring-muscle-injuries",
+      "checkedOn": "2026-09-10"
+    },
+    "ulnar": {
+      "label": "AAOS • Cubital tunnel syndrome",
+      "url": "https://www.orthoinfo.org/diseases--conditions/ulnar-nerve-entrapment-at-the-elbow/",
+      "checkedOn": "2026-09-10"
+    },
+    "vein": {
+      "label": "NHLBI • Varicose veins",
+      "url": "https://www.nhlbi.nih.gov/health/varicose-veins",
+      "checkedOn": "2026-09-10"
+    },
+    "clot": {
+      "label": "NHLBI • Venous thromboembolism",
+      "url": "https://www.nhlbi.nih.gov/health/venous-thromboembolism",
+      "checkedOn": "2026-09-10"
+    },
+    "concussion": {
+      "label": "CDC • Responding to concussion",
+      "url": "https://www.cdc.gov/heads-up/response/index.html",
+      "checkedOn": "2026-09-10"
+    },
+    "consensus": {
+      "label": "BJSM • Amsterdam concussion consensus",
+      "url": "https://bjsm.bmj.com/content/57/11/695",
+      "checkedOn": "2026-09-10"
+    },
+    "activity": {
+      "label": "WHO • Physical activity",
+      "url": "https://www.who.int/europe/news-room/fact-sheets/item/physical-activity",
+      "checkedOn": "2026-09-10"
+    },
+    "weight": {
+      "label": "NIDDK • Factors affecting weight",
+      "url": "https://www.niddk.nih.gov/health-information/weight-management/adult-overweight-obesity/factors-affecting-weight-health",
+      "checkedOn": "2026-09-10"
+    },
+    "medication": {
+      "label": "NIDDK • Prescription weight management",
+      "url": "https://www.niddk.nih.gov/health-information/weight-management/prescription-medications-treat-overweight-obesity",
+      "checkedOn": "2026-09-10"
+    },
+    "diabetes": {
+      "label": "NIDDK • Healthy living with diabetes",
+      "url": "https://www.niddk.nih.gov/health-information/diabetes/overview/healthy-living-with-diabetes",
+      "checkedOn": "2026-09-10"
+    },
+    "supplements": {
+      "label": "NIH ODS • Exercise and supplements",
+      "url": "https://ods.od.nih.gov/factsheets/ExerciseAndAthleticPerformance-HealthProfessional/",
+      "checkedOn": "2026-09-10"
+    },
+    "painmedicine": {
+      "label": "FDA • Acetaminophen safety",
+      "url": "https://www.fda.gov/consumers/consumer-updates/dont-overuse-acetaminophen",
+      "checkedOn": "2026-09-10"
+    }
+  },
+  "models": {
+    "achilles": {
+      "src": "/medical-visuals/models/achilles.glb",
+      "poster": "/medical-visuals/models/achilles.webp",
+      "notes": "足部為開放式結構示意；骨形、筋膜厚度與附著範圍經簡化。",
+      "structures": [
+        [
+          "脛骨・腓骨・足骨",
+          "#eee5d3"
+        ],
+        [
+          "肌腱／筋膜",
+          "#49bdb4"
+        ],
+        [
+          "關注區（非分級）",
+          "#f2a066"
+        ]
+      ],
+      "camera": [
+        2.6135182051634334,
+        0.26028975677365856
+      ],
+      "sha256": "9d805f0a71f3e3b57ea1db20cf616942f71066f146828c00615352ab6efb4c9b",
+      "vertices": 9013,
+      "triangles": 17790,
+      "parts": 59,
+      "bytes": 437084
+    },
+    "ankle-lateral": {
+      "src": "/medical-visuals/models/ankle-lateral.glb",
+      "poster": "/medical-visuals/models/ankle-lateral.webp",
+      "notes": "足部為開放式結構示意；骨形、筋膜厚度與附著範圍經簡化。",
+      "structures": [
+        [
+          "脛骨・腓骨・足骨",
+          "#eee5d3"
+        ],
+        [
+          "肌腱／筋膜",
+          "#49bdb4"
+        ],
+        [
+          "關注區（非分級）",
+          "#f2a066"
+        ]
+      ],
+      "camera": [
+        0.5880026035475675,
+        0.3337208841379054
+      ],
+      "sha256": "3e8bdc5968d7e120a0aa95c2d3b32de70c6212744005f03e060efa3ee5a03f0f",
+      "vertices": 6011,
+      "triangles": 11910,
+      "parts": 28,
+      "bytes": 291256
+    },
+    "assessment-abcde": {
+      "src": "/medical-visuals/models/assessment-abcde.glb",
+      "poster": "/medical-visuals/models/assessment-abcde.webp",
+      "notes": "供受訓團隊理解系統性評估概念，非完整急救演算法或徒手操作指南。",
+      "structures": [
+        [
+          "評估人偶",
+          "#eee5d3"
+        ],
+        [
+          "呼吸循環等初評",
+          "#49bdb4"
+        ],
+        [
+          "持續再評估",
+          "#f2a066"
+        ]
+      ],
+      "camera": [
+        0.49394136891958124,
+        0.32652137675065274
+      ],
+      "sha256": "a470f88cc872606397996a81e92c2aac1067ccb1c5d9a3b2e82fac7fbccad334",
+      "vertices": 10774,
+      "triangles": 21440,
+      "parts": 27,
+      "bytes": 521676
+    },
+    "assessment-ultrasound": {
+      "src": "/medical-visuals/models/assessment-ultrasound.glb",
+      "poster": "/medical-visuals/models/assessment-ultrasound.webp",
+      "notes": "模擬聲束與組織剖面，完全不是超音波掃描畫面。",
+      "structures": [
+        [
+          "探頭",
+          "#eee5d3"
+        ],
+        [
+          "模擬聲束",
+          "#49bdb4"
+        ],
+        [
+          "組織層示意",
+          "#bb7564"
+        ]
+      ],
+      "camera": [
+        0.49394136891958124,
+        0.32652137675065274
+      ],
+      "sha256": "e4ed13abb9f67220fa26b152943340684c425588ac272261f73337c97df7285e",
+      "vertices": 644,
+      "triangles": 1232,
+      "parts": 14,
+      "bytes": 36272
+    },
+    "brain-concussion": {
+      "src": "/medical-visuals/models/brain-concussion.glb",
+      "poster": "/medical-visuals/models/brain-concussion.webp",
+      "notes": "腦部結構高度簡化；沒有病灶、出血或可供診斷的影像特徵。",
+      "structures": [
+        [
+          "大腦半球示意",
+          "#eee5d3"
+        ],
+        [
+          "腦幹示意",
+          "#49bdb4"
+        ],
+        [
+          "小腦示意",
+          "#c7ddd2"
+        ]
+      ],
+      "camera": [
+        0.5280744484263596,
+        0.4076915718445349
+      ],
+      "sha256": "6902480af1e9fe3155354277c020b4764c345ef082478baf56a08deaf6dae444",
+      "vertices": 3544,
+      "triangles": 7072,
+      "parts": 4,
+      "bytes": 173688
+    },
+    "calf-tear": {
+      "src": "/medical-visuals/models/calf-tear.glb",
+      "poster": "/medical-visuals/models/calf-tear.webp",
+      "notes": "足部為開放式結構示意；骨形、筋膜厚度與附著範圍經簡化。",
+      "structures": [
+        [
+          "脛骨・腓骨・足骨",
+          "#eee5d3"
+        ],
+        [
+          "肌腱／筋膜",
+          "#49bdb4"
+        ],
+        [
+          "關注區（非分級）",
+          "#f2a066"
+        ]
+      ],
+      "camera": [
+        2.6135182051634334,
+        0.26028975677365856
+      ],
+      "sha256": "3369001b093dd66dd68f5bc6edaa39b0e5b8151270733a7e601e30fe6e38bf37",
+      "vertices": 9495,
+      "triangles": 18750,
+      "parts": 60,
+      "bytes": 460124
+    },
+    "elbow-tendon": {
+      "src": "/medical-visuals/models/elbow-tendon.glb",
+      "poster": "/medical-visuals/models/elbow-tendon.webp",
+      "notes": "神經與軟組織為放大的走向示意；不提供注射或手術定位。",
+      "structures": [
+        [
+          "骨骼",
+          "#eee5d3"
+        ],
+        [
+          "肌腱／韌帶",
+          "#49bdb4"
+        ],
+        [
+          "神經或關注區",
+          "#f2a066"
+        ]
+      ],
+      "camera": [
+        0.40489178628508343,
+        0.2568139174208071
+      ],
+      "sha256": "36ebb5eaafbd0a9466a6e8fa5b936b8866606cce16218e9809f25560a0bf91d0",
+      "vertices": 4612,
+      "triangles": 9164,
+      "parts": 15,
+      "bytes": 224696
+    },
+    "elbow-ulnar": {
+      "src": "/medical-visuals/models/elbow-ulnar.glb",
+      "poster": "/medical-visuals/models/elbow-ulnar.webp",
+      "notes": "神經與軟組織為放大的走向示意；不提供注射或手術定位。",
+      "structures": [
+        [
+          "骨骼",
+          "#eee5d3"
+        ],
+        [
+          "肌腱／韌帶",
+          "#49bdb4"
+        ],
+        [
+          "神經或關注區",
+          "#edc877"
+        ]
+      ],
+      "camera": [
+        0.40489178628508343,
+        0.2568139174208071
+      ],
+      "sha256": "a083b18bb30f46bd57befa8727622cc53e0bd68b7762e96ae5eb34773c3eac3e",
+      "vertices": 3941,
+      "triangles": 7858,
+      "parts": 6,
+      "bytes": 193640
+    },
+    "hamstrings": {
+      "src": "/medical-visuals/models/hamstrings.glb",
+      "poster": "/medical-visuals/models/hamstrings.webp",
+      "notes": "肌群以分層概念呈現；不是完整的肌肉起止點圖，也不是個人的撕裂影像。",
+      "structures": [
+        [
+          "骨盆・股骨",
+          "#eee5d3"
+        ],
+        [
+          "肌群／肌腱",
+          "#49bdb4"
+        ],
+        [
+          "關注肌群",
+          "#f2a066"
+        ]
+      ],
+      "camera": [
+        2.647651284670212,
+        0.26456370705311916
+      ],
+      "sha256": "d82f0ef106eb089acff55a4d75614171ada54ea225ddfcd54391b58d61ae7f7c",
+      "vertices": 13148,
+      "triangles": 26104,
+      "parts": 51,
+      "bytes": 635996
+    },
+    "hip-glutes": {
+      "src": "/medical-visuals/models/hip-glutes.glb",
+      "poster": "/medical-visuals/models/hip-glutes.webp",
+      "notes": "肌群以分層概念呈現；不是完整的肌肉起止點圖，也不是個人的撕裂影像。",
+      "structures": [
+        [
+          "骨盆・股骨",
+          "#eee5d3"
+        ],
+        [
+          "肌群／肌腱",
+          "#49bdb4"
+        ],
+        [
+          "關注肌群",
+          "#f2a066"
+        ]
+      ],
+      "camera": [
+        2.647651284670212,
+        0.26456370705311916
+      ],
+      "sha256": "ecaec603f1483ca3f9313489ff07b8f51bc31a32b42ad90c25a94682d5afd955",
+      "vertices": 11220,
+      "triangles": 22264,
+      "parts": 47,
+      "bytes": 541476
+    },
+    "knee-acl": {
+      "src": "/medical-visuals/models/knee-acl.glb",
+      "poster": "/medical-visuals/models/knee-acl.webp",
+      "notes": "為看清關節內部，髕骨在部分模型中移開；軟骨與間隙放大。不是病人影像。",
+      "structures": [
+        [
+          "股骨・脛骨・腓骨",
+          "#eee5d3"
+        ],
+        [
+          "關節軟骨・半月板",
+          "#49bdb4"
+        ],
+        [
+          "關注區（非分級）",
+          "#f2a066"
+        ]
+      ],
+      "camera": [
+        0.49394136891958124,
+        0.26456370705311916
+      ],
+      "sha256": "f1abfcc474f58aa81b80ea2f93b3018b8fd5a360f0911dd79cfe64351ce976db",
+      "vertices": 9659,
+      "triangles": 19198,
+      "parts": 15,
+      "bytes": 471396
+    },
+    "knee-mcl": {
+      "src": "/medical-visuals/models/knee-mcl.glb",
+      "poster": "/medical-visuals/models/knee-mcl.webp",
+      "notes": "為看清關節內部，髕骨在部分模型中移開；軟骨與間隙放大。不是病人影像。",
+      "structures": [
+        [
+          "股骨・脛骨・腓骨",
+          "#eee5d3"
+        ],
+        [
+          "關節軟骨・半月板",
+          "#49bdb4"
+        ],
+        [
+          "關注區（非分級）",
+          "#f2a066"
+        ]
+      ],
+      "camera": [
+        0.49394136891958124,
+        0.26456370705311916
+      ],
+      "sha256": "2dc1977cba3747fd83a318ac6504488664bbfb8ef4c1ee665fdc8739b1f78d83",
+      "vertices": 9659,
+      "triangles": 19198,
+      "parts": 15,
+      "bytes": 471400
+    },
+    "knee-meniscus": {
+      "src": "/medical-visuals/models/knee-meniscus.glb",
+      "poster": "/medical-visuals/models/knee-meniscus.webp",
+      "notes": "為看清關節內部，髕骨在部分模型中移開；軟骨與間隙放大。不是病人影像。",
+      "structures": [
+        [
+          "股骨・脛骨・腓骨",
+          "#eee5d3"
+        ],
+        [
+          "關節軟骨・半月板",
+          "#49bdb4"
+        ],
+        [
+          "關注區（非分級）",
+          "#f2a066"
+        ]
+      ],
+      "camera": [
+        0.49394136891958124,
+        0.26456370705311916
+      ],
+      "sha256": "471152eb69cce12549288e74d11a90d33104532a382009912912377c01e45d73",
+      "vertices": 9659,
+      "triangles": 19198,
+      "parts": 15,
+      "bytes": 471412
+    },
+    "knee-motion": {
+      "src": "/medical-visuals/models/knee-motion.glb",
+      "poster": "/medical-visuals/models/knee-motion.webp",
+      "notes": "僅為 0–72° 剛性鉸鏈教學動畫；省略十字韌帶與肌肉，不模擬真實滾滑或髕骨軌跡。",
+      "structures": [
+        [
+          "股骨・脛骨・腓骨",
+          "#eee5d3"
+        ],
+        [
+          "關節軟骨・半月板",
+          "#49bdb4"
+        ],
+        [
+          "關注區（非分級）",
+          "#f2a066"
+        ]
+      ],
+      "camera": [
+        0.49394136891958124,
+        0.26456370705311916
+      ],
+      "sha256": "942b7ada98699995e28201463c4d452e01c3b93d1c866dd2836c18cec059be83",
+      "vertices": 7919,
+      "triangles": 15742,
+      "parts": 9,
+      "bytes": 385508
+    },
+    "knee-oa": {
+      "src": "/medical-visuals/models/knee-oa.glb",
+      "poster": "/medical-visuals/models/knee-oa.webp",
+      "notes": "為看清關節內部，髕骨在部分模型中移開；軟骨與間隙放大。不是病人影像。",
+      "structures": [
+        [
+          "股骨・脛骨・腓骨",
+          "#eee5d3"
+        ],
+        [
+          "關節軟骨・半月板",
+          "#49bdb4"
+        ],
+        [
+          "關注區（非分級）",
+          "#f2a066"
+        ]
+      ],
+      "camera": [
+        0.49394136891958124,
+        0.26456370705311916
+      ],
+      "sha256": "db9ead971b74e7f1d4b020202e709ede42b371c9149e833ca396b581298dc440",
+      "vertices": 11471,
+      "triangles": 22798,
+      "parts": 21,
+      "bytes": 558204
+    },
+    "knee-overview": {
+      "src": "/medical-visuals/models/knee-overview.glb",
+      "poster": "/medical-visuals/models/knee-overview.webp",
+      "notes": "為看清關節內部，髕骨在部分模型中移開；軟骨與間隙放大。不是病人影像。",
+      "structures": [
+        [
+          "股骨・脛骨・腓骨",
+          "#eee5d3"
+        ],
+        [
+          "關節軟骨・半月板",
+          "#49bdb4"
+        ],
+        [
+          "關注區（非分級）",
+          "#f2a066"
+        ]
+      ],
+      "camera": [
+        0.49394136891958124,
+        0.26456370705311916
+      ],
+      "sha256": "ce18128584e53335a8f8860a4c5d0454dadc9f05135d699e2651d1e0c6303299",
+      "vertices": 9659,
+      "triangles": 19198,
+      "parts": 15,
+      "bytes": 470360
+    },
+    "knee-patellar": {
+      "src": "/medical-visuals/models/knee-patellar.glb",
+      "poster": "/medical-visuals/models/knee-patellar.webp",
+      "notes": "為看清關節內部，髕骨在部分模型中移開；軟骨與間隙放大。不是病人影像。",
+      "structures": [
+        [
+          "股骨・脛骨・腓骨",
+          "#eee5d3"
+        ],
+        [
+          "關節軟骨・半月板",
+          "#49bdb4"
+        ],
+        [
+          "關注區（非分級）",
+          "#f2a066"
+        ]
+      ],
+      "camera": [
+        0.49394136891958124,
+        0.26456370705311916
+      ],
+      "sha256": "39500395069834b16f49ef07921dd91837a987c188a0eebcc6fe5790de2b87c0",
+      "vertices": 9659,
+      "triangles": 19198,
+      "parts": 15,
+      "bytes": 471388
+    },
+    "knee-pes": {
+      "src": "/medical-visuals/models/knee-pes.glb",
+      "poster": "/medical-visuals/models/knee-pes.webp",
+      "notes": "為看清關節內部，髕骨在部分模型中移開；軟骨與間隙放大。不是病人影像。",
+      "structures": [
+        [
+          "股骨・脛骨・腓骨",
+          "#eee5d3"
+        ],
+        [
+          "關節軟骨・半月板",
+          "#49bdb4"
+        ],
+        [
+          "關注區（非分級）",
+          "#f2a066"
+        ]
+      ],
+      "camera": [
+        0.49394136891958124,
+        0.26456370705311916
+      ],
+      "sha256": "6c5c90827e560a77e55ea74479f82b47711c04154d81caca0f5de16929685920",
+      "vertices": 11491,
+      "triangles": 22846,
+      "parts": 19,
+      "bytes": 559160
+    },
+    "metabolism-appetite": {
+      "src": "/medical-visuals/models/metabolism-appetite.glb",
+      "poster": "/medical-visuals/models/metabolism-appetite.webp",
+      "notes": "器官分離排列以表達訊號概念；並非真實相對位置、比例或完整生理路徑。",
+      "structures": [
+        [
+          "器官／身體概念",
+          "#eee5d3"
+        ],
+        [
+          "生活與調節",
+          "#49bdb4"
+        ],
+        [
+          "閱讀關注區",
+          "#f2a066"
+        ]
+      ],
+      "camera": [
+        0.4636476090008061,
+        0.3660500688467121
+      ],
+      "sha256": "0c889eb96d79b56b5b7e91952c880d8cb3e454d5d95771d34ee7c0fb053bceaa",
+      "vertices": 9628,
+      "triangles": 19204,
+      "parts": 13,
+      "bytes": 466564
+    },
+    "metabolism-body": {
+      "src": "/medical-visuals/models/metabolism-body.glb",
+      "poster": "/medical-visuals/models/metabolism-body.webp",
+      "notes": "中性人偶與健康紀錄為概念圖，沒有理想體型、前後對照或量測值。",
+      "structures": [
+        [
+          "器官／身體概念",
+          "#eee5d3"
+        ],
+        [
+          "生活與調節",
+          "#49bdb4"
+        ],
+        [
+          "閱讀關注區",
+          "#f2a066"
+        ]
+      ],
+      "camera": [
+        0.4636476090008061,
+        0.3660500688467121
+      ],
+      "sha256": "f09a8592751afd2ad267e621e8640f864bc6f8b61a46256a478be7ea43f8966c",
+      "vertices": 9154,
+      "triangles": 18192,
+      "parts": 29,
+      "bytes": 443936
+    },
+    "metabolism-care": {
+      "src": "/medical-visuals/models/metabolism-care.glb",
+      "poster": "/medical-visuals/models/metabolism-care.webp",
+      "notes": "生活照護概念圖；不顯示注射方式、劑量或停藥時程。",
+      "structures": [
+        [
+          "器官／身體概念",
+          "#eee5d3"
+        ],
+        [
+          "生活與調節",
+          "#49bdb4"
+        ],
+        [
+          "閱讀關注區",
+          "#f2a066"
+        ]
+      ],
+      "camera": [
+        0.4636476090008061,
+        0.3660500688467121
+      ],
+      "sha256": "f6bc57ac053c118891fa0bb0c1a4b93bbca827524fa669f27ad4bd99012ddc77",
+      "vertices": 9232,
+      "triangles": 18348,
+      "parts": 29,
+      "bytes": 446556
+    },
+    "metabolism-diabetes": {
+      "src": "/medical-visuals/models/metabolism-diabetes.glb",
+      "poster": "/medical-visuals/models/metabolism-diabetes.webp",
+      "notes": "飲食、活動與追蹤的概念組合；不是血糖讀值或保證療效。",
+      "structures": [
+        [
+          "食物／器具示意",
+          "#eee5d3"
+        ],
+        [
+          "飲食與生活",
+          "#49bdb4"
+        ],
+        [
+          "閱讀關注區",
+          "#f2a066"
+        ]
+      ],
+      "camera": [
+        0.5280744484263596,
+        0.6239016980312335
+      ],
+      "sha256": "73f8d8aa4aee730ffd618e6613634039d57578af27819ef20a8d552e31df81ea",
+      "vertices": 19797,
+      "triangles": 39200,
+      "parts": 100,
+      "bytes": 954400
+    },
+    "movement-agility": {
+      "src": "/medical-visuals/models/movement-agility.glb",
+      "poster": "/medical-visuals/models/movement-agility.webp",
+      "notes": "人偶是動作概念而非處方；關節角度、肌肉外形與器材比例經簡化。",
+      "structures": [
+        [
+          "中性訓練人偶",
+          "#eee5d3"
+        ],
+        [
+          "訓練／肌群重點",
+          "#49bdb4"
+        ],
+        [
+          "動作關注区",
+          "#f2a066"
+        ]
+      ],
+      "camera": [
+        0.5880026035475675,
+        0.2705497629785729
+      ],
+      "sha256": "f03f135b22e1b810111dd33973978702ad0d3ee10d821d556699e84dd4493ee8",
+      "vertices": 9810,
+      "triangles": 19520,
+      "parts": 25,
+      "bytes": 474432
+    },
+    "movement-coach": {
+      "src": "/medical-visuals/models/movement-coach.glb",
+      "poster": "/medical-visuals/models/movement-coach.webp",
+      "notes": "人偶是動作概念而非處方；關節角度、肌肉外形與器材比例經簡化。",
+      "structures": [
+        [
+          "中性訓練人偶",
+          "#eee5d3"
+        ],
+        [
+          "訓練／肌群重點",
+          "#49bdb4"
+        ],
+        [
+          "動作關注区",
+          "#f2a066"
+        ]
+      ],
+      "camera": [
+        0.5880026035475675,
+        0.2705497629785729
+      ],
+      "sha256": "4e7f9f82ac55c4a47127845754078eb8ad930d22266f31eff31abfa8ab08568a",
+      "vertices": 16728,
+      "triangles": 33280,
+      "parts": 44,
+      "bytes": 805776
+    },
+    "movement-hinge": {
+      "src": "/medical-visuals/models/movement-hinge.glb",
+      "poster": "/medical-visuals/models/movement-hinge.webp",
+      "notes": "人偶是動作概念而非處方；關節角度、肌肉外形與器材比例經簡化。",
+      "structures": [
+        [
+          "中性訓練人偶",
+          "#eee5d3"
+        ],
+        [
+          "訓練／肌群重點",
+          "#49bdb4"
+        ],
+        [
+          "動作關注区",
+          "#f2a066"
+        ]
+      ],
+      "camera": [
+        0.5880026035475675,
+        0.2705497629785729
+      ],
+      "sha256": "2d7b5f6ffe08f936229ac8e20aa5388a7bdc45a5727fdbb2bd3359ce67c2509b",
+      "vertices": 9362,
+      "triangles": 18624,
+      "parts": 25,
+      "bytes": 452968
+    },
+    "movement-running": {
+      "src": "/medical-visuals/models/movement-running.glb",
+      "poster": "/medical-visuals/models/movement-running.webp",
+      "notes": "人偶是動作概念而非處方；關節角度、肌肉外形與器材比例經簡化。",
+      "structures": [
+        [
+          "中性訓練人偶",
+          "#eee5d3"
+        ],
+        [
+          "訓練／肌群重點",
+          "#49bdb4"
+        ],
+        [
+          "動作關注区",
+          "#f2a066"
+        ]
+      ],
+      "camera": [
+        0.5880026035475675,
+        0.2705497629785729
+      ],
+      "sha256": "b062762e27dfa68fbf92eba61e5b174572a257088822c49fe94279fdab5f37db",
+      "vertices": 8364,
+      "triangles": 16640,
+      "parts": 22,
+      "bytes": 405164
+    },
+    "movement-squat": {
+      "src": "/medical-visuals/models/movement-squat.glb",
+      "poster": "/medical-visuals/models/movement-squat.webp",
+      "notes": "人偶是動作概念而非處方；關節角度、肌肉外形與器材比例經簡化。",
+      "structures": [
+        [
+          "中性訓練人偶",
+          "#eee5d3"
+        ],
+        [
+          "訓練／肌群重點",
+          "#49bdb4"
+        ],
+        [
+          "動作關注区",
+          "#f2a066"
+        ]
+      ],
+      "camera": [
+        0.5880026035475675,
+        0.2705497629785729
+      ],
+      "sha256": "b9d3b081b6ac43121ec7e4479919ea164f27be9d0ec7a827ae839d3c03532c34",
+      "vertices": 8364,
+      "triangles": 16640,
+      "parts": 22,
+      "bytes": 405216
+    },
+    "movement-step": {
+      "src": "/medical-visuals/models/movement-step.glb",
+      "poster": "/medical-visuals/models/movement-step.webp",
+      "notes": "人偶是動作概念而非處方；關節角度、肌肉外形與器材比例經簡化。",
+      "structures": [
+        [
+          "中性訓練人偶",
+          "#eee5d3"
+        ],
+        [
+          "訓練／肌群重點",
+          "#49bdb4"
+        ],
+        [
+          "動作關注区",
+          "#f2a066"
+        ]
+      ],
+      "camera": [
+        0.5880026035475675,
+        0.2705497629785729
+      ],
+      "sha256": "f0f2c3fa6cc5991ed1f72d4128452ed84a04e6cdd2b5c9a8acc851ae1180304d",
+      "vertices": 8372,
+      "triangles": 16652,
+      "parts": 23,
+      "bytes": 405516
+    },
+    "movement-training": {
+      "src": "/medical-visuals/models/movement-training.glb",
+      "poster": "/medical-visuals/models/movement-training.webp",
+      "notes": "人偶是動作概念而非處方；關節角度、肌肉外形與器材比例經簡化。",
+      "structures": [
+        [
+          "中性訓練人偶",
+          "#eee5d3"
+        ],
+        [
+          "訓練／肌群重點",
+          "#49bdb4"
+        ],
+        [
+          "動作關注区",
+          "#f2a066"
+        ]
+      ],
+      "camera": [
+        0.5880026035475675,
+        0.2705497629785729
+      ],
+      "sha256": "38c8d6330154da85d8d865f74497da418362755e67405c987e648da7b063a246",
+      "vertices": 9122,
+      "triangles": 18144,
+      "parts": 25,
+      "bytes": 441424
+    },
+    "movement-week": {
+      "src": "/medical-visuals/models/movement-week.glb",
+      "poster": "/medical-visuals/models/movement-week.webp",
+      "notes": "人偶是動作概念而非處方；關節角度、肌肉外形與器材比例經簡化。",
+      "structures": [
+        [
+          "中性訓練人偶",
+          "#eee5d3"
+        ],
+        [
+          "訓練／肌群重點",
+          "#49bdb4"
+        ],
+        [
+          "動作關注区",
+          "#f2a066"
+        ]
+      ],
+      "camera": [
+        0.5880026035475675,
+        0.2705497629785729
+      ],
+      "sha256": "38c8d6330154da85d8d865f74497da418362755e67405c987e648da7b063a246",
+      "vertices": 9122,
+      "triangles": 18144,
+      "parts": 25,
+      "bytes": 441424
+    },
+    "muscle-fibers": {
+      "src": "/medical-visuals/models/muscle-fibers.glb",
+      "poster": "/medical-visuals/models/muscle-fibers.webp",
+      "notes": "放大肌束概念模型；激痛點不是本圖所能顯示或確診的可見腫塊。",
+      "structures": [
+        [
+          "肌束",
+          "#bb7564"
+        ],
+        [
+          "肌腱連接",
+          "#c7ddd2"
+        ],
+        [
+          "關注區（非可見病灶）",
+          "#f2a066"
+        ]
+      ],
+      "camera": [
+        0.4636476090008061,
+        0.3091933209430012
+      ],
+      "sha256": "d77d6df272a538e2d2d60014a90b27340079937c1f53e76da1b301d55ca15a66",
+      "vertices": 11073,
+      "triangles": 21862,
+      "parts": 71,
+      "bytes": 533644
+    },
+    "muscle-trigger": {
+      "src": "/medical-visuals/models/muscle-trigger.glb",
+      "poster": "/medical-visuals/models/muscle-trigger.webp",
+      "notes": "放大肌束概念模型；激痛點不是本圖所能顯示或確診的可見腫塊。",
+      "structures": [
+        [
+          "肌束",
+          "#bb7564"
+        ],
+        [
+          "肌腱連接",
+          "#c7ddd2"
+        ],
+        [
+          "關注區（非可見病灶）",
+          "#f2a066"
+        ]
+      ],
+      "camera": [
+        0.4636476090008061,
+        0.3091933209430012
+      ],
+      "sha256": "5d47fb27df96be56eea5ea2bec6a08ea809a0c9adf14d4a0e6a0595f25c73bbd",
+      "vertices": 10637,
+      "triangles": 20998,
+      "parts": 69,
+      "bytes": 512760
+    },
+    "nutrition-alcohol": {
+      "src": "/medical-visuals/models/nutrition-alcohol.glb",
+      "poster": "/medical-visuals/models/nutrition-alcohol.webp",
+      "notes": "杯子是酒精飲品概念，不代表建議杯量、種類或健康效益。",
+      "structures": [
+        [
+          "食物／器具示意",
+          "#eee5d3"
+        ],
+        [
+          "飲食與生活",
+          "#49bdb4"
+        ],
+        [
+          "閱讀關注區",
+          "#f2a066"
+        ]
+      ],
+      "camera": [
+        0.5280744484263596,
+        0.6239016980312335
+      ],
+      "sha256": "0f3ac1095a7d009a8c59b4732c24b607cb4ccf8ddb2b929bcee71f7f2115ce67",
+      "vertices": 1206,
+      "triangles": 2380,
+      "parts": 8,
+      "bytes": 62152
+    },
+    "nutrition-mood": {
+      "src": "/medical-visuals/models/nutrition-mood.glb",
+      "poster": "/medical-visuals/models/nutrition-mood.webp",
+      "notes": "餐盤為食物類別示意；沒有代表固定熱量、份量或營養比例。",
+      "structures": [
+        [
+          "食物／器具示意",
+          "#eee5d3"
+        ],
+        [
+          "飲食與生活",
+          "#49bdb4"
+        ],
+        [
+          "閱讀關注區",
+          "#f2a066"
+        ]
+      ],
+      "camera": [
+        0.5280744484263596,
+        0.6239016980312335
+      ],
+      "sha256": "8b995cab7fe4db6c7e6e97d11b50cf613179d22f73e92f4b43b995522bee396a",
+      "vertices": 23231,
+      "triangles": 46068,
+      "parts": 100,
+      "bytes": 1119288
+    },
+    "nutrition-order": {
+      "src": "/medical-visuals/models/nutrition-order.glb",
+      "poster": "/medical-visuals/models/nutrition-order.webp",
+      "notes": "餐盤為食物類別示意；沒有代表固定熱量、份量或營養比例。",
+      "structures": [
+        [
+          "食物／器具示意",
+          "#eee5d3"
+        ],
+        [
+          "飲食與生活",
+          "#49bdb4"
+        ],
+        [
+          "閱讀關注區",
+          "#f2a066"
+        ]
+      ],
+      "camera": [
+        0.5280744484263596,
+        0.6239016980312335
+      ],
+      "sha256": "a8862f1a9d849a3c2a97f58fc09ab934cfb3c14017a338a3ad9d88d697c4b12a",
+      "vertices": 19687,
+      "triangles": 38996,
+      "parts": 96,
+      "bytes": 949264
+    },
+    "nutrition-recovery": {
+      "src": "/medical-visuals/models/nutrition-recovery.glb",
+      "poster": "/medical-visuals/models/nutrition-recovery.webp",
+      "notes": "餐盤為食物類別示意；沒有代表固定熱量、份量或營養比例。",
+      "structures": [
+        [
+          "食物／器具示意",
+          "#eee5d3"
+        ],
+        [
+          "飲食與生活",
+          "#49bdb4"
+        ],
+        [
+          "閱讀關注區",
+          "#f2a066"
+        ]
+      ],
+      "camera": [
+        0.5280744484263596,
+        0.6239016980312335
+      ],
+      "sha256": "905d236f86d3da50bab67b2a6b077f6b52286aeddc301b5b7bda8f4bc59312a0",
+      "vertices": 20445,
+      "triangles": 40500,
+      "parts": 99,
+      "bytes": 985524
+    },
+    "nutrition-supplements": {
+      "src": "/medical-visuals/models/nutrition-supplements.glb",
+      "poster": "/medical-visuals/models/nutrition-supplements.webp",
+      "notes": "容器與膠囊均無品牌、無劑量，僅代表補充品類別。",
+      "structures": [
+        [
+          "食物／器具示意",
+          "#eee5d3"
+        ],
+        [
+          "飲食與生活",
+          "#49bdb4"
+        ],
+        [
+          "閱讀關注區",
+          "#f2a066"
+        ]
+      ],
+      "camera": [
+        0.5280744484263596,
+        0.6239016980312335
+      ],
+      "sha256": "9c2c61869a6acef14204eb34c6e51ab29b6b7f3d498170ac85508c9d1d898c17",
+      "vertices": 1856,
+      "triangles": 3672,
+      "parts": 10,
+      "bytes": 93304
+    },
+    "plantar-fascia": {
+      "src": "/medical-visuals/models/plantar-fascia.glb",
+      "poster": "/medical-visuals/models/plantar-fascia.webp",
+      "notes": "足部為開放式結構示意；骨形、筋膜厚度與附著範圍經簡化。",
+      "structures": [
+        [
+          "脛骨・腓骨・足骨",
+          "#eee5d3"
+        ],
+        [
+          "肌腱／筋膜",
+          "#49bdb4"
+        ],
+        [
+          "關注區（非分級）",
+          "#f2a066"
+        ]
+      ],
+      "camera": [
+        0.6747409422235526,
+        -0.3379134479187735
+      ],
+      "sha256": "b95f59602c7272ae19a87f5f2ff6a2374684ef2b503f2b4c06934d1d84d65572",
+      "vertices": 7955,
+      "triangles": 15782,
+      "parts": 32,
+      "bytes": 384412
+    },
+    "safety-medication": {
+      "src": "/medical-visuals/models/safety-medication.glb",
+      "poster": "/medical-visuals/models/safety-medication.webp",
+      "notes": "藥品外觀純屬概念，不對應真實品項、劑量或使用方式。",
+      "structures": [
+        [
+          "藥品／資料概念",
+          "#eee5d3"
+        ],
+        [
+          "核對資訊",
+          "#49bdb4"
+        ],
+        [
+          "需要留意",
+          "#f2a066"
+        ]
+      ],
+      "camera": [
+        0.5191461142465229,
+        0.35622947615187256
+      ],
+      "sha256": "27d406ca330f751fe886cc18dc24297d51e19533ea4e0cccb404390ce14bd028",
+      "vertices": 1988,
+      "triangles": 3936,
+      "parts": 10,
+      "bytes": 99620
+    },
+    "safety-screening": {
+      "src": "/medical-visuals/models/safety-screening.glb",
+      "poster": "/medical-visuals/models/safety-screening.webp",
+      "notes": "藥品外觀純屬概念，不對應真實品項、劑量或使用方式。",
+      "structures": [
+        [
+          "藥品／資料概念",
+          "#eee5d3"
+        ],
+        [
+          "核對資訊",
+          "#49bdb4"
+        ],
+        [
+          "需要留意",
+          "#f2a066"
+        ]
+      ],
+      "camera": [
+        0.5191461142465229,
+        0.35622947615187256
+      ],
+      "sha256": "27d406ca330f751fe886cc18dc24297d51e19533ea4e0cccb404390ce14bd028",
+      "vertices": 1988,
+      "triangles": 3936,
+      "parts": 10,
+      "bytes": 99620
+    },
+    "safety-weightpills": {
+      "src": "/medical-visuals/models/safety-weightpills.glb",
+      "poster": "/medical-visuals/models/safety-weightpills.webp",
+      "notes": "藥品外觀純屬概念，不對應真實品項、劑量或使用方式。",
+      "structures": [
+        [
+          "藥品／資料概念",
+          "#eee5d3"
+        ],
+        [
+          "核對資訊",
+          "#49bdb4"
+        ],
+        [
+          "需要留意",
+          "#f2a066"
+        ]
+      ],
+      "camera": [
+        0.5191461142465229,
+        0.35622947615187256
+      ],
+      "sha256": "9bc7107339ff1a8720d24ef6fa5065e6b98310b86e441778faefc56f38bd92be",
+      "vertices": 2118,
+      "triangles": 4188,
+      "parts": 12,
+      "bytes": 106876
+    },
+    "shoulder-capsule": {
+      "src": "/medical-visuals/models/shoulder-capsule.glb",
+      "poster": "/medical-visuals/models/shoulder-capsule.webp",
+      "notes": "肩胛骨與軟組織採開放式、簡化呈現；色彩只標出閱讀焦點。",
+      "structures": [
+        [
+          "肩胛骨・肱骨",
+          "#eee5d3"
+        ],
+        [
+          "肌腱／關節囊",
+          "#49bdb4"
+        ],
+        [
+          "關注區（非分級）",
+          "#f2a066"
+        ]
+      ],
+      "camera": [
+        0.5191461142465229,
+        0.3006848912268313
+      ],
+      "sha256": "c235460e77166d3449793939649ce96f105dcabef445a4249dd36dd721c91fc8",
+      "vertices": 8081,
+      "triangles": 16082,
+      "parts": 20,
+      "bytes": 391008
+    },
+    "shoulder-cuff": {
+      "src": "/medical-visuals/models/shoulder-cuff.glb",
+      "poster": "/medical-visuals/models/shoulder-cuff.webp",
+      "notes": "肩胛骨與軟組織採開放式、簡化呈現；色彩只標出閱讀焦點。",
+      "structures": [
+        [
+          "肩胛骨・肱骨",
+          "#eee5d3"
+        ],
+        [
+          "肌腱／關節囊",
+          "#49bdb4"
+        ],
+        [
+          "關注區（非分級）",
+          "#f2a066"
+        ]
+      ],
+      "camera": [
+        0.5191461142465229,
+        0.3006848912268313
+      ],
+      "sha256": "a463c40882a90521c99d8f41c28ccd3f887b04d0723f0e36723d108180d43d23",
+      "vertices": 4715,
+      "triangles": 9394,
+      "parts": 9,
+      "bytes": 229708
+    },
+    "shoulder-load": {
+      "src": "/medical-visuals/models/shoulder-load.glb",
+      "poster": "/medical-visuals/models/shoulder-load.webp",
+      "notes": "肩胛骨與軟組織採開放式、簡化呈現；色彩只標出閱讀焦點。",
+      "structures": [
+        [
+          "肩胛骨・肱骨",
+          "#eee5d3"
+        ],
+        [
+          "肌腱／關節囊",
+          "#49bdb4"
+        ],
+        [
+          "關注區（非分級）",
+          "#f2a066"
+        ]
+      ],
+      "camera": [
+        0.5191461142465229,
+        0.3006848912268313
+      ],
+      "sha256": "a463c40882a90521c99d8f41c28ccd3f887b04d0723f0e36723d108180d43d23",
+      "vertices": 4715,
+      "triangles": 9394,
+      "parts": 9,
+      "bytes": 229708
+    },
+    "vein-clot": {
+      "src": "/medical-visuals/models/vein-clot.glb",
+      "poster": "/medical-visuals/models/vein-clot.webp",
+      "notes": "血管為縱向剖開與放大示意；不表示血流速度、血栓大小或個人的病況。",
+      "structures": [
+        [
+          "靜脈壁",
+          "#5596b7"
+        ],
+        [
+          "瓣膜示意",
+          "#49bdb4"
+        ],
+        [
+          "血塊／回流關注區",
+          "#bb7564"
+        ]
+      ],
+      "camera": [
+        0.5191461142465229,
+        0.2431608692238309
+      ],
+      "sha256": "72a728794556f30825e7ad5288384f490af8b9d593449ccc7ccf62d138568f98",
+      "vertices": 6539,
+      "triangles": 12872,
+      "parts": 15,
+      "bytes": 315404
+    },
+    "vein-valve": {
+      "src": "/medical-visuals/models/vein-valve.glb",
+      "poster": "/medical-visuals/models/vein-valve.webp",
+      "notes": "血管為縱向剖開與放大示意；不表示血流速度、血栓大小或個人的病況。",
+      "structures": [
+        [
+          "靜脈壁",
+          "#5596b7"
+        ],
+        [
+          "瓣膜示意",
+          "#49bdb4"
+        ],
+        [
+          "血塊／回流關注區",
+          "#bb7564"
+        ]
+      ],
+      "camera": [
+        0.5191461142465229,
+        0.2431608692238309
+      ],
+      "sha256": "2c63bb21fb8be7aa90f80106be728c142adf3eb4d412d1d9b6def43931e9d40a",
+      "vertices": 7099,
+      "triangles": 13952,
+      "parts": 25,
+      "bytes": 343340
+    },
+    "wrist-load": {
+      "src": "/medical-visuals/models/wrist-load.glb",
+      "poster": "/medical-visuals/models/wrist-load.webp",
+      "notes": "神經與軟組織為放大的走向示意；不提供注射或手術定位。",
+      "structures": [
+        [
+          "骨骼",
+          "#eee5d3"
+        ],
+        [
+          "肌腱／韌帶",
+          "#49bdb4"
+        ],
+        [
+          "神經或關注區",
+          "#f2a066"
+        ]
+      ],
+      "camera": [
+        0.40489178628508343,
+        0.2568139174208071
+      ],
+      "sha256": "8e420b4ada9dc3d650f7c0509f45e70c8d5e6eb21354fd06b10df6e743a83997",
+      "vertices": 4692,
+      "triangles": 9264,
+      "parts": 30,
+      "bytes": 226848
+    }
+  },
+  "articles": {
+    "achilles-rupture-return": {
+      "slug": "achilles-rupture-return",
+      "scene": "achilles",
+      "title": "阿基里斯腱：力量的連結",
+      "points": [
+        {
+          "heading": "小腿肌群",
+          "text": "腓腸肌與比目魚肌的力量經肌腱傳遞。"
+        },
+        {
+          "heading": "阿基里斯腱",
+          "text": "連接小腿後側肌群與跟骨；圖中橘色為關注區。"
+        },
+        {
+          "heading": "回到運動",
+          "text": "依傷勢、治療與功能評估循序恢復，不以天數單獨決定。"
+        }
+      ],
+      "sourceIds": [
+        "achilles"
+      ],
+      "caution": "突然啪一聲、推蹬無力或無法正常走路，應及時就醫。",
+      "reviewStatus": "clinician-review-pending",
+      "articleTitle": "阿基里斯腱斷裂還能回來嗎？從 20 年 NBA 數據看回歸率與影響",
+      "category": "sports-injury",
+      "articlePath": "website/src/content/articles/achilles-rupture-return.md",
+      "articleSha256": "989ae101f373368ab2b7892de85aae7f52874660616c92791e4539d80e9ffecb",
+      "alt": "阿基里斯腱：力量的連結的原創 3D 示意；脛骨・腓骨・足骨、肌腱／筋膜、關注區（非分級）。足部為開放式結構示意；骨形、筋膜厚度與附著範圍經簡化。",
+      "cover": "/medical-visuals/articles/achilles-rupture-return/cover.webp",
+      "coverSmall": "/medical-visuals/articles/achilles-rupture-return/cover-480.webp",
+      "coverMedium": "/medical-visuals/articles/achilles-rupture-return/cover-800.webp",
+      "figure": "/medical-visuals/articles/achilles-rupture-return/explain.svg",
+      "figureRaster": "/medical-visuals/articles/achilles-rupture-return/explain.webp",
+      "og": "/medical-visuals/articles/achilles-rupture-return/og.jpg",
+      "model": "/medical-visuals/models/achilles.glb",
+      "poster": "/medical-visuals/models/achilles.webp",
+      "modelNotes": "足部為開放式結構示意；骨形、筋膜厚度與附著範圍經簡化。",
+      "structures": [
+        [
+          "脛骨・腓骨・足骨",
+          "#eee5d3"
+        ],
+        [
+          "肌腱／筋膜",
+          "#49bdb4"
+        ],
+        [
+          "關注區（非分級）",
+          "#f2a066"
+        ]
+      ],
+      "camera": [
+        2.6135182051634334,
+        0.26028975677365856
+      ],
+      "sha256": {
+        "cover-480.webp": "cf451f936571018837e051512ee4dc2fc4f63cb7e41f69436563f193d6c14984",
+        "cover-800.webp": "7e9c5833d94ef1c6038463179ee5315d0a59ffa537183734d3310f26a6ab2fff",
+        "cover.webp": "446c5e00b14938b5f0137e75bac81f40e3cffec5fea31217c0df03dc4609b2ad",
+        "explain.svg": "d2e246fa05194c7f762637639edc81bea41f249989cb39ca7b058cd2634c257a",
+        "explain.webp": "0176501a029e8917b51d6fa788129de0565feb8261a45a84217635d3d1dba2e4",
+        "og.jpg": "4b1e75be0570e68be83c24288a51229788da03d0d579bef083b1f5a3f3fe8b5c"
+      }
+    },
+    "acl-tear-return-to-play": {
+      "slug": "acl-tear-return-to-play",
+      "scene": "knee-acl",
+      "title": "前十字韌帶與膝穩定",
+      "points": [
+        {
+          "heading": "股骨與脛骨",
+          "text": "韌帶位在兩骨之間，圖中部分結構移開以利觀看。"
+        },
+        {
+          "heading": "前十字韌帶",
+          "text": "協助限制脛骨過度向前位移，並參與旋轉穩定。"
+        },
+        {
+          "heading": "功能恢復",
+          "text": "回場需綜合肌力、動作控制及醫療評估，不只看影像。"
+        }
+      ],
+      "sourceIds": [
+        "acl"
+      ],
+      "caution": "模型為簡化示意，不能判斷個人的撕裂程度或回場日期。",
+      "reviewStatus": "clinician-review-pending",
+      "articleTitle": "前十字韌帶（ACL）撕裂：從 NBA 球員回歸數據談起，以及落地機制為什麼重要",
+      "category": "sports-injury",
+      "articlePath": "website/src/content/articles/acl-tear-return-to-play.md",
+      "articleSha256": "24fc005719015a902d6f674b75f8559445c22831644d5f4529132444e534cc02",
+      "alt": "前十字韌帶與膝穩定的原創 3D 示意；股骨・脛骨・腓骨、關節軟骨・半月板、關注區（非分級）。為看清關節內部，髕骨在部分模型中移開；軟骨與間隙放大。不是病人影像。",
+      "cover": "/medical-visuals/articles/acl-tear-return-to-play/cover.webp",
+      "coverSmall": "/medical-visuals/articles/acl-tear-return-to-play/cover-480.webp",
+      "coverMedium": "/medical-visuals/articles/acl-tear-return-to-play/cover-800.webp",
+      "figure": "/medical-visuals/articles/acl-tear-return-to-play/explain.svg",
+      "figureRaster": "/medical-visuals/articles/acl-tear-return-to-play/explain.webp",
+      "og": "/medical-visuals/articles/acl-tear-return-to-play/og.jpg",
+      "model": "/medical-visuals/models/knee-acl.glb",
+      "poster": "/medical-visuals/models/knee-acl.webp",
+      "modelNotes": "為看清關節內部，髕骨在部分模型中移開；軟骨與間隙放大。不是病人影像。",
+      "structures": [
+        [
+          "股骨・脛骨・腓骨",
+          "#eee5d3"
+        ],
+        [
+          "關節軟骨・半月板",
+          "#49bdb4"
+        ],
+        [
+          "關注區（非分級）",
+          "#f2a066"
+        ]
+      ],
+      "camera": [
+        0.49394136891958124,
+        0.26456370705311916
+      ],
+      "sha256": {
+        "cover-480.webp": "1edd450c6f498cdfad4bdfb1eddb51717292ea136ffa3a8fa1238254c6e62eb7",
+        "cover-800.webp": "eadf72cda80facdee3dc32509dd36e14cca31c95e46b6dcba80f9611f2556273",
+        "cover.webp": "76188233a7318cb723e0474e437c4dd4f35d2ae45d5d7e673e315e60ac155511",
+        "explain.svg": "b557f71336bb488e443201cbb73baa67bcaa5eed0e7a527f4d1cbcb6e4af894c",
+        "explain.webp": "e850d88a1598bc9213e5ddd6d5979dabcc69a3db54ee73350eea9d5a5351cd4f",
+        "og.jpg": "5e78c65efef1777192f501b805785e7de8e312b0c4d1f835e2888a186c81c69c"
+      }
+    },
+    "alcohol-and-weight-loss": {
+      "slug": "alcohol-and-weight-loss",
+      "scene": "nutrition-alcohol",
+      "title": "酒精與體重管理",
+      "points": [
+        {
+          "heading": "酒精飲品",
+          "text": "也會帶入能量；飲用量與頻率都值得記錄。"
+        },
+        {
+          "heading": "生活脈絡",
+          "text": "飲食、睡眠與活動需一起看，不把單一飲品當成減重法。"
+        },
+        {
+          "heading": "個別風險",
+          "text": "用藥、肝臟疾病及其他健康狀況，應與醫療人員討論。"
+        }
+      ],
+      "sourceIds": [
+        "weight"
+      ],
+      "caution": "不建議為了健康或減重開始飲酒；本圖不宣稱任何酒類有保健功效。",
+      "reviewStatus": "clinician-review-pending",
+      "articleTitle": "減重期間到底能不能喝酒？能，但要喝對",
+      "category": "weight-management",
+      "articlePath": "website/src/content/articles/alcohol-and-weight-loss.md",
+      "articleSha256": "0ec69d28003e3bf29bbe16278ba88b9db172a8faa93d88acae2f6b39e7b054ff",
+      "alt": "酒精與體重管理的原創 3D 示意；食物／器具示意、飲食與生活、閱讀關注區。杯子是酒精飲品概念，不代表建議杯量、種類或健康效益。",
+      "cover": "/medical-visuals/articles/alcohol-and-weight-loss/cover.webp",
+      "coverSmall": "/medical-visuals/articles/alcohol-and-weight-loss/cover-480.webp",
+      "coverMedium": "/medical-visuals/articles/alcohol-and-weight-loss/cover-800.webp",
+      "figure": "/medical-visuals/articles/alcohol-and-weight-loss/explain.svg",
+      "figureRaster": "/medical-visuals/articles/alcohol-and-weight-loss/explain.webp",
+      "og": "/medical-visuals/articles/alcohol-and-weight-loss/og.jpg",
+      "model": "/medical-visuals/models/nutrition-alcohol.glb",
+      "poster": "/medical-visuals/models/nutrition-alcohol.webp",
+      "modelNotes": "杯子是酒精飲品概念，不代表建議杯量、種類或健康效益。",
+      "structures": [
+        [
+          "食物／器具示意",
+          "#eee5d3"
+        ],
+        [
+          "飲食與生活",
+          "#49bdb4"
+        ],
+        [
+          "閱讀關注區",
+          "#f2a066"
+        ]
+      ],
+      "camera": [
+        0.5280744484263596,
+        0.6239016980312335
+      ],
+      "sha256": {
+        "cover-480.webp": "811bcdc0d642b7deb855f3ef1dabb16190b842cc8e448e0344237687b1e13d93",
+        "cover-800.webp": "c52bab09eae3e46a50445bd95270b615ffa5acf7c2a2e5dee1ccf863304a9dfd",
+        "cover.webp": "a1b00333726028c4e8f76ff27f7ea32a6b0f2bf8ab4ca2dc5a860e21ae0f09a7",
+        "explain.svg": "5ac70b6473ab40362f7a0ade70741be5c70d7dd8f6475de3b9d63c21870ab3a1",
+        "explain.webp": "3c05d14190ed3009494810480d4b8efdded01fd34c7e3238553f9d419ac50019",
+        "og.jpg": "779dcaa1520d71900ff43d37d88af5a36cda7c1eaca79c9d5592bbc46963304f"
+      }
+    },
+    "athletes-and-blood-clots": {
+      "slug": "athletes-and-blood-clots",
+      "scene": "vein-clot",
+      "title": "血栓：運動員也要留意",
+      "points": [
+        {
+          "heading": "靜脈管腔",
+          "text": "圖中藍色為靜脈示意，不是動脈斑塊。"
+        },
+        {
+          "heading": "血塊",
+          "text": "深層靜脈血栓可影響回流；部分血塊可能移至肺部。"
+        },
+        {
+          "heading": "警覺症狀",
+          "text": "單側肢體腫痛需評估；突發胸痛或呼吸困難需緊急就醫。"
+        }
+      ],
+      "sourceIds": [
+        "clot"
+      ],
+      "caution": "無症狀也不能排除血栓；請勿用揉捏小腿或自行測試代替診斷。",
+      "reviewStatus": "clinician-review-pending",
+      "articleTitle": "運動員與血栓：NBA 球星接連因血栓報銷，淺談常見原因與預防",
+      "category": "sports-injury",
+      "articlePath": "website/src/content/articles/athletes-and-blood-clots.md",
+      "articleSha256": "8dff0aacb49433288b07556868ce260b130dae814bcbbeeaf42216221cb12ee2",
+      "alt": "血栓：運動員也要留意的原創 3D 示意；靜脈壁、瓣膜示意、血塊／回流關注區。血管為縱向剖開與放大示意；不表示血流速度、血栓大小或個人的病況。",
+      "cover": "/medical-visuals/articles/athletes-and-blood-clots/cover.webp",
+      "coverSmall": "/medical-visuals/articles/athletes-and-blood-clots/cover-480.webp",
+      "coverMedium": "/medical-visuals/articles/athletes-and-blood-clots/cover-800.webp",
+      "figure": "/medical-visuals/articles/athletes-and-blood-clots/explain.svg",
+      "figureRaster": "/medical-visuals/articles/athletes-and-blood-clots/explain.webp",
+      "og": "/medical-visuals/articles/athletes-and-blood-clots/og.jpg",
+      "model": "/medical-visuals/models/vein-clot.glb",
+      "poster": "/medical-visuals/models/vein-clot.webp",
+      "modelNotes": "血管為縱向剖開與放大示意；不表示血流速度、血栓大小或個人的病況。",
+      "structures": [
+        [
+          "靜脈壁",
+          "#5596b7"
+        ],
+        [
+          "瓣膜示意",
+          "#49bdb4"
+        ],
+        [
+          "血塊／回流關注區",
+          "#bb7564"
+        ]
+      ],
+      "camera": [
+        0.5191461142465229,
+        0.2431608692238309
+      ],
+      "sha256": {
+        "cover-480.webp": "b1ad2eff72d30c05720e40ecce2df908aceb7e42b10bec2eabdec4627d36438c",
+        "cover-800.webp": "81214d16d7fc4543b94cf96fc8d5c53d9b5cf9f60425379e9ce6568545ad114b",
+        "cover.webp": "52ef297be29780774f913dff930ebc3d2ff40142460f1d585be1443afa721344",
+        "explain.svg": "b14b75b361341a46f61cf48ef4b30888ecc9d49614ff083e2be4945c8e1454e3",
+        "explain.webp": "6e9c4c8a2ea43189a1767ba1490028c1d29e8c7f4839bfe80d7b272130b3697b",
+        "og.jpg": "1f73f3091b6ed59f195edfdda4efe72c1e52b56581152627fb0ad3c87415f421"
+      }
+    },
+    "badminton-is-not-leisure": {
+      "slug": "badminton-is-not-leisure",
+      "scene": "shoulder-load",
+      "title": "羽球：肩部負荷與控制",
+      "points": [
+        {
+          "heading": "肩胛骨",
+          "text": "肩帶的活動與控制是揮拍動作的一環。"
+        },
+        {
+          "heading": "旋轉肌袖",
+          "text": "包覆肱骨頭的肌腱群，協助肩部動作與穩定。"
+        },
+        {
+          "heading": "負荷安排",
+          "text": "反覆過頭揮拍的強度、恢復與症狀要一起評估。"
+        }
+      ],
+      "sourceIds": [
+        "shoulder",
+        "activity"
+      ],
+      "caution": "這是肩部重點圖，不代表羽球傷害只發生在肩膀。",
+      "reviewStatus": "clinician-review-pending",
+      "articleTitle": "認真的羽球，一點都不是休閒運動：常見傷害與防護秘訣",
+      "category": "sports-injury",
+      "articlePath": "website/src/content/articles/badminton-is-not-leisure.md",
+      "articleSha256": "51a9315cfc498b98bfcb2cdd1b2c859109cf59a0e84e77b785fdd2e092ac73ef",
+      "alt": "羽球：肩部負荷與控制的原創 3D 示意；肩胛骨・肱骨、肌腱／關節囊、關注區（非分級）。肩胛骨與軟組織採開放式、簡化呈現；色彩只標出閱讀焦點。",
+      "cover": "/medical-visuals/articles/badminton-is-not-leisure/cover.webp",
+      "coverSmall": "/medical-visuals/articles/badminton-is-not-leisure/cover-480.webp",
+      "coverMedium": "/medical-visuals/articles/badminton-is-not-leisure/cover-800.webp",
+      "figure": "/medical-visuals/articles/badminton-is-not-leisure/explain.svg",
+      "figureRaster": "/medical-visuals/articles/badminton-is-not-leisure/explain.webp",
+      "og": "/medical-visuals/articles/badminton-is-not-leisure/og.jpg",
+      "model": "/medical-visuals/models/shoulder-load.glb",
+      "poster": "/medical-visuals/models/shoulder-load.webp",
+      "modelNotes": "肩胛骨與軟組織採開放式、簡化呈現；色彩只標出閱讀焦點。",
+      "structures": [
+        [
+          "肩胛骨・肱骨",
+          "#eee5d3"
+        ],
+        [
+          "肌腱／關節囊",
+          "#49bdb4"
+        ],
+        [
+          "關注區（非分級）",
+          "#f2a066"
+        ]
+      ],
+      "camera": [
+        0.5191461142465229,
+        0.3006848912268313
+      ],
+      "sha256": {
+        "cover-480.webp": "f6ea0d1b310a4a153b47aef0e4f617a416af5531957a825d0df227083865159d",
+        "cover-800.webp": "572fa301659f1f43003c002e4cbfce0d437ede1eb77d0448c30032c4b3c8b497",
+        "cover.webp": "99dcca3ea1a95128d1147348076031edeb001f0c4068254e60126911d2fac60a",
+        "explain.svg": "5f97ba198d315c20a0cfa1dfb4e5e9cca4d6361cba8c42a460bbcf8f6d96e67f",
+        "explain.webp": "e680241d0021bfb65712b90a9a4aa1ef85b5b2c4cdcc381a5da31a9623e5a7a8",
+        "og.jpg": "89f304375ae439283279b13df21f08e62b616207d0fc8ac5f474237a88854f38"
+      }
+    },
+    "basketball-injury-prevention": {
+      "slug": "basketball-injury-prevention",
+      "scene": "ankle-lateral",
+      "title": "籃球：認識踝外側結構",
+      "points": [
+        {
+          "heading": "脛骨與腓骨",
+          "text": "構成踝部上方的骨性結構。"
+        },
+        {
+          "heading": "外側韌帶",
+          "text": "足部內翻時，踝外側組織可能受到牽拉。"
+        },
+        {
+          "heading": "恢復控制",
+          "text": "逐步重建活動、肌力與平衡，再評估跑跳需求。"
+        }
+      ],
+      "sourceIds": [
+        "foot",
+        "activity"
+      ],
+      "caution": "不能負重、明顯變形或持續腫痛應就醫；本圖不提供傷勢分級。",
+      "reviewStatus": "clinician-review-pending",
+      "articleTitle": "籃球是高風險的競技運動：踝關節「翻船」不是休息幾天就好",
+      "category": "sports-injury",
+      "articlePath": "website/src/content/articles/basketball-injury-prevention.md",
+      "articleSha256": "0743fb4a0168f27e6a4bcb3dd5628d0b0679807332cca8c60602a26a608759b7",
+      "alt": "籃球：認識踝外側結構的原創 3D 示意；脛骨・腓骨・足骨、肌腱／筋膜、關注區（非分級）。足部為開放式結構示意；骨形、筋膜厚度與附著範圍經簡化。",
+      "cover": "/medical-visuals/articles/basketball-injury-prevention/cover.webp",
+      "coverSmall": "/medical-visuals/articles/basketball-injury-prevention/cover-480.webp",
+      "coverMedium": "/medical-visuals/articles/basketball-injury-prevention/cover-800.webp",
+      "figure": "/medical-visuals/articles/basketball-injury-prevention/explain.svg",
+      "figureRaster": "/medical-visuals/articles/basketball-injury-prevention/explain.webp",
+      "og": "/medical-visuals/articles/basketball-injury-prevention/og.jpg",
+      "model": "/medical-visuals/models/ankle-lateral.glb",
+      "poster": "/medical-visuals/models/ankle-lateral.webp",
+      "modelNotes": "足部為開放式結構示意；骨形、筋膜厚度與附著範圍經簡化。",
+      "structures": [
+        [
+          "脛骨・腓骨・足骨",
+          "#eee5d3"
+        ],
+        [
+          "肌腱／筋膜",
+          "#49bdb4"
+        ],
+        [
+          "關注區（非分級）",
+          "#f2a066"
+        ]
+      ],
+      "camera": [
+        0.5880026035475675,
+        0.3337208841379054
+      ],
+      "sha256": {
+        "cover-480.webp": "466bd82db8b5537cc942a28f66381dfdb7092d711b2d04318377620c948d40ab",
+        "cover-800.webp": "54644fba080c59f0be46e48f26c670593f13d105bbdb66d2b3ebb81b41031882",
+        "cover.webp": "fd0d830b81aabd7d88ef9b4f7b2eb28e2198fbe7ff8242c4ed4c976f846653a9",
+        "explain.svg": "477fd3a8a86413eb140cf366fad10a08c8371ec01f70d677e771d256da68e689",
+        "explain.webp": "5237607a5dd6333f552bfa6dd0f4403548bf49dcb51b6d84275ba9b7a91801e9",
+        "og.jpg": "0b2e491c39e0ae6dee97ddb300eaede8d1ec0199e9963c04df9cb6609a820be4"
+      }
+    },
+    "calf-muscle-tear": {
+      "slug": "calf-muscle-tear",
+      "scene": "calf-tear",
+      "title": "網球腿：不只是小腿痠",
+      "points": [
+        {
+          "heading": "腓腸肌",
+          "text": "位於小腿後側表層，跨過膝關節與踝關節。"
+        },
+        {
+          "heading": "肌腱交界",
+          "text": "肌肉與肌腱交接處，是需要評估的區域之一。"
+        },
+        {
+          "heading": "鑑別診斷",
+          "text": "小腿痛可能來自多種問題，不能只依疼痛位置定論。"
+        }
+      ],
+      "sourceIds": [
+        "achilles",
+        "clot"
+      ],
+      "caution": "單側小腿腫痛需排除血栓等問題，不應一律當成拉傷。",
+      "reviewStatus": "clinician-review-pending",
+      "articleTitle": "小腿肌撕裂傷（網球腿）：怎麼發生、多久會好、如何治療",
+      "category": "sports-injury",
+      "articlePath": "website/src/content/articles/calf-muscle-tear.md",
+      "articleSha256": "5487dc01ae8642d8582a888c5ad9e70705e8fc9be1a2654420e94531c226248f",
+      "alt": "網球腿：不只是小腿痠的原創 3D 示意；脛骨・腓骨・足骨、肌腱／筋膜、關注區（非分級）。足部為開放式結構示意；骨形、筋膜厚度與附著範圍經簡化。",
+      "cover": "/medical-visuals/articles/calf-muscle-tear/cover.webp",
+      "coverSmall": "/medical-visuals/articles/calf-muscle-tear/cover-480.webp",
+      "coverMedium": "/medical-visuals/articles/calf-muscle-tear/cover-800.webp",
+      "figure": "/medical-visuals/articles/calf-muscle-tear/explain.svg",
+      "figureRaster": "/medical-visuals/articles/calf-muscle-tear/explain.webp",
+      "og": "/medical-visuals/articles/calf-muscle-tear/og.jpg",
+      "model": "/medical-visuals/models/calf-tear.glb",
+      "poster": "/medical-visuals/models/calf-tear.webp",
+      "modelNotes": "足部為開放式結構示意；骨形、筋膜厚度與附著範圍經簡化。",
+      "structures": [
+        [
+          "脛骨・腓骨・足骨",
+          "#eee5d3"
+        ],
+        [
+          "肌腱／筋膜",
+          "#49bdb4"
+        ],
+        [
+          "關注區（非分級）",
+          "#f2a066"
+        ]
+      ],
+      "camera": [
+        2.6135182051634334,
+        0.26028975677365856
+      ],
+      "sha256": {
+        "cover-480.webp": "d841f73ef97f5bca88283655b025f170e278d06c87c162c26dc45429edfb81d1",
+        "cover-800.webp": "0511f8b0093ba4ae1f2c255471feb53162475018bc05755cc21e077b3308c0fc",
+        "cover.webp": "048747955b9db74b66a2aea01eac3dbff3ffe325263da3317113e2e67686d67f",
+        "explain.svg": "fa8d368d0877c523b61e837fdd5f9cefd01cc909c8403030faec216ad9140fc4",
+        "explain.webp": "7581cf2570ed0ede8e226a42f8b2853cba56c5d7eb5316329ee10379bd1d4308",
+        "og.jpg": "b4bf7c4aeb585b8be5936ceb09e2bdc87cc1fb16679b977f439e2443b74039a3"
+      }
+    },
+    "deadlift-everyone-should-learn": {
+      "slug": "deadlift-everyone-should-learn",
+      "scene": "movement-hinge",
+      "title": "硬舉：先認識髖折疊",
+      "points": [
+        {
+          "heading": "髖部後移",
+          "text": "軀幹與髖部協調，練習可控制的活動範圍。"
+        },
+        {
+          "heading": "軀幹穩定",
+          "text": "呼吸、軀幹控制與負荷需配合個人能力。"
+        },
+        {
+          "heading": "循序增加",
+          "text": "先學動作，再調整重量；不是所有人都需相同姿勢或重量。"
+        }
+      ],
+      "sourceIds": [
+        "activity"
+      ],
+      "caution": "人偶為動作概念示意，不是個別化教學或下背痛的保證療法。",
+      "reviewStatus": "clinician-review-pending",
+      "articleTitle": "硬舉：每個人都該學會的基礎動作，也是現代人下背痛的救星",
+      "category": "training",
+      "articlePath": "website/src/content/articles/deadlift-everyone-should-learn.md",
+      "articleSha256": "63be45108f37b72e3f7d1ac423b89ae638bd029f5c5e204766714e3c0a3a1d7f",
+      "alt": "硬舉：先認識髖折疊的原創 3D 示意；中性訓練人偶、訓練／肌群重點、動作關注区。人偶是動作概念而非處方；關節角度、肌肉外形與器材比例經簡化。",
+      "cover": "/medical-visuals/articles/deadlift-everyone-should-learn/cover.webp",
+      "coverSmall": "/medical-visuals/articles/deadlift-everyone-should-learn/cover-480.webp",
+      "coverMedium": "/medical-visuals/articles/deadlift-everyone-should-learn/cover-800.webp",
+      "figure": "/medical-visuals/articles/deadlift-everyone-should-learn/explain.svg",
+      "figureRaster": "/medical-visuals/articles/deadlift-everyone-should-learn/explain.webp",
+      "og": "/medical-visuals/articles/deadlift-everyone-should-learn/og.jpg",
+      "model": "/medical-visuals/models/movement-hinge.glb",
+      "poster": "/medical-visuals/models/movement-hinge.webp",
+      "modelNotes": "人偶是動作概念而非處方；關節角度、肌肉外形與器材比例經簡化。",
+      "structures": [
+        [
+          "中性訓練人偶",
+          "#eee5d3"
+        ],
+        [
+          "訓練／肌群重點",
+          "#49bdb4"
+        ],
+        [
+          "動作關注区",
+          "#f2a066"
+        ]
+      ],
+      "camera": [
+        0.5880026035475675,
+        0.2705497629785729
+      ],
+      "sha256": {
+        "cover-480.webp": "8a0c2fc87ddb389ac03b8467a323597a6d50ca0831c70b09f58139d89de545da",
+        "cover-800.webp": "efa02e80727a41e3846c0a5fa5b0b6a2e0aa9e048356b2a9ad334728de41fc55",
+        "cover.webp": "eeff43e7da4d24923997e433de313c46dd136673d532c1fd4bf83c386125f8f8",
+        "explain.svg": "a67d6edf51e1ca84dad9dada38e9bedb081f2a30bafca488338ab9e215d3d3c5",
+        "explain.webp": "9c632cd71b50a9f07a2c2046c57438ef74edd08b1b0bbf352a62c817ada57101",
+        "og.jpg": "29078f95e1a30c5ac4aa0cb591c86346c00b831dce542f8da95e47ed1cb0c564"
+      }
+    },
+    "diabetes-aunt-three-things": {
+      "slug": "diabetes-aunt-three-things",
+      "scene": "metabolism-diabetes",
+      "title": "糖尿病照護：三個面向",
+      "points": [
+        {
+          "heading": "飲食計畫",
+          "text": "食物種類、份量與用餐習慣一起調整。"
+        },
+        {
+          "heading": "規律活動",
+          "text": "依身體能力與用藥狀況安排活動。"
+        },
+        {
+          "heading": "追蹤與用藥",
+          "text": "記錄血糖並按醫療團隊建議治療，不自行停藥。"
+        }
+      ],
+      "sourceIds": [
+        "diabetes"
+      ],
+      "caution": "個案的血糖改善幅度不能直接套用到其他人。",
+      "reviewStatus": "clinician-review-pending",
+      "articleTitle": "糖尿病控制好，阿姨只做了這三件事",
+      "category": "weight-management",
+      "articlePath": "website/src/content/articles/diabetes-aunt-three-things.md",
+      "articleSha256": "45830110f8c2d3a85f34dc0c1c384b239d8b6cac1c74497fc64b5630ca70c879",
+      "alt": "糖尿病照護：三個面向的原創 3D 示意；食物／器具示意、飲食與生活、閱讀關注區。飲食、活動與追蹤的概念組合；不是血糖讀值或保證療效。",
+      "cover": "/medical-visuals/articles/diabetes-aunt-three-things/cover.webp",
+      "coverSmall": "/medical-visuals/articles/diabetes-aunt-three-things/cover-480.webp",
+      "coverMedium": "/medical-visuals/articles/diabetes-aunt-three-things/cover-800.webp",
+      "figure": "/medical-visuals/articles/diabetes-aunt-three-things/explain.svg",
+      "figureRaster": "/medical-visuals/articles/diabetes-aunt-three-things/explain.webp",
+      "og": "/medical-visuals/articles/diabetes-aunt-three-things/og.jpg",
+      "model": "/medical-visuals/models/metabolism-diabetes.glb",
+      "poster": "/medical-visuals/models/metabolism-diabetes.webp",
+      "modelNotes": "飲食、活動與追蹤的概念組合；不是血糖讀值或保證療效。",
+      "structures": [
+        [
+          "食物／器具示意",
+          "#eee5d3"
+        ],
+        [
+          "飲食與生活",
+          "#49bdb4"
+        ],
+        [
+          "閱讀關注區",
+          "#f2a066"
+        ]
+      ],
+      "camera": [
+        0.5280744484263596,
+        0.6239016980312335
+      ],
+      "sha256": {
+        "cover-480.webp": "e09cc622aa6f9b85735a6e4fb8771bd5be3ebcd71250344e1984b73dd04ab09d",
+        "cover-800.webp": "02758c4f097eedc85b486e9fe57ac69a3f70c3f29afd2a9f578bbdb076b21c98",
+        "cover.webp": "87eae3bf6d07df3ac67502d5c16323c32a12ef8a14ff351b8a27fae4fb26ca4d",
+        "explain.svg": "f9d9c252081bc692e1eaa0ec5b8f5bd9e756f8c7162f50c716cfb0a3c4056919",
+        "explain.webp": "749a099dedf87cfbef1b3b636b2c6ad70ee618b5fa3bbc71e731e6d245a505ae",
+        "og.jpg": "f1ddba3b0c8ca2bdbe70d3a5ae4aaa0416c1c777122cf20cf5af7f17cd49e5ac"
+      }
+    },
+    "does-jogging-hurt-knees": {
+      "slug": "does-jogging-hurt-knees",
+      "scene": "knee-overview",
+      "title": "慢跑與膝蓋：看懂結構",
+      "points": [
+        {
+          "heading": "關節軟骨",
+          "text": "覆蓋骨端，與半月板不是同一種結構。"
+        },
+        {
+          "heading": "半月板",
+          "text": "位在股骨與脛骨間，協助負荷分散。"
+        },
+        {
+          "heading": "負荷管理",
+          "text": "把跑量、肌力、恢復及既有症狀一起考量。"
+        }
+      ],
+      "sourceIds": [
+        "meniscus",
+        "activity"
+      ],
+      "caution": "不以圖像暗示跑步會保證軟骨增生，或任何膝痛都可繼續跑。",
+      "reviewStatus": "clinician-review-pending",
+      "articleTitle": "慢跑傷膝蓋嗎？研究怎麼說",
+      "category": "sports-injury",
+      "articlePath": "website/src/content/articles/does-jogging-hurt-knees.md",
+      "articleSha256": "4a27259c1214cee1ff95b2b3b24fe7b59fd29f45310ea3a732a0e83b0532aa8e",
+      "alt": "慢跑與膝蓋：看懂結構的原創 3D 示意；股骨・脛骨・腓骨、關節軟骨・半月板、關注區（非分級）。為看清關節內部，髕骨在部分模型中移開；軟骨與間隙放大。不是病人影像。",
+      "cover": "/medical-visuals/articles/does-jogging-hurt-knees/cover.webp",
+      "coverSmall": "/medical-visuals/articles/does-jogging-hurt-knees/cover-480.webp",
+      "coverMedium": "/medical-visuals/articles/does-jogging-hurt-knees/cover-800.webp",
+      "figure": "/medical-visuals/articles/does-jogging-hurt-knees/explain.svg",
+      "figureRaster": "/medical-visuals/articles/does-jogging-hurt-knees/explain.webp",
+      "og": "/medical-visuals/articles/does-jogging-hurt-knees/og.jpg",
+      "model": "/medical-visuals/models/knee-overview.glb",
+      "poster": "/medical-visuals/models/knee-overview.webp",
+      "modelNotes": "為看清關節內部，髕骨在部分模型中移開；軟骨與間隙放大。不是病人影像。",
+      "structures": [
+        [
+          "股骨・脛骨・腓骨",
+          "#eee5d3"
+        ],
+        [
+          "關節軟骨・半月板",
+          "#49bdb4"
+        ],
+        [
+          "關注區（非分級）",
+          "#f2a066"
+        ]
+      ],
+      "camera": [
+        0.49394136891958124,
+        0.26456370705311916
+      ],
+      "sha256": {
+        "cover-480.webp": "aba1065365ef1836c02c6ea88b1cc309c15a0e0e7f3966506532fbfce4c5aa67",
+        "cover-800.webp": "e71e11383dbac18e897b63135372d54f60c2c28f322ecd051218c4a67f13fe23",
+        "cover.webp": "0709e153896f925a6bbc2ac57669b8e9f3bf769da65b7b52dffd68d0d9622311",
+        "explain.svg": "02e24597c0e65464970181787981d403579af2e90567af760854b6597d37d389",
+        "explain.webp": "da61de5c64601827761342e47bafed991881e2097414763de34d7e24f8516e08",
+        "og.jpg": "4987253181e8aeb6a40e49f7c408fbc3d1fb9e94cea9f86f4f0d2e79649e2324"
+      }
+    },
+    "eating-for-training": {
+      "slug": "eating-for-training",
+      "scene": "nutrition-recovery",
+      "title": "訓練後：補充與恢復",
+      "points": [
+        {
+          "heading": "主食",
+          "text": "碳水化合物是訓練後營養規劃的一部分。"
+        },
+        {
+          "heading": "蛋白質來源",
+          "text": "從日常食物與整日攝取量一起考量。"
+        },
+        {
+          "heading": "水分與休息",
+          "text": "依流汗、環境與訓練量調整，讓恢復跟上負荷。"
+        }
+      ],
+      "sourceIds": [
+        "supplements"
+      ],
+      "caution": "餐盤是食物類別示意，不是固定份量、比例或通用營養處方。",
+      "reviewStatus": "clinician-review-pending",
+      "articleTitle": "會練是一種天賦，會吃更是一種才能：運動後怎麼吃",
+      "category": "training",
+      "articlePath": "website/src/content/articles/eating-for-training.md",
+      "articleSha256": "8a3df37d0590f4ce8398875d87e50ecdc1de8c16d9bcfddc4ab57f6a0dfd0c22",
+      "alt": "訓練後：補充與恢復的原創 3D 示意；食物／器具示意、飲食與生活、閱讀關注區。餐盤為食物類別示意；沒有代表固定熱量、份量或營養比例。",
+      "cover": "/medical-visuals/articles/eating-for-training/cover.webp",
+      "coverSmall": "/medical-visuals/articles/eating-for-training/cover-480.webp",
+      "coverMedium": "/medical-visuals/articles/eating-for-training/cover-800.webp",
+      "figure": "/medical-visuals/articles/eating-for-training/explain.svg",
+      "figureRaster": "/medical-visuals/articles/eating-for-training/explain.webp",
+      "og": "/medical-visuals/articles/eating-for-training/og.jpg",
+      "model": "/medical-visuals/models/nutrition-recovery.glb",
+      "poster": "/medical-visuals/models/nutrition-recovery.webp",
+      "modelNotes": "餐盤為食物類別示意；沒有代表固定熱量、份量或營養比例。",
+      "structures": [
+        [
+          "食物／器具示意",
+          "#eee5d3"
+        ],
+        [
+          "飲食與生活",
+          "#49bdb4"
+        ],
+        [
+          "閱讀關注區",
+          "#f2a066"
+        ]
+      ],
+      "camera": [
+        0.5280744484263596,
+        0.6239016980312335
+      ],
+      "sha256": {
+        "cover-480.webp": "477cec551f0c7f3b238cf05f23aab0c07b8f52d37e4fb044dc05dd6192c875dc",
+        "cover-800.webp": "6f0ea1c945f213688c2832150f4c071112b460e18879b78db70e9fceaf5738b2",
+        "cover.webp": "0fae5b631b711b43c694107a655fe335ce97d327ac2aaca5ac4088e1f3d545b1",
+        "explain.svg": "656ebf811695b0b4ef0b529979a9862851e11bc284606c5a80c443a34accf830",
+        "explain.webp": "3a9468154e0f39b56392879edc289322a692400295ab738d1f4429e30b99ee74",
+        "og.jpg": "91a7920ccde22ad8f02d61bed6afd91f00d5c92bcef4f90dd8be3e0463e5d01d"
+      }
+    },
+    "fish-oil-and-vitamin-d": {
+      "slug": "fish-oil-and-vitamin-d",
+      "scene": "nutrition-supplements",
+      "title": "補充之前，先評估需求",
+      "points": [
+        {
+          "heading": "日常飲食",
+          "text": "先確認食物來源與平常攝取情況。"
+        },
+        {
+          "heading": "補充品",
+          "text": "魚油與維生素 D 不是同一種營養素，也不能相互替代。"
+        },
+        {
+          "heading": "專業評估",
+          "text": "劑量、檢驗需求與藥物交互作用，需個別確認。"
+        }
+      ],
+      "sourceIds": [
+        "supplements"
+      ],
+      "caution": "不宣稱補充品能保證預防疾病；不提供自行加量建議。",
+      "reviewStatus": "clinician-review-pending",
+      "articleTitle": "魚油與維他命 D：誰該補、補多少",
+      "category": "training",
+      "articlePath": "website/src/content/articles/fish-oil-and-vitamin-d.md",
+      "articleSha256": "2e6b28cb3344edc0b533a596ad93c36c90713f19e9d6db543928f778fab0aa25",
+      "alt": "補充之前，先評估需求的原創 3D 示意；食物／器具示意、飲食與生活、閱讀關注區。容器與膠囊均無品牌、無劑量，僅代表補充品類別。",
+      "cover": "/medical-visuals/articles/fish-oil-and-vitamin-d/cover.webp",
+      "coverSmall": "/medical-visuals/articles/fish-oil-and-vitamin-d/cover-480.webp",
+      "coverMedium": "/medical-visuals/articles/fish-oil-and-vitamin-d/cover-800.webp",
+      "figure": "/medical-visuals/articles/fish-oil-and-vitamin-d/explain.svg",
+      "figureRaster": "/medical-visuals/articles/fish-oil-and-vitamin-d/explain.webp",
+      "og": "/medical-visuals/articles/fish-oil-and-vitamin-d/og.jpg",
+      "model": "/medical-visuals/models/nutrition-supplements.glb",
+      "poster": "/medical-visuals/models/nutrition-supplements.webp",
+      "modelNotes": "容器與膠囊均無品牌、無劑量，僅代表補充品類別。",
+      "structures": [
+        [
+          "食物／器具示意",
+          "#eee5d3"
+        ],
+        [
+          "飲食與生活",
+          "#49bdb4"
+        ],
+        [
+          "閱讀關注區",
+          "#f2a066"
+        ]
+      ],
+      "camera": [
+        0.5280744484263596,
+        0.6239016980312335
+      ],
+      "sha256": {
+        "cover-480.webp": "8ac6ba02f87f3280505719567422039c753268b864c5f196c4ae5d7e7341e0ff",
+        "cover-800.webp": "51104ccc289a863d881d510bc8b1ea726707bf26c899c91a0747cca06d34b370",
+        "cover.webp": "93ea54d0d6cbedcbccf9d905823a4679837dd753ea106fdc962d005758ae1917",
+        "explain.svg": "1990f6f020e8405d9b84523c4a6272a81b8dd95a1a9b6d4365a3828548ad2884",
+        "explain.webp": "d3e99349bcc2d347ed67c3ed6eb6ff67cb1522de584091ad755f2697a390ec03",
+        "og.jpg": "116b87d9011f84d2500a350c7ca1266e4d72538adfafdfc7ac3f76cfc6e4b711"
+      }
+    },
+    "fried-food-and-mood": {
+      "slug": "fried-food-and-mood",
+      "scene": "nutrition-mood",
+      "title": "飲食與情緒：別畫上等號",
+      "points": [
+        {
+          "heading": "飲食習慣",
+          "text": "評估的是整體飲食模式，而不只一份食物。"
+        },
+        {
+          "heading": "情緒與睡眠",
+          "text": "心理健康也受到睡眠、壓力與生活環境影響。"
+        },
+        {
+          "heading": "研究解讀",
+          "text": "觀察到關聯不等於證明因果，不能用飲食圖診斷憂鬱症。"
+        }
+      ],
+      "sourceIds": [
+        "weight"
+      ],
+      "caution": "此圖不把油炸食物描繪成造成憂鬱症的單一原因。",
+      "reviewStatus": "clinician-review-pending",
+      "articleTitle": "油炸食物不只讓你變胖，還讓你憂鬱",
+      "category": "weight-management",
+      "articlePath": "website/src/content/articles/fried-food-and-mood.md",
+      "articleSha256": "d62ce4ea6d89f1fb7d4d7ea52f48b98c3eb0a0a5e396c836439827856c72869a",
+      "alt": "飲食與情緒：別畫上等號的原創 3D 示意；食物／器具示意、飲食與生活、閱讀關注區。餐盤為食物類別示意；沒有代表固定熱量、份量或營養比例。",
+      "cover": "/medical-visuals/articles/fried-food-and-mood/cover.webp",
+      "coverSmall": "/medical-visuals/articles/fried-food-and-mood/cover-480.webp",
+      "coverMedium": "/medical-visuals/articles/fried-food-and-mood/cover-800.webp",
+      "figure": "/medical-visuals/articles/fried-food-and-mood/explain.svg",
+      "figureRaster": "/medical-visuals/articles/fried-food-and-mood/explain.webp",
+      "og": "/medical-visuals/articles/fried-food-and-mood/og.jpg",
+      "model": "/medical-visuals/models/nutrition-mood.glb",
+      "poster": "/medical-visuals/models/nutrition-mood.webp",
+      "modelNotes": "餐盤為食物類別示意；沒有代表固定熱量、份量或營養比例。",
+      "structures": [
+        [
+          "食物／器具示意",
+          "#eee5d3"
+        ],
+        [
+          "飲食與生活",
+          "#49bdb4"
+        ],
+        [
+          "閱讀關注區",
+          "#f2a066"
+        ]
+      ],
+      "camera": [
+        0.5280744484263596,
+        0.6239016980312335
+      ],
+      "sha256": {
+        "cover-480.webp": "d20e2e860ace1e5ad5b69a7120ea51c1ca2dc65b585c0cf77bae8f0e5ae28a3e",
+        "cover-800.webp": "88578ef21aca804e2533a185c923079e7ea33e82e54f1eb21d5540e5922a2758",
+        "cover.webp": "b461715e2d7d81863c7f2b520850c55cdfbfeae70af0e344635728076e2f2768",
+        "explain.svg": "fb776959cae54e6ec6f97ba7cd306f22115b9a0569945ace0d493579f51bf9e2",
+        "explain.webp": "3c29e00815ca7944407d07df59298c12498e9b8da892deea8c80c25d2977981f",
+        "og.jpg": "3f90a5a073ca10cc6f774a2912e673aa0ce0b52c2841ba0ad6237abc3a973e2a"
+      }
+    },
+    "frozen-shoulder-self-check": {
+      "slug": "frozen-shoulder-self-check",
+      "scene": "shoulder-capsule",
+      "title": "五十肩：關節囊的改變",
+      "points": [
+        {
+          "heading": "球與窩",
+          "text": "肱骨頭與肩胛骨關節窩構成肩關節。"
+        },
+        {
+          "heading": "關節囊",
+          "text": "五十肩可能出現關節囊增厚、緊縮與活動受限。"
+        },
+        {
+          "heading": "診察重點",
+          "text": "主動與被動活動、病史及其他原因需一起評估。"
+        }
+      ],
+      "sourceIds": [
+        "capsule"
+      ],
+      "caution": "在家動作只能提供症狀線索，不能單憑三個動作確診。",
+      "reviewStatus": "clinician-review-pending",
+      "articleTitle": "五十肩：三個症狀、三個動作，在家先自我檢測",
+      "category": "sports-injury",
+      "articlePath": "website/src/content/articles/frozen-shoulder-self-check.md",
+      "articleSha256": "55257a264760558c3d179046d6e4b85de2371da2835642451b4fd952b7c52d94",
+      "alt": "五十肩：關節囊的改變的原創 3D 示意；肩胛骨・肱骨、肌腱／關節囊、關注區（非分級）。肩胛骨與軟組織採開放式、簡化呈現；色彩只標出閱讀焦點。",
+      "cover": "/medical-visuals/articles/frozen-shoulder-self-check/cover.webp",
+      "coverSmall": "/medical-visuals/articles/frozen-shoulder-self-check/cover-480.webp",
+      "coverMedium": "/medical-visuals/articles/frozen-shoulder-self-check/cover-800.webp",
+      "figure": "/medical-visuals/articles/frozen-shoulder-self-check/explain.svg",
+      "figureRaster": "/medical-visuals/articles/frozen-shoulder-self-check/explain.webp",
+      "og": "/medical-visuals/articles/frozen-shoulder-self-check/og.jpg",
+      "model": "/medical-visuals/models/shoulder-capsule.glb",
+      "poster": "/medical-visuals/models/shoulder-capsule.webp",
+      "modelNotes": "肩胛骨與軟組織採開放式、簡化呈現；色彩只標出閱讀焦點。",
+      "structures": [
+        [
+          "肩胛骨・肱骨",
+          "#eee5d3"
+        ],
+        [
+          "肌腱／關節囊",
+          "#49bdb4"
+        ],
+        [
+          "關注區（非分級）",
+          "#f2a066"
+        ]
+      ],
+      "camera": [
+        0.5191461142465229,
+        0.3006848912268313
+      ],
+      "sha256": {
+        "cover-480.webp": "fe162cc87d8722e685c463e3b58b7f6ad52307020b0e876273d9fb73d8395c84",
+        "cover-800.webp": "6df64d1fe334b562adc309104eb9c8800a3cd4fce8f49f85125b588047cbb2f6",
+        "cover.webp": "764c28cb6a56a4e10dd7640fb77e809ca927bfd4826a46806fc8efa3e2286c64",
+        "explain.svg": "0eeb68b4bcfeef57170ff1a5a4191a28a3d89f49347b34f840e1253a9b8a17e6",
+        "explain.webp": "5d14ee0a3dcf5e4b0d30c88074d9caae49ee336869c6392844694f66fb551db8",
+        "og.jpg": "ea374b21a07b8bb88529fbf870cd022cbd03cd670e0a6cfb07933b88ac63c8ec"
+      }
+    },
+    "glp1-during-treatment": {
+      "slug": "glp1-during-treatment",
+      "scene": "metabolism-care",
+      "title": "體重治療：用藥以外的事",
+      "points": [
+        {
+          "heading": "飲食支持",
+          "text": "維持足夠營養與水分，不以極端少吃為目標。"
+        },
+        {
+          "heading": "活動與肌力",
+          "text": "依能力安排有氧與阻力訓練，照顧日常功能。"
+        },
+        {
+          "heading": "定期追蹤",
+          "text": "副作用、療效與後續計畫由醫療團隊共同評估。"
+        }
+      ],
+      "sourceIds": [
+        "medication",
+        "activity"
+      ],
+      "caution": "請勿依示意圖自行改劑量、移動注射日期或停藥。",
+      "reviewStatus": "clinician-review-pending",
+      "articleTitle": "打瘦瘦針前你必須知道的事（三）：使用期間怎麼吃、怎麼動、停滯期與復胖",
+      "category": "weight-management",
+      "articlePath": "website/src/content/articles/glp1-during-treatment.md",
+      "articleSha256": "45ad479f2c0de20764b34601dd58a24905c40a864cb1db678f565c3a2a1a3279",
+      "alt": "體重治療：用藥以外的事的原創 3D 示意；器官／身體概念、生活與調節、閱讀關注區。生活照護概念圖；不顯示注射方式、劑量或停藥時程。",
+      "cover": "/medical-visuals/articles/glp1-during-treatment/cover.webp",
+      "coverSmall": "/medical-visuals/articles/glp1-during-treatment/cover-480.webp",
+      "coverMedium": "/medical-visuals/articles/glp1-during-treatment/cover-800.webp",
+      "figure": "/medical-visuals/articles/glp1-during-treatment/explain.svg",
+      "figureRaster": "/medical-visuals/articles/glp1-during-treatment/explain.webp",
+      "og": "/medical-visuals/articles/glp1-during-treatment/og.jpg",
+      "model": "/medical-visuals/models/metabolism-care.glb",
+      "poster": "/medical-visuals/models/metabolism-care.webp",
+      "modelNotes": "生活照護概念圖；不顯示注射方式、劑量或停藥時程。",
+      "structures": [
+        [
+          "器官／身體概念",
+          "#eee5d3"
+        ],
+        [
+          "生活與調節",
+          "#49bdb4"
+        ],
+        [
+          "閱讀關注區",
+          "#f2a066"
+        ]
+      ],
+      "camera": [
+        0.4636476090008061,
+        0.3660500688467121
+      ],
+      "sha256": {
+        "cover-480.webp": "a692be2e118cb2eff8f466e35fcd5aad36d6cb0ed4346f4f58ff93eb621e170e",
+        "cover-800.webp": "f36a77dcdba411915a40b0a2bb38d2c4cc33c0c895fd815097fcabaa7fde6257",
+        "cover.webp": "885c00a46b196928970e1b55e91615dc2aedfbcc512e36fd34f2bbb40569cc15",
+        "explain.svg": "0b79b0c6c4374e856fd1b6110c21063d47b99d9bc626bce73889eb86f9a15ca5",
+        "explain.webp": "e4658e48abed1014e91202da3db22fe411110a06f750985f69a7c836455ed0f9",
+        "og.jpg": "e9c46cc2c9c49d62b4da1e5d7b8f29fc7078bdd77bc0ec5baf0cff9f4faef28e"
+      }
+    },
+    "glp1-precautions-and-contraindications": {
+      "slug": "glp1-precautions-and-contraindications",
+      "scene": "safety-screening",
+      "title": "用藥前：把資訊說清楚",
+      "points": [
+        {
+          "heading": "藥物清單",
+          "text": "處方藥、成藥及補充品都要告知。"
+        },
+        {
+          "heading": "相關病史",
+          "text": "個人與家族病史、懷孕計畫等交由醫師評估。"
+        },
+        {
+          "heading": "依品項確認",
+          "text": "不同藥物的適應症與注意事項，以當地核准仿單為準。"
+        }
+      ],
+      "sourceIds": [
+        "medication"
+      ],
+      "caution": "這不是完整禁忌清單，也不能代替處方評估。",
+      "reviewStatus": "clinician-review-pending",
+      "articleTitle": "打瘦瘦針前你必須知道的事（二）：哪些情況不能打、需要注意什麼",
+      "category": "weight-management",
+      "articlePath": "website/src/content/articles/glp1-precautions-and-contraindications.md",
+      "articleSha256": "981c1317d4246643a536f33aae34d5f3cad099b00d74e07cfbd69e2ca6d0e444",
+      "alt": "用藥前：把資訊說清楚的原創 3D 示意；藥品／資料概念、核對資訊、需要留意。藥品外觀純屬概念，不對應真實品項、劑量或使用方式。",
+      "cover": "/medical-visuals/articles/glp1-precautions-and-contraindications/cover.webp",
+      "coverSmall": "/medical-visuals/articles/glp1-precautions-and-contraindications/cover-480.webp",
+      "coverMedium": "/medical-visuals/articles/glp1-precautions-and-contraindications/cover-800.webp",
+      "figure": "/medical-visuals/articles/glp1-precautions-and-contraindications/explain.svg",
+      "figureRaster": "/medical-visuals/articles/glp1-precautions-and-contraindications/explain.webp",
+      "og": "/medical-visuals/articles/glp1-precautions-and-contraindications/og.jpg",
+      "model": "/medical-visuals/models/safety-screening.glb",
+      "poster": "/medical-visuals/models/safety-screening.webp",
+      "modelNotes": "藥品外觀純屬概念，不對應真實品項、劑量或使用方式。",
+      "structures": [
+        [
+          "藥品／資料概念",
+          "#eee5d3"
+        ],
+        [
+          "核對資訊",
+          "#49bdb4"
+        ],
+        [
+          "需要留意",
+          "#f2a066"
+        ]
+      ],
+      "camera": [
+        0.5191461142465229,
+        0.35622947615187256
+      ],
+      "sha256": {
+        "cover-480.webp": "2577be8c7e044286b83f2b07e839363fd219770470b50c072205653f43c5410b",
+        "cover-800.webp": "7c14a1d69a1bc746a658cfd66085642d1c48ff37851892ac2ea9012184074180",
+        "cover.webp": "d27de499e0c3c1c31a8a9af942eb8c38cac32d466025cb2b5f394f8343df2dd4",
+        "explain.svg": "8b60856a4a81747e7ac5140171bfbe80659888772abaa292470e0e81946158ae",
+        "explain.webp": "a1a1575de81d71349523ae3b6975c2dd070d250b4451029f231706187883f478",
+        "og.jpg": "4667b161a694ef2753dceda1ad6bca8ea375f2b62eede04077a10bcabdc41778"
+      }
+    },
+    "glp1-what-it-is-and-who-fits": {
+      "slug": "glp1-what-it-is-and-who-fits",
+      "scene": "metabolism-appetite",
+      "title": "GLP-1：訊號，不是溶脂",
+      "points": [
+        {
+          "heading": "腸道與訊號",
+          "text": "GLP-1 是與進食反應相關的荷爾蒙之一。"
+        },
+        {
+          "heading": "食慾調節",
+          "text": "相關藥物可作用於調節食慾與進食的訊號路徑。"
+        },
+        {
+          "heading": "整體治療",
+          "text": "藥物搭配營養、活動與追蹤，不是直接把脂肪溶掉。"
+        }
+      ],
+      "sourceIds": [
+        "medication"
+      ],
+      "caution": "器官採分離排列的概念圖，位置與大小非解剖比例；GLP-1 不是胰島素。",
+      "reviewStatus": "clinician-review-pending",
+      "articleTitle": "打瘦瘦針前你必須知道的事（一）：它是什麼、怎麼作用、適合誰",
+      "category": "weight-management",
+      "articlePath": "website/src/content/articles/glp1-what-it-is-and-who-fits.md",
+      "articleSha256": "5cc63b2f097463fa6d9096996c1e1e8aed2439aad19abd4f3fe7ef420e823a59",
+      "alt": "GLP-1：訊號，不是溶脂的原創 3D 示意；器官／身體概念、生活與調節、閱讀關注區。器官分離排列以表達訊號概念；並非真實相對位置、比例或完整生理路徑。",
+      "cover": "/medical-visuals/articles/glp1-what-it-is-and-who-fits/cover.webp",
+      "coverSmall": "/medical-visuals/articles/glp1-what-it-is-and-who-fits/cover-480.webp",
+      "coverMedium": "/medical-visuals/articles/glp1-what-it-is-and-who-fits/cover-800.webp",
+      "figure": "/medical-visuals/articles/glp1-what-it-is-and-who-fits/explain.svg",
+      "figureRaster": "/medical-visuals/articles/glp1-what-it-is-and-who-fits/explain.webp",
+      "og": "/medical-visuals/articles/glp1-what-it-is-and-who-fits/og.jpg",
+      "model": "/medical-visuals/models/metabolism-appetite.glb",
+      "poster": "/medical-visuals/models/metabolism-appetite.webp",
+      "modelNotes": "器官分離排列以表達訊號概念；並非真實相對位置、比例或完整生理路徑。",
+      "structures": [
+        [
+          "器官／身體概念",
+          "#eee5d3"
+        ],
+        [
+          "生活與調節",
+          "#49bdb4"
+        ],
+        [
+          "閱讀關注區",
+          "#f2a066"
+        ]
+      ],
+      "camera": [
+        0.4636476090008061,
+        0.3660500688467121
+      ],
+      "sha256": {
+        "cover-480.webp": "4db7db5b08e76082208768a6217719b82185e429a8998cd47dac44b5a354f5cd",
+        "cover-800.webp": "83b35c8a290532798f640157310668bee04639e6f524aa4e0d83baf3508b330e",
+        "cover.webp": "e6f9142adedc75a92b51f936d3c483d84823f3b948be5d72ce5e53f368ab2bea",
+        "explain.svg": "f75b5de89447595195f7da1f025f10b822186ca0baca94076ccde749c6210141",
+        "explain.webp": "fc848ceb531e6bc7c5c718aa99a43aa6479cb1a9478510d91474a21559d8914e",
+        "og.jpg": "3cf7bc5a8329dddfc19d9b8df0a2eeb3e955de9efa5b4024870581bc8b245fc3"
+      }
+    },
+    "glute-training-best-exercises": {
+      "slug": "glute-training-best-exercises",
+      "scene": "hip-glutes",
+      "title": "臀肌：不只是外觀",
+      "points": [
+        {
+          "heading": "臀大肌",
+          "text": "參與髖部伸展，和日常起身、登階等動作相關。"
+        },
+        {
+          "heading": "臀中肌區",
+          "text": "位在髖外側，參與髖部控制與骨盆穩定。"
+        },
+        {
+          "heading": "訓練安排",
+          "text": "動作選擇需配合目標、能力與症狀，不只看單次研究排名。"
+        }
+      ],
+      "sourceIds": [
+        "activity"
+      ],
+      "caution": "肌群為分層簡化示意，不是精確肌電圖或個人訓練處方。",
+      "reviewStatus": "clinician-review-pending",
+      "articleTitle": "為什麼要訓練臀肌？研究告訴你哪些動作效果最好",
+      "category": "training",
+      "articlePath": "website/src/content/articles/glute-training-best-exercises.md",
+      "articleSha256": "c7993f674789768cf839f7b8a377cac5bd862b88f1f587590031e3e35d2f9a0f",
+      "alt": "臀肌：不只是外觀的原創 3D 示意；骨盆・股骨、肌群／肌腱、關注肌群。肌群以分層概念呈現；不是完整的肌肉起止點圖，也不是個人的撕裂影像。",
+      "cover": "/medical-visuals/articles/glute-training-best-exercises/cover.webp",
+      "coverSmall": "/medical-visuals/articles/glute-training-best-exercises/cover-480.webp",
+      "coverMedium": "/medical-visuals/articles/glute-training-best-exercises/cover-800.webp",
+      "figure": "/medical-visuals/articles/glute-training-best-exercises/explain.svg",
+      "figureRaster": "/medical-visuals/articles/glute-training-best-exercises/explain.webp",
+      "og": "/medical-visuals/articles/glute-training-best-exercises/og.jpg",
+      "model": "/medical-visuals/models/hip-glutes.glb",
+      "poster": "/medical-visuals/models/hip-glutes.webp",
+      "modelNotes": "肌群以分層概念呈現；不是完整的肌肉起止點圖，也不是個人的撕裂影像。",
+      "structures": [
+        [
+          "骨盆・股骨",
+          "#eee5d3"
+        ],
+        [
+          "肌群／肌腱",
+          "#49bdb4"
+        ],
+        [
+          "關注肌群",
+          "#f2a066"
+        ]
+      ],
+      "camera": [
+        2.647651284670212,
+        0.26456370705311916
+      ],
+      "sha256": {
+        "cover-480.webp": "32e43ae168d0c71c6ba6aa20498d84648d028fa25051e23917222e99e2bfe962",
+        "cover-800.webp": "d17f50914976435d4c86a9bc50548bd8bca4a376feaf8d3a5e61ca506c11b4f0",
+        "cover.webp": "8ab2974064af6402d7914816be6f16cb8674296e700a89c4c41c82a011f2d63d",
+        "explain.svg": "a9691226268342e1d86d45030b9000bc97401e753257d21be3f1a92d29f763db",
+        "explain.webp": "b99b7262b2113c1d91dcfb803b0c07e45cd3d753950a284447c01c3c08486642",
+        "og.jpg": "4b226f6af878ae6e9aba6d486ebd9464ae8a34058b925f716b2264e1ac3f6bbc"
+      }
+    },
+    "gym-trap-cards": {
+      "slug": "gym-trap-cards",
+      "scene": "movement-training",
+      "title": "器材沒有代替動作控制",
+      "points": [
+        {
+          "heading": "起始設定",
+          "text": "座椅、支點與行程需配合自己的身體。"
+        },
+        {
+          "heading": "動作控制",
+          "text": "能控制的範圍與負荷，比勉強完成更重要。"
+        },
+        {
+          "heading": "尋求回饋",
+          "text": "有不適或不確定時，請合格教練或醫療人員協助。"
+        }
+      ],
+      "sourceIds": [
+        "activity"
+      ],
+      "caution": "不把某種器材一概標為危險，也不以人偶示意取代現場指導。",
+      "reviewStatus": "clinician-review-pending",
+      "articleTitle": "健身房陷阱卡：腿推、啞鈴側平舉、史密斯機",
+      "category": "training",
+      "articlePath": "website/src/content/articles/gym-trap-cards.md",
+      "articleSha256": "df437c4cf86da9a6b03f85057a6156bc793f586c0ee0259a5940d18a07c3f7f2",
+      "alt": "器材沒有代替動作控制的原創 3D 示意；中性訓練人偶、訓練／肌群重點、動作關注区。人偶是動作概念而非處方；關節角度、肌肉外形與器材比例經簡化。",
+      "cover": "/medical-visuals/articles/gym-trap-cards/cover.webp",
+      "coverSmall": "/medical-visuals/articles/gym-trap-cards/cover-480.webp",
+      "coverMedium": "/medical-visuals/articles/gym-trap-cards/cover-800.webp",
+      "figure": "/medical-visuals/articles/gym-trap-cards/explain.svg",
+      "figureRaster": "/medical-visuals/articles/gym-trap-cards/explain.webp",
+      "og": "/medical-visuals/articles/gym-trap-cards/og.jpg",
+      "model": "/medical-visuals/models/movement-training.glb",
+      "poster": "/medical-visuals/models/movement-training.webp",
+      "modelNotes": "人偶是動作概念而非處方；關節角度、肌肉外形與器材比例經簡化。",
+      "structures": [
+        [
+          "中性訓練人偶",
+          "#eee5d3"
+        ],
+        [
+          "訓練／肌群重點",
+          "#49bdb4"
+        ],
+        [
+          "動作關注区",
+          "#f2a066"
+        ]
+      ],
+      "camera": [
+        0.5880026035475675,
+        0.2705497629785729
+      ],
+      "sha256": {
+        "cover-480.webp": "10701ad82010be9d12d09862f9ebbf19f896ae37e3f12c62ecbfae2e4d288ad4",
+        "cover-800.webp": "acc53e57e2f1f1db366d151192dc4fab8083cfce7155e2627aac047c88aaf747",
+        "cover.webp": "8ea235359d50139c0fdbf66750b5822f3fa0fda1dd84e2d50d8de98711a14297",
+        "explain.svg": "924fd2eecf4cd233ce535b07fd10a2bb4bb296486ef2f8a158d5fb85b404732c",
+        "explain.webp": "53ca6d30beb3532fe609dca1afd236582b0e66675c5dc0859af322bcd75e086c",
+        "og.jpg": "13c28cfb86f5d67d080c3c215d2690950b348e25c4ea2c0c3dc23e617d82ce43"
+      }
+    },
+    "gymnastics-injuries": {
+      "slug": "gymnastics-injuries",
+      "scene": "wrist-load",
+      "title": "體操：上肢承重的提醒",
+      "points": [
+        {
+          "heading": "前臂骨",
+          "text": "橈骨與尺骨把負荷傳往肘與肩。"
+        },
+        {
+          "heading": "腕部結構",
+          "text": "小骨、韌帶與肌腱共同參與支撐。"
+        },
+        {
+          "heading": "成長中的運動員",
+          "text": "持續疼痛或功能改變，應接受適齡評估。"
+        }
+      ],
+      "sourceIds": [
+        "activity"
+      ],
+      "caution": "兒少骨骼仍在發育；本模型不顯示或判讀生長板傷勢。",
+      "reviewStatus": "clinician-review-pending",
+      "articleTitle": "體操相關運動傷害：為什麼上肢與生長板需要特別注意",
+      "category": "sports-injury",
+      "articlePath": "website/src/content/articles/gymnastics-injuries.md",
+      "articleSha256": "a34a6cf9e247446f466eebb615d8573b89f33f5900a24f4e28a493d054666a59",
+      "alt": "體操：上肢承重的提醒的原創 3D 示意；骨骼、肌腱／韌帶、神經或關注區。神經與軟組織為放大的走向示意；不提供注射或手術定位。",
+      "cover": "/medical-visuals/articles/gymnastics-injuries/cover.webp",
+      "coverSmall": "/medical-visuals/articles/gymnastics-injuries/cover-480.webp",
+      "coverMedium": "/medical-visuals/articles/gymnastics-injuries/cover-800.webp",
+      "figure": "/medical-visuals/articles/gymnastics-injuries/explain.svg",
+      "figureRaster": "/medical-visuals/articles/gymnastics-injuries/explain.webp",
+      "og": "/medical-visuals/articles/gymnastics-injuries/og.jpg",
+      "model": "/medical-visuals/models/wrist-load.glb",
+      "poster": "/medical-visuals/models/wrist-load.webp",
+      "modelNotes": "神經與軟組織為放大的走向示意；不提供注射或手術定位。",
+      "structures": [
+        [
+          "骨骼",
+          "#eee5d3"
+        ],
+        [
+          "肌腱／韌帶",
+          "#49bdb4"
+        ],
+        [
+          "神經或關注區",
+          "#f2a066"
+        ]
+      ],
+      "camera": [
+        0.40489178628508343,
+        0.2568139174208071
+      ],
+      "sha256": {
+        "cover-480.webp": "25d15823786b24bcd8138c5e5d9e73ccefdb3f9164c91f2c6fdc949366cf490b",
+        "cover-800.webp": "5c38d1553987198c1523fc6ffe4df8fdc9beb4422e7f73c6a41f8cc71975082e",
+        "cover.webp": "1aedcd724af553ca771ce85570f6b1f0a6d21cd0ede3058dfa7c5cff0f4549d8",
+        "explain.svg": "5104df75a6513e28685934f6e94f79932f687524b21490d36f9d097b976d1201",
+        "explain.webp": "1cb8de589113e4204067f73bf58b730ac1552531826ad5f575bb0a508697a73d",
+        "og.jpg": "0651d4bb5f44e046ec64fcc18cf8a94e977187b2d22635ac8bf4a19a79e4e5dd"
+      }
+    },
+    "hamstring-strain-curry": {
+      "slug": "hamstring-strain-curry",
+      "scene": "hamstrings",
+      "title": "腿後肌：從受傷到回場",
+      "points": [
+        {
+          "heading": "腿後肌群",
+          "text": "位在大腿後側，與髖伸展、膝屈曲有關。"
+        },
+        {
+          "heading": "受力區域",
+          "text": "衝刺或拉長狀態下受力，可能造成肌肉肌腱損傷。"
+        },
+        {
+          "heading": "功能性進程",
+          "text": "恢復活動、肌力及專項能力，再由團隊評估回場。"
+        }
+      ],
+      "sourceIds": [
+        "hamstring"
+      ],
+      "caution": "不以球員個案或固定週數預測個人恢復時間。",
+      "reviewStatus": "clinician-review-pending",
+      "articleTitle": "腿後肌拉傷怎麼處理？從 Curry 的季後賽傷勢看三階段處理與回場時間",
+      "category": "sports-injury",
+      "articlePath": "website/src/content/articles/hamstring-strain-curry.md",
+      "articleSha256": "1d3cc56d98d6396bfa024bf39c364d91452752f6d66d457ebc2a4bf30bb8d59e",
+      "alt": "腿後肌：從受傷到回場的原創 3D 示意；骨盆・股骨、肌群／肌腱、關注肌群。肌群以分層概念呈現；不是完整的肌肉起止點圖，也不是個人的撕裂影像。",
+      "cover": "/medical-visuals/articles/hamstring-strain-curry/cover.webp",
+      "coverSmall": "/medical-visuals/articles/hamstring-strain-curry/cover-480.webp",
+      "coverMedium": "/medical-visuals/articles/hamstring-strain-curry/cover-800.webp",
+      "figure": "/medical-visuals/articles/hamstring-strain-curry/explain.svg",
+      "figureRaster": "/medical-visuals/articles/hamstring-strain-curry/explain.webp",
+      "og": "/medical-visuals/articles/hamstring-strain-curry/og.jpg",
+      "model": "/medical-visuals/models/hamstrings.glb",
+      "poster": "/medical-visuals/models/hamstrings.webp",
+      "modelNotes": "肌群以分層概念呈現；不是完整的肌肉起止點圖，也不是個人的撕裂影像。",
+      "structures": [
+        [
+          "骨盆・股骨",
+          "#eee5d3"
+        ],
+        [
+          "肌群／肌腱",
+          "#49bdb4"
+        ],
+        [
+          "關注肌群",
+          "#f2a066"
+        ]
+      ],
+      "camera": [
+        2.647651284670212,
+        0.26456370705311916
+      ],
+      "sha256": {
+        "cover-480.webp": "51658a2d0ae03675bb6f9610c2b6b0d86c2c4c7d9bfbcec97cbb9854fd2406ec",
+        "cover-800.webp": "b75661e7705e2901f60c2bf0bae3481b2cb877386e19468912155d561bcced26",
+        "cover.webp": "beb8b3ffe29f26d9cf2fdd05f2890133ef216a41d501d13e76145bdb04b1133c",
+        "explain.svg": "ea0a7928cc2a61183bcd115490565d40fe0346637d0d6617591ad9530c7bdd8e",
+        "explain.webp": "c1f5ade5e1a7fe3765803355b1e2bf1800c4f388b5d8c7875f565e43e6673348",
+        "og.jpg": "d5249fe2f4d7fd3d24c4836e4b17cd04f3b9920c0f98ee09265c3b488ebccc0b"
+      }
+    },
+    "hiking-is-strength-training": {
+      "slug": "hiking-is-strength-training",
+      "scene": "movement-step",
+      "title": "登山：上坡與下坡的控制",
+      "points": [
+        {
+          "heading": "踏階",
+          "text": "髖、膝與踝協同完成向上移動。"
+        },
+        {
+          "heading": "下坡",
+          "text": "重心下降也需要肌肉控制，不只是往下走。"
+        },
+        {
+          "heading": "行程安排",
+          "text": "路線、負重、體力與休息要一起規劃。"
+        }
+      ],
+      "sourceIds": [
+        "activity"
+      ],
+      "caution": "圖中的階梯為概念模型，不代表特定登山路線或固定關節受力倍數。",
+      "reviewStatus": "clinician-review-pending",
+      "articleTitle": "爬山一點都不容易，它其實是種超級重訓",
+      "category": "sports-injury",
+      "articlePath": "website/src/content/articles/hiking-is-strength-training.md",
+      "articleSha256": "a6ec881d0402792415abc1c7680e2c649b9edb8b0fd462301d825526c30d3b44",
+      "alt": "登山：上坡與下坡的控制的原創 3D 示意；中性訓練人偶、訓練／肌群重點、動作關注区。人偶是動作概念而非處方；關節角度、肌肉外形與器材比例經簡化。",
+      "cover": "/medical-visuals/articles/hiking-is-strength-training/cover.webp",
+      "coverSmall": "/medical-visuals/articles/hiking-is-strength-training/cover-480.webp",
+      "coverMedium": "/medical-visuals/articles/hiking-is-strength-training/cover-800.webp",
+      "figure": "/medical-visuals/articles/hiking-is-strength-training/explain.svg",
+      "figureRaster": "/medical-visuals/articles/hiking-is-strength-training/explain.webp",
+      "og": "/medical-visuals/articles/hiking-is-strength-training/og.jpg",
+      "model": "/medical-visuals/models/movement-step.glb",
+      "poster": "/medical-visuals/models/movement-step.webp",
+      "modelNotes": "人偶是動作概念而非處方；關節角度、肌肉外形與器材比例經簡化。",
+      "structures": [
+        [
+          "中性訓練人偶",
+          "#eee5d3"
+        ],
+        [
+          "訓練／肌群重點",
+          "#49bdb4"
+        ],
+        [
+          "動作關注区",
+          "#f2a066"
+        ]
+      ],
+      "camera": [
+        0.5880026035475675,
+        0.2705497629785729
+      ],
+      "sha256": {
+        "cover-480.webp": "86798d9273914b09adedde6395bab598d1a284e0a216b6678d1b2c0e28bba2af",
+        "cover-800.webp": "16cbb56b7a5be6b7be71dac96683631c70922fac1d325f02adaa66b4afa2c535",
+        "cover.webp": "1106d953f5485e6dc42c876eecff9778e8ed3fcf79f8074e8b5e2ab917417350",
+        "explain.svg": "149ae54933aa39124c3a3ebc93d052e3e692d4145f952d793ffcf271ea33de98",
+        "explain.webp": "07147ba99411404eb6a47bc8361cf1b7f05976a0ead3e9947f4cad1f8e513384",
+        "og.jpg": "21709c18fe533ee275ede031667f680afe50fb9687bba24aeeab22a593049779"
+      }
+    },
+    "how-much-exercise-per-week": {
+      "slug": "how-much-exercise-per-week",
+      "scene": "movement-week",
+      "title": "每週活動：有氧加肌力",
+      "points": [
+        {
+          "heading": "有氧活動",
+          "text": "一般成人每週可朝 150–300 分鐘中等強度活動累積。"
+        },
+        {
+          "heading": "肌力活動",
+          "text": "每週至少 2 天，涵蓋主要肌群。"
+        },
+        {
+          "heading": "從能力出發",
+          "text": "少量活動也有價值，逐漸建立可持續的習慣。"
+        }
+      ],
+      "sourceIds": [
+        "activity"
+      ],
+      "caution": "上述是一般成人指引，不適用於所有病況；兒少與高齡者另有重點。",
+      "reviewStatus": "clinician-review-pending",
+      "articleTitle": "每週動多久，健康沒煩惱？150 分鐘的建議，以及「10 分鐘也算」",
+      "category": "training",
+      "articlePath": "website/src/content/articles/how-much-exercise-per-week.md",
+      "articleSha256": "b35549127ad5b9939bb13ddb621616fd2c2cb2e90e3de61c74cc0379488104f5",
+      "alt": "每週活動：有氧加肌力的原創 3D 示意；中性訓練人偶、訓練／肌群重點、動作關注区。人偶是動作概念而非處方；關節角度、肌肉外形與器材比例經簡化。",
+      "cover": "/medical-visuals/articles/how-much-exercise-per-week/cover.webp",
+      "coverSmall": "/medical-visuals/articles/how-much-exercise-per-week/cover-480.webp",
+      "coverMedium": "/medical-visuals/articles/how-much-exercise-per-week/cover-800.webp",
+      "figure": "/medical-visuals/articles/how-much-exercise-per-week/explain.svg",
+      "figureRaster": "/medical-visuals/articles/how-much-exercise-per-week/explain.webp",
+      "og": "/medical-visuals/articles/how-much-exercise-per-week/og.jpg",
+      "model": "/medical-visuals/models/movement-week.glb",
+      "poster": "/medical-visuals/models/movement-week.webp",
+      "modelNotes": "人偶是動作概念而非處方；關節角度、肌肉外形與器材比例經簡化。",
+      "structures": [
+        [
+          "中性訓練人偶",
+          "#eee5d3"
+        ],
+        [
+          "訓練／肌群重點",
+          "#49bdb4"
+        ],
+        [
+          "動作關注区",
+          "#f2a066"
+        ]
+      ],
+      "camera": [
+        0.5880026035475675,
+        0.2705497629785729
+      ],
+      "sha256": {
+        "cover-480.webp": "fc5cb58aafe732d7f6d307504a326ab353cafe2b1d84595510cd81378b25c113",
+        "cover-800.webp": "d1cd2e170b3ee33d350f63acbc43f6c3de89b89362aa6db527609d8c952e4c30",
+        "cover.webp": "7e192962d8d8fa3b713162d04499c283aeab5275a856fa8dd28bcbd565438c5d",
+        "explain.svg": "7f6f31ebedd62b048c5b8cb9ba5ad25cfbf26d78ff621d8154b79b8583bed978",
+        "explain.webp": "e3556aa64d602afe0bcf6492a7016a36a6781d9bb82a614919f8eb53422f98c9",
+        "og.jpg": "9b57fd92452b9b1aa9f76c69da0ecc8854f364d1f5359a913419de7b5e19fb5d"
+      }
+    },
+    "knee-oa-treatment-options": {
+      "slug": "knee-oa-treatment-options",
+      "scene": "knee-oa",
+      "title": "膝關節炎：結構與功能",
+      "points": [
+        {
+          "heading": "關節表面",
+          "text": "退化可能伴隨軟骨變薄與骨端改變，表現因人而異。"
+        },
+        {
+          "heading": "周邊肌力",
+          "text": "膝部功能也受到肌力、活動與負荷影響。"
+        },
+        {
+          "heading": "共同決策",
+          "text": "治療要整合症狀、功能需求與個別風險。"
+        }
+      ],
+      "sourceIds": [
+        "meniscus",
+        "activity"
+      ],
+      "caution": "橘色只是關注區，不代表疼痛程度；不暗示注射可保證軟骨再生。",
+      "reviewStatus": "clinician-review-pending",
+      "articleTitle": "退化性膝關節炎有哪些治療選項？運動訓練與體重管理為什麼是核心",
+      "category": "sports-injury",
+      "articlePath": "website/src/content/articles/knee-oa-treatment-options.md",
+      "articleSha256": "c28ab03b6ecd28518b118862af98bb9b0a568a6f2b85dff905e7ec03f0cf12ea",
+      "alt": "膝關節炎：結構與功能的原創 3D 示意；股骨・脛骨・腓骨、關節軟骨・半月板、關注區（非分級）。為看清關節內部，髕骨在部分模型中移開；軟骨與間隙放大。不是病人影像。",
+      "cover": "/medical-visuals/articles/knee-oa-treatment-options/cover.webp",
+      "coverSmall": "/medical-visuals/articles/knee-oa-treatment-options/cover-480.webp",
+      "coverMedium": "/medical-visuals/articles/knee-oa-treatment-options/cover-800.webp",
+      "figure": "/medical-visuals/articles/knee-oa-treatment-options/explain.svg",
+      "figureRaster": "/medical-visuals/articles/knee-oa-treatment-options/explain.webp",
+      "og": "/medical-visuals/articles/knee-oa-treatment-options/og.jpg",
+      "model": "/medical-visuals/models/knee-oa.glb",
+      "poster": "/medical-visuals/models/knee-oa.webp",
+      "modelNotes": "為看清關節內部，髕骨在部分模型中移開；軟骨與間隙放大。不是病人影像。",
+      "structures": [
+        [
+          "股骨・脛骨・腓骨",
+          "#eee5d3"
+        ],
+        [
+          "關節軟骨・半月板",
+          "#49bdb4"
+        ],
+        [
+          "關注區（非分級）",
+          "#f2a066"
+        ]
+      ],
+      "camera": [
+        0.49394136891958124,
+        0.26456370705311916
+      ],
+      "sha256": {
+        "cover-480.webp": "2f94f66153203dc8f7162e9744d7cf13c50e93dd8c416c16b1ba68852022d2c3",
+        "cover-800.webp": "e255a97b3cc91611b33c2a4df55bcbb1e48e8325c1b0a897d6281b256533e4ca",
+        "cover.webp": "9df87520a2c2d2fe16e7c77c1634cfcc084231e170b7e4c7a136c71295d8228f",
+        "explain.svg": "9f30bfe15caf585e7013efccca7b8e3bd1b738606ab89402b8b6f00142915249",
+        "explain.webp": "bbbc2d45f4dbcd33a928314bb476225f0db5f1da4d3443ace795d2fb080457a5",
+        "og.jpg": "c7b3ab1a40fcd3d0dcc9085c3437b3ab2d30ab61b0a20800986413a0d7275cf2"
+      }
+    },
+    "knee-pain-diagnosis-first": {
+      "slug": "knee-pain-diagnosis-first",
+      "scene": "knee-overview",
+      "title": "膝痛：先知道哪裡出問題",
+      "points": [
+        {
+          "heading": "骨與軟骨",
+          "text": "骨端關節面只是膝部評估的一部分。"
+        },
+        {
+          "heading": "韌帶與半月板",
+          "text": "不同組織可能出現相似的疼痛或卡住感。"
+        },
+        {
+          "heading": "整體診察",
+          "text": "病史、動作與必要檢查一起判斷，不能只看痛點。"
+        }
+      ],
+      "sourceIds": [
+        "meniscus",
+        "acl"
+      ],
+      "caution": "模型不能定位個人的病灶；原有門診照片與草圖仍保留。",
+      "reviewStatus": "clinician-review-pending",
+      "articleTitle": "膝蓋疼痛，先把診斷弄清楚，而不是直接一針打下去",
+      "category": "sports-injury",
+      "articlePath": "website/src/content/articles/knee-pain-diagnosis-first.md",
+      "articleSha256": "0cce7b5436db6a96a618175ee8cc6a065955f9bdda763e804d2a5199328cdb1c",
+      "alt": "膝痛：先知道哪裡出問題的原創 3D 示意；股骨・脛骨・腓骨、關節軟骨・半月板、關注區（非分級）。為看清關節內部，髕骨在部分模型中移開；軟骨與間隙放大。不是病人影像。",
+      "cover": "/medical-visuals/articles/knee-pain-diagnosis-first/cover.webp",
+      "coverSmall": "/medical-visuals/articles/knee-pain-diagnosis-first/cover-480.webp",
+      "coverMedium": "/medical-visuals/articles/knee-pain-diagnosis-first/cover-800.webp",
+      "figure": "/medical-visuals/articles/knee-pain-diagnosis-first/explain.svg",
+      "figureRaster": "/medical-visuals/articles/knee-pain-diagnosis-first/explain.webp",
+      "og": "/medical-visuals/articles/knee-pain-diagnosis-first/og.jpg",
+      "model": "/medical-visuals/models/knee-overview.glb",
+      "poster": "/medical-visuals/models/knee-overview.webp",
+      "modelNotes": "為看清關節內部，髕骨在部分模型中移開；軟骨與間隙放大。不是病人影像。",
+      "structures": [
+        [
+          "股骨・脛骨・腓骨",
+          "#eee5d3"
+        ],
+        [
+          "關節軟骨・半月板",
+          "#49bdb4"
+        ],
+        [
+          "關注區（非分級）",
+          "#f2a066"
+        ]
+      ],
+      "camera": [
+        0.49394136891958124,
+        0.26456370705311916
+      ],
+      "sha256": {
+        "cover-480.webp": "aba1065365ef1836c02c6ea88b1cc309c15a0e0e7f3966506532fbfce4c5aa67",
+        "cover-800.webp": "e71e11383dbac18e897b63135372d54f60c2c28f322ecd051218c4a67f13fe23",
+        "cover.webp": "0709e153896f925a6bbc2ac57669b8e9f3bf769da65b7b52dffd68d0d9622311",
+        "explain.svg": "9ac5e24f25dccab9007e2a228b92fc83b62efc4ad84be0b74f0bde95348f3ec8",
+        "explain.webp": "9d862c818d7472d89b4f8783737859254ffb2971b84d33c50e466042fcfe05e5",
+        "og.jpg": "06d6409bafe2e1ee77999eef02cb55c389fcd49b891a4ebb4ff29f1f91463032"
+      }
+    },
+    "mcl-sprain-grades": {
+      "slug": "mcl-sprain-grades",
+      "scene": "knee-mcl",
+      "title": "內側副韌帶：膝內側支撐",
+      "points": [
+        {
+          "heading": "內側位置",
+          "text": "MCL 位在膝內側，與外側的腓骨分處不同側。"
+        },
+        {
+          "heading": "連接兩骨",
+          "text": "連接股骨與脛骨，參與抵抗膝部外翻受力。"
+        },
+        {
+          "heading": "傷勢評估",
+          "text": "拉傷程度與穩定性需實際檢查，不能只依腫痛分級。"
+        }
+      ],
+      "sourceIds": [
+        "acl"
+      ],
+      "caution": "圖中不以顏色代替第一、二、三級診斷，也不預設恢復天數。",
+      "reviewStatus": "clinician-review-pending",
+      "articleTitle": "膝內側副韌帶（MCL）拉傷嚴重嗎？三級分法與處理原則",
+      "category": "sports-injury",
+      "articlePath": "website/src/content/articles/mcl-sprain-grades.md",
+      "articleSha256": "b4234b5006a47258d51d89e1f5d6249f9cfbba83b0b13667d8905d68809af0fd",
+      "alt": "內側副韌帶：膝內側支撐的原創 3D 示意；股骨・脛骨・腓骨、關節軟骨・半月板、關注區（非分級）。為看清關節內部，髕骨在部分模型中移開；軟骨與間隙放大。不是病人影像。",
+      "cover": "/medical-visuals/articles/mcl-sprain-grades/cover.webp",
+      "coverSmall": "/medical-visuals/articles/mcl-sprain-grades/cover-480.webp",
+      "coverMedium": "/medical-visuals/articles/mcl-sprain-grades/cover-800.webp",
+      "figure": "/medical-visuals/articles/mcl-sprain-grades/explain.svg",
+      "figureRaster": "/medical-visuals/articles/mcl-sprain-grades/explain.webp",
+      "og": "/medical-visuals/articles/mcl-sprain-grades/og.jpg",
+      "model": "/medical-visuals/models/knee-mcl.glb",
+      "poster": "/medical-visuals/models/knee-mcl.webp",
+      "modelNotes": "為看清關節內部，髕骨在部分模型中移開；軟骨與間隙放大。不是病人影像。",
+      "structures": [
+        [
+          "股骨・脛骨・腓骨",
+          "#eee5d3"
+        ],
+        [
+          "關節軟骨・半月板",
+          "#49bdb4"
+        ],
+        [
+          "關注區（非分級）",
+          "#f2a066"
+        ]
+      ],
+      "camera": [
+        0.49394136891958124,
+        0.26456370705311916
+      ],
+      "sha256": {
+        "cover-480.webp": "a4a392019b8f48ead8363fb834a53c4496babc93311c32b5b93f2b007cd10a68",
+        "cover-800.webp": "d1fbf67512b4ba98612d404dcdc4cea97d719daac2a826b87a530a5fa0be272e",
+        "cover.webp": "704fd62fc9d9f445fae502e19d7a2748415dd2f3165b07ceb6fc3b5ef0ea1746",
+        "explain.svg": "bb2ffac2428bdf281d1bb49b56e24483f3f61f28e195a395262ca7ee48d1c7b1",
+        "explain.webp": "a0c291ede47d495eae2b03a5449fa9c8f2e05cc0c6fcf4ab99d12512961083d0",
+        "og.jpg": "bd726bcec0534908fb61567f563db300126cc1b91cdacaece5203bd516b72406"
+      }
+    },
+    "meal-order-veg-protein-carb": {
+      "slug": "meal-order-veg-protein-carb",
+      "scene": "nutrition-order",
+      "title": "用餐順序：只是其中一環",
+      "points": [
+        {
+          "heading": "蔬菜",
+          "text": "可以從蔬菜開始安排均衡的一餐。"
+        },
+        {
+          "heading": "蛋白質",
+          "text": "與其他食物共同搭配，而不是排除主食。"
+        },
+        {
+          "heading": "主食與份量",
+          "text": "整餐份量、食物種類及用藥同樣重要。"
+        }
+      ],
+      "sourceIds": [
+        "diabetes"
+      ],
+      "caution": "不把纖維畫成腸道保護膜；順序不是保證血糖穩定的唯一條件。",
+      "reviewStatus": "clinician-review-pending",
+      "articleTitle": "進食順序也有差：菜 → 蛋白質 → 飯，讓血糖更穩",
+      "category": "weight-management",
+      "articlePath": "website/src/content/articles/meal-order-veg-protein-carb.md",
+      "articleSha256": "43cd48aa626fb70c862e3a6cbedd74322e9987f2091490e16fa70ebd90afe564",
+      "alt": "用餐順序：只是其中一環的原創 3D 示意；食物／器具示意、飲食與生活、閱讀關注區。餐盤為食物類別示意；沒有代表固定熱量、份量或營養比例。",
+      "cover": "/medical-visuals/articles/meal-order-veg-protein-carb/cover.webp",
+      "coverSmall": "/medical-visuals/articles/meal-order-veg-protein-carb/cover-480.webp",
+      "coverMedium": "/medical-visuals/articles/meal-order-veg-protein-carb/cover-800.webp",
+      "figure": "/medical-visuals/articles/meal-order-veg-protein-carb/explain.svg",
+      "figureRaster": "/medical-visuals/articles/meal-order-veg-protein-carb/explain.webp",
+      "og": "/medical-visuals/articles/meal-order-veg-protein-carb/og.jpg",
+      "model": "/medical-visuals/models/nutrition-order.glb",
+      "poster": "/medical-visuals/models/nutrition-order.webp",
+      "modelNotes": "餐盤為食物類別示意；沒有代表固定熱量、份量或營養比例。",
+      "structures": [
+        [
+          "食物／器具示意",
+          "#eee5d3"
+        ],
+        [
+          "飲食與生活",
+          "#49bdb4"
+        ],
+        [
+          "閱讀關注區",
+          "#f2a066"
+        ]
+      ],
+      "camera": [
+        0.5280744484263596,
+        0.6239016980312335
+      ],
+      "sha256": {
+        "cover-480.webp": "6cef2f16b13192fbbf96ac6c2ea9d95fe4682147890fe088f99bcfcfccac8718",
+        "cover-800.webp": "55277b2a102036069c520eb460511faf8b6e9489149af225327ba73c23d9b832",
+        "cover.webp": "0b0fe723fab14edb7fd42100b453a6fcedbe2cd4d8f22810d028754ab69de527",
+        "explain.svg": "cb3c2e5992f836e56bcc35aa4ae34e28b5edf73999f36542281bfc38d0f7519a",
+        "explain.webp": "2c2111c9037e0d3195fb0d0373ac7c699deab46d63567d11ae4332e002e5b520",
+        "og.jpg": "0c243e9c075644351c339b2b8ec48242de41e349f6da789fda4ae9f8dfdb095c"
+      }
+    },
+    "meniscus-tear-embiid": {
+      "slug": "meniscus-tear-embiid",
+      "scene": "knee-meniscus",
+      "title": "半月板：膝內的纖維軟骨",
+      "points": [
+        {
+          "heading": "兩片半月板",
+          "text": "內、外側各一片，位在股骨與脛骨之間。"
+        },
+        {
+          "heading": "負荷分散",
+          "text": "協助關節承重與穩定，不等於覆蓋骨端的關節軟骨。"
+        },
+        {
+          "heading": "撕裂評估",
+          "text": "位置、型態、症狀與個人需求影響治療選擇。"
+        }
+      ],
+      "sourceIds": [
+        "meniscus"
+      ],
+      "caution": "示意圖不代表任何特定運動員的影像或實際傷勢。",
+      "reviewStatus": "clinician-review-pending",
+      "articleTitle": "半月板撕裂是怎麼造成的？從 Embiid 的膝傷談典型受傷機制",
+      "category": "sports-injury",
+      "articlePath": "website/src/content/articles/meniscus-tear-embiid.md",
+      "articleSha256": "21d9f10edbf0427c90ba909dd4708497477bb498e3d07592dfb03673c81cc230",
+      "alt": "半月板：膝內的纖維軟骨的原創 3D 示意；股骨・脛骨・腓骨、關節軟骨・半月板、關注區（非分級）。為看清關節內部，髕骨在部分模型中移開；軟骨與間隙放大。不是病人影像。",
+      "cover": "/medical-visuals/articles/meniscus-tear-embiid/cover.webp",
+      "coverSmall": "/medical-visuals/articles/meniscus-tear-embiid/cover-480.webp",
+      "coverMedium": "/medical-visuals/articles/meniscus-tear-embiid/cover-800.webp",
+      "figure": "/medical-visuals/articles/meniscus-tear-embiid/explain.svg",
+      "figureRaster": "/medical-visuals/articles/meniscus-tear-embiid/explain.webp",
+      "og": "/medical-visuals/articles/meniscus-tear-embiid/og.jpg",
+      "model": "/medical-visuals/models/knee-meniscus.glb",
+      "poster": "/medical-visuals/models/knee-meniscus.webp",
+      "modelNotes": "為看清關節內部，髕骨在部分模型中移開；軟骨與間隙放大。不是病人影像。",
+      "structures": [
+        [
+          "股骨・脛骨・腓骨",
+          "#eee5d3"
+        ],
+        [
+          "關節軟骨・半月板",
+          "#49bdb4"
+        ],
+        [
+          "關注區（非分級）",
+          "#f2a066"
+        ]
+      ],
+      "camera": [
+        0.49394136891958124,
+        0.26456370705311916
+      ],
+      "sha256": {
+        "cover-480.webp": "fd340cc5272e92abaabe69c301dba85e5f43762e8d75273513c0823ed756019c",
+        "cover-800.webp": "902a65aa71c6aaf6511fbf9911a396cceeb2d8c41edec2c4bf43204a79587917",
+        "cover.webp": "8ef310e2fc87b0dc16aff9563f7b261ddd6c60961e1a478c7ed2a3bb2e45ec9a",
+        "explain.svg": "c6b66efc64581fddf79784214e2075df9b7ea7cde0c80015e2088e0fc29efa30",
+        "explain.webp": "cbc60116ae4477995fe1a3c1fca2d372d22f9ac650831dba9fc34b9dd5152034",
+        "og.jpg": "ade7b05f0fc9f0e778a86efa5642f96bb17250acc042f71f6f535579ad21e292"
+      }
+    },
+    "msk-ultrasound-self-study": {
+      "slug": "msk-ultrasound-self-study",
+      "scene": "assessment-ultrasound",
+      "title": "肌骨超音波：從定位開始",
+      "points": [
+        {
+          "heading": "探頭",
+          "text": "聲波由探頭進出，檢查方向需對照解剖。"
+        },
+        {
+          "heading": "組織層次",
+          "text": "皮膚下有不同軟組織，不能只憑亮暗判讀病灶。"
+        },
+        {
+          "heading": "動態評估",
+          "text": "影像需結合病史、理學檢查及專業操作。"
+        }
+      ],
+      "sourceIds": [
+        "shoulder",
+        "ulnar"
+      ],
+      "caution": "畫面完全是模擬聲束與組織，不是超音波檢查影像。",
+      "reviewStatus": "clinician-review-pending",
+      "articleTitle": "超音波自學大補帖：骨骼肌肉超音波的入門資源整理",
+      "category": "sports-injury",
+      "articlePath": "website/src/content/articles/msk-ultrasound-self-study.md",
+      "articleSha256": "45c85d569123230ab058058726c4ac23a12bcc2d172eafca5defd0007514dd80",
+      "alt": "肌骨超音波：從定位開始的原創 3D 示意；探頭、模擬聲束、組織層示意。模擬聲束與組織剖面，完全不是超音波掃描畫面。",
+      "cover": "/medical-visuals/articles/msk-ultrasound-self-study/cover.webp",
+      "coverSmall": "/medical-visuals/articles/msk-ultrasound-self-study/cover-480.webp",
+      "coverMedium": "/medical-visuals/articles/msk-ultrasound-self-study/cover-800.webp",
+      "figure": "/medical-visuals/articles/msk-ultrasound-self-study/explain.svg",
+      "figureRaster": "/medical-visuals/articles/msk-ultrasound-self-study/explain.webp",
+      "og": "/medical-visuals/articles/msk-ultrasound-self-study/og.jpg",
+      "model": "/medical-visuals/models/assessment-ultrasound.glb",
+      "poster": "/medical-visuals/models/assessment-ultrasound.webp",
+      "modelNotes": "模擬聲束與組織剖面，完全不是超音波掃描畫面。",
+      "structures": [
+        [
+          "探頭",
+          "#eee5d3"
+        ],
+        [
+          "模擬聲束",
+          "#49bdb4"
+        ],
+        [
+          "組織層示意",
+          "#bb7564"
+        ]
+      ],
+      "camera": [
+        0.49394136891958124,
+        0.32652137675065274
+      ],
+      "sha256": {
+        "cover-480.webp": "08c2d554a7be711d1422e54b7e744c62d7450ce469b871772cc8d2bd9dc6beda",
+        "cover-800.webp": "951a06f6856698b1db887fbdb1389d8b74ce9b3fa715ac407dc4699deb32f17e",
+        "cover.webp": "111bee3907cd9934c3a3d62f0e3f2d98933cb76f4040a0d752613e44bf5c9aa8",
+        "explain.svg": "628600bf8820d7d826c5bf657347bbeba5864b5237929816fde18d0b65ea7fff",
+        "explain.webp": "8e63b4a8b9bfc1b5c945a2b3c00e85717db33893e052706389df4791071ea6ba",
+        "og.jpg": "a9a7f074171a80281bd537e77d073d715f878c5d3071417ccc58cd652ba1ef08"
+      }
+    },
+    "numbness-nerve-hydrodissection": {
+      "slug": "numbness-nerve-hydrodissection",
+      "scene": "elbow-ulnar",
+      "title": "手麻：以尺神經為例",
+      "points": [
+        {
+          "heading": "肘內側",
+          "text": "尺神經經過肘部內側附近的通道。"
+        },
+        {
+          "heading": "神經走向",
+          "text": "壓迫可能影響前臂與手部感覺；分布需實際檢查。"
+        },
+        {
+          "heading": "治療評估",
+          "text": "先釐清原因，再決定活動調整、復健或其他處理。"
+        }
+      ],
+      "sourceIds": [
+        "ulnar"
+      ],
+      "caution": "本圖不顯示穿刺路徑；神經解套須由合格醫療人員評估與施作。",
+      "reviewStatus": "clinician-review-pending",
+      "articleTitle": "痠、麻、痛：睡午覺起來手麻是怎麼回事？認識神經壓迫與神經解套注射",
+      "category": "sports-injury",
+      "articlePath": "website/src/content/articles/numbness-nerve-hydrodissection.md",
+      "articleSha256": "84aac557f4383b681e710cfe61e6075c1a91518749a0179f0f866566290cfb5c",
+      "alt": "手麻：以尺神經為例的原創 3D 示意；骨骼、肌腱／韌帶、神經或關注區。神經與軟組織為放大的走向示意；不提供注射或手術定位。",
+      "cover": "/medical-visuals/articles/numbness-nerve-hydrodissection/cover.webp",
+      "coverSmall": "/medical-visuals/articles/numbness-nerve-hydrodissection/cover-480.webp",
+      "coverMedium": "/medical-visuals/articles/numbness-nerve-hydrodissection/cover-800.webp",
+      "figure": "/medical-visuals/articles/numbness-nerve-hydrodissection/explain.svg",
+      "figureRaster": "/medical-visuals/articles/numbness-nerve-hydrodissection/explain.webp",
+      "og": "/medical-visuals/articles/numbness-nerve-hydrodissection/og.jpg",
+      "model": "/medical-visuals/models/elbow-ulnar.glb",
+      "poster": "/medical-visuals/models/elbow-ulnar.webp",
+      "modelNotes": "神經與軟組織為放大的走向示意；不提供注射或手術定位。",
+      "structures": [
+        [
+          "骨骼",
+          "#eee5d3"
+        ],
+        [
+          "肌腱／韌帶",
+          "#49bdb4"
+        ],
+        [
+          "神經或關注區",
+          "#edc877"
+        ]
+      ],
+      "camera": [
+        0.40489178628508343,
+        0.2568139174208071
+      ],
+      "sha256": {
+        "cover-480.webp": "d6ee8f923aa2d323c3ca6516ec410927e7369ae7a06dae29ea06e60b6841ef44",
+        "cover-800.webp": "5f0d956e0027cd4661f7d92c808ad758418d84621fe19c1ea395c3a5ce8e6bc0",
+        "cover.webp": "9d7b16bc9b022e31dc45fc7ed67cca5564ff2ffaa70e1b98e5ca06be9e28409e",
+        "explain.svg": "40c3061a3ab3ca4d0244239a300f5378b97589e9e015b1c62618a449c6021ffd",
+        "explain.webp": "f72f0132fcbc7cd1371e99636d8476ecaa368edf0f1a2817dde4cee2650b67ff",
+        "og.jpg": "9c630d6f1d2e3c51ada56fbc58f222d0ec63e91caf8cc46516cdc1abb90d2c51"
+      }
+    },
+    "painkillers-headache-menstrual": {
+      "slug": "painkillers-headache-menstrual",
+      "scene": "safety-medication",
+      "title": "止痛藥：先讀成分",
+      "points": [
+        {
+          "heading": "成分名稱",
+          "text": "不同商品可能含相同成分，不能只看包裝。"
+        },
+        {
+          "heading": "避免重複",
+          "text": "成藥、感冒藥與處方藥需一起核對。"
+        },
+        {
+          "heading": "個別安全",
+          "text": "病史、其他用藥與症狀會影響選擇，請諮詢醫藥人員。"
+        }
+      ],
+      "sourceIds": [
+        "painmedicine"
+      ],
+      "caution": "本圖不提供通用劑量；突發劇烈或異常頭痛應及時就醫。",
+      "reviewStatus": "clinician-review-pending",
+      "articleTitle": "頭痛、經痛怎麼選止痛藥？普拿疼、布洛芬與其他選項",
+      "category": "sports-injury",
+      "articlePath": "website/src/content/articles/painkillers-headache-menstrual.md",
+      "articleSha256": "f2de767bbdd99ab0dbe8c8f22eba51121b6314108298afb60e900810ab50ba56",
+      "alt": "止痛藥：先讀成分的原創 3D 示意；藥品／資料概念、核對資訊、需要留意。藥品外觀純屬概念，不對應真實品項、劑量或使用方式。",
+      "cover": "/medical-visuals/articles/painkillers-headache-menstrual/cover.webp",
+      "coverSmall": "/medical-visuals/articles/painkillers-headache-menstrual/cover-480.webp",
+      "coverMedium": "/medical-visuals/articles/painkillers-headache-menstrual/cover-800.webp",
+      "figure": "/medical-visuals/articles/painkillers-headache-menstrual/explain.svg",
+      "figureRaster": "/medical-visuals/articles/painkillers-headache-menstrual/explain.webp",
+      "og": "/medical-visuals/articles/painkillers-headache-menstrual/og.jpg",
+      "model": "/medical-visuals/models/safety-medication.glb",
+      "poster": "/medical-visuals/models/safety-medication.webp",
+      "modelNotes": "藥品外觀純屬概念，不對應真實品項、劑量或使用方式。",
+      "structures": [
+        [
+          "藥品／資料概念",
+          "#eee5d3"
+        ],
+        [
+          "核對資訊",
+          "#49bdb4"
+        ],
+        [
+          "需要留意",
+          "#f2a066"
+        ]
+      ],
+      "camera": [
+        0.5191461142465229,
+        0.35622947615187256
+      ],
+      "sha256": {
+        "cover-480.webp": "2577be8c7e044286b83f2b07e839363fd219770470b50c072205653f43c5410b",
+        "cover-800.webp": "7c14a1d69a1bc746a658cfd66085642d1c48ff37851892ac2ea9012184074180",
+        "cover.webp": "d27de499e0c3c1c31a8a9af942eb8c38cac32d466025cb2b5f394f8343df2dd4",
+        "explain.svg": "355d89cfba789df4cbe089273329be0c2f3f04998a5c926cf9c7f17f81673cfb",
+        "explain.webp": "55a3f11c091073def0740b827ed976e23268030d6f0badcfce200d1939884aae",
+        "og.jpg": "13b84b72b53c7725906b891fea5adebf713505e85d6a4e034687cb472763e1c2"
+      }
+    },
+    "pes-anserine-bursitis": {
+      "slug": "pes-anserine-bursitis",
+      "scene": "knee-pes",
+      "title": "鵝掌區：在膝內側下方",
+      "points": [
+        {
+          "heading": "三條肌腱",
+          "text": "縫匠肌、股薄肌與半腱肌的肌腱匯向脛骨內側。"
+        },
+        {
+          "heading": "鵝掌滑囊",
+          "text": "在肌腱與深層組織間，協助減少摩擦。"
+        },
+        {
+          "heading": "相似症狀",
+          "text": "此區疼痛也需與內側韌帶、半月板等問題區分。"
+        }
+      ],
+      "sourceIds": [
+        "pes"
+      ],
+      "caution": "位置為簡化示意；鵝掌肌腱問題與滑囊發炎不能只憑痛點混為一談。",
+      "reviewStatus": "clinician-review-pending",
+      "articleTitle": "內側膝蓋痛，不一定是退化性關節炎：認識鵝掌肌腱炎",
+      "category": "sports-injury",
+      "articlePath": "website/src/content/articles/pes-anserine-bursitis.md",
+      "articleSha256": "1cb88e6c64cd12133545260c29afbb3a261fa77d2b4373037b2b27536c4aa923",
+      "alt": "鵝掌區：在膝內側下方的原創 3D 示意；股骨・脛骨・腓骨、關節軟骨・半月板、關注區（非分級）。為看清關節內部，髕骨在部分模型中移開；軟骨與間隙放大。不是病人影像。",
+      "cover": "/medical-visuals/articles/pes-anserine-bursitis/cover.webp",
+      "coverSmall": "/medical-visuals/articles/pes-anserine-bursitis/cover-480.webp",
+      "coverMedium": "/medical-visuals/articles/pes-anserine-bursitis/cover-800.webp",
+      "figure": "/medical-visuals/articles/pes-anserine-bursitis/explain.svg",
+      "figureRaster": "/medical-visuals/articles/pes-anserine-bursitis/explain.webp",
+      "og": "/medical-visuals/articles/pes-anserine-bursitis/og.jpg",
+      "model": "/medical-visuals/models/knee-pes.glb",
+      "poster": "/medical-visuals/models/knee-pes.webp",
+      "modelNotes": "為看清關節內部，髕骨在部分模型中移開；軟骨與間隙放大。不是病人影像。",
+      "structures": [
+        [
+          "股骨・脛骨・腓骨",
+          "#eee5d3"
+        ],
+        [
+          "關節軟骨・半月板",
+          "#49bdb4"
+        ],
+        [
+          "關注區（非分級）",
+          "#f2a066"
+        ]
+      ],
+      "camera": [
+        0.49394136891958124,
+        0.26456370705311916
+      ],
+      "sha256": {
+        "cover-480.webp": "9446e546a5f6fdf970d9e43a1aeb15c5e45e044b88db58cec776987de82264b5",
+        "cover-800.webp": "7cded7443ec72261f0ad9f60846253c1fdd8a4ec36d19521b197304e9c3ec961",
+        "cover.webp": "6910764ebd864620ff1c5b37bfaa8d3709f136cd0c0568c737cf069a17fd28c6",
+        "explain.svg": "e96f217105316574e6c0ccbf5bc5bb14689154a25d4592a8d8e133299bef9fbd",
+        "explain.webp": "0f080c15304732293e92b2574d8e35c65b3464fa2126acbcd06816ac4c8ecf6e",
+        "og.jpg": "082f879288487076a070aa2666a5016a6b9fa4720124061ced10588668ddf501"
+      }
+    },
+    "pickleball-injury-risks": {
+      "slug": "pickleball-injury-risks",
+      "scene": "elbow-tendon",
+      "title": "匹克球：上肢也要準備",
+      "points": [
+        {
+          "heading": "肘部骨點",
+          "text": "肌腱附著於骨骼周邊，是受力傳遞的一環。"
+        },
+        {
+          "heading": "前臂伸肌",
+          "text": "反覆握拍與揮拍可能增加相關組織負荷。"
+        },
+        {
+          "heading": "全身準備",
+          "text": "除了上肢，步伐、平衡與跌倒風險也要一起注意。"
+        }
+      ],
+      "sourceIds": [
+        "activity"
+      ],
+      "caution": "本圖只聚焦肘部；腕部骨折、踝傷等仍需個別評估。",
+      "reviewStatus": "clinician-review-pending",
+      "articleTitle": "匹克球看似溫和，其實暗藏風險：常見傷害與安全打法",
+      "category": "sports-injury",
+      "articlePath": "website/src/content/articles/pickleball-injury-risks.md",
+      "articleSha256": "93a00035780ec320293b09b96218121ee6188601ad2cab3c466bcce89de253c8",
+      "alt": "匹克球：上肢也要準備的原創 3D 示意；骨骼、肌腱／韌帶、神經或關注區。神經與軟組織為放大的走向示意；不提供注射或手術定位。",
+      "cover": "/medical-visuals/articles/pickleball-injury-risks/cover.webp",
+      "coverSmall": "/medical-visuals/articles/pickleball-injury-risks/cover-480.webp",
+      "coverMedium": "/medical-visuals/articles/pickleball-injury-risks/cover-800.webp",
+      "figure": "/medical-visuals/articles/pickleball-injury-risks/explain.svg",
+      "figureRaster": "/medical-visuals/articles/pickleball-injury-risks/explain.webp",
+      "og": "/medical-visuals/articles/pickleball-injury-risks/og.jpg",
+      "model": "/medical-visuals/models/elbow-tendon.glb",
+      "poster": "/medical-visuals/models/elbow-tendon.webp",
+      "modelNotes": "神經與軟組織為放大的走向示意；不提供注射或手術定位。",
+      "structures": [
+        [
+          "骨骼",
+          "#eee5d3"
+        ],
+        [
+          "肌腱／韌帶",
+          "#49bdb4"
+        ],
+        [
+          "神經或關注區",
+          "#f2a066"
+        ]
+      ],
+      "camera": [
+        0.40489178628508343,
+        0.2568139174208071
+      ],
+      "sha256": {
+        "cover-480.webp": "bac0e5d39806f570207645fd7496d5f74c87a2a5411548f72b75a2c6ae4114c7",
+        "cover-800.webp": "878963ab07f46f5f7e39750c61d5c547bdfc4c053618242d5ac1fe36194454b3",
+        "cover.webp": "c0493345130511ec1b861a903ec48cadb6a388109610d87d811375cdf55ef529",
+        "explain.svg": "aec5f3ebd2f9adf08ecec7e6e8815b5b024c5090fc9f48a9e598368ab74009be",
+        "explain.webp": "b466677698254306af51e86ec651d6a5d708d18be8cc81325ee822c4a97bf8be",
+        "og.jpg": "4eb9382a5629ee0ad7b469ec8c5ec2dd814a0ff71c6be622d5054f5ba85ebfcb"
+      }
+    },
+    "plantar-fasciitis-morning-heel-pain": {
+      "slug": "plantar-fasciitis-morning-heel-pain",
+      "scene": "plantar-fascia",
+      "title": "足底筋膜：腳跟到前足",
+      "points": [
+        {
+          "heading": "跟骨",
+          "text": "足底筋膜由腳跟附近向前延伸。"
+        },
+        {
+          "heading": "筋膜扇形束",
+          "text": "沿足底延展，參與支撐足弓。"
+        },
+        {
+          "heading": "疼痛線索",
+          "text": "晨起第一步痛是常見表現，但仍需排除其他原因。"
+        }
+      ],
+      "sourceIds": [
+        "foot"
+      ],
+      "caution": "骨刺不等於疼痛原因；不依單一症狀自行確診。",
+      "reviewStatus": "clinician-review-pending",
+      "articleTitle": "早上第一步腳跟痛到不行？認識足底筋膜炎與可以做的訓練",
+      "category": "sports-injury",
+      "articlePath": "website/src/content/articles/plantar-fasciitis-morning-heel-pain.md",
+      "articleSha256": "56c77d93cdfb47a685bf3384952d538a33b5d158c3e1a06a5476e51be599d4da",
+      "alt": "足底筋膜：腳跟到前足的原創 3D 示意；脛骨・腓骨・足骨、肌腱／筋膜、關注區（非分級）。足部為開放式結構示意；骨形、筋膜厚度與附著範圍經簡化。",
+      "cover": "/medical-visuals/articles/plantar-fasciitis-morning-heel-pain/cover.webp",
+      "coverSmall": "/medical-visuals/articles/plantar-fasciitis-morning-heel-pain/cover-480.webp",
+      "coverMedium": "/medical-visuals/articles/plantar-fasciitis-morning-heel-pain/cover-800.webp",
+      "figure": "/medical-visuals/articles/plantar-fasciitis-morning-heel-pain/explain.svg",
+      "figureRaster": "/medical-visuals/articles/plantar-fasciitis-morning-heel-pain/explain.webp",
+      "og": "/medical-visuals/articles/plantar-fasciitis-morning-heel-pain/og.jpg",
+      "model": "/medical-visuals/models/plantar-fascia.glb",
+      "poster": "/medical-visuals/models/plantar-fascia.webp",
+      "modelNotes": "足部為開放式結構示意；骨形、筋膜厚度與附著範圍經簡化。",
+      "structures": [
+        [
+          "脛骨・腓骨・足骨",
+          "#eee5d3"
+        ],
+        [
+          "肌腱／筋膜",
+          "#49bdb4"
+        ],
+        [
+          "關注區（非分級）",
+          "#f2a066"
+        ]
+      ],
+      "camera": [
+        0.6747409422235526,
+        -0.3379134479187735
+      ],
+      "sha256": {
+        "cover-480.webp": "b6be28ab1ca39f10b469bbeccb9555f763678beb4d982bcb6c8145c06b18fde5",
+        "cover-800.webp": "257a4a72ed975055c4be0a3dabb0a24c213ed68f7d785e631615dcba9418fdbf",
+        "cover.webp": "4948ea0c74770528b6fe52916c3967ab221068e06174e807853f97ee22b11fb6",
+        "explain.svg": "b86781b4f7341d072aa5e5aab62bfb6390bdb014cf3a4280ba7359bd99d51e35",
+        "explain.webp": "d62a3a60de559c2bcdd0a1bfba111deeea2450976bb8ad864d27a39cee5a5a4c",
+        "og.jpg": "23b876f1c59df9677d5e2c2ced77148f138f9135403acf977725977f25fd7434"
+      }
+    },
+    "quick-weight-loss-pill-bags": {
+      "slug": "quick-weight-loss-pill-bags",
+      "scene": "safety-weightpills",
+      "title": "減重藥袋：來路與成分要清楚",
+      "points": [
+        {
+          "heading": "核對來源",
+          "text": "確認提供者、完整藥名與使用說明。"
+        },
+        {
+          "heading": "別追求極速",
+          "text": "體重變化不等於脂肪變化，也可能涉及水分與肌肉。"
+        },
+        {
+          "heading": "安全追蹤",
+          "text": "出現不適或對成分不清楚，請先詢問醫師或藥師。"
+        }
+      ],
+      "sourceIds": [
+        "medication",
+        "weight"
+      ],
+      "caution": "不提供減重藥混搭方式、利尿或瀉藥操作，也不承諾快速減重。",
+      "reviewStatus": "clinician-review-pending",
+      "articleTitle": "醫師悄悄話：那些「兩週減十公斤」的藥袋裡裝了什麼",
+      "category": "weight-management",
+      "articlePath": "website/src/content/articles/quick-weight-loss-pill-bags.md",
+      "articleSha256": "a82976f1673af6be91085ddb65a0eed2e455f99dedca3b6046bb74d9607c6e48",
+      "alt": "減重藥袋：來路與成分要清楚的原創 3D 示意；藥品／資料概念、核對資訊、需要留意。藥品外觀純屬概念，不對應真實品項、劑量或使用方式。",
+      "cover": "/medical-visuals/articles/quick-weight-loss-pill-bags/cover.webp",
+      "coverSmall": "/medical-visuals/articles/quick-weight-loss-pill-bags/cover-480.webp",
+      "coverMedium": "/medical-visuals/articles/quick-weight-loss-pill-bags/cover-800.webp",
+      "figure": "/medical-visuals/articles/quick-weight-loss-pill-bags/explain.svg",
+      "figureRaster": "/medical-visuals/articles/quick-weight-loss-pill-bags/explain.webp",
+      "og": "/medical-visuals/articles/quick-weight-loss-pill-bags/og.jpg",
+      "model": "/medical-visuals/models/safety-weightpills.glb",
+      "poster": "/medical-visuals/models/safety-weightpills.webp",
+      "modelNotes": "藥品外觀純屬概念，不對應真實品項、劑量或使用方式。",
+      "structures": [
+        [
+          "藥品／資料概念",
+          "#eee5d3"
+        ],
+        [
+          "核對資訊",
+          "#49bdb4"
+        ],
+        [
+          "需要留意",
+          "#f2a066"
+        ]
+      ],
+      "camera": [
+        0.5191461142465229,
+        0.35622947615187256
+      ],
+      "sha256": {
+        "cover-480.webp": "11b7c76679428e526c5d6745ab639bc3c2f1c16ee0eb94939801333173f41a1f",
+        "cover-800.webp": "9d24c7f887ab6fb72a7b48e3032b88e868f493f70fe65a3c4b5ac9ffa947f491",
+        "cover.webp": "1f09efdd39b305ecdd604fbec540a097430ac9c3403cd442527aaca3bcf95cfc",
+        "explain.svg": "861d08828f3b08250bb095f059260e67158431b0eefe3e0c17907613d54c8238",
+        "explain.webp": "6715bda6d5a11858911ef9baff6d8cd6ed623a27d12aae503e2f4f24d6ce9708",
+        "og.jpg": "55f06dc8b4b3114338dcf14fcdb6a59210941ee03c54b9480f962b41dc3d203a"
+      }
+    },
+    "rotator-cuff-housework": {
+      "slug": "rotator-cuff-housework",
+      "scene": "shoulder-cuff",
+      "title": "旋轉肌袖：肩部的協同",
+      "points": [
+        {
+          "heading": "肩胛骨與肱骨",
+          "text": "骨性結構是肩部動作的基礎。"
+        },
+        {
+          "heading": "旋轉肌袖",
+          "text": "四條肌肉及其肌腱共同參與抬手與旋轉。"
+        },
+        {
+          "heading": "肩峰下空間",
+          "text": "反覆負荷與軟組織問題需結合症狀評估。"
+        }
+      ],
+      "sourceIds": [
+        "shoulder"
+      ],
+      "caution": "圖中特別呈現棘上肌腱；不代表所有肩痛都是肌袖撕裂。",
+      "reviewStatus": "clinician-review-pending",
+      "articleTitle": "做家事肩膀痛？小心旋轉肌袖問題",
+      "category": "sports-injury",
+      "articlePath": "website/src/content/articles/rotator-cuff-housework.md",
+      "articleSha256": "a3095328dd4737c01d3dca9efac4b34286028fa0d683255c5c21309b39340173",
+      "alt": "旋轉肌袖：肩部的協同的原創 3D 示意；肩胛骨・肱骨、肌腱／關節囊、關注區（非分級）。肩胛骨與軟組織採開放式、簡化呈現；色彩只標出閱讀焦點。",
+      "cover": "/medical-visuals/articles/rotator-cuff-housework/cover.webp",
+      "coverSmall": "/medical-visuals/articles/rotator-cuff-housework/cover-480.webp",
+      "coverMedium": "/medical-visuals/articles/rotator-cuff-housework/cover-800.webp",
+      "figure": "/medical-visuals/articles/rotator-cuff-housework/explain.svg",
+      "figureRaster": "/medical-visuals/articles/rotator-cuff-housework/explain.webp",
+      "og": "/medical-visuals/articles/rotator-cuff-housework/og.jpg",
+      "model": "/medical-visuals/models/shoulder-cuff.glb",
+      "poster": "/medical-visuals/models/shoulder-cuff.webp",
+      "modelNotes": "肩胛骨與軟組織採開放式、簡化呈現；色彩只標出閱讀焦點。",
+      "structures": [
+        [
+          "肩胛骨・肱骨",
+          "#eee5d3"
+        ],
+        [
+          "肌腱／關節囊",
+          "#49bdb4"
+        ],
+        [
+          "關注區（非分級）",
+          "#f2a066"
+        ]
+      ],
+      "camera": [
+        0.5191461142465229,
+        0.3006848912268313
+      ],
+      "sha256": {
+        "cover-480.webp": "e5c96b3c2741004b73d021f3eb7422cf3989aac259e3f256e7fe42b9871d316a",
+        "cover-800.webp": "346f2aa7313848ebb5cb102e80c6e6dd47bf8511173bbb3d628886bd1508175d",
+        "cover.webp": "8da6f5dcd08887737e40df9c00a6d0064ef66e16b1239eae3b4a67a7c4e4b38e",
+        "explain.svg": "32eebad62afdd210a3f3a8d0d17076f916eb565fc50ffe0ebaf2056da209738d",
+        "explain.webp": "f6a240b9437c90d9da28ac379a2f3deac970a93e756daa197a114ef5fff35d42",
+        "og.jpg": "99d79b724ae93a2c46eb3965736adf90d9a949bafe113af30bfbff93f66a0078"
+      }
+    },
+    "runners-knee-and-patellar-strap": {
+      "slug": "runners-knee-and-patellar-strap",
+      "scene": "knee-patellar",
+      "title": "膝前痛：先分清位置",
+      "points": [
+        {
+          "heading": "髕股區域",
+          "text": "髕骨與股骨之間的區域可能出現疼痛。"
+        },
+        {
+          "heading": "髕骨肌腱",
+          "text": "位在髕骨下方，連接至脛骨，與前者不同。"
+        },
+        {
+          "heading": "依原因處理",
+          "text": "護具是否合適需看診斷、負荷與個人反應。"
+        }
+      ],
+      "sourceIds": [
+        "meniscus",
+        "activity"
+      ],
+      "caution": "髕股疼痛與髕腱病不能當成同一種病；髕骨帶不是通用解方。",
+      "reviewStatus": "clinician-review-pending",
+      "articleTitle": "跑者膝是什麼？從 Curry 的傷勢談膝前疼痛與髕骨帶",
+      "category": "sports-injury",
+      "articlePath": "website/src/content/articles/runners-knee-and-patellar-strap.md",
+      "articleSha256": "1f8c4a9e837464d05a6a1bcba8feb928c647026a5ab1152b0695be69226fe69b",
+      "alt": "膝前痛：先分清位置的原創 3D 示意；股骨・脛骨・腓骨、關節軟骨・半月板、關注區（非分級）。為看清關節內部，髕骨在部分模型中移開；軟骨與間隙放大。不是病人影像。",
+      "cover": "/medical-visuals/articles/runners-knee-and-patellar-strap/cover.webp",
+      "coverSmall": "/medical-visuals/articles/runners-knee-and-patellar-strap/cover-480.webp",
+      "coverMedium": "/medical-visuals/articles/runners-knee-and-patellar-strap/cover-800.webp",
+      "figure": "/medical-visuals/articles/runners-knee-and-patellar-strap/explain.svg",
+      "figureRaster": "/medical-visuals/articles/runners-knee-and-patellar-strap/explain.webp",
+      "og": "/medical-visuals/articles/runners-knee-and-patellar-strap/og.jpg",
+      "model": "/medical-visuals/models/knee-patellar.glb",
+      "poster": "/medical-visuals/models/knee-patellar.webp",
+      "modelNotes": "為看清關節內部，髕骨在部分模型中移開；軟骨與間隙放大。不是病人影像。",
+      "structures": [
+        [
+          "股骨・脛骨・腓骨",
+          "#eee5d3"
+        ],
+        [
+          "關節軟骨・半月板",
+          "#49bdb4"
+        ],
+        [
+          "關注區（非分級）",
+          "#f2a066"
+        ]
+      ],
+      "camera": [
+        0.49394136891958124,
+        0.26456370705311916
+      ],
+      "sha256": {
+        "cover-480.webp": "3c9a233c4275fedfd8d4d982aea25b406938ddeffd5fd6d8b1c6c7756285356b",
+        "cover-800.webp": "6219945302e1ab5a7c33332c61b05041eb9b98d1a8d712ad2a27bb4a5bc65fda",
+        "cover.webp": "8ade6e5821300b7359613cde90a742ab52151c09e9f0f2fc47941903b1a91973",
+        "explain.svg": "4af9d4a75c4e00cd51bbb41ba6b25d1f73f738e4472feec32e53e58a9f36fa98",
+        "explain.webp": "8cb43d8b7f7b74a6ace6dcab563616f70a8d1633832a31103b8912d299798ba0",
+        "og.jpg": "7e68cdf80a349c3f8e5e83f1dbf7e35306d25e0a36503ca23c20377a95a20083"
+      }
+    },
+    "runners-need-strength": {
+      "slug": "runners-need-strength",
+      "scene": "movement-running",
+      "title": "跑者肌力：把控制補起來",
+      "points": [
+        {
+          "heading": "髖部控制",
+          "text": "讓髖與軀幹一起參與動作。"
+        },
+        {
+          "heading": "膝踝協作",
+          "text": "練習肌力、平衡與可控制的落地。"
+        },
+        {
+          "heading": "負荷搭配",
+          "text": "跑量、肌力訓練與恢復需整體安排。"
+        }
+      ],
+      "sourceIds": [
+        "activity"
+      ],
+      "caution": "人偶不呈現實際受力數值，也不保證做某一動作就不會受傷。",
+      "reviewStatus": "clinician-review-pending",
+      "articleTitle": "週跑 40K 卻避開肌力？跑者最該補的幾個訓練",
+      "category": "training",
+      "articlePath": "website/src/content/articles/runners-need-strength.md",
+      "articleSha256": "e69dd135472a218a376f3dd77ac9a2b6535ee5bedb901c4a69ff7e9e09ee0e94",
+      "alt": "跑者肌力：把控制補起來的原創 3D 示意；中性訓練人偶、訓練／肌群重點、動作關注区。人偶是動作概念而非處方；關節角度、肌肉外形與器材比例經簡化。",
+      "cover": "/medical-visuals/articles/runners-need-strength/cover.webp",
+      "coverSmall": "/medical-visuals/articles/runners-need-strength/cover-480.webp",
+      "coverMedium": "/medical-visuals/articles/runners-need-strength/cover-800.webp",
+      "figure": "/medical-visuals/articles/runners-need-strength/explain.svg",
+      "figureRaster": "/medical-visuals/articles/runners-need-strength/explain.webp",
+      "og": "/medical-visuals/articles/runners-need-strength/og.jpg",
+      "model": "/medical-visuals/models/movement-running.glb",
+      "poster": "/medical-visuals/models/movement-running.webp",
+      "modelNotes": "人偶是動作概念而非處方；關節角度、肌肉外形與器材比例經簡化。",
+      "structures": [
+        [
+          "中性訓練人偶",
+          "#eee5d3"
+        ],
+        [
+          "訓練／肌群重點",
+          "#49bdb4"
+        ],
+        [
+          "動作關注区",
+          "#f2a066"
+        ]
+      ],
+      "camera": [
+        0.5880026035475675,
+        0.2705497629785729
+      ],
+      "sha256": {
+        "cover-480.webp": "909b795d9b5b075807121726fc752f308b8a93695cdaadb8dd4cb30df9ac836d",
+        "cover-800.webp": "60843aec9a0d3bc904bab9402c98ba81c399c988ad868f0ac683b6caa58cdbc5",
+        "cover.webp": "f32b697806bb2543212e0c66ee7c5c1bf09366cc7d8d6ab1bda9431fd1e3ca5c",
+        "explain.svg": "ab0526d93e98ed1959b540c75b459d621d69cbe3443b3703a0445e30421ccada",
+        "explain.webp": "14046f8dd5e1e58cb43b77cae5dfe6dcf5a4c9966232348de1f040320effec3f",
+        "og.jpg": "776196d94d6e23d8cd5d0a4aefd82b58a58b80f870f56bb8f3e7eef4d3dee4e2"
+      }
+    },
+    "sideline-doctor-abcde": {
+      "slug": "sideline-doctor-abcde",
+      "scene": "assessment-abcde",
+      "title": "場邊評估：先處理危急狀況",
+      "points": [
+        {
+          "heading": "先求援",
+          "text": "確認現場安全並啟動緊急應變。"
+        },
+        {
+          "heading": "系統評估",
+          "text": "由受訓人員以 ABCDE 等架構持續評估。"
+        },
+        {
+          "heading": "再決定處置",
+          "text": "生命威脅優先；後續轉送與回場由專業團隊判斷。"
+        }
+      ],
+      "sourceIds": [
+        "concussion"
+      ],
+      "caution": "ABCDE：Airway、Breathing、Circulation、Disability、Exposure；不是自行復位指南。",
+      "reviewStatus": "clinician-review-pending",
+      "articleTitle": "我也想當場邊醫師，第一步該準備什麼？賽場外傷評估的基礎",
+      "category": "sports-injury",
+      "articlePath": "website/src/content/articles/sideline-doctor-abcde.md",
+      "articleSha256": "b115478b859c767c502ce4587f03d979633fe0891f7bb2ef183e687566398a30",
+      "alt": "場邊評估：先處理危急狀況的原創 3D 示意；評估人偶、呼吸循環等初評、持續再評估。供受訓團隊理解系統性評估概念，非完整急救演算法或徒手操作指南。",
+      "cover": "/medical-visuals/articles/sideline-doctor-abcde/cover.webp",
+      "coverSmall": "/medical-visuals/articles/sideline-doctor-abcde/cover-480.webp",
+      "coverMedium": "/medical-visuals/articles/sideline-doctor-abcde/cover-800.webp",
+      "figure": "/medical-visuals/articles/sideline-doctor-abcde/explain.svg",
+      "figureRaster": "/medical-visuals/articles/sideline-doctor-abcde/explain.webp",
+      "og": "/medical-visuals/articles/sideline-doctor-abcde/og.jpg",
+      "model": "/medical-visuals/models/assessment-abcde.glb",
+      "poster": "/medical-visuals/models/assessment-abcde.webp",
+      "modelNotes": "供受訓團隊理解系統性評估概念，非完整急救演算法或徒手操作指南。",
+      "structures": [
+        [
+          "評估人偶",
+          "#eee5d3"
+        ],
+        [
+          "呼吸循環等初評",
+          "#49bdb4"
+        ],
+        [
+          "持續再評估",
+          "#f2a066"
+        ]
+      ],
+      "camera": [
+        0.49394136891958124,
+        0.32652137675065274
+      ],
+      "sha256": {
+        "cover-480.webp": "5a8cadf20306544161dba25c1cc7d839cfa00ba0fba030fa30c23e358a4c14c5",
+        "cover-800.webp": "0d83c2faa837729ead3aa2d9011ada5da636665ad166192a697b70588f26fc7e",
+        "cover.webp": "b79ba2d687e55a062e697e8f258a9a313632ece8dc62a981278744298b49d13a",
+        "explain.svg": "bad843af5eedf627888b54263dc999ff1e2d17cc0ca4fdd83421d1d80d0544e4",
+        "explain.webp": "d84c6a58ecfd86cf71f662ae17eebd2e7b4ee9773fddc99173d5789387e9427a",
+        "og.jpg": "de1e10dd902f419b60730d293b63f5f0c986371e00e04f34558b85d126dd9127"
+      }
+    },
+    "sport-related-concussion": {
+      "slug": "sport-related-concussion",
+      "scene": "brain-concussion",
+      "title": "疑似腦震盪：立即停止運動",
+      "points": [
+        {
+          "heading": "辨識",
+          "text": "頭部或身體撞擊後，留意症狀與行為改變。"
+        },
+        {
+          "heading": "移出比賽",
+          "text": "疑似腦震盪應立即停止參賽，當天不回場。"
+        },
+        {
+          "heading": "醫療評估",
+          "text": "持續觀察警訊，由醫療人員評估及安排漸進恢復。"
+        }
+      ],
+      "sourceIds": [
+        "concussion",
+        "consensus"
+      ],
+      "caution": "本圖不把出血當作腦震盪必要條件；不以固定天數承諾回場。",
+      "reviewStatus": "clinician-review-pending",
+      "articleTitle": "運動性腦震盪：場邊怎麼評估、為什麼當天不能回場、要休息多久",
+      "category": "sports-injury",
+      "articlePath": "website/src/content/articles/sport-related-concussion.md",
+      "articleSha256": "53fd3e9620af4d2b179b526ddc0ba1db501ad81b711e8b797da6ee25ab80bf04",
+      "alt": "疑似腦震盪：立即停止運動的原創 3D 示意；大腦半球示意、腦幹示意、小腦示意。腦部結構高度簡化；沒有病灶、出血或可供診斷的影像特徵。",
+      "cover": "/medical-visuals/articles/sport-related-concussion/cover.webp",
+      "coverSmall": "/medical-visuals/articles/sport-related-concussion/cover-480.webp",
+      "coverMedium": "/medical-visuals/articles/sport-related-concussion/cover-800.webp",
+      "figure": "/medical-visuals/articles/sport-related-concussion/explain.svg",
+      "figureRaster": "/medical-visuals/articles/sport-related-concussion/explain.webp",
+      "og": "/medical-visuals/articles/sport-related-concussion/og.jpg",
+      "model": "/medical-visuals/models/brain-concussion.glb",
+      "poster": "/medical-visuals/models/brain-concussion.webp",
+      "modelNotes": "腦部結構高度簡化；沒有病灶、出血或可供診斷的影像特徵。",
+      "structures": [
+        [
+          "大腦半球示意",
+          "#eee5d3"
+        ],
+        [
+          "腦幹示意",
+          "#49bdb4"
+        ],
+        [
+          "小腦示意",
+          "#c7ddd2"
+        ]
+      ],
+      "camera": [
+        0.5280744484263596,
+        0.4076915718445349
+      ],
+      "sha256": {
+        "cover-480.webp": "ba732df5f2a9bd567f6d14d3722dff53ab9908b1b89823041e35bc86557ce3aa",
+        "cover-800.webp": "6b736334f171f6796df2a9213befe4a6a1996a47ed371730fbf027efe1c3ac4d",
+        "cover.webp": "66ea4013581b73010675cd76eab32175e20e3a22bacf28bb0209937eb8ffaddd",
+        "explain.svg": "646ec4ff2082b72c53fef11548759e28971b7124141494ff2b300f58cf9a908d",
+        "explain.webp": "12953b457abec3e26b85b7e132673a262bf22157d0c680f9fda1f7f8829cdf59",
+        "og.jpg": "fa3d5fbcb2dfc61d23b8d4ebd3ad41e193b9644af5938976e00ad519eb536160"
+      }
+    },
+    "squat-essentials": {
+      "slug": "squat-essentials",
+      "scene": "movement-squat",
+      "title": "深蹲：控制優先於重量",
+      "points": [
+        {
+          "heading": "髖膝踝協調",
+          "text": "依個人能力選擇能控制的深度與站姿。"
+        },
+        {
+          "heading": "軀幹與呼吸",
+          "text": "建立可維持的穩定與呼吸節奏。"
+        },
+        {
+          "heading": "逐步增加",
+          "text": "先練習再調整負荷，有不適時重新評估。"
+        }
+      ],
+      "sourceIds": [
+        "activity"
+      ],
+      "caution": "沒有適合所有人的單一重量目標；人偶不是動作合格判定器。",
+      "reviewStatus": "clinician-review-pending",
+      "articleTitle": "深蹲要領：兩倍體重、動作模式、呼吸，以及為什麼不需要鏡子",
+      "category": "training",
+      "articlePath": "website/src/content/articles/squat-essentials.md",
+      "articleSha256": "1d2b35e34a3566b8531de0361fecd65365213214bb3701cf3ddf04e376a7f69e",
+      "alt": "深蹲：控制優先於重量的原創 3D 示意；中性訓練人偶、訓練／肌群重點、動作關注区。人偶是動作概念而非處方；關節角度、肌肉外形與器材比例經簡化。",
+      "cover": "/medical-visuals/articles/squat-essentials/cover.webp",
+      "coverSmall": "/medical-visuals/articles/squat-essentials/cover-480.webp",
+      "coverMedium": "/medical-visuals/articles/squat-essentials/cover-800.webp",
+      "figure": "/medical-visuals/articles/squat-essentials/explain.svg",
+      "figureRaster": "/medical-visuals/articles/squat-essentials/explain.webp",
+      "og": "/medical-visuals/articles/squat-essentials/og.jpg",
+      "model": "/medical-visuals/models/movement-squat.glb",
+      "poster": "/medical-visuals/models/movement-squat.webp",
+      "modelNotes": "人偶是動作概念而非處方；關節角度、肌肉外形與器材比例經簡化。",
+      "structures": [
+        [
+          "中性訓練人偶",
+          "#eee5d3"
+        ],
+        [
+          "訓練／肌群重點",
+          "#49bdb4"
+        ],
+        [
+          "動作關注区",
+          "#f2a066"
+        ]
+      ],
+      "camera": [
+        0.5880026035475675,
+        0.2705497629785729
+      ],
+      "sha256": {
+        "cover-480.webp": "78e77c6652362323e38e058f62c3179de2cb5cd33ef534065dbe2f9e38c1c1ca",
+        "cover-800.webp": "947b164ee763cb72434fbb401b69c69c07073b752f651435f7a2b104827c7981",
+        "cover.webp": "4aa6a4ad8af4f24393dec081dffae1badc18c5b6b47d97bdfe1a25d50bf7d2cc",
+        "explain.svg": "b073ee2fad6f26f24e848e5c4194fab76de888a8409f0282016668ccebc316ef",
+        "explain.webp": "491c6f05bed6f8fae0e5d3a0c58e9d88be2a38ad1283e9df5e9d2e2e84b97e34",
+        "og.jpg": "8bdb1b37de5e83e6cd4f82fcb98cca9aed8767b5d369fefdd45437a6e787cdb6"
+      }
+    },
+    "start-exercise-with-weight-loss": {
+      "slug": "start-exercise-with-weight-loss",
+      "scene": "movement-week",
+      "title": "體重照護：讓活動成為日常",
+      "points": [
+        {
+          "heading": "有氧選擇",
+          "text": "走路、騎車等活動可依喜好與能力安排。"
+        },
+        {
+          "heading": "肌力訓練",
+          "text": "與有氧互補，重視日常功能及肌肉健康。"
+        },
+        {
+          "heading": "可持續性",
+          "text": "從能做到的份量開始，留意飲食、睡眠與恢復。"
+        }
+      ],
+      "sourceIds": [
+        "activity",
+        "medication"
+      ],
+      "caution": "不將游泳或其他運動標為對所有疾病都安全，需依個別狀況調整。",
+      "reviewStatus": "clinician-review-pending",
+      "articleTitle": "開始減重治療，請同時開始運動：有氧、肌力，以及游泳的小提醒",
+      "category": "weight-management",
+      "articlePath": "website/src/content/articles/start-exercise-with-weight-loss.md",
+      "articleSha256": "f9ec1912fab4f35d14f92638b994f4e1353e30bf0875ee883f3ae2f7265c2979",
+      "alt": "體重照護：讓活動成為日常的原創 3D 示意；中性訓練人偶、訓練／肌群重點、動作關注区。人偶是動作概念而非處方；關節角度、肌肉外形與器材比例經簡化。",
+      "cover": "/medical-visuals/articles/start-exercise-with-weight-loss/cover.webp",
+      "coverSmall": "/medical-visuals/articles/start-exercise-with-weight-loss/cover-480.webp",
+      "coverMedium": "/medical-visuals/articles/start-exercise-with-weight-loss/cover-800.webp",
+      "figure": "/medical-visuals/articles/start-exercise-with-weight-loss/explain.svg",
+      "figureRaster": "/medical-visuals/articles/start-exercise-with-weight-loss/explain.webp",
+      "og": "/medical-visuals/articles/start-exercise-with-weight-loss/og.jpg",
+      "model": "/medical-visuals/models/movement-week.glb",
+      "poster": "/medical-visuals/models/movement-week.webp",
+      "modelNotes": "人偶是動作概念而非處方；關節角度、肌肉外形與器材比例經簡化。",
+      "structures": [
+        [
+          "中性訓練人偶",
+          "#eee5d3"
+        ],
+        [
+          "訓練／肌群重點",
+          "#49bdb4"
+        ],
+        [
+          "動作關注区",
+          "#f2a066"
+        ]
+      ],
+      "camera": [
+        0.5880026035475675,
+        0.2705497629785729
+      ],
+      "sha256": {
+        "cover-480.webp": "51857b9637b716c97f4c4b60889611a370588ddfc30e6d10d1e8ea3493ad9ddf",
+        "cover-800.webp": "faaa06f32c6a18ad948420bbe422ad592fb5793f1a17e9c653251090e1b38e9a",
+        "cover.webp": "215524ebc2e67ad0922f5597e6037ee899ce10b83050f80bc6143df992a8686f",
+        "explain.svg": "ff50dd27f60e1230b2d0e8227bf8a8bc3d1128f66b83b6f894502c9dc62bf2ab",
+        "explain.webp": "72f372311e45489c4b575528b8edf8a831cafc1d38d64bcda84cf49e0fe1333a",
+        "og.jpg": "1a6f0479cdc0877cd1ad78f41027ca30f09bf07dc4cf88ad8d57551d23184aeb"
+      }
+    },
+    "strength-is-maintenance-and-treatment": {
+      "slug": "strength-is-maintenance-and-treatment",
+      "scene": "muscle-fibers",
+      "title": "肌肉健康：力量與功能",
+      "points": [
+        {
+          "heading": "肌纖維",
+          "text": "肌肉以纖維結構組成，圖中放大以利觀看。"
+        },
+        {
+          "heading": "神經肌肉控制",
+          "text": "力量與動作協調共同影響日常功能。"
+        },
+        {
+          "heading": "阻力與營養",
+          "text": "訓練、營養與恢復是長期照護的一部分。"
+        }
+      ],
+      "sourceIds": [
+        "activity",
+        "supplements"
+      ],
+      "caution": "未呈現肌少症診斷切點；不能只看圖或小腿圍自行診斷。",
+      "reviewStatus": "clinician-review-pending",
+      "articleTitle": "肌力訓練是保養，也是治療：肌肉如何像盔甲一樣保護關節",
+      "category": "training",
+      "articlePath": "website/src/content/articles/strength-is-maintenance-and-treatment.md",
+      "articleSha256": "991b4aff40263353938d5090be55933acac29b5b9af5b6472005010b425332ef",
+      "alt": "肌肉健康：力量與功能的原創 3D 示意；肌束、肌腱連接、關注區（非可見病灶）。放大肌束概念模型；激痛點不是本圖所能顯示或確診的可見腫塊。",
+      "cover": "/medical-visuals/articles/strength-is-maintenance-and-treatment/cover.webp",
+      "coverSmall": "/medical-visuals/articles/strength-is-maintenance-and-treatment/cover-480.webp",
+      "coverMedium": "/medical-visuals/articles/strength-is-maintenance-and-treatment/cover-800.webp",
+      "figure": "/medical-visuals/articles/strength-is-maintenance-and-treatment/explain.svg",
+      "figureRaster": "/medical-visuals/articles/strength-is-maintenance-and-treatment/explain.webp",
+      "og": "/medical-visuals/articles/strength-is-maintenance-and-treatment/og.jpg",
+      "model": "/medical-visuals/models/muscle-fibers.glb",
+      "poster": "/medical-visuals/models/muscle-fibers.webp",
+      "modelNotes": "放大肌束概念模型；激痛點不是本圖所能顯示或確診的可見腫塊。",
+      "structures": [
+        [
+          "肌束",
+          "#bb7564"
+        ],
+        [
+          "肌腱連接",
+          "#c7ddd2"
+        ],
+        [
+          "關注區（非可見病灶）",
+          "#f2a066"
+        ]
+      ],
+      "camera": [
+        0.4636476090008061,
+        0.3091933209430012
+      ],
+      "sha256": {
+        "cover-480.webp": "677c5b95f5c77d53ad38506e55d747b3bc92359779e3fe4417a9c5478f2e042d",
+        "cover-800.webp": "75b9725278874a60777e7c37fc33560fc46936809507b3fa6fecd886dd9584a3",
+        "cover.webp": "5cc752fdea65a5ec793caf9043839b670332a024eb458ba76a0e37b2f6447a47",
+        "explain.svg": "db84118f62115de4e15a3c5d1d1682239f7471f4f9835f5e70e0dbf8b8f99cc4",
+        "explain.webp": "ccd73788cfd44b659f031668859840243a444dc5344b9e0e330acca0f2522884",
+        "og.jpg": "ed8854009f9da122dca45f95d335c4704cdd55ebc2fe2596484e62a36a06f793"
+      }
+    },
+    "supplements-overview-ranking": {
+      "slug": "supplements-overview-ranking",
+      "scene": "nutrition-supplements",
+      "title": "補劑不是訓練的捷徑",
+      "points": [
+        {
+          "heading": "先有基礎",
+          "text": "規律訓練、充足飲食與恢復仍是核心。"
+        },
+        {
+          "heading": "看目標與證據",
+          "text": "不同補充品、運動種類與個體反應並不相同。"
+        },
+        {
+          "heading": "注意品質",
+          "text": "核對成分、來源與交互作用，競技選手更需留意禁藥風險。"
+        }
+      ],
+      "sourceIds": [
+        "supplements"
+      ],
+      "caution": "不以排行榜保證效果，也不提供所有人通用的補充劑量。",
+      "reviewStatus": "clinician-review-pending",
+      "articleTitle": "補劑排名總覽：乳清蛋白、肌酸、咖啡因，哪些真的有用",
+      "category": "training",
+      "articlePath": "website/src/content/articles/supplements-overview-ranking.md",
+      "articleSha256": "da66152ecca6125bd8d46d15feece6ce655c923cdbfa426bc3e2acdabe7cc02c",
+      "alt": "補劑不是訓練的捷徑的原創 3D 示意；食物／器具示意、飲食與生活、閱讀關注區。容器與膠囊均無品牌、無劑量，僅代表補充品類別。",
+      "cover": "/medical-visuals/articles/supplements-overview-ranking/cover.webp",
+      "coverSmall": "/medical-visuals/articles/supplements-overview-ranking/cover-480.webp",
+      "coverMedium": "/medical-visuals/articles/supplements-overview-ranking/cover-800.webp",
+      "figure": "/medical-visuals/articles/supplements-overview-ranking/explain.svg",
+      "figureRaster": "/medical-visuals/articles/supplements-overview-ranking/explain.webp",
+      "og": "/medical-visuals/articles/supplements-overview-ranking/og.jpg",
+      "model": "/medical-visuals/models/nutrition-supplements.glb",
+      "poster": "/medical-visuals/models/nutrition-supplements.webp",
+      "modelNotes": "容器與膠囊均無品牌、無劑量，僅代表補充品類別。",
+      "structures": [
+        [
+          "食物／器具示意",
+          "#eee5d3"
+        ],
+        [
+          "飲食與生活",
+          "#49bdb4"
+        ],
+        [
+          "閱讀關注區",
+          "#f2a066"
+        ]
+      ],
+      "camera": [
+        0.5280744484263596,
+        0.6239016980312335
+      ],
+      "sha256": {
+        "cover-480.webp": "440306ec023e8ce1ae23bcbdd2d50839f7e4be47de9b97555501741519d96fb4",
+        "cover-800.webp": "b20cefb804eb14ef03e2da80eeadb27f7d8d5b606615c27d88a74ba42e5bed34",
+        "cover.webp": "42bfca0501e32cae3cd09d793d91d096063eae26e4549f98ef96b1cc635eace3",
+        "explain.svg": "639b2731e6a62404190adaedd0d13b59987a6b030eb4d6634ec868dc0794042f",
+        "explain.webp": "8680da7127d9071afc3f8a0f8350f20b3ef1309e03aa7c9e5e1ba0b6a77c685b",
+        "og.jpg": "8f089bb3fc6563a00aabbd16c3250ee3ed8f6a5b78a3352f3549b4f522f6a0d4"
+      }
+    },
+    "supplements-vs-medication-cholesterol": {
+      "slug": "supplements-vs-medication-cholesterol",
+      "scene": "safety-medication",
+      "title": "血脂管理：不是包裝比較",
+      "points": [
+        {
+          "heading": "處方藥",
+          "text": "依個人心血管風險與檢查結果評估。"
+        },
+        {
+          "heading": "補充品",
+          "text": "不能因為標榜天然，就視為與藥物相同。"
+        },
+        {
+          "heading": "共同核對",
+          "text": "把藥品與補充品清單一起交給醫師或藥師。"
+        }
+      ],
+      "sourceIds": [
+        "supplements",
+        "painmedicine"
+      ],
+      "caution": "不自行以保健食品替換處方；圖中不做療效百分比比較。",
+      "reviewStatus": "clinician-review-pending",
+      "articleTitle": "紅麴、魚油能降膽固醇？為什麼藥物可能就是最適合你的「健康食品」",
+      "category": "weight-management",
+      "articlePath": "website/src/content/articles/supplements-vs-medication-cholesterol.md",
+      "articleSha256": "dd6d00712c133043dc78fcf712a0463ef4b1b0ab85645c28f4ed9002493812ec",
+      "alt": "血脂管理：不是包裝比較的原創 3D 示意；藥品／資料概念、核對資訊、需要留意。藥品外觀純屬概念，不對應真實品項、劑量或使用方式。",
+      "cover": "/medical-visuals/articles/supplements-vs-medication-cholesterol/cover.webp",
+      "coverSmall": "/medical-visuals/articles/supplements-vs-medication-cholesterol/cover-480.webp",
+      "coverMedium": "/medical-visuals/articles/supplements-vs-medication-cholesterol/cover-800.webp",
+      "figure": "/medical-visuals/articles/supplements-vs-medication-cholesterol/explain.svg",
+      "figureRaster": "/medical-visuals/articles/supplements-vs-medication-cholesterol/explain.webp",
+      "og": "/medical-visuals/articles/supplements-vs-medication-cholesterol/og.jpg",
+      "model": "/medical-visuals/models/safety-medication.glb",
+      "poster": "/medical-visuals/models/safety-medication.webp",
+      "modelNotes": "藥品外觀純屬概念，不對應真實品項、劑量或使用方式。",
+      "structures": [
+        [
+          "藥品／資料概念",
+          "#eee5d3"
+        ],
+        [
+          "核對資訊",
+          "#49bdb4"
+        ],
+        [
+          "需要留意",
+          "#f2a066"
+        ]
+      ],
+      "camera": [
+        0.5191461142465229,
+        0.35622947615187256
+      ],
+      "sha256": {
+        "cover-480.webp": "b4f9053cc5eb0b227beb83f1fa5e6d4670d37fb7e478013ca6b8409a20dc6278",
+        "cover-800.webp": "94077a391763abc9f4cfeecae011e1ec19089b5cd5cd9b8c74a2e57535eaa4fe",
+        "cover.webp": "08a5ab9fea713bbfad7b593636b66eda4119b988e2657570c845ee2ede949186",
+        "explain.svg": "c23ad26fd9498f6465d936cc73a1dbc6884aeee1ac0df9d8e91396ccb9d6092b",
+        "explain.webp": "80d97a1a5ace90086c5e10588263ecf1d0c1c166445b5d98698b9cd070dded32",
+        "og.jpg": "28eb70ea23eb704514af699cc006fa0c7c8120fac572ba67e638b644e51d0d3a"
+      }
+    },
+    "trigger-point-injection": {
+      "slug": "trigger-point-injection",
+      "scene": "muscle-trigger",
+      "title": "肌筋膜疼痛：先評估再處理",
+      "points": [
+        {
+          "heading": "肌肉纖維",
+          "text": "圖中肌束為放大示意，不是影像檢查結果。"
+        },
+        {
+          "heading": "關注區域",
+          "text": "局部壓痛只是線索，需要結合病史與檢查。"
+        },
+        {
+          "heading": "治療選擇",
+          "text": "不同處理有各自適應情況、限制與風險。"
+        }
+      ],
+      "sourceIds": [
+        "activity"
+      ],
+      "caution": "橘色不代表可見的病灶；圖中不提供進針深度、角度或施打步驟。",
+      "reviewStatus": "clinician-review-pending",
+      "articleTitle": "疼痛小知識：「痛哪打哪」其實有根據——激痛點治療",
+      "category": "sports-injury",
+      "articlePath": "website/src/content/articles/trigger-point-injection.md",
+      "articleSha256": "c7c696e029a18700ce8ae766e166d6f7572349a17411942cf5c9ccec8707dab7",
+      "alt": "肌筋膜疼痛：先評估再處理的原創 3D 示意；肌束、肌腱連接、關注區（非可見病灶）。放大肌束概念模型；激痛點不是本圖所能顯示或確診的可見腫塊。",
+      "cover": "/medical-visuals/articles/trigger-point-injection/cover.webp",
+      "coverSmall": "/medical-visuals/articles/trigger-point-injection/cover-480.webp",
+      "coverMedium": "/medical-visuals/articles/trigger-point-injection/cover-800.webp",
+      "figure": "/medical-visuals/articles/trigger-point-injection/explain.svg",
+      "figureRaster": "/medical-visuals/articles/trigger-point-injection/explain.webp",
+      "og": "/medical-visuals/articles/trigger-point-injection/og.jpg",
+      "model": "/medical-visuals/models/muscle-trigger.glb",
+      "poster": "/medical-visuals/models/muscle-trigger.webp",
+      "modelNotes": "放大肌束概念模型；激痛點不是本圖所能顯示或確診的可見腫塊。",
+      "structures": [
+        [
+          "肌束",
+          "#bb7564"
+        ],
+        [
+          "肌腱連接",
+          "#c7ddd2"
+        ],
+        [
+          "關注區（非可見病灶）",
+          "#f2a066"
+        ]
+      ],
+      "camera": [
+        0.4636476090008061,
+        0.3091933209430012
+      ],
+      "sha256": {
+        "cover-480.webp": "eb8e1b19cc0ef92e08ea00fc7b3dc6c288a9e08b9a5740701e8975fbe6862b70",
+        "cover-800.webp": "7cabc0c7c40423e4aa6b9fe33f03983b09d274ef1efb72edb8204f3d098a174b",
+        "cover.webp": "a515b7b823e64db9f77292b30b86f34d64c463dda1eb5501e85f7f514ff4161d",
+        "explain.svg": "23b4d0f59708096e1cf216ab8eb8c204e6450e4b5da17f3ce0eb815cb26ff133",
+        "explain.webp": "c963863e90d50558918986921bf843643bbaf7bd92f9796c98a6574dcfbbfbc0",
+        "og.jpg": "f738309af1613e9ca5666c2d2ea701a577c756489ec3ba5ec211d1997f56e936"
+      }
+    },
+    "varicose-veins-and-lifting": {
+      "slug": "varicose-veins-and-lifting",
+      "scene": "vein-valve",
+      "title": "靜脈回流：瓣膜與肌肉",
+      "points": [
+        {
+          "heading": "靜脈瓣膜",
+          "text": "協助血液朝心臟方向回流。"
+        },
+        {
+          "heading": "小腿活動",
+          "text": "肌肉收縮與放鬆可以協助靜脈回流。"
+        },
+        {
+          "heading": "症狀與評估",
+          "text": "腫脹、不適或皮膚改變需讓醫療人員評估。"
+        }
+      ],
+      "sourceIds": [
+        "vein"
+      ],
+      "caution": "不將固定心率或重量百分比當作所有人的安全上限。",
+      "reviewStatus": "clinician-review-pending",
+      "articleTitle": "有靜脈曲張，還能重訓嗎？",
+      "category": "sports-injury",
+      "articlePath": "website/src/content/articles/varicose-veins-and-lifting.md",
+      "articleSha256": "e8509f8cc2d79b2c15a7066db1a19f4fcc90a2ac0f560895b96d2ab0e775ad39",
+      "alt": "靜脈回流：瓣膜與肌肉的原創 3D 示意；靜脈壁、瓣膜示意、血塊／回流關注區。血管為縱向剖開與放大示意；不表示血流速度、血栓大小或個人的病況。",
+      "cover": "/medical-visuals/articles/varicose-veins-and-lifting/cover.webp",
+      "coverSmall": "/medical-visuals/articles/varicose-veins-and-lifting/cover-480.webp",
+      "coverMedium": "/medical-visuals/articles/varicose-veins-and-lifting/cover-800.webp",
+      "figure": "/medical-visuals/articles/varicose-veins-and-lifting/explain.svg",
+      "figureRaster": "/medical-visuals/articles/varicose-veins-and-lifting/explain.webp",
+      "og": "/medical-visuals/articles/varicose-veins-and-lifting/og.jpg",
+      "model": "/medical-visuals/models/vein-valve.glb",
+      "poster": "/medical-visuals/models/vein-valve.webp",
+      "modelNotes": "血管為縱向剖開與放大示意；不表示血流速度、血栓大小或個人的病況。",
+      "structures": [
+        [
+          "靜脈壁",
+          "#5596b7"
+        ],
+        [
+          "瓣膜示意",
+          "#49bdb4"
+        ],
+        [
+          "血塊／回流關注區",
+          "#bb7564"
+        ]
+      ],
+      "camera": [
+        0.5191461142465229,
+        0.2431608692238309
+      ],
+      "sha256": {
+        "cover-480.webp": "087a53520cc7217c282d08df82eb075f8aada0d727ee5170edc4f4c1206c8aa2",
+        "cover-800.webp": "3b643878b38a7120a50b07102189fb6515f6aa35d570e6e126e472e30944b14b",
+        "cover.webp": "a1d18cc73f34122164e242ebee7d332a206a1d7a053bc8798ac87c099118e918",
+        "explain.svg": "0ffebc0e6ca20b5e125ebf98be5743e5fa6616704251eada564889eb93a49905",
+        "explain.webp": "11c418aa9bcedcfc864dc8b1e63d8cef874f569b88775df76c0d7336c2da264e",
+        "og.jpg": "a54f45dc5beea731a5d2121e163a13cfcc3e1b7ded8d45c6100c3cc1db78b5d2"
+      }
+    },
+    "weight-and-joint-pain": {
+      "slug": "weight-and-joint-pain",
+      "scene": "metabolism-body",
+      "title": "體重與功能：一起照顧",
+      "points": [
+        {
+          "heading": "關節負荷",
+          "text": "體重、活動與肌力共同影響關節使用。"
+        },
+        {
+          "heading": "整體健康",
+          "text": "症狀還可能牽涉睡眠及其他健康問題。"
+        },
+        {
+          "heading": "整合照護",
+          "text": "以營養、活動與必要治療共同支持生活功能。"
+        }
+      ],
+      "sourceIds": [
+        "weight",
+        "medication"
+      ],
+      "caution": "不把體重視為疼痛的唯一原因，也不保證減重後所有症狀都會消失。",
+      "reviewStatus": "clinician-review-pending",
+      "articleTitle": "體重與疼痛、關節、睡眠的關係：為什麼減重是治療的一部分",
+      "category": "weight-management",
+      "articlePath": "website/src/content/articles/weight-and-joint-pain.md",
+      "articleSha256": "b578f7513046f1a992f8e55b2337eb30ae84525cc42155f23e32b2b321f3ba0b",
+      "alt": "體重與功能：一起照顧的原創 3D 示意；器官／身體概念、生活與調節、閱讀關注區。中性人偶與健康紀錄為概念圖，沒有理想體型、前後對照或量測值。",
+      "cover": "/medical-visuals/articles/weight-and-joint-pain/cover.webp",
+      "coverSmall": "/medical-visuals/articles/weight-and-joint-pain/cover-480.webp",
+      "coverMedium": "/medical-visuals/articles/weight-and-joint-pain/cover-800.webp",
+      "figure": "/medical-visuals/articles/weight-and-joint-pain/explain.svg",
+      "figureRaster": "/medical-visuals/articles/weight-and-joint-pain/explain.webp",
+      "og": "/medical-visuals/articles/weight-and-joint-pain/og.jpg",
+      "model": "/medical-visuals/models/metabolism-body.glb",
+      "poster": "/medical-visuals/models/metabolism-body.webp",
+      "modelNotes": "中性人偶與健康紀錄為概念圖，沒有理想體型、前後對照或量測值。",
+      "structures": [
+        [
+          "器官／身體概念",
+          "#eee5d3"
+        ],
+        [
+          "生活與調節",
+          "#49bdb4"
+        ],
+        [
+          "閱讀關注區",
+          "#f2a066"
+        ]
+      ],
+      "camera": [
+        0.4636476090008061,
+        0.3660500688467121
+      ],
+      "sha256": {
+        "cover-480.webp": "46fa34fe37444a00c87dae380d2aa218b1a1793d1ed57a210bcdab1b5c54b7d9",
+        "cover-800.webp": "ed11e6cbc5597bd243f2d7c3db24d3bc5c4b7d6635cff25f6470eea03f6dbe66",
+        "cover.webp": "8dd0359bce3c2e2e2f1f65e52a0659a3ceffce13ed4bd655cb972c89a7e127c7",
+        "explain.svg": "51ad35b63089fe8433bc4d4718c3c112167e592cb53b91a187fb45039bf960cb",
+        "explain.webp": "08f3bbced1191d835ad2cccce230808b9ad0aaff7340db04961b517f2eac2ef2",
+        "og.jpg": "37819c9aa37d60ac1419a858915a750421867c980554e95edd1e353a20b818d6"
+      }
+    },
+    "weight-is-not-the-only-number": {
+      "slug": "weight-is-not-the-only-number",
+      "scene": "metabolism-body",
+      "title": "健康不只是一個數字",
+      "points": [
+        {
+          "heading": "身體組成",
+          "text": "體重不能完整表示肌肉、脂肪與健康狀況。"
+        },
+        {
+          "heading": "生活功能",
+          "text": "飲食、睡眠、活動與精神狀況同樣值得關心。"
+        },
+        {
+          "heading": "個別目標",
+          "text": "與醫療團隊一起設定適合自己的健康方向。"
+        }
+      ],
+      "sourceIds": [
+        "weight"
+      ],
+      "caution": "不以體型定義價值，也不鼓勵正常或過輕者為外觀追求用藥減重。",
+      "reviewStatus": "clinician-review-pending",
+      "articleTitle": "體重不是最重要的：減重門診裡，醫師真正在看什麼",
+      "category": "weight-management",
+      "articlePath": "website/src/content/articles/weight-is-not-the-only-number.md",
+      "articleSha256": "a6db887a71bfbf9dd2c45efc41000e7ab02dc10f018e2834ca79481dc992f880",
+      "alt": "健康不只是一個數字的原創 3D 示意；器官／身體概念、生活與調節、閱讀關注區。中性人偶與健康紀錄為概念圖，沒有理想體型、前後對照或量測值。",
+      "cover": "/medical-visuals/articles/weight-is-not-the-only-number/cover.webp",
+      "coverSmall": "/medical-visuals/articles/weight-is-not-the-only-number/cover-480.webp",
+      "coverMedium": "/medical-visuals/articles/weight-is-not-the-only-number/cover-800.webp",
+      "figure": "/medical-visuals/articles/weight-is-not-the-only-number/explain.svg",
+      "figureRaster": "/medical-visuals/articles/weight-is-not-the-only-number/explain.webp",
+      "og": "/medical-visuals/articles/weight-is-not-the-only-number/og.jpg",
+      "model": "/medical-visuals/models/metabolism-body.glb",
+      "poster": "/medical-visuals/models/metabolism-body.webp",
+      "modelNotes": "中性人偶與健康紀錄為概念圖，沒有理想體型、前後對照或量測值。",
+      "structures": [
+        [
+          "器官／身體概念",
+          "#eee5d3"
+        ],
+        [
+          "生活與調節",
+          "#49bdb4"
+        ],
+        [
+          "閱讀關注區",
+          "#f2a066"
+        ]
+      ],
+      "camera": [
+        0.4636476090008061,
+        0.3660500688467121
+      ],
+      "sha256": {
+        "cover-480.webp": "ea3d52cb731e5bee82fd29c62a20194a5f0193b89fdb8392cfb4875990e0ae8d",
+        "cover-800.webp": "578d51d9fdc2c9b93ddde5b5a050efbf225d6351401ca04cb1bf96917057627e",
+        "cover.webp": "6f1a473e0178e5a35298d7301fec5a3bacf730b34db7264b20b378517299bcc3",
+        "explain.svg": "3fb2ad1d4189671158e5c9f3b14769ecd4492e17b57bf126ae94ac97f27f8260",
+        "explain.webp": "71588fbe9408a9c3c3f4917408091727b058d26198fb532d519ccb81752af37c",
+        "og.jpg": "340b202abd314dd3e208a4a3ac9b0d0df6869c32067bfd291e3e860d5962c769"
+      }
+    },
+    "why-diet-and-exercise-alone-is-hard": {
+      "slug": "why-diet-and-exercise-alone-is-hard",
+      "scene": "metabolism-appetite",
+      "title": "體重調節：不只是意志力",
+      "points": [
+        {
+          "heading": "生理訊號",
+          "text": "食慾與能量調節涉及多種生理因素。"
+        },
+        {
+          "heading": "生活環境",
+          "text": "飲食可近性、睡眠、壓力與活動環境都有影響。"
+        },
+        {
+          "heading": "支持而非責備",
+          "text": "找出可調整的因素，必要時加入專業協助。"
+        }
+      ],
+      "sourceIds": [
+        "weight",
+        "medication"
+      ],
+      "caution": "不以單一平均降幅推估個人結果，也不把困難歸咎於自制力。",
+      "reviewStatus": "clinician-review-pending",
+      "articleTitle": "「減重不就是節食運動而已？」為什麼這樣說是把減重想得太簡單",
+      "category": "weight-management",
+      "articlePath": "website/src/content/articles/why-diet-and-exercise-alone-is-hard.md",
+      "articleSha256": "6eb8ded97ae8072d3df674198a485dc4836a40984579f7b84ffa6a07cc4ef981",
+      "alt": "體重調節：不只是意志力的原創 3D 示意；器官／身體概念、生活與調節、閱讀關注區。器官分離排列以表達訊號概念；並非真實相對位置、比例或完整生理路徑。",
+      "cover": "/medical-visuals/articles/why-diet-and-exercise-alone-is-hard/cover.webp",
+      "coverSmall": "/medical-visuals/articles/why-diet-and-exercise-alone-is-hard/cover-480.webp",
+      "coverMedium": "/medical-visuals/articles/why-diet-and-exercise-alone-is-hard/cover-800.webp",
+      "figure": "/medical-visuals/articles/why-diet-and-exercise-alone-is-hard/explain.svg",
+      "figureRaster": "/medical-visuals/articles/why-diet-and-exercise-alone-is-hard/explain.webp",
+      "og": "/medical-visuals/articles/why-diet-and-exercise-alone-is-hard/og.jpg",
+      "model": "/medical-visuals/models/metabolism-appetite.glb",
+      "poster": "/medical-visuals/models/metabolism-appetite.webp",
+      "modelNotes": "器官分離排列以表達訊號概念；並非真實相對位置、比例或完整生理路徑。",
+      "structures": [
+        [
+          "器官／身體概念",
+          "#eee5d3"
+        ],
+        [
+          "生活與調節",
+          "#49bdb4"
+        ],
+        [
+          "閱讀關注區",
+          "#f2a066"
+        ]
+      ],
+      "camera": [
+        0.4636476090008061,
+        0.3660500688467121
+      ],
+      "sha256": {
+        "cover-480.webp": "4db7db5b08e76082208768a6217719b82185e429a8998cd47dac44b5a354f5cd",
+        "cover-800.webp": "83b35c8a290532798f640157310668bee04639e6f524aa4e0d83baf3508b330e",
+        "cover.webp": "e6f9142adedc75a92b51f936d3c483d84823f3b948be5d72ce5e53f368ab2bea",
+        "explain.svg": "a4f863c954018425c26cab3f7acfc7069ba5adb4a8145d076cc55a3dbb182868",
+        "explain.webp": "d35eaabb4f03c667a687f9f400b429d8b389697a0b6b7d283b3b46801586d358",
+        "og.jpg": "18a13b71fb98ffc9ee28bac554a1e7f28bb20a45964f9b603d28c935fa9fd1c3"
+      }
+    },
+    "yamamoto-no-weight-training": {
+      "slug": "yamamoto-no-weight-training",
+      "scene": "movement-agility",
+      "title": "運動表現：訓練需要個別化",
+      "points": [
+        {
+          "heading": "基礎能力",
+          "text": "力量、控制與恢復是安排訓練時的考量。"
+        },
+        {
+          "heading": "專項需求",
+          "text": "速度、協調與技巧需配合不同運動項目。"
+        },
+        {
+          "heading": "個別調整",
+          "text": "考慮賽季、疲勞與傷勢，不直接照抄名人課表。"
+        }
+      ],
+      "sourceIds": [
+        "activity"
+      ],
+      "caution": "人偶不代表特定球員；不把新聞標題當成個人訓練建議。",
+      "reviewStatus": "clinician-review-pending",
+      "articleTitle": "新聞說山本「不做重訓」，代表我們不需要深蹲硬舉嗎？",
+      "category": "training",
+      "articlePath": "website/src/content/articles/yamamoto-no-weight-training.md",
+      "articleSha256": "35df48319ced08725fe39a223f596dbcb6a8afbe71afe38b5d47fc9cc7f43aae",
+      "alt": "運動表現：訓練需要個別化的原創 3D 示意；中性訓練人偶、訓練／肌群重點、動作關注区。人偶是動作概念而非處方；關節角度、肌肉外形與器材比例經簡化。",
+      "cover": "/medical-visuals/articles/yamamoto-no-weight-training/cover.webp",
+      "coverSmall": "/medical-visuals/articles/yamamoto-no-weight-training/cover-480.webp",
+      "coverMedium": "/medical-visuals/articles/yamamoto-no-weight-training/cover-800.webp",
+      "figure": "/medical-visuals/articles/yamamoto-no-weight-training/explain.svg",
+      "figureRaster": "/medical-visuals/articles/yamamoto-no-weight-training/explain.webp",
+      "og": "/medical-visuals/articles/yamamoto-no-weight-training/og.jpg",
+      "model": "/medical-visuals/models/movement-agility.glb",
+      "poster": "/medical-visuals/models/movement-agility.webp",
+      "modelNotes": "人偶是動作概念而非處方；關節角度、肌肉外形與器材比例經簡化。",
+      "structures": [
+        [
+          "中性訓練人偶",
+          "#eee5d3"
+        ],
+        [
+          "訓練／肌群重點",
+          "#49bdb4"
+        ],
+        [
+          "動作關注区",
+          "#f2a066"
+        ]
+      ],
+      "camera": [
+        0.5880026035475675,
+        0.2705497629785729
+      ],
+      "sha256": {
+        "cover-480.webp": "6531e5c9380dfbc345a8586c724650f69641cf662f188b13c4f08d01262546fa",
+        "cover-800.webp": "8964fc029b019d882c293aa76f26e1c20b6c92fd118ad66b8483e7394b565642",
+        "cover.webp": "a5a396766e2a660706f4d78859e58040fbe9e6cb1acc794fa8ee4eb5be3e2673",
+        "explain.svg": "bac58a3a23be5af57c0c71c1cd4d5e2ea777a00915f0c215a80329e4ee038cd5",
+        "explain.webp": "7b435c21e5f0e3ec0183810f1bbf7ad31663a391f3e64e469cdc4ed3d2d30bf7",
+        "og.jpg": "863c8d4be4c4ce8d54f92772ab089175de34f665981b703be988fdb109399d04"
+      }
+    },
+    "you-need-a-coach": {
+      "slug": "you-need-a-coach",
+      "scene": "movement-coach",
+      "title": "好訓練：看見細節與回饋",
+      "points": [
+        {
+          "heading": "先評估",
+          "text": "能力、目標與不適需要先說清楚。"
+        },
+        {
+          "heading": "動作回饋",
+          "text": "由合格教練協助觀察與調整，再循序增加負荷。"
+        },
+        {
+          "heading": "持續追蹤",
+          "text": "用紀錄了解進步與疲勞，必要時轉介醫療評估。"
+        }
+      ],
+      "sourceIds": [
+        "activity"
+      ],
+      "caution": "模型是教學概念，不暗示沒有教練就必定受傷或無法進步。",
+      "reviewStatus": "clinician-review-pending",
+      "articleTitle": "你永遠需要一個好教練：運動醫學科醫師為什麼不建議自己練",
+      "category": "training",
+      "articlePath": "website/src/content/articles/you-need-a-coach.md",
+      "articleSha256": "05fd3eb0aec1f3f5767451384a6cf15f98ab420c70380878cf1d5bea9861c675",
+      "alt": "好訓練：看見細節與回饋的原創 3D 示意；中性訓練人偶、訓練／肌群重點、動作關注区。人偶是動作概念而非處方；關節角度、肌肉外形與器材比例經簡化。",
+      "cover": "/medical-visuals/articles/you-need-a-coach/cover.webp",
+      "coverSmall": "/medical-visuals/articles/you-need-a-coach/cover-480.webp",
+      "coverMedium": "/medical-visuals/articles/you-need-a-coach/cover-800.webp",
+      "figure": "/medical-visuals/articles/you-need-a-coach/explain.svg",
+      "figureRaster": "/medical-visuals/articles/you-need-a-coach/explain.webp",
+      "og": "/medical-visuals/articles/you-need-a-coach/og.jpg",
+      "model": "/medical-visuals/models/movement-coach.glb",
+      "poster": "/medical-visuals/models/movement-coach.webp",
+      "modelNotes": "人偶是動作概念而非處方；關節角度、肌肉外形與器材比例經簡化。",
+      "structures": [
+        [
+          "中性訓練人偶",
+          "#eee5d3"
+        ],
+        [
+          "訓練／肌群重點",
+          "#49bdb4"
+        ],
+        [
+          "動作關注区",
+          "#f2a066"
+        ]
+      ],
+      "camera": [
+        0.5880026035475675,
+        0.2705497629785729
+      ],
+      "sha256": {
+        "cover-480.webp": "82c1745406bd572487bb2699630ae11a45e45d8fffaf987578c152001c956fbe",
+        "cover-800.webp": "3a9665da4dd880147e2fb38ad5d6f51dd58e06026fb68c6828718f22bb696e60",
+        "cover.webp": "b6ce43d2da9c6bcdd108c43057c3dbe1eb33aa3ea9767358e521dcaf312a862e",
+        "explain.svg": "0b2e2598f3a013f6d03f5cda0fc1ff72a2099c9622ae74301d1ef3115ebfefef",
+        "explain.webp": "d7204e3a8bc8b4d1b12721ffc3b8c87949d14d4d86d94dd254e3a8cfa751149a",
+        "og.jpg": "0d6f617a4fd11e6b3e2cc6bb178fd40a746e5e717f81b7f39146b70029b2e1fe"
+      }
+    }
+  }
+}

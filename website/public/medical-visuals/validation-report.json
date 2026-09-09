@@ -1,0 +1,17 @@
+{
+  "status": "passed",
+  "articleCoverage": 52,
+  "glbFiles": 47,
+  "modelBytes": 20200592,
+  "markdownHashesUnchanged": true,
+  "reviewStatus": "clinician-review-pending",
+  "checks": [
+    "exact article coverage",
+    "all local URLs",
+    "image decoding and dimensions",
+    "SVG safety/self-containment",
+    "SHA-256 integrity",
+    "GLB headers/accessors/indices/unit normals",
+    "motion track present"
+  ]
+}

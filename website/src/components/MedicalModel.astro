@@ -1,0 +1,57 @@
+---
+interface Props { src: string; poster: string; alt: string; notes: string; camera?: number[]; motion?: boolean; }
+const { src, poster, alt, notes, camera = [0.35, 0.25], motion = false } = Astro.props;
+---
+<div class="medical-model" data-medical-model data-src={src} data-poster={poster} data-alt={alt} data-camera={JSON.stringify(camera)} data-motion={String(motion)}>
+  <div class="medical-model__screen">
+    <img class="medical-model__poster" src={poster} alt={alt} width="1100" height="825" loading="lazy" decoding="async" />
+    <div class="medical-model__viewport" data-viewport></div>
+    <span class="medical-model__badge">3D 示意・待醫師審閱</span>
+  </div>
+  <div class="medical-model__toolbar">
+    <button type="button" class="btn btn--secondary" data-enable hidden>載入可旋轉 3D 模型</button>
+    <a href={src} download class="medical-model__download">下載 GLB 模型</a>
+  </div>
+  <div class="medical-model__controls" data-controls hidden>
+    <div class="medical-model__buttons" role="group" aria-label="模型視角控制">
+      <button type="button" data-action="left" aria-label="向左旋轉 15 度">向左轉</button>
+      <button type="button" data-action="right" aria-label="向右旋轉 15 度">向右轉</button>
+      <button type="button" data-action="in" aria-label="放大模型">放大</button>
+      <button type="button" data-action="out" aria-label="縮小模型">縮小</button>
+      <button type="button" data-action="reset">重設視角</button>
+    </div>
+    <p class="medical-model__help">可拖曳旋轉、雙指縮放；也可使用上方按鈕。手機單指上下滑動仍可捲動文章。</p>
+    {motion && <div class="medical-model__motion">
+      <label>示意屈曲角度 <output data-angle>0°</output><input data-angle-input type="range" min="0" max="72" step="1" value="0" aria-label="示意屈曲角度，零至七十二度" /></label>
+      <button type="button" data-play>播放示意動畫</button>
+    </div>}
+  </div>
+  <p class="medical-model__status" role="status" aria-live="polite" data-status>按下按鈕才會下載互動程式與模型；靜態圖可直接閱讀。</p>
+  <p class="medical-model__notes">{notes}</p>
+  <noscript><p>目前未啟用 JavaScript，已顯示靜態圖；GLB 檔仍可下載。</p></noscript>
+</div>
+<script>
+  import '../scripts/medical-model';
+</script>
+<style>
+  .medical-model { border: 1px solid var(--c-line); border-radius: var(--r-lg); overflow: hidden; background: var(--c-bg, #fff); }
+  .medical-model__screen { position: relative; aspect-ratio: 4 / 3; background: #0c1b25; overflow: hidden; }
+  .medical-model__poster { display: block; width: 100%; height: 100%; object-fit: contain; }
+  .medical-model__viewport { position: absolute; inset: 0; }
+  .medical-model__viewport :global(model-viewer) { display: block; width: 100%; height: 100%; background: #0c1b25; --poster-color: #0c1b25; touch-action: pan-y; }
+  .medical-model__badge { position: absolute; top: 14px; left: 14px; color: #f3c790; background: #1a303ce8; padding: 7px 11px; border-radius: 8px; font-size: 12px; pointer-events: none; }
+  .medical-model__toolbar, .medical-model__buttons { display: flex; flex-wrap: wrap; align-items: center; gap: 10px; }
+  .medical-model__toolbar { padding: 16px 18px 8px; }
+  .medical-model__download { font-size: 14px; }
+  .medical-model__controls { padding: 8px 18px; }
+  .medical-model__buttons button, .medical-model__motion button { padding: 9px 13px; min-height: 44px; border-radius: 8px; border: 1px solid var(--c-line); background: #f1f8f9; color: #153e48; cursor: pointer; font: inherit; }
+  .medical-model__buttons button:focus-visible, .medical-model__motion button:focus-visible, input:focus-visible { outline: 3px solid #147f8c; outline-offset: 3px; }
+  .medical-model__status, .medical-model__notes, .medical-model__help { font-size: 13px; line-height: 1.7; color: var(--c-muted); margin: 8px 18px 12px; }
+  .medical-model__help { margin-inline: 0; }
+  .medical-model__notes { color: #825320; }
+  .medical-model__motion { display: grid; gap: 10px; }
+  .medical-model__motion label { display: grid; grid-template-columns: 1fr auto; gap: 8px; font-size: 14px; }
+  .medical-model__motion input { grid-column: 1 / -1; width: 100%; min-height: 44px; }
+  [hidden] { display: none !important; }
+  @media (prefers-reduced-motion: reduce) { * { scroll-behavior: auto; } }
+</style>

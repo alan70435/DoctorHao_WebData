@@ -1,0 +1,47 @@
+---
+import MedicalModel from './MedicalModel.astro';
+import { medicalVisuals, type MedicalVisual } from '@/lib/medical-visuals';
+interface Props { visual: MedicalVisual; }
+const { visual } = Astro.props;
+const headingId = `visual-${visual.slug}`;
+---
+<section class="medical-visual" aria-labelledby={headingId}>
+  <div class="medical-visual__heading"><span>醫學圖解</span><a href="/medical-visuals/">瀏覽全部素材</a></div>
+  <h2 id={headingId}>{visual.title}</h2>
+  <p class="medical-visual__review">原創示意草稿・尚待醫師審閱。以下圖解為編輯輔助，不代表程皓醫師已審定。</p>
+  <MedicalModel src={visual.model} poster={visual.poster} alt={visual.alt} notes={visual.modelNotes} camera={visual.camera} />
+  <div class="medical-visual__points">
+    {visual.points.map((point, index) => <div><span aria-hidden="true">0{index + 1}</span><h3>{point.heading}</h3><p>{point.text}</p></div>)}
+  </div>
+  <p class="medical-visual__caution">{visual.caution}</p>
+  <details class="medical-visual__details">
+    <summary>完整圖卡、可下載格式與圖解參考資料</summary>
+    <figure>
+      <img src={visual.figureRaster} alt={`${visual.title}：${visual.points.map(p => p.heading).join('、')}；同頁文字提供完整解說。`} width="1600" height="1120" loading="lazy" decoding="async" />
+      <figcaption>結構經簡化與放大，比例不供量測；色彩表示閱讀焦點，不表示疾病分級。</figcaption>
+    </figure>
+    <p class="medical-visual__downloads"><a href={visual.figure} download>SVG 圖卡</a><a href={visual.figureRaster} download>WebP 圖卡</a><a href={visual.og} download>分享圖 JPG</a></p>
+    <ul>{visual.sourceIds.map(key => <li><a href={medicalVisuals.sources[key].url} target="_blank" rel="noopener noreferrer">{medicalVisuals.sources[key].label}</a></li>)}</ul>
+    <p class="medical-visual__source-note">參考資料用於核對衛教概念；不是影像、模型素材的來源，也不表示上述機構審定本圖。</p>
+  </details>
+</section>
+<style>
+  .medical-visual { display: grid; gap: 18px; }
+  .medical-visual__heading { display: flex; justify-content: space-between; flex-wrap: wrap; gap: 10px; font-size: 13px; color: var(--c-brand-700); }
+  .medical-visual h2 { font-size: clamp(1.4rem, 3vw, 1.85rem); margin: 0; }
+  .medical-visual__review { font-size: 13px; line-height: 1.8; color: #825320; background: #fff4e6; border-radius: 10px; padding: 12px 15px; margin: 0; }
+  .medical-visual__points { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 14px; }
+  .medical-visual__points > div { border: 1px solid var(--c-line); border-radius: 12px; padding: 18px; background: #f5f9f8; }
+  .medical-visual__points span { font-size: 13px; font-weight: 700; color: #237571; }
+  .medical-visual__points h3 { font-size: 17px; margin: 6px 0 9px; }
+  .medical-visual__points p, .medical-visual__caution { font-size: 15px; line-height: 1.85; margin: 0; }
+  .medical-visual__caution { padding: 14px 18px; border-left: 3px solid #dc9250; background: #fff9f1; }
+  .medical-visual__details { border-block: 1px solid var(--c-line); padding: 14px 0; font-size: 14px; }
+  .medical-visual__details summary { cursor: pointer; min-height: 28px; }
+  .medical-visual__details figure { margin: 20px 0; }
+  .medical-visual__details img { display: block; width: 100%; height: auto; border-radius: 10px; }
+  .medical-visual__details figcaption, .medical-visual__source-note { font-size: 12px; color: var(--c-muted); line-height: 1.8; margin-top: 10px; }
+  .medical-visual__downloads { display: flex; flex-wrap: wrap; gap: 16px; }
+  .medical-visual__details li { margin-block: 8px; }
+  @media (max-width: 680px) { .medical-visual__points { grid-template-columns: 1fr; } }
+</style>
