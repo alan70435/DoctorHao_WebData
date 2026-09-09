@@ -7,8 +7,14 @@ on:
     paths:
       - '.github/workflows/medical-visuals.yml'
       - 'website/scripts/medical-visuals/**'
-      - 'website/src/data/medical-visuals.*'
+      - 'website/scripts/medical-visuals-upload/**'
       - 'website/src/content/articles/**'
+      - 'website/src/components/Medical*.astro'
+      - 'website/src/components/ArticleCard.astro'
+      - 'website/src/layouts/ArticleLayout.astro'
+      - 'website/src/lib/medical-visuals.ts'
+      - 'website/src/scripts/medical-model.ts'
+      - 'website/src/pages/medical-visuals.astro'
 
 permissions:
   contents: read
@@ -18,36 +24,150 @@ concurrency:
   cancel-in-progress: false
 
 jobs:
-  audit:
+  build-validate-publish:
+    if: github.actor != 'github-actions[bot]'
     runs-on: ubuntu-latest
-    timeout-minutes: 10
+    timeout-minutes: 40
+    permissions:
+      contents: write
+    env:
+      ASTRO_TELEMETRY_DISABLED: '1'
+      QA_NODE_MODULES: /tmp/doctorhao-qa/node_modules
+      LIBGL_ALWAYS_SOFTWARE: '1'
     steps:
       - uses: actions/checkout@v4
         with:
           persist-credentials: false
-      - name: Inventory article sources without modifying them
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+      - name: Verify and unpack initial source transport, when present
+        run: |
+          python3 - <<'PY'
+          import base64, hashlib, json, lzma
+          from pathlib import Path
+          transport = Path('website/scripts/medical-visuals-upload')
+          if transport.exists():
+              names = [transport / f'part-{i}.b64' for i in range(1, 5)]
+              assert all(p.is_file() for p in names), 'Incomplete source transport'
+              compressed = base64.b64decode(''.join(p.read_text().strip() for p in names), validate=True)
+              assert hashlib.sha256(compressed).hexdigest() == 'deeaf258daabb3617f0ebc62ddf755d84ec232d35c0abdbd5b4578f0b3291833', 'Transport checksum mismatch'
+              files = json.loads(lzma.decompress(compressed))['files']
+              allowed = {
+                  'website/docs/06-medical-visuals.md', 'website/docs/07-medical-visual-review.md',
+                  'website/public/medical-visuals/knee-flexion.zh-Hant.vtt',
+                  'website/scripts/medical-visuals/build.py', 'website/scripts/medical-visuals/catalog.py',
+                  'website/scripts/medical-visuals/geometry.py', 'website/scripts/medical-visuals/qa.mjs',
+                  'website/scripts/medical-visuals/requirements.txt', 'website/scripts/medical-visuals/validate.py',
+                  'website/src/components/ArticleCard.astro', 'website/src/components/MedicalModel.astro',
+                  'website/src/components/MedicalVisual.astro', 'website/src/layouts/ArticleLayout.astro',
+                  'website/src/lib/medical-visuals.ts', 'website/src/pages/medical-visuals.astro',
+                  'website/src/scripts/medical-model.ts'
+              }
+              assert len(files) == len(allowed) and {f['path'] for f in files} == allowed
+              for f in files:
+                  p = Path(f['path'])
+                  assert not p.is_absolute() and '..' not in p.parts
+                  assert hashlib.sha256(f['content'].encode('utf-8')).hexdigest() == f['sha256']
+                  if p.exists():
+                      assert hashlib.sha256(p.read_bytes()).hexdigest() in {f['expectedExistingSha256'], f['sha256']}, f'Concurrent edit: {p}'
+              for f in files:
+                  p = Path(f['path']); p.parent.mkdir(parents=True, exist_ok=True)
+                  p.write_text(f['content'], encoding='utf-8')
+              print('Verified and unpacked 16 readable source files; original articles are not transport targets.')
+          else:
+              print('Using committed readable generator sources.')
+          PY
+      - name: Install rendering dependencies
+        run: |
+          sudo apt-get update -qq
+          sudo apt-get install -y fonts-noto-cjk ffmpeg libgl1 libegl1 libxrender1 xvfb
+          python -m pip install -r website/scripts/medical-visuals/requirements.txt
+      - name: Install self-hosted model viewer and website dependencies
+        working-directory: website
+        run: |
+          if node -e "process.exit(JSON.parse(require('fs').readFileSync('package.json')).dependencies['@google/model-viewer']==='4.3.1'?0:1)"; then
+            npm ci
+          else
+            npm install --save-exact @google/model-viewer@4.3.1
+          fi
+      - name: Render all 52 article sets, models and motion example
+        run: xvfb-run -a python website/scripts/medical-visuals/build.py
+      - name: Validate asset integrity and preserve original articles
+        run: |
+          python website/scripts/medical-visuals/validate.py
+          git diff --exit-code -- website/src/content/articles
+      - name: Type-check and build the Astro website
+        working-directory: website
+        run: |
+          npm run check
+          npm run build
+      - name: Install isolated browser and glTF validators
+        run: |
+          npm install --prefix /tmp/doctorhao-qa --no-save playwright@1.55.0 gltf-validator@2.0.0-dev.3.10
+          /tmp/doctorhao-qa/node_modules/.bin/playwright install --with-deps chromium
+      - name: Test article routes, accessibility, mobile layout and real WebGL interaction
+        run: |
+          python3 -m http.server 4321 --directory website/dist > /tmp/doctorhao-server.log 2>&1 &
+          SERVER_PID=$!
+          trap 'kill "$SERVER_PID" || true' EXIT
+          for i in $(seq 1 20); do curl -fsS http://127.0.0.1:4321/medical-visuals/ > /dev/null && break || sleep 1; done
+          node website/scripts/medical-visuals/qa.mjs
+      - name: Retain machine-readable QA reports with the assets
+        run: |
+          mkdir -p website/public/medical-visuals/qa
+          cp website/medical-visual-qa/*.json website/public/medical-visuals/qa/
+      - name: Package source, rendered assets and QA evidence
+        if: always()
         run: |
           python3 - <<'PY'
           from pathlib import Path
-          import hashlib, json, zipfile
-          root = Path('website')
-          articles = []
-          for p in sorted((root / 'src/content/articles').glob('*.md')):
-              text = p.read_text(encoding='utf-8')
-              articles.append({'slug': p.stem, 'path': str(p), 'sha256': hashlib.sha256(p.read_bytes()).hexdigest(), 'content': text})
-              print(p.stem)
-          Path('medical-article-inventory.json').write_text(json.dumps(articles, ensure_ascii=False, indent=2), encoding='utf-8')
-          print('ARTICLE_COUNT=' + str(len(articles)))
-          allowed = {'.md', '.astro', '.ts', '.js', '.mjs', '.json', '.css'}
-          with zipfile.ZipFile('medical-visual-source-audit.zip', 'w', zipfile.ZIP_DEFLATED) as z:
-              for p in sorted(root.rglob('*')):
-                  if p.is_file() and p.suffix in allowed and not any(part.startswith('.') or part in {'node_modules', 'dist'} for part in p.parts):
-                      z.write(p, str(p))
-              z.write('medical-article-inventory.json')
+          import zipfile
+          roots = [
+            Path('website/public/medical-visuals'), Path('website/scripts/medical-visuals'),
+            Path('website/medical-visual-qa'), Path('website/docs/06-medical-visuals.md'),
+            Path('website/docs/07-medical-visual-review.md'), Path('website/src/data/medical-visuals.json'),
+            Path('website/src/components/MedicalModel.astro'), Path('website/src/components/MedicalVisual.astro'),
+            Path('website/src/components/ArticleCard.astro'), Path('website/src/layouts/ArticleLayout.astro'),
+            Path('website/src/lib/medical-visuals.ts'), Path('website/src/pages/medical-visuals.astro'),
+            Path('website/src/scripts/medical-model.ts'), Path('website/package.json'), Path('website/package-lock.json')
+          ]
+          with zipfile.ZipFile('medical-visual-delivery.zip', 'w', zipfile.ZIP_DEFLATED) as z:
+              for root in roots:
+                  for p in ([root] if root.is_file() else sorted(root.rglob('*'))):
+                      if p.is_file() and '__pycache__' not in p.parts:
+                          z.write(p, str(p))
           PY
       - uses: actions/upload-artifact@v4
+        if: always()
         with:
-          name: medical-visual-source-audit
-          path: medical-visual-source-audit.zip
-          retention-days: 7
+          name: medical-visual-delivery
+          path: medical-visual-delivery.zip
+          retention-days: 14
           if-no-files-found: error
+      - name: Commit validated assets and readable sources to main
+        env:
+          GH_PUSH_TOKEN: ${{ github.token }}
+        run: |
+          git config user.name 'github-actions[bot]'
+          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+          git diff --exit-code -- website/src/content/articles
+          git add website/public/medical-visuals website/src/data/medical-visuals.json
+          git add website/scripts/medical-visuals/*.py website/scripts/medical-visuals/*.mjs website/scripts/medical-visuals/requirements.txt
+          git add website/docs/06-medical-visuals.md website/docs/07-medical-visual-review.md
+          git add website/src/components/ArticleCard.astro website/src/components/MedicalModel.astro website/src/components/MedicalVisual.astro
+          git add website/src/layouts/ArticleLayout.astro website/src/lib/medical-visuals.ts website/src/pages/medical-visuals.astro website/src/scripts/medical-model.ts
+          git add website/package.json website/package-lock.json
+          git rm -r --ignore-unmatch website/scripts/medical-visuals-upload
+          if git diff --cached --quiet; then
+            echo 'No asset changes to publish.'
+            exit 0
+          fi
+          git commit -m 'feat: add 52 article illustration sets, 47 3D models and interactive medical library'
+          AUTH=$(printf 'x-access-token:%s' "$GH_PUSH_TOKEN" | base64 -w0)
+          echo "::add-mask::$AUTH"
+          git -c http.https://github.com/.extraheader="AUTHORIZATION: basic $AUTH" push origin HEAD:main
+          echo "Published commit: $(git rev-parse HEAD)" >> "$GITHUB_STEP_SUMMARY"
