@@ -247,38 +247,38 @@
       "files": [
         {
           "path": "wrist-anatomy-probe.svg",
-          "sha256": "3dc1edcdf73abe96d8feeb1bd40ffa4c72d2d95e2b3be60e85b94040d8ea4b43",
-          "bytes": 478763
+          "sha256": "e5b7d7160f699dd6472826bf38e331637f2feccc09dae466b8409c6e0b767209",
+          "bytes": 474731
         },
         {
           "path": "wrist-anatomy-probe.png",
-          "sha256": "014dd2dfe6f7e66a1ffdccae0a2d45b73a94987a25e6666ea40fd4840cb4c072",
-          "bytes": 384936
+          "sha256": "119ab0c150ac7fc3a75ea275887da2ded7d97221629d500ef25c7e42094b263e",
+          "bytes": 381982
         },
         {
           "path": "wrist-anatomy-probe.webp",
-          "sha256": "e46b187d58f17ddf99bf722a7f391b879a76f07e94debd6dcacd8dc928fb3412",
-          "bytes": 145228
+          "sha256": "9fe40a2766a7504206e0f8a9ed9bbd432d414890c9bbcfc5846053ffb7a5e218",
+          "bytes": 144906
         },
         {
           "path": "wrist-long.glb",
-          "sha256": "58e09ec0bf4ac0d9fcd1cdff81d9bf862e05a2cffbc5ec16c9fe19ae0c4d4ad5",
-          "bytes": 285724
+          "sha256": "aa460d624b16c3c06d15dbca6ae08175ffa717778329b1be96eb4f97e012dbc2",
+          "bytes": 285728
         },
         {
           "path": "wrist-long-poster.webp",
-          "sha256": "96a213676a65fc4cf3933f12d798f2c196e58ed2187ad39296914f99575f60ab",
-          "bytes": 16500
+          "sha256": "821502cf2571ebe40be74b59ccdfb0aa69eac627a804d80dc847736d619f8aad",
+          "bytes": 16054
         },
         {
           "path": "wrist-short.glb",
-          "sha256": "bff47b15715b372e12dabaa2750dbc1a6ff59d9a19af09a6cbec558f93002402",
-          "bytes": 285756
+          "sha256": "ffe51b1e691e58dd7be33e1aa2abcfcb2446493647c45e635b91df7f0d323cc5",
+          "bytes": 285760
         },
         {
           "path": "wrist-short-poster.webp",
-          "sha256": "6679da5b21b76bd4ba34e95e6ba8e8bfefecf7bb73f29a48a8774ec2d709c7ba",
-          "bytes": 16724
+          "sha256": "24820062bcb73711d8c9030500b490f7f4a3223f8fe5733745e5da8dd5def6fb",
+          "bytes": 16648
         }
       ]
     },
